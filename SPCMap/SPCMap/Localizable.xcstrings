@@ -1,0 +1,192 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@ SIG %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ SIG %2$@"
+          }
+        }
+      }
+    },
+    "%@ Significant Severe" : {
+
+    },
+    "10% or greater probability of 2-inch diameter or larger within 25 miles of a point." : {
+
+    },
+    "10% or greater probability of damaging wind gusts of 65 knots (~75 miles per hour) or greater within 25 miles of a point." : {
+
+    },
+    "10% or greater probability of EF2 - EF5 tornadoes within 25 miles of a point." : {
+
+    },
+    "10% or higher probability of thunderstorms is forecast." : {
+
+    },
+    "A greater concentration of organized severe thunderstorms with varying levels of intensity." : {
+
+    },
+    "A severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived derecho system with hurricane-force wind gusts producing widespread damage." : {
+
+    },
+    "A significant severe region represents 10% or greater probability of 2-inch diameter hail or larger within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them." : {
+
+    },
+    "A significant severe region represents 10% or greater probability of 65-knot (~75 miles per hour) or greater wind gusts within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them." : {
+
+    },
+    "A significant severe region represents 10% or greater probability of EF2 - EF5 tornadoes within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them." : {
+
+    },
+    "About" : {
+
+    },
+    "Categorical Risk Levels" : {
+
+    },
+    "categorical0_name" : {
+
+    },
+    "categorical1_name" : {
+
+    },
+    "categorical2_name" : {
+
+    },
+    "categorical3_name" : {
+
+    },
+    "categorical4_name" : {
+
+    },
+    "categorical5_name" : {
+
+    },
+    "Data provided by the" : {
+
+    },
+    "Day" : {
+
+    },
+    "Day %lld" : {
+
+    },
+    "Enhanced (3/5, orange)" : {
+
+    },
+    "Forecasted at your location" : {
+
+    },
+    "Forecasted probability of 1-inch diameter or larger within 25 miles of a point." : {
+
+    },
+    "Forecasted probability of a tornado within 25 miles of a point." : {
+
+    },
+    "Forecasted probability of damaging wind gusts of 50 knots (~60 miles per hour) or greater within 25 miles of a point." : {
+
+    },
+    "General Thunderstorms (light green)" : {
+
+    },
+    "Hail risk is measured on a scale of 5%, 15%, 30%, 45%, and 60% with each percentage represening the forecasted probably of 1-inch diameter hail or larger within 25 miles of a point." : {
+
+    },
+    "Hail Risk Levels" : {
+
+    },
+    "High (5/5, magenta)" : {
+
+    },
+    "Hybrid" : {
+
+    },
+    "Layer" : {
+
+    },
+    "Loading..." : {
+
+    },
+    "Marginal (1/5, dark green)" : {
+
+    },
+    "Moderage (4/5, red)" : {
+
+    },
+    "National Oceanic and Atmospheric Administration's (NOAA) Storm Prediction Center (SPC)" : {
+
+    },
+    "Organized severe thunderstorms are expected, but usually in low coverage with varying levels of intensity." : {
+
+    },
+    "Outlook" : {
+
+    },
+    "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense." : {
+
+    },
+    "Satellite" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Severe storms of either limited organization and logevety, or very low coverage and marginal intensity." : {
+
+    },
+    "Significant Severe" : {
+
+    },
+    "Slight (2/5, yellow)" : {
+
+    },
+    "SPC Forecast Discussion" : {
+
+    },
+    "Standard" : {
+
+    },
+    "Timeframe" : {
+
+    },
+    "Tornado risk is measured on a scale of 2%, 5%, 10%, 15%, 30%, 45%, and 60% with each percentage represening the forecasted probably of a tornado within 25 miles of a point." : {
+
+    },
+    "Tornado Risk Levels" : {
+
+    },
+    "U.C. Department of Commerce" : {
+
+    },
+    "Unknown: %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unknown: %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Wind risk is measured on a scale of 5%, 15%, 30%, 45%, and 60% with each percentage represening the forecasted probably of damaging wind gusts of 50 knots (~60 miles per hour) or greater within 25 miles of a point." : {
+
+    },
+    "Wind Risk Levels" : {
+
+    }
+  },
+  "version" : "1.0"
+}
