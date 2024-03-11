@@ -13,4 +13,8 @@ extension View {
             self
         }
     }
+    
+    func onChange<V: Equatable>(of value: V, initial: Bool = false, _ task: @Sendable @escaping () async -> Void) -> some View {
+        onChange(of: value, initial: initial, { Task(operation: task) })
+    }
 }

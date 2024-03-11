@@ -8,6 +8,9 @@
 import SwiftUI
 
 extension Color {
+    static let magenta = Color(.magenta)
+    static let label = Color(.label)
+    
     init(hex string: String) {
         var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if string.hasPrefix("#") {

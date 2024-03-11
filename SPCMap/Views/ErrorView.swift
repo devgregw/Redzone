@@ -25,6 +25,9 @@ struct ErrorView: View {
                 }
                 .padding([.horizontal, .bottom])
             }
+            .toolbar {
+                DismissButton()
+            }
             .navigationTitle("Error")
             .navigationBarTitleDisplayMode(.inline)
         }

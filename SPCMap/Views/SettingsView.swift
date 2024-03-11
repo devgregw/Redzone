@@ -6,27 +6,18 @@
 //
 
 import SwiftUI
+import CoreLocationUI
 
 struct SettingsView: View {
-    @Binding var selectedOutlook: OutlookType
-    @Binding var selectedMapStyle: OutlookMapView.Configuration
+    @Environment(LocationService.self) private var locationService
+    @Environment(Context.self) private var context
     
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    OutlookPicker(selection: $selectedOutlook)
-                    
-                    Picker(selection: $selectedMapStyle) {
-                        ForEach(OutlookMapView.Configuration.allCases, id: \.self) {
-                            Text($0.rawValue.capitalized)
-                        }
-                        .foregroundStyle(.secondary)
-                    } label: {
-                        Label("Map Style", systemImage: "map")
-                    }
-                    .menuOrder(.fixed)
-                    .pickerStyle(.menu)
+                    OutlookTypePicker()
+                    MapStylePicker()
                 }
                 
                 Section {
@@ -36,6 +27,9 @@ struct SettingsView: View {
                         Label("About", systemImage: "questionmark.circle")
                     }
                 }
+            }
+            .toolbar {
+                DismissButton()
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)

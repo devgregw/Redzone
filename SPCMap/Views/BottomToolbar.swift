@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CurrentLocationButton: View {
-    @EnvironmentObject private var outlookService: OutlookService
+    @Environment(OutlookService.self) private var outlookService
     @State private var displayDetail: Bool = false
+    
     let highestRisk: OutlookFeature?
     let isSignificant: Bool
-    let selectedOutlook: OutlookType
     
-    var errorMessage: String? {
+    private var errorMessage: String? {
         if case let .error(message) = outlookService.state {
             message
         } else {
@@ -28,10 +28,6 @@ struct CurrentLocationButton: View {
         } label: {
             HStack(alignment: .center, spacing: 4) {
                 if let highestRisk {
-                    /* Image(systemName: "circle")
-                        .symbolRenderingMode(.monochrome)
-                        .foregroundColor(.init(hex: highestRisk.outlookProperties.strokeColor)) */
-                    
                     Image(systemName: "circle.inset.filled")
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(Color(hex: highestRisk.outlookProperties.fillColor).opacity(0.50), Color(hex: highestRisk.outlookProperties.strokeColor))
@@ -53,6 +49,7 @@ struct CurrentLocationButton: View {
                         Text("No risk zones at your location")
                     }
                 }
+                .lineLimit(1)
                 .font(.callout)
                 
                 if !highestRisk.isNil || !errorMessage.isNil {
@@ -61,17 +58,13 @@ struct CurrentLocationButton: View {
                         .fontWeight(.bold)
                         .foregroundStyle(.secondary)
                 }
-                
-                /* if isSignificant {
-                    SigSevereBadgeView(theme: .light, font: .caption)
-                } */
             }
         }
         .disabled(highestRisk.isNil && errorMessage.isNil)
         .buttonStyle(.plain)
         .sheet(isPresented: $displayDetail) {
             if let highestRisk {
-                RiskDetailView(feature: highestRisk, isSignificant: isSignificant, atCurrentLocation: true, selectedOutlook: selectedOutlook)
+                RiskDetailView(feature: highestRisk, isSignificant: isSignificant, atCurrentLocation: true)
             } else if let errorMessage {
                 ErrorView(message: errorMessage)
             }
@@ -80,35 +73,47 @@ struct CurrentLocationButton: View {
 }
 
 struct BottomToolbar: ToolbarContent {
+    @Environment(OutlookService.self) private var outlookService
+    @Environment(LocationService.self) private var locationService
+    @Environment(Context.self) private var context
+    
     let highestRisk: OutlookFeature?
     let isSignificant: Bool
-    @Binding var selectedOutlook: OutlookType
-    @Binding var selectedMapStyle: OutlookMapView.Configuration
-    @EnvironmentObject private var outlookService: OutlookService
+    
     @State private var displayDetail: Bool = false
-    @Binding var displaySettings: Bool
     
     var body: some ToolbarContent {
-        CurrentLocationButton(highestRisk: highestRisk, isSignificant: isSignificant, selectedOutlook: selectedOutlook)
-        .sheet(isPresented: $displaySettings) {
-            SettingsView(selectedOutlook: $selectedOutlook, selectedMapStyle: $selectedMapStyle)
-        }
-        .toolbarItem(.bottomBar)
-        
-        Spacer()
-            .toolbarItem(.bottomBar)
-        
-        Button {
-            Task { await outlookService.load(selectedOutlook) }
-        } label: {
-            Image(systemName: "arrow.clockwise")
-        }
-        .toolbarItem(.bottomBar)
-        
-        Button {
-            displaySettings.toggle()
-        } label: {
-            Image(systemName: "square.3.layers.3d")
+        @Bindable var context = context
+        HStack {
+            CurrentLocationButton(highestRisk: highestRisk, isSignificant: isSignificant)
+                .sheet(isPresented: $context.displaySettingsSheet) {
+                    SettingsView()
+                }
+            
+            Spacer()
+            
+            Button {
+                if !locationService.isUpdatingLocation {
+                    locationService.requestPermission()
+                } else if let location = locationService.lastKnownLocation?.coordinate {
+                    context.moveCamera(to: location)
+                }
+            } label: {
+                Image(systemName: "location\(locationService.isUpdatingLocation ? ".fill" : "")")
+            }
+            
+            Button {
+                await outlookService.refresh()
+                self.context.moveCamera(centering: outlookService.state)
+            } label: {
+                Image(systemName: "arrow.clockwise")
+            }
+            
+            Button {
+                context.displaySettingsSheet.toggle()
+            } label: {
+                Image(systemName: "square.3.layers.3d")
+            }
         }
         .toolbarItem(.bottomBar)
     }

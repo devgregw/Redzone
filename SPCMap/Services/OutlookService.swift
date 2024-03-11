@@ -17,25 +17,25 @@ enum OutlookType: Hashable {
         
         var systemImage: String {
             switch self {
-            case .categorical: "square.stack.3d.down.forward"
-            case .wind: "wind"
-            case .hail: "cloud.hail"
-            case .tornado: "tornado"
+            case .categorical: return "square.stack.3d.down.forward"
+            case .wind: return "wind"
+            case .hail: return "cloud.hail"
+            case .tornado: return "tornado"
             }
         }
         
         var displayName: String {
             switch self {
-            case .categorical: "Categorical"
-            case .tornado: "Tornado"
-            default: rawValue.capitalized
+            case .categorical: return "Categorical"
+            case .tornado: return "Tornado"
+            default: return rawValue.capitalized
             }
         }
     }
     
     case convective1(_: ConvectiveOutlookType)
     case convective2(_: ConvectiveOutlookType)
-    case convective3(_: ConvectiveOutlookType)
+    case convective3(probabilistic: Bool)
     
     case convective4
     case convective5
@@ -45,14 +45,14 @@ enum OutlookType: Hashable {
     
     var day: Int {
         switch self {
-        case .convective1: 1
-        case .convective2: 2
-        case .convective3: 3
-        case .convective4: 4
-        case .convective5: 5
-        case .convective6: 6
-        case .convective7: 7
-        case .convective8: 8
+        case .convective1: return 1
+        case .convective2: return 2
+        case .convective3: return 3
+        case .convective4: return 4
+        case .convective5: return 5
+        case .convective6: return 6
+        case .convective7: return 7
+        case .convective8: return 8
         }
     }
     
@@ -60,10 +60,19 @@ enum OutlookType: Hashable {
         true
     }
     
+    var isProbabilistic: Bool {
+        if case let .convective3(probabilistic) = self {
+            return probabilistic
+        } else {
+            return day >= 4
+        }
+    }
+    
     var subSection: String {
         switch self {
-        case .convective1(let type), .convective2(let type), .convective3(let type): type.displayName
-        case .convective4, .convective5, .convective6, .convective7, .convective8: "Probabilistic"
+        case .convective1(let type), .convective2(let type): return type.displayName
+        case .convective3(let probabilistic): return probabilistic ? "Probabilistic" : ConvectiveOutlookType.categorical.displayName
+        case .convective4, .convective5, .convective6, .convective7, .convective8: return "Probabilistic"
         }
     }
     
@@ -73,15 +82,17 @@ enum OutlookType: Hashable {
     
     var path: String {
         switch self {
-        case .convective1(let type), .convective2(let type), .convective3(let type): "convective/\(day)/\(type.rawValue)"
-        case .convective4, .convective5, .convective6, .convective7, .convective8: "convective/\(day)"
+        case .convective1(let type), .convective2(let type): return "convective/\(day)/\(type.rawValue)"
+        case .convective3(let probabilistic): return "convective/\(day)/\(probabilistic ? "prob" : ConvectiveOutlookType.categorical.rawValue)"
+        case .convective4, .convective5, .convective6, .convective7, .convective8: return "convective/\(day)"
         }
     }
     
     var convectiveSubtype: ConvectiveOutlookType? {
         switch self {
-        case let .convective1(subtype), let .convective2(subtype), let .convective3(subtype): subtype
-        default: nil
+        case let .convective1(subtype), let .convective2(subtype): return subtype
+        case let .convective3(probabilistic): return probabilistic ? nil : ConvectiveOutlookType.categorical
+        default: return nil
         }
     }
     
@@ -90,6 +101,7 @@ enum OutlookType: Hashable {
     }
 }
 
+@Observable
 class OutlookService: ObservableObject {
     enum State: Hashable {
         case noData
@@ -111,27 +123,37 @@ class OutlookService: ObservableObject {
         }
     }
     
-    private let hostname = "http://192.168.100.9:8080"
+    private let hostname = "http://192.168.100.9:8081"
     
-    @Published var state: State = .loading
+    var state: State = .loading
+    private var lastOutlookType: OutlookType = Context.defaultOutlookType
     
     @MainActor func load(_ type: OutlookType) async {
+        lastOutlookType = type
         if let url = URL(string: "\(hostname)/\(type.path)") {
             do {
                 self.state = .loading
-                let data = try await URLSession.shared.data(from: url).0
-                let response = try OutlookResponse(data: data, outlookType: type)
-                if response.features.count <= 1 || (response.features.first?.geometry.isEmpty ?? true) {
+                let (data, urlResponse) = try await URLSession.shared.data(from: url)
+                if let httpResponse = urlResponse as? HTTPURLResponse,
+                   httpResponse.statusCode == 204 {
                     self.state = .noData
                 } else {
-                    self.state = .loaded(response: response)
+                    let response = try OutlookResponse(data: data, outlookType: type)
+                    if response.features.first?.geometry.isEmpty ?? true {
+                        self.state = .noData
+                    } else {
+                        self.state = .loaded(response: response)
+                    }
                 }
             } catch {
-                debugPrint(error.localizedDescription)
                 self.state = .error(error: error.localizedDescription)
             }
         } else {
             self.state = .error(error: "Invalid selection specified")
         }
+    }
+    
+    @MainActor func refresh() async {
+        await load(lastOutlookType)
     }
 }

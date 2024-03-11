@@ -6,11 +6,11 @@
 //
 
 import MapKit
-import UIKit
+import SwiftUI
 
 class OutlookMultiPolygon: MKMultiPolygon {
-    lazy var strokeColor: UIColor = properties.isSignificant ? .black : UIColor(hex: properties.strokeColor)
-    lazy var fillColor: UIColor = properties.isSignificant ? .clear : UIColor(hex: properties.fillColor).withAlphaComponent(0.25)
+    lazy var strokeColor: Color = properties.isSignificant ? .black : Color(hex: properties.strokeColor)
+    lazy var fillColor: Color = properties.isSignificant ? .clear : Color(hex: properties.fillColor).opacity(0.25)
     var dashed: Bool { properties.isSignificant }
     
     let properties: OutlookProperties

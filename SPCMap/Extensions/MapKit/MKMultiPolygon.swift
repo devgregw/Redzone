@@ -7,10 +7,6 @@
 
 import MapKit
 
-protocol AnyPolygon: NSObject {
-    func contains(point: MKMapPoint) -> Bool
-}
-
 extension MKMultiPolygon: AnyPolygon {
     func contains(point: MKMapPoint) -> Bool {
         polygons.contains {
