@@ -28,6 +28,7 @@
 		FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92429C29F9B006C5DAC /* SPCApp.swift */; };
 		FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92629C29F9B006C5DAC /* ContentView.swift */; };
 		FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC70F92829C29F9D006C5DAC /* Assets.xcassets */; };
+		FCA57D3F2B9F52F5008DDCE8 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */; };
 		FCAC37902B75C88300AEB3C8 /* MapStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */; };
 		FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */; };
 		FCAC37952B78793600AEB3C8 /* AboutCategoricalRiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37942B78793600AEB3C8 /* AboutCategoricalRiskView.swift */; };
@@ -50,6 +51,16 @@
 		FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCADE42A3CEE3100944D48 /* SettingsView.swift */; };
 		FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC70F92029C29F9B006C5DAC;
+			remoteInfo = SPCMap;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookResponse.swift; sourceTree = "<group>"; };
@@ -75,6 +86,8 @@
 		FC70F92429C29F9B006C5DAC /* SPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCApp.swift; sourceTree = "<group>"; };
 		FC70F92629C29F9B006C5DAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC70F92829C29F9D006C5DAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCA57D3C2B9F52F5008DDCE8 /* SPCMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleModifier.swift; sourceTree = "<group>"; };
 		FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		FCAC37942B78793600AEB3C8 /* AboutCategoricalRiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCategoricalRiskView.swift; sourceTree = "<group>"; };
@@ -105,6 +118,13 @@
 			files = (
 				FCB4BBB92A48E12900738C3E /* MapKit.framework in Frameworks */,
 				FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA57D392B9F52F5008DDCE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +240,7 @@
 			children = (
 				FC44E04D2A35713400A9925D /* SPC-Info.plist */,
 				FC70F92329C29F9B006C5DAC /* SPCMap */,
+				FCA57D3D2B9F52F5008DDCE8 /* SPCMapTests */,
 				FC70F92229C29F9B006C5DAC /* Products */,
 				FC4897E329F5890C0045E761 /* Frameworks */,
 			);
@@ -229,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				FC70F92129C29F9B006C5DAC /* SPCMap.app */,
+				FCA57D3C2B9F52F5008DDCE8 /* SPCMapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,6 +268,14 @@
 				FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */,
 			);
 			path = SPCMap;
+			sourceTree = "<group>";
+		};
+		FCA57D3D2B9F52F5008DDCE8 /* SPCMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */,
+			);
+			path = SPCMapTests;
 			sourceTree = "<group>";
 		};
 		FCAC37932B78790E00AEB3C8 /* About */ = {
@@ -303,6 +333,24 @@
 			productReference = FC70F92129C29F9B006C5DAC /* SPCMap.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FCA57D3B2B9F52F5008DDCE8 /* SPCMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA57D442B9F52F5008DDCE8 /* Build configuration list for PBXNativeTarget "SPCMapTests" */;
+			buildPhases = (
+				FCA57D382B9F52F5008DDCE8 /* Sources */,
+				FCA57D392B9F52F5008DDCE8 /* Frameworks */,
+				FCA57D3A2B9F52F5008DDCE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA57D412B9F52F5008DDCE8 /* PBXTargetDependency */,
+			);
+			name = SPCMapTests;
+			productName = SPCMapTests;
+			productReference = FCA57D3C2B9F52F5008DDCE8 /* SPCMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -310,11 +358,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					FC70F92029C29F9B006C5DAC = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					FCA57D3B2B9F52F5008DDCE8 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = FC70F92029C29F9B006C5DAC;
 					};
 				};
 			};
@@ -332,6 +384,7 @@
 			projectRoot = "";
 			targets = (
 				FC70F92029C29F9B006C5DAC /* SPCMap */,
+				FCA57D3B2B9F52F5008DDCE8 /* SPCMapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,6 +396,13 @@
 			files = (
 				FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */,
 				FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA57D3A2B9F52F5008DDCE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +454,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCA57D382B9F52F5008DDCE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA57D3F2B9F52F5008DDCE8 /* ExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCA57D412B9F52F5008DDCE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC70F92029C29F9B006C5DAC /* SPCMap */;
+			targetProxy = FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FC70F92D29C29F9D006C5DAC /* Debug */ = {
@@ -579,6 +655,49 @@
 			};
 			name = Release;
 		};
+		FCA57D422B9F52F5008DDCE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.SPCMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SPCMap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SPCMap";
+			};
+			name = Debug;
+		};
+		FCA57D432B9F52F5008DDCE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.SPCMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SPCMap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SPCMap";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -596,6 +715,15 @@
 			buildConfigurations = (
 				FC70F93029C29F9D006C5DAC /* Debug */,
 				FC70F93129C29F9D006C5DAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA57D442B9F52F5008DDCE8 /* Build configuration list for PBXNativeTarget "SPCMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA57D422B9F52F5008DDCE8 /* Debug */,
+				FCA57D432B9F52F5008DDCE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
