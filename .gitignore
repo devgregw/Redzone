@@ -3,7 +3,7 @@
 
 ### macOS ###
 # General
-.DS_Store
+**/.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -12,7 +12,7 @@ Icon
 
 
 # Thumbnails
-._*
+**/._*
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
