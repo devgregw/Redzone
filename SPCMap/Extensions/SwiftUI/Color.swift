@@ -1,6 +1,6 @@
 //
 //  Color.swift
-//  SPC
+//  SPCMap
 //
 //  Created by Greg Whatley on 4/2/23.
 //
@@ -8,6 +8,9 @@
 import SwiftUI
 
 extension Color {
+    static let magenta = Color(.magenta)
+    static let label = Color(.label)
+    
     init(hex string: String) {
         var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if string.hasPrefix("#") {

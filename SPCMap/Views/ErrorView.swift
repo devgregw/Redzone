@@ -1,6 +1,6 @@
 //
 //  ErrorView.swift
-//  SPC
+//  SPCMap
 //
 //  Created by Greg Whatley on 6/25/23.
 //
@@ -24,6 +24,9 @@ struct ErrorView: View {
                     Text(message)
                 }
                 .padding([.horizontal, .bottom])
+            }
+            .toolbar {
+                DismissButton()
             }
             .navigationTitle("Error")
             .navigationBarTitleDisplayMode(.inline)

@@ -1,6 +1,6 @@
 //
 //  RiskDetailView.swift
-//  SPC
+//  SPCMap
 //
 //  Created by Greg Whatley on 4/8/23.
 //
@@ -9,30 +9,29 @@ import SafariServices
 import SwiftUI
 
 struct RiskDetailView: View {
+    @Environment(Context.self) private var context
+    @Environment(\.openURL) private var openURL
+    
     let properties: OutlookProperties
     let isSignificant: Bool
     let atCurrentLocation: Bool
-    let selectedOutlook: OutlookType
     
-    init(properties: OutlookProperties, isSignificant: Bool, atCurrentLocation: Bool, selectedOutlook: OutlookType) {
+    init(properties: OutlookProperties, isSignificant: Bool, atCurrentLocation: Bool) {
         self.properties = properties
         self.isSignificant = isSignificant
         self.atCurrentLocation = atCurrentLocation
-        self.selectedOutlook = selectedOutlook
     }
     
-    init(feature: OutlookFeature, isSignificant: Bool, atCurrentLocation: Bool, selectedOutlook: OutlookType) {
-        self.init(properties: feature.outlookProperties, isSignificant: isSignificant, atCurrentLocation: atCurrentLocation, selectedOutlook: selectedOutlook)
+    init(feature: OutlookFeature, isSignificant: Bool, atCurrentLocation: Bool) {
+        self.init(properties: feature.outlookProperties, isSignificant: isSignificant, atCurrentLocation: atCurrentLocation)
     }
     
-    init(polygon: OutlookMultiPolygon, isSignificant: Bool, atCurrentLocation: Bool, selectedOutlook: OutlookType) {
-        self.init(properties: polygon.properties, isSignificant: isSignificant, atCurrentLocation: atCurrentLocation, selectedOutlook: selectedOutlook)
+    init(polygon: OutlookMultiPolygon, isSignificant: Bool, atCurrentLocation: Bool) {
+        self.init(properties: polygon.properties, isSignificant: isSignificant, atCurrentLocation: atCurrentLocation)
     }
-    
-    @State private var presentCommentary: Bool = false
-    
-    private var commentaryURL: URL {
-        URL(string: "https://www.spc.noaa.gov/products/outlook/day\(selectedOutlook.day)otlk.html")!
+        
+    private var commentaryURL: URL? {
+        URL(string: "https://www.spc.noaa.gov/products/outlook/day\(context.outlookType.day)otlk.html")
     }
     
     private var outlookTitleIcon: Image {
@@ -47,11 +46,15 @@ struct RiskDetailView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("\(outlookTitleIcon) \(properties.title)")
-                        .font(.title3.bold())
-                        .padding(.bottom)
+                    HStack {
+                        outlookTitleIcon
+                        OutlookLegendIconView(properties: properties)
+                        Text(properties.title)
+                    }
+                    .font(.title3.bold())
+                    .padding(.bottom)
                     
-                    switch selectedOutlook.convectiveSubtype {
+                    switch context.outlookType.convectiveSubtype {
                     case .categorical:
                         switch properties.severity {
                         case .generalThunder: Text("10% or higher probability of thunderstorms is forecast.")
@@ -60,12 +63,12 @@ struct RiskDetailView: View {
                         case .enhanced: Text("A greater concentration of organized severe thunderstorms with varying levels of intensity.")
                         case .moderate: Text("Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense.")
                         case .high: Text("A severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived derecho system with hurricane-force wind gusts producing widespread damage.")
-                        default: Text("Unknown: \(selectedOutlook.path) \(properties.id)")
+                        default: Text("Unknown: \(context.outlookType.path) \(properties.id)")
                         }
                     case .wind:
                         Text("Forecasted probability of damaging wind gusts of 50 knots (~60 miles per hour) or greater within 25 miles of a point.")
                     case .hail:
-                        Text("Forecasted probability of 1-inch diameter or larger within 25 miles of a point.")
+                        Text("Forecasted probability of 1-inch diameter hail or larger within 25 miles of a point.")
                     case .tornado:
                         Text("Forecasted probability of a tornado within 25 miles of a point.")
                     case nil: EmptyView()
@@ -74,12 +77,17 @@ struct RiskDetailView: View {
                     if isSignificant {
                         Divider()
                             .padding(.vertical)
-                        Text("\(significantIcon) Significant Severe")
-                            .font(.title3.bold())
-                            .padding(.bottom)
-                        switch selectedOutlook.convectiveSubtype {
+                        HStack {
+                            significantIcon
+                            SigSevLegendIconView()
+                            Text("Significant Severe")
+                        }
+                        .font(.title3.bold())
+                        .padding(.bottom)
+                        
+                        switch context.outlookType.convectiveSubtype {
                         case .hail:
-                            Text("10% or greater probability of 2-inch diameter or larger within 25 miles of a point.")
+                            Text("10% or greater probability of 2-inch diameter hail or larger within 25 miles of a point.")
                         case .wind:
                             Text("10% or greater probability of damaging wind gusts of 65 knots (~75 miles per hour) or greater within 25 miles of a point.")
                         case .tornado:
@@ -91,17 +99,48 @@ struct RiskDetailView: View {
                     Divider()
                         .padding(.vertical)
                     
-                    Button {
-                        presentCommentary.toggle()
-                    } label: {
-                        Label("SPC Forecast Discussion", systemImage: "exclamationmark.bubble")
-                    }
-                    .fullScreenCover(isPresented: $presentCommentary) {
-                        SafariView(url: commentaryURL)
-                            .ignoresSafeArea(.all)
+                    VStack(alignment: .leading, spacing: 16) {
+                        NavigationLink {
+                            switch context.outlookType {
+                            case .convective1, .convective2, .convective3(probabilistic: false):
+                                switch context.outlookType.convectiveSubtype {
+                                case .categorical: AboutCategoricalRiskView()
+                                case .wind: PercentageRiskDetailView.wind
+                                case .hail: PercentageRiskDetailView.hail
+                                case .tornado: PercentageRiskDetailView.tornado
+                                default: EmptyView()
+                                }
+                            case .convective3(probabilistic: true):
+                                PercentageRiskDetailView.probabilistic3
+                            default:
+                                PercentageRiskDetailView.probabilistic48
+                            }
+                        } label: {
+                            HStack {
+                                Label("About This Risk", systemImage: "questionmark.circle")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .imageScale(.small)
+                            }
+                        }
+                        
+                        if let commentaryURL {
+                            Button {
+                                openURL(commentaryURL)
+                            } label: {
+                                HStack {
+                                    Label("SPC Forecast Discussion", systemImage: "exclamationmark.bubble")
+                                    Spacer()
+                                    Image(systemName: "arrow.up.forward.square")
+                                }
+                            }
+                        }
                     }
                 }
                 .padding([.horizontal, .bottom])
+            }
+            .toolbar {
+                DismissButton()
             }
             .navigationTitle(atCurrentLocation ? "Forecasted at Your Location" : "Tapped Outlook")
             .navigationBarTitleDisplayMode(.inline)

@@ -1,6 +1,6 @@
 //
 //  View.swift
-//  SPC
+//  SPCMap
 //
 //  Created by Greg Whatley on 4/8/23.
 //
@@ -12,5 +12,9 @@ extension View {
         ToolbarItem(placement: placement) {
             self
         }
+    }
+    
+    func onChange<V: Equatable>(of value: V, initial: Bool = false, _ task: @Sendable @escaping () async -> Void) -> some View {
+        onChange(of: value, initial: initial, { Task(operation: task) })
     }
 }

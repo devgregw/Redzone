@@ -1,6 +1,6 @@
 //
 //  OutlookSeverity.swift
-//  SPC
+//  SPCMap
 //
 //  Created by Greg Whatley on 4/7/23.
 //
@@ -41,7 +41,6 @@ enum OutlookSeverity: Comparable, Equatable {
         } else if let mappedValue = OutlookSeverity.idMapping[rawValue] {
             self = mappedValue
         } else {
-            debugPrint("Warning: raw value \(rawValue) for OutlookSeverity could not be mapped to a known case.")
             self = .unknown
         }
     }

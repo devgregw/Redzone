@@ -1,6 +1,6 @@
 //
 //  MKPolygon.swift
-//  SPC
+//  SPCMap
 //
 //  Created by Greg Whatley on 4/2/23.
 //
@@ -40,12 +40,7 @@ extension MKPolygon: AnyPolygon {
         return isInsidePolygon
     }
     
-    convenience init(coordinates: [CLLocationCoordinate2D], interiorPolygons: [MKPolygon]?, data: String?) {
-        self.init(coordinates: coordinates, count: coordinates.count, interiorPolygons: interiorPolygons)
-        self.accessibilityLabel = data
-    }
-    
-    convenience init(coordinates: [CLLocationCoordinate2D]) {
-        self.init(coordinates: coordinates, interiorPolygons: nil, data: nil)
+    var points: [MKMapPoint] {
+        .init(unsafeMutablePointer: points(), count: pointCount)
     }
 }
