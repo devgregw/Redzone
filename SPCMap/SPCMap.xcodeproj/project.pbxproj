@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
+		FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745F2A40D8220058EBF7 /* OutlookService.swift */; };
+		FC21F5F129D9C8E800046C79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F029D9C8E800046C79 /* Color.swift */; };
+		FC21F5F329D9D6FA00046C79 /* MKPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */; };
+		FC21F5F529D9F06000046C79 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F429D9F06000046C79 /* Array.swift */; };
+		FC21F5F829D9F54A00046C79 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F729D9F54A00046C79 /* AboutView.swift */; };
+		FC21F61029E10BB000046C79 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
+		FC21F61929E11CA800046C79 /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F61829E11CA800046C79 /* LoadingModifier.swift */; };
+		FC21F62129E1B16200046C79 /* MKMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */; };
+		FC21F62D29E1BA9800046C79 /* OutlookTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */; };
+		FC21F62F29E1BB6A00046C79 /* BottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */; };
+		FC21F63329E1C84C00046C79 /* RiskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63229E1C84C00046C79 /* RiskDetailView.swift */; };
+		FC21F63E29E1DE5700046C79 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63D29E1DE5700046C79 /* View.swift */; };
+		FC2668982A5CFF4D00CA34DC /* MapStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668972A5CFF4D00CA34DC /* MapStylePicker.swift */; };
+		FC26689C2A5D030A00CA34DC /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26689B2A5D030A00CA34DC /* Context.swift */; };
+		FC26689F2A5E386200CA34DC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26689E2A5E386200CA34DC /* LocationService.swift */; };
+		FC2668A12A5E5A0E00CA34DC /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
+		FC2668A32A5E5A2800CA34DC /* AnyPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */; };
+		FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92429C29F9B006C5DAC /* SPCApp.swift */; };
+		FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92629C29F9B006C5DAC /* ContentView.swift */; };
+		FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC70F92829C29F9D006C5DAC /* Assets.xcassets */; };
+		FCAC37902B75C88300AEB3C8 /* MapStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */; };
+		FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */; };
+		FCAC37952B78793600AEB3C8 /* AboutCategoricalRiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37942B78793600AEB3C8 /* AboutCategoricalRiskView.swift */; };
+		FCAC37972B7879C300AEB3C8 /* PercentageRiskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37962B7879C300AEB3C8 /* PercentageRiskDetailView.swift */; };
+		FCAC37992B787A0F00AEB3C8 /* RiskLevelLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37982B787A0F00AEB3C8 /* RiskLevelLinksView.swift */; };
+		FCAC379B2B79A69200AEB3C8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
+		FCAC379D2B79ABB800AEB3C8 /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
+		FCAC379F2B79AC3100AEB3C8 /* SigSevLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379E2B79AC3100AEB3C8 /* SigSevLegendIconView.swift */; };
+		FCAC37A12B79B4B700AEB3C8 /* MapMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37A02B79B4B700AEB3C8 /* MapMultiPolygon.swift */; };
+		FCB386FA2A57A6C300C10FFB /* OutlookSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */; };
+		FCB386FD2A57A9B000C10FFB /* OutlookMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */; };
+		FCB4BBB92A48E12900738C3E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB4BBB82A48E12900738C3E /* MapKit.framework */; };
+		FCB4BBBE2A48E31000738C3E /* OutlookMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */; };
+		FCB4BBC02A48E34C00738C3E /* OutlookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */; };
+		FCB4BBC22A48E36100738C3E /* OutlookProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */; };
+		FCB4BBC62A48F93300738C3E /* TappedOutlook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */; };
+		FCB4BBC82A4919E600738C3E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC72A4919E600738C3E /* ErrorView.swift */; };
+		FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDA91532A3E5123003FFD84 /* SafariServices.framework */; };
+		FCDA91562A3E51FE003FFD84 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDA91552A3E51FE003FFD84 /* SafariView.swift */; };
+		FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCADE42A3CEE3100944D48 /* SettingsView.swift */; };
+		FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookResponse.swift; sourceTree = "<group>"; };
+		FC09745F2A40D8220058EBF7 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
+		FC21F5F029D9C8E800046C79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPolygon.swift; sourceTree = "<group>"; };
+		FC21F5F429D9F06000046C79 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		FC21F5F729D9F54A00046C79 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		FC21F60F29E10BB000046C79 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		FC21F61829E11CA800046C79 /* LoadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
+		FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMultiPolygon.swift; sourceTree = "<group>"; };
+		FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookTypePicker.swift; sourceTree = "<group>"; };
+		FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbar.swift; sourceTree = "<group>"; };
+		FC21F63229E1C84C00046C79 /* RiskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskDetailView.swift; sourceTree = "<group>"; };
+		FC21F63D29E1DE5700046C79 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		FC2668972A5CFF4D00CA34DC /* MapStylePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStylePicker.swift; sourceTree = "<group>"; };
+		FC26689B2A5D030A00CA34DC /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		FC26689E2A5E386200CA34DC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapRect.swift; sourceTree = "<group>"; };
+		FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPolygon.swift; sourceTree = "<group>"; };
+		FC44E04D2A35713400A9925D /* SPC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SPC-Info.plist"; sourceTree = "<group>"; };
+		FC70F92129C29F9B006C5DAC /* SPCMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPCMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC70F92429C29F9B006C5DAC /* SPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCApp.swift; sourceTree = "<group>"; };
+		FC70F92629C29F9B006C5DAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC70F92829C29F9D006C5DAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleModifier.swift; sourceTree = "<group>"; };
+		FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		FCAC37942B78793600AEB3C8 /* AboutCategoricalRiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCategoricalRiskView.swift; sourceTree = "<group>"; };
+		FCAC37962B7879C300AEB3C8 /* PercentageRiskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageRiskDetailView.swift; sourceTree = "<group>"; };
+		FCAC37982B787A0F00AEB3C8 /* RiskLevelLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskLevelLinksView.swift; sourceTree = "<group>"; };
+		FCAC379A2B79A69200AEB3C8 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookLegendIconView.swift; sourceTree = "<group>"; };
+		FCAC379E2B79AC3100AEB3C8 /* SigSevLegendIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigSevLegendIconView.swift; sourceTree = "<group>"; };
+		FCAC37A02B79B4B700AEB3C8 /* MapMultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMultiPolygon.swift; sourceTree = "<group>"; };
+		FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlookSeverity.swift; sourceTree = "<group>"; };
+		FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookMapView.swift; sourceTree = "<group>"; };
+		FCB4BBB82A48E12900738C3E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookMultiPolygon.swift; sourceTree = "<group>"; };
+		FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFeature.swift; sourceTree = "<group>"; };
+		FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookProperties.swift; sourceTree = "<group>"; };
+		FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedOutlook.swift; sourceTree = "<group>"; };
+		FCB4BBC72A4919E600738C3E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FCDA91532A3E5123003FFD84 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		FCDA91552A3E51FE003FFD84 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		FCFCADE42A3CEE3100944D48 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC70F91E29C29F9B006C5DAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCB4BBB92A48E12900738C3E /* MapKit.framework in Frameworks */,
+				FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC21F5F629D9F37D00046C79 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F62629E1BA0D00046C79 /* SwiftUI */,
+				FC21F62529E1B9FE00046C79 /* MapKit */,
+				FC21F62A29E1BA6400046C79 /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC21F61429E11C5600046C79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCAC37932B78790E00AEB3C8 /* About */,
+				FC21F63F29E1DF5000046C79 /* Pickers */,
+				FCB386FB2A57A99B00C10FFB /* Map */,
+				FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */,
+				FC21F63229E1C84C00046C79 /* RiskDetailView.swift */,
+				FCFCADE42A3CEE3100944D48 /* SettingsView.swift */,
+				FCDA91552A3E51FE003FFD84 /* SafariView.swift */,
+				FCB4BBC72A4919E600738C3E /* ErrorView.swift */,
+				FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */,
+				FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */,
+				FCAC379E2B79AC3100AEB3C8 /* SigSevLegendIconView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC21F61729E11C9F00046C79 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F61829E11CA800046C79 /* LoadingModifier.swift */,
+				FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		FC21F61A29E11FCA00046C79 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FC09745F2A40D8220058EBF7 /* OutlookService.swift */,
+				FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */,
+				FC26689E2A5E386200CA34DC /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FC21F62529E1B9FE00046C79 /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */,
+				FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */,
+				FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */,
+			);
+			path = MapKit;
+			sourceTree = "<group>";
+		};
+		FC21F62629E1BA0D00046C79 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F5F029D9C8E800046C79 /* Color.swift */,
+				FC21F63D29E1DE5700046C79 /* View.swift */,
+				FCAC379A2B79A69200AEB3C8 /* Button.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		FC21F62A29E1BA6400046C79 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F5F429D9F06000046C79 /* Array.swift */,
+				FC21F60F29E10BB000046C79 /* Optional.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		FC21F63F29E1DF5000046C79 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */,
+				FC2668972A5CFF4D00CA34DC /* MapStylePicker.swift */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		FC26689D2A5D032300CA34DC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FC70F92429C29F9B006C5DAC /* SPCApp.swift */,
+				FC70F92629C29F9B006C5DAC /* ContentView.swift */,
+				FC26689B2A5D030A00CA34DC /* Context.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FC4897E329F5890C0045E761 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCB4BBB82A48E12900738C3E /* MapKit.framework */,
+				FCDA91532A3E5123003FFD84 /* SafariServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC70F91829C29F9B006C5DAC = {
+			isa = PBXGroup;
+			children = (
+				FC44E04D2A35713400A9925D /* SPC-Info.plist */,
+				FC70F92329C29F9B006C5DAC /* SPCMap */,
+				FC70F92229C29F9B006C5DAC /* Products */,
+				FC4897E329F5890C0045E761 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FC70F92229C29F9B006C5DAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC70F92129C29F9B006C5DAC /* SPCMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC70F92329C29F9B006C5DAC /* SPCMap */ = {
+			isa = PBXGroup;
+			children = (
+				FCB4BBBC2A48E2FE00738C3E /* Utilities */,
+				FC21F61A29E11FCA00046C79 /* Services */,
+				FC21F61729E11C9F00046C79 /* Modifiers */,
+				FC21F61429E11C5600046C79 /* Views */,
+				FC26689D2A5D032300CA34DC /* Core */,
+				FC70F92829C29F9D006C5DAC /* Assets.xcassets */,
+				FC21F5F629D9F37D00046C79 /* Extensions */,
+				FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */,
+			);
+			path = SPCMap;
+			sourceTree = "<group>";
+		};
+		FCAC37932B78790E00AEB3C8 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F5F729D9F54A00046C79 /* AboutView.swift */,
+				FCAC37962B7879C300AEB3C8 /* PercentageRiskDetailView.swift */,
+				FCAC37942B78793600AEB3C8 /* AboutCategoricalRiskView.swift */,
+				FCAC37982B787A0F00AEB3C8 /* RiskLevelLinksView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		FCB386FB2A57A99B00C10FFB /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */,
+				FCAC37A02B79B4B700AEB3C8 /* MapMultiPolygon.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		FCB4BBBC2A48E2FE00738C3E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */,
+				FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */,
+				FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */,
+				FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */,
+				FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */,
+				FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC70F92029C29F9B006C5DAC /* SPCMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC70F92F29C29F9D006C5DAC /* Build configuration list for PBXNativeTarget "SPCMap" */;
+			buildPhases = (
+				FC70F91D29C29F9B006C5DAC /* Sources */,
+				FC70F91E29C29F9B006C5DAC /* Frameworks */,
+				FC70F91F29C29F9B006C5DAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPCMap;
+			packageProductDependencies = (
+			);
+			productName = SPC;
+			productReference = FC70F92129C29F9B006C5DAC /* SPCMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC70F91929C29F9B006C5DAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FC70F92029C29F9B006C5DAC = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = FC70F91C29C29F9B006C5DAC /* Build configuration list for PBXProject "SPCMap" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC70F91829C29F9B006C5DAC;
+			productRefGroup = FC70F92229C29F9B006C5DAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC70F92029C29F9B006C5DAC /* SPCMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC70F91F29C29F9B006C5DAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */,
+				FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC70F91D29C29F9B006C5DAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCAC379B2B79A69200AEB3C8 /* Button.swift in Sources */,
+				FC21F63E29E1DE5700046C79 /* View.swift in Sources */,
+				FC21F5F829D9F54A00046C79 /* AboutView.swift in Sources */,
+				FCB4BBC62A48F93300738C3E /* TappedOutlook.swift in Sources */,
+				FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */,
+				FCAC37A12B79B4B700AEB3C8 /* MapMultiPolygon.swift in Sources */,
+				FCB4BBC82A4919E600738C3E /* ErrorView.swift in Sources */,
+				FC2668A12A5E5A0E00CA34DC /* MKMapRect.swift in Sources */,
+				FC26689C2A5D030A00CA34DC /* Context.swift in Sources */,
+				FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */,
+				FCB386FD2A57A9B000C10FFB /* OutlookMapView.swift in Sources */,
+				FC21F61029E10BB000046C79 /* Optional.swift in Sources */,
+				FCB4BBC02A48E34C00738C3E /* OutlookFeature.swift in Sources */,
+				FCAC37972B7879C300AEB3C8 /* PercentageRiskDetailView.swift in Sources */,
+				FC21F5F529D9F06000046C79 /* Array.swift in Sources */,
+				FCAC37952B78793600AEB3C8 /* AboutCategoricalRiskView.swift in Sources */,
+				FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */,
+				FC2668982A5CFF4D00CA34DC /* MapStylePicker.swift in Sources */,
+				FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */,
+				FCAC379D2B79ABB800AEB3C8 /* OutlookLegendIconView.swift in Sources */,
+				FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */,
+				FCB4BBBE2A48E31000738C3E /* OutlookMultiPolygon.swift in Sources */,
+				FC21F62F29E1BB6A00046C79 /* BottomToolbar.swift in Sources */,
+				FC21F5F129D9C8E800046C79 /* Color.swift in Sources */,
+				FCB4BBC22A48E36100738C3E /* OutlookProperties.swift in Sources */,
+				FC21F5F329D9D6FA00046C79 /* MKPolygon.swift in Sources */,
+				FCDA91562A3E51FE003FFD84 /* SafariView.swift in Sources */,
+				FC21F61929E11CA800046C79 /* LoadingModifier.swift in Sources */,
+				FC26689F2A5E386200CA34DC /* LocationService.swift in Sources */,
+				FCB386FA2A57A6C300C10FFB /* OutlookSeverity.swift in Sources */,
+				FC21F62129E1B16200046C79 /* MKMultiPolygon.swift in Sources */,
+				FC21F63329E1C84C00046C79 /* RiskDetailView.swift in Sources */,
+				FCAC37902B75C88300AEB3C8 /* MapStyleModifier.swift in Sources */,
+				FCAC379F2B79AC3100AEB3C8 /* SigSevLegendIconView.swift in Sources */,
+				FC2668A32A5E5A2800CA34DC /* AnyPolygon.swift in Sources */,
+				FCAC37992B787A0F00AEB3C8 /* RiskLevelLinksView.swift in Sources */,
+				FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */,
+				FC21F62D29E1BA9800046C79 /* OutlookTypePicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FC70F92D29C29F9D006C5DAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC70F92E29C29F9D006C5DAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC70F93029C29F9D006C5DAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SPC-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.SPCMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC70F93129C29F9D006C5DAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SPC-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.SPCMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC70F91C29C29F9B006C5DAC /* Build configuration list for PBXProject "SPCMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC70F92D29C29F9D006C5DAC /* Debug */,
+				FC70F92E29C29F9D006C5DAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC70F92F29C29F9D006C5DAC /* Build configuration list for PBXNativeTarget "SPCMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC70F93029C29F9D006C5DAC /* Debug */,
+				FC70F93129C29F9D006C5DAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC70F91929C29F9B006C5DAC /* Project object */;
+}

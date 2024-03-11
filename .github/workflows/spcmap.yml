@@ -1,0 +1,21 @@
+name: SPCMap - Xcode build
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "SPCMap/**" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: ./SPCMap
+    runs-on: macos-13
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_15.2.app && /usr/bin/xcodebuild -version
+    - name: Build & run tests
+      run: xcodebuild test -scheme SPCMap -project SPCMap.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' | xcpretty && exit ${PIPESTATUS[0]}

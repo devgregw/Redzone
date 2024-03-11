@@ -121,7 +121,7 @@ iOSInjectionProject/
 ### SwiftPackageManager ###
 Packages
 xcuserdata
-*.xcodeproj
+# *.xcodeproj
 
 
 ### SwiftPM ###
@@ -145,7 +145,7 @@ xcuserdata
 Packages
 .build
 xcuserdata
-*.xcodeproj
+# *.xcodeproj
 DerivedData/
 .DS_Store
 db.sqlite
