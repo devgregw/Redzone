@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 import Vapor
 
 class OutlookDownloader {    
@@ -21,7 +24,7 @@ class OutlookDownloader {
         logger.info("Fetching GeoJSON: \(url.absoluteString)")
         let (data, response) = try await URLSessionAdapter.shared.data(from: url)
         return if let response = response as? HTTPURLResponse,
-           response.statusCode == 200 {
+                  response.statusCode == 200 {
             data
         } else {
             nil
