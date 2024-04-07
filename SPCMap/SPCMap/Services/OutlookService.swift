@@ -5,10 +5,11 @@
 //  Created by Greg Whatley on 4/2/23.
 //
 
+import Combine
 import SwiftUI
 
 @Observable
-class OutlookService: ObservableObject {
+class OutlookService {
     enum State: Hashable {
         case noData
         case loading
@@ -41,7 +42,15 @@ class OutlookService: ObservableObject {
         }
     }
     
-    var state: State = .loading
+    @ObservationIgnored private let stateChangePublisher = ObservableObjectPublisher()
+    @ObservationIgnored lazy var debouncePublisher = stateChangePublisher.debounce(for: .seconds(5), scheduler: DispatchQueue.main)
+    var state: State = .loading {
+        didSet {
+            if case .loaded = state {
+                stateChangePublisher.send()
+            }
+        }
+    }
     private var lastOutlookType: OutlookType = Context.defaultOutlookType
     
     @MainActor func load(_ type: OutlookType) async {

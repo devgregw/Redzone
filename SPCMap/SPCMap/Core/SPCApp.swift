@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 @main
 struct SPCApp: App {
@@ -19,6 +20,10 @@ struct SPCApp: App {
                 .environment(outlookService)
                 .environment(context)
                 .environment(locationService)
+                .onReceive(outlookService.debouncePublisher) {
+                    print("Widget: Reloading timeline due to new service state")
+                    WidgetCenter.shared.reloadTimelines(ofKind: "SPCMapWidget")
+                }
         }
     }
 }
