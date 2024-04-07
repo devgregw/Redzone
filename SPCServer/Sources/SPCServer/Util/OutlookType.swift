@@ -118,12 +118,16 @@ extension OutlookType {
         }
     }
     
-    var collectionURL: URL {
-        let components = Calendar.current.dateComponents(in: .init(abbreviation: "EST")!, from: .now)
-        let year = components.year ?? 0
-        let month = components.month ?? 0
-        let day = components.day ?? 0
-        let timestamp = "\(year.stringByPaddingZeroes(length: 4))\(month.stringByPaddingZeroes(length: 2))\(day.stringByPaddingZeroes(length: 2))"
-        return URL(string: "https://www.spc.noaa.gov/cgi-bin-spc/getacrange.pl?date0=\(timestamp)&date1=\(timestamp)")!
+    var issuances: [Int]? {
+        switch self {
+        case .convective1:
+            [2000, 1630, 1300, 1200, 100]
+        case .convective2:
+            [1730, 600]
+        case .convective3:
+            [730]
+        default:
+            nil
+        }
     }
 }

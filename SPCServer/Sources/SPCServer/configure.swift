@@ -8,12 +8,12 @@ public func configure(_ app: Application) async throws {
     
     do {
         app.http.server.configuration.tlsConfiguration = .makeServerConfiguration(
-            certificateChain: try NIOSSLCertificate.fromPEMFile("/cert/chain.pem").map { .certificate($0) },
+            certificateChain: try NIOSSLCertificate.fromPEMFile("/cert/fullchain.pem").map { .certificate($0) },
             privateKey: .file("/cert/privkey.pem")
         )
         app.logger.info("SSL configuration successful")
     } catch {
-        app.logger.error("SSL configuration failed: \(error.localizedDescription)")
+        app.logger.error("SSL configuration failed: \(String(describing: error)), \(error.localizedDescription)")
     }
     
     // register routes

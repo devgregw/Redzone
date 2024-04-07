@@ -3,19 +3,7 @@ import Vapor
 
 fileprivate func buildRequestHandler(_ outlook: OutlookType) -> (Request) async throws -> AnyResponse {
     { req async throws in
-        let data: Data
-        if let cached = await OutlookCache.shared.data(for: outlook) {
-            req.logger.info("Cache hit: \(cached.count) bytes")
-            data = cached
-        } else {
-            req.logger.info("Cache miss: scraping...")
-            let geojson = try await Scraper.scrapeGeoJSONURL(outlook: outlook)
-            req.logger.info("Scraped GeoJSON URL: \(geojson)")
-            data = try await URLSessionAdapter.shared.data(from: geojson).0
-            req.logger.info("Received \(data.count) bytes")
-            await OutlookCache.shared.set(data: data, for: outlook)
-        }
-        
+        let data: Data = try await OutlookDownloader.fetchOutlook(outlook)
         return AnyResponse(data: data, contentType: "application/geo+json")
     }
 }
