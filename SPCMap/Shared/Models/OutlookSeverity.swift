@@ -49,12 +49,12 @@ enum OutlookSeverity: Comparable, Equatable {
         switch self {
         case let .percentage(value): value
         case .significant, .probabilistic, .sigprobabilistic: 10
-        case .generalThunder: 1
-        case .marginal: 2
-        case .slight: 3
-        case .enhanced: 4
-        case .moderate: 5
-        case .high: 6
+        case .generalThunder: 0
+        case .marginal: 1
+        case .slight: 2
+        case .enhanced: 3
+        case .moderate: 4
+        case .high: 5
         case .unknown: -1
         }
     }

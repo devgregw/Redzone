@@ -48,6 +48,37 @@
 		FCB4BBC82A4919E600738C3E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC72A4919E600738C3E /* ErrorView.swift */; };
 		FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDA91532A3E5123003FFD84 /* SafariServices.framework */; };
 		FCDA91562A3E51FE003FFD84 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDA91552A3E51FE003FFD84 /* SafariView.swift */; };
+		FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
+		FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
+		FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
+		FCF811152BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */; };
+		FCF811162BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */; };
+		FCF811182BC1EC87005D3552 /* OutlookSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */; };
+		FCF811192BC1EC87005D3552 /* OutlookMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */; };
+		FCF8111A2BC1EC87005D3552 /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
+		FCF8111B2BC1EC87005D3552 /* OutlookProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */; };
+		FCF8111C2BC1EC87005D3552 /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
+		FCF8111D2BC1EC87005D3552 /* OutlookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */; };
+		FCF811202BC1ED8C005D3552 /* WidgetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */; };
+		FCF811212BC1F0AD005D3552 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F029D9C8E800046C79 /* Color.swift */; };
+		FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
+		FCF811232BC1F0AD005D3552 /* MKMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */; };
+		FCF811242BC1F0AD005D3552 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
+		FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
+		FCF811262BC1F0AD005D3552 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63D29E1DE5700046C79 /* View.swift */; };
+		FCF811272BC1F0AD005D3552 /* MKPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */; };
+		FCF811282BC1F0AD005D3552 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F429D9F06000046C79 /* Array.swift */; };
+		FCF8112A2BC1F3F3005D3552 /* AnyPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */; };
+		FCF8112C2BC1F40D005D3552 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8112B2BC1F40D005D3552 /* Extensions.swift */; };
+		FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
+		FCF811312BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
+		FCF811322BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
+		FCF912EE2BC0F61C005E5A44 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */; };
+		FCF912F02BC0F61C005E5A44 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
+		FCF912F32BC0F61C005E5A44 /* SPCMapWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F22BC0F61C005E5A44 /* SPCMapWidgetBundle.swift */; };
+		FCF912F52BC0F61C005E5A44 /* SPCMapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F42BC0F61C005E5A44 /* SPCMapWidget.swift */; };
+		FCF912F72BC0F61E005E5A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF912F62BC0F61E005E5A44 /* Assets.xcassets */; };
+		FCF912FB2BC0F61E005E5A44 /* SPCMapWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FCF912EC2BC0F61C005E5A44 /* SPCMapWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCADE42A3CEE3100944D48 /* SettingsView.swift */; };
 		FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
@@ -60,7 +91,28 @@
 			remoteGlobalIDString = FC70F92029C29F9B006C5DAC;
 			remoteInfo = SPCMap;
 		};
+		FCF912F92BC0F61E005E5A44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCF912EB2BC0F61C005E5A44;
+			remoteInfo = SPCMapWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FCF912FB2BC0F61E005E5A44 /* SPCMapWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookResponse.swift; sourceTree = "<group>"; };
@@ -107,6 +159,19 @@
 		FCB4BBC72A4919E600738C3E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FCDA91532A3E5123003FFD84 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		FCDA91552A3E51FE003FFD84 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		FCF8110D2BC1E92D005D3552 /* OutlookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookType.swift; sourceTree = "<group>"; };
+		FCF811102BC1E952005D3552 /* OutlookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcher.swift; sourceTree = "<group>"; };
+		FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcherError.swift; sourceTree = "<group>"; };
+		FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLocation.swift; sourceTree = "<group>"; };
+		FCF8112B2BC1F40D005D3552 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FCF811302BC23593005D3552 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
+		FCF912EC2BC0F61C005E5A44 /* SPCMapWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SPCMapWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FCF912F22BC0F61C005E5A44 /* SPCMapWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCMapWidgetBundle.swift; sourceTree = "<group>"; };
+		FCF912F42BC0F61C005E5A44 /* SPCMapWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCMapWidget.swift; sourceTree = "<group>"; };
+		FCF912F62BC0F61E005E5A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCF912F82BC0F61E005E5A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCFCADE42A3CEE3100944D48 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +190,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF912E92BC0F61C005E5A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF912F02BC0F61C005E5A44 /* SwiftUI.framework in Frameworks */,
+				FCF912EE2BC0F61C005E5A44 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +227,6 @@
 				FCDA91552A3E51FE003FFD84 /* SafariView.swift */,
 				FCB4BBC72A4919E600738C3E /* ErrorView.swift */,
 				FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */,
-				FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */,
 				FCAC379E2B79AC3100AEB3C8 /* SigSevLegendIconView.swift */,
 			);
 			path = Views;
@@ -172,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				FC09745F2A40D8220058EBF7 /* OutlookService.swift */,
-				FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */,
 				FC26689E2A5E386200CA34DC /* LocationService.swift */,
 			);
 			path = Services;
@@ -231,6 +303,8 @@
 			children = (
 				FCB4BBB82A48E12900738C3E /* MapKit.framework */,
 				FCDA91532A3E5123003FFD84 /* SafariServices.framework */,
+				FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */,
+				FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,9 +312,11 @@
 		FC70F91829C29F9B006C5DAC = {
 			isa = PBXGroup;
 			children = (
+				FCF8110C2BC1E917005D3552 /* Shared */,
 				FC44E04D2A35713400A9925D /* SPC-Info.plist */,
 				FC70F92329C29F9B006C5DAC /* SPCMap */,
 				FCA57D3D2B9F52F5008DDCE8 /* SPCMapTests */,
+				FCF912F12BC0F61C005E5A44 /* SPCMapWidget */,
 				FC70F92229C29F9B006C5DAC /* Products */,
 				FC4897E329F5890C0045E761 /* Frameworks */,
 			);
@@ -251,6 +327,7 @@
 			children = (
 				FC70F92129C29F9B006C5DAC /* SPCMap.app */,
 				FCA57D3C2B9F52F5008DDCE8 /* SPCMapTests.xctest */,
+				FCF912EC2BC0F61C005E5A44 /* SPCMapWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,8 +341,8 @@
 				FC21F61429E11C5600046C79 /* Views */,
 				FC26689D2A5D032300CA34DC /* Core */,
 				FC70F92829C29F9D006C5DAC /* Assets.xcassets */,
-				FC21F5F629D9F37D00046C79 /* Extensions */,
 				FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */,
+				FCF8112B2BC1F40D005D3552 /* Extensions.swift */,
 			);
 			path = SPCMap;
 			sourceTree = "<group>";
@@ -301,14 +378,56 @@
 		FCB4BBBC2A48E2FE00738C3E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FCF8110C2BC1E917005D3552 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FCF8112E2BC1F4A7005D3552 /* Views */,
+				FC21F5F629D9F37D00046C79 /* Extensions */,
+				FCF811172BC1EC77005D3552 /* Models */,
+				FCF811102BC1E952005D3552 /* OutlookFetcher.swift */,
+				FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */,
+				FCF811302BC23593005D3552 /* SharedAssets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FCF811172BC1EC77005D3552 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */,
+				FCF8110D2BC1E92D005D3552 /* OutlookType.swift */,
+				FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */,
 				FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */,
 				FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */,
 				FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */,
 				FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */,
-				FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */,
-				FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */,
 			);
-			path = Utilities;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCF8112E2BC1F4A7005D3552 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCF912F12BC0F61C005E5A44 /* SPCMapWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FCF912F22BC0F61C005E5A44 /* SPCMapWidgetBundle.swift */,
+				FCF912F42BC0F61C005E5A44 /* SPCMapWidget.swift */,
+				FCF912F62BC0F61E005E5A44 /* Assets.xcassets */,
+				FCF912F82BC0F61E005E5A44 /* Info.plist */,
+				FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */,
+			);
+			path = SPCMapWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,10 +440,12 @@
 				FC70F91D29C29F9B006C5DAC /* Sources */,
 				FC70F91E29C29F9B006C5DAC /* Frameworks */,
 				FC70F91F29C29F9B006C5DAC /* Resources */,
+				FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FCF912FA2BC0F61E005E5A44 /* PBXTargetDependency */,
 			);
 			name = SPCMap;
 			packageProductDependencies = (
@@ -351,6 +472,23 @@
 			productReference = FCA57D3C2B9F52F5008DDCE8 /* SPCMapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FCF912EB2BC0F61C005E5A44 /* SPCMapWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCF912FF2BC0F61E005E5A44 /* Build configuration list for PBXNativeTarget "SPCMapWidgetExtension" */;
+			buildPhases = (
+				FCF912E82BC0F61C005E5A44 /* Sources */,
+				FCF912E92BC0F61C005E5A44 /* Frameworks */,
+				FCF912EA2BC0F61C005E5A44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPCMapWidgetExtension;
+			productName = SPCMapWidgetExtension;
+			productReference = FCF912EC2BC0F61C005E5A44 /* SPCMapWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -367,6 +505,9 @@
 					FCA57D3B2B9F52F5008DDCE8 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = FC70F92029C29F9B006C5DAC;
+					};
+					FCF912EB2BC0F61C005E5A44 = {
+						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
@@ -385,6 +526,7 @@
 			targets = (
 				FC70F92029C29F9B006C5DAC /* SPCMap */,
 				FCA57D3B2B9F52F5008DDCE8 /* SPCMapTests */,
+				FCF912EB2BC0F61C005E5A44 /* SPCMapWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -394,6 +536,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF811312BC23593005D3552 /* SharedAssets.xcassets in Resources */,
 				FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */,
 				FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */,
 			);
@@ -403,6 +546,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF912EA2BC0F61C005E5A44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF912F72BC0F61E005E5A44 /* Assets.xcassets in Resources */,
+				FCF811322BC23593005D3552 /* SharedAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +569,7 @@
 				FC21F63E29E1DE5700046C79 /* View.swift in Sources */,
 				FC21F5F829D9F54A00046C79 /* AboutView.swift in Sources */,
 				FCB4BBC62A48F93300738C3E /* TappedOutlook.swift in Sources */,
+				FCF811152BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */,
 				FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */,
 				FCAC37A12B79B4B700AEB3C8 /* MapMultiPolygon.swift in Sources */,
 				FCB4BBC82A4919E600738C3E /* ErrorView.swift in Sources */,
@@ -431,6 +584,7 @@
 				FCAC37952B78793600AEB3C8 /* AboutCategoricalRiskView.swift in Sources */,
 				FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */,
 				FC2668982A5CFF4D00CA34DC /* MapStylePicker.swift in Sources */,
+				FCF8112C2BC1F40D005D3552 /* Extensions.swift in Sources */,
 				FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */,
 				FCAC379D2B79ABB800AEB3C8 /* OutlookLegendIconView.swift in Sources */,
 				FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */,
@@ -447,8 +601,10 @@
 				FC21F63329E1C84C00046C79 /* RiskDetailView.swift in Sources */,
 				FCAC37902B75C88300AEB3C8 /* MapStyleModifier.swift in Sources */,
 				FCAC379F2B79AC3100AEB3C8 /* SigSevLegendIconView.swift in Sources */,
+				FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */,
 				FC2668A32A5E5A2800CA34DC /* AnyPolygon.swift in Sources */,
 				FCAC37992B787A0F00AEB3C8 /* RiskLevelLinksView.swift in Sources */,
+				FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */,
 				FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */,
 				FC21F62D29E1BA9800046C79 /* OutlookTypePicker.swift in Sources */,
 			);
@@ -462,6 +618,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCF912E82BC0F61C005E5A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF912F32BC0F61C005E5A44 /* SPCMapWidgetBundle.swift in Sources */,
+				FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */,
+				FCF811182BC1EC87005D3552 /* OutlookSeverity.swift in Sources */,
+				FCF811192BC1EC87005D3552 /* OutlookMultiPolygon.swift in Sources */,
+				FCF8111A2BC1EC87005D3552 /* OutlookType.swift in Sources */,
+				FCF8111B2BC1EC87005D3552 /* OutlookProperties.swift in Sources */,
+				FCF811202BC1ED8C005D3552 /* WidgetLocation.swift in Sources */,
+				FCF8111C2BC1EC87005D3552 /* OutlookResponse.swift in Sources */,
+				FCF8111D2BC1EC87005D3552 /* OutlookFeature.swift in Sources */,
+				FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */,
+				FCF811162BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */,
+				FCF811212BC1F0AD005D3552 /* Color.swift in Sources */,
+				FCF8112A2BC1F3F3005D3552 /* AnyPolygon.swift in Sources */,
+				FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */,
+				FCF811232BC1F0AD005D3552 /* MKMultiPolygon.swift in Sources */,
+				FCF811242BC1F0AD005D3552 /* Button.swift in Sources */,
+				FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */,
+				FCF811262BC1F0AD005D3552 /* View.swift in Sources */,
+				FCF811272BC1F0AD005D3552 /* MKPolygon.swift in Sources */,
+				FCF811282BC1F0AD005D3552 /* Array.swift in Sources */,
+				FCF912F52BC0F61C005E5A44 /* SPCMapWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -469,6 +653,11 @@
 			isa = PBXTargetDependency;
 			target = FC70F92029C29F9B006C5DAC /* SPCMap */;
 			targetProxy = FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */;
+		};
+		FCF912FA2BC0F61E005E5A44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCF912EB2BC0F61C005E5A44 /* SPCMapWidgetExtension */;
+			targetProxy = FCF912F92BC0F61E005E5A44 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -594,6 +783,7 @@
 		FC70F93029C29F9D006C5DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -603,6 +793,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SPC-Info.plist";
+				INFOPLIST_KEY_NSLocationUsageDescription = "To show your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -626,6 +817,7 @@
 		FC70F93129C29F9D006C5DAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -635,6 +827,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SPC-Info.plist";
+				INFOPLIST_KEY_NSLocationUsageDescription = "To show your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -698,6 +891,67 @@
 			};
 			name = Release;
 		};
+		FCF912FD2BC0F61E005E5A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SPCMapWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SPCMapWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.SPCMap.SPCMapWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCF912FE2BC0F61E005E5A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SPCMapWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SPCMapWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.SPCMap.SPCMapWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -724,6 +978,15 @@
 			buildConfigurations = (
 				FCA57D422B9F52F5008DDCE8 /* Debug */,
 				FCA57D432B9F52F5008DDCE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCF912FF2BC0F61E005E5A44 /* Build configuration list for PBXNativeTarget "SPCMapWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCF912FD2BC0F61E005E5A44 /* Debug */,
+				FCF912FE2BC0F61E005E5A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
