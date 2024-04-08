@@ -51,7 +51,11 @@ class OutlookDownloader {
         if let issuances = outlook.issuances {
             let timestamp: SPCTimestamp
             let issuance: Int
-            if let latestIssuance: Int = issuances.first(where: { SPCTimestamp.now.time >= $0 }) {
+            if let latestIssuance: Int = issuances.first(where: {
+                // 1200 is actually issued at 600
+                let value = if $0 == 1200 { 600 } else { $0 }
+                return SPCTimestamp.now.time >= value
+            }) {
                 issuance = latestIssuance
                 timestamp = .now
             } else if let firstIssuance: Int = issuances.first {
