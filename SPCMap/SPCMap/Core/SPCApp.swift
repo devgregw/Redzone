@@ -21,8 +21,18 @@ struct SPCApp: App {
                 .environment(context)
                 .environment(locationService)
                 .onReceive(outlookService.debouncePublisher) {
-                    print("Widget: Reloading timeline due to new service state")
-                    WidgetCenter.shared.reloadTimelines(ofKind: "SPCMapWidget")
+                    Logger.log(.widgets, "Reloading all timelines")
+                    WidgetCenter.shared.getCurrentConfigurations {
+                        if case let .success(widgets) = $0 {
+                            widgets.forEach { widget in
+                                Logger.log(.widgets, "- \(widget.kind) [\(widget.family.description)]: config = \(widget.widgetConfigurationIntent(of: OutlookDayConfigurationIntent.self)?.day.rawValue ?? -1)")
+                            }
+                        }
+                    }
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
+                .onReceive(locationService.debouncePublisher) {
+                    Settings.lastKnownLocation = $0.coordinate
                 }
         }
     }

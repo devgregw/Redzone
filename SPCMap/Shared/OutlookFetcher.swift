@@ -7,12 +7,8 @@
 
 import Foundation
 
-class OutlookFetcher {    
-    #if targetEnvironment(simulator)
-    private static let hostname: String = "http://127.0.0.1:8081"
-    #else
+class OutlookFetcher {
     private static let hostname: String = "https://ct106-spc.pve.gregwhatley.dev:8081"
-    #endif
     
     static let session: URLSession = .init(configuration: .ephemeral)
     

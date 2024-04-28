@@ -42,18 +42,33 @@ class OutlookService {
         }
     }
     
+    #if targetEnvironment(simulator)
+    static private let debounceDelay = 5
+    #else
+    static private let debounceDelay = 30
+    #endif
     @ObservationIgnored private let stateChangePublisher = ObservableObjectPublisher()
-    @ObservationIgnored lazy var debouncePublisher = stateChangePublisher.debounce(for: .seconds(5), scheduler: DispatchQueue.main)
+    @ObservationIgnored lazy var debouncePublisher: AnyPublisher<Void, Never> = stateChangePublisher
+        .debounce(for: .seconds(Self.debounceDelay), scheduler: DispatchQueue.main)
+        .map { _ in Logger.log(.outlookService, "Debounce") }
+        .eraseToAnyPublisher()
+    
+    init() {
+        defer {
+            Logger.log(.outlookService, "Initialized")
+        }
+    }
+    
     var state: State = .loading {
         didSet {
-            if case .loaded = state {
-                stateChangePublisher.send()
-            }
+            Logger.log(.outlookService, "State: \(String(describing: state))")
+            stateChangePublisher.send()
         }
     }
     private var lastOutlookType: OutlookType = Context.defaultOutlookType
     
     @MainActor func load(_ type: OutlookType) async {
+        Logger.log(.outlookService, "Fetching outlook \(String(describing: type))")
         lastOutlookType = type
         self.state = .loading
         self.state = .init(fetcherResult: await OutlookFetcher.fetch(outlook: type))
