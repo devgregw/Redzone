@@ -10,7 +10,6 @@ import SwiftUI
 
 struct RiskDetailView: View {
     @Environment(Context.self) private var context
-    @Environment(\.openURL) private var openURL
     
     let properties: OutlookProperties
     let isSignificant: Bool
@@ -124,9 +123,31 @@ struct RiskDetailView: View {
                             }
                         }
                         
+                        Button {
+                            context.presentedURL = URL(string: "https://www.weather.gov/safety/")!
+                        } label: {
+                            HStack {
+                                Label("National Weather Service Safety Tips", systemImage: "staroflife.circle")
+                                Spacer()
+                                Image(systemName: "arrow.up.forward.square")
+                            }
+                        }
+                        
+                        if properties.title.contains("Tornado") {
+                            Button {
+                                context.presentedURL = URL(string: "https://www.spc.noaa.gov/efscale/")!
+                            } label: {
+                                HStack {
+                                    Label("The Enhanced Fujita (EF) Scale", systemImage: "tornado.circle")
+                                    Spacer()
+                                    Image(systemName: "arrow.up.forward.square")
+                                }
+                            }
+                        }
+                        
                         if let commentaryURL {
                             Button {
-                                openURL(commentaryURL)
+                                context.presentedURL = commentaryURL
                             } label: {
                                 HStack {
                                     Label("SPC Forecast Discussion", systemImage: "exclamationmark.bubble")

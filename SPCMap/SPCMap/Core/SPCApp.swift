@@ -16,6 +16,7 @@ struct SPCApp: App {
     
     var body: some Scene {
         WindowGroup {
+            @Bindable var bindableContext = context
             ContentView()
                 .environment(outlookService)
                 .environment(context)
@@ -34,6 +35,7 @@ struct SPCApp: App {
                 .onReceive(locationService.debouncePublisher) {
                     Settings.lastKnownLocation = $0.coordinate
                 }
+                .openURL(url: $bindableContext.presentedURL)
         }
     }
 }
