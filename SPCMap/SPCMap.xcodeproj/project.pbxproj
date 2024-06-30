@@ -26,6 +26,8 @@
 		FC2668A12A5E5A0E00CA34DC /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
 		FC2668A32A5E5A2800CA34DC /* AnyPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */; };
 		FC54AFA32BDEA98500D559C0 /* OpenURLModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA22BDEA98500D559C0 /* OpenURLModifier.swift */; };
+		FC54AFA82BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
+		FC54AFA92BDEBBA100D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
 		FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92429C29F9B006C5DAC /* SPCApp.swift */; };
 		FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92629C29F9B006C5DAC /* ContentView.swift */; };
 		FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC70F92829C29F9D006C5DAC /* Assets.xcassets */; };
@@ -174,6 +176,7 @@
 		FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPolygon.swift; sourceTree = "<group>"; };
 		FC44E04D2A35713400A9925D /* SPC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SPC-Info.plist"; sourceTree = "<group>"; };
 		FC54AFA22BDEA98500D559C0 /* OpenURLModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLModifier.swift; sourceTree = "<group>"; };
+		FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		FC70F92129C29F9B006C5DAC /* SPCMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPCMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC70F92429C29F9B006C5DAC /* SPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCApp.swift; sourceTree = "<group>"; };
 		FC70F92629C29F9B006C5DAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 		FC21F5F629D9F37D00046C79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FC54AFA62BDEBB5F00D559C0 /* CoreLocation */,
 				FC21F62629E1BA0D00046C79 /* SwiftUI */,
 				FC21F62529E1B9FE00046C79 /* MapKit */,
 				FC21F62A29E1BA6400046C79 /* Foundation */,
@@ -372,6 +376,14 @@
 				FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC54AFA62BDEBB5F00D559C0 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */,
+			);
+			path = CoreLocation;
 			sourceTree = "<group>";
 		};
 		FC70F91829C29F9B006C5DAC = {
@@ -754,6 +766,7 @@
 				FC26689F2A5E386200CA34DC /* LocationService.swift in Sources */,
 				FCB386FA2A57A6C300C10FFB /* OutlookSeverity.swift in Sources */,
 				FC21F62129E1B16200046C79 /* MKMultiPolygon.swift in Sources */,
+				FC54AFA82BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift in Sources */,
 				FC21F63329E1C84C00046C79 /* RiskDetailView.swift in Sources */,
 				FCAC37902B75C88300AEB3C8 /* MapStyleModifier.swift in Sources */,
 				FC54AFA32BDEA98500D559C0 /* OpenURLModifier.swift in Sources */,
@@ -804,6 +817,7 @@
 				FCAB72EA2BC383E200E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
 				FCAB72CD2BC3719300E41256 /* EntryError.swift in Sources */,
 				FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */,
+				FC54AFA92BDEBBA100D559C0 /* CLLocationCoordinate2D.swift in Sources */,
 				FCF811162BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */,
 				FCAB72CA2BC3714800E41256 /* WidgetErrorView.swift in Sources */,
 				FCAB72D02BC3748400E41256 /* OutlookDay.swift in Sources */,
