@@ -13,10 +13,14 @@ class Settings {
     
     @SettingsStorage(key: .lastKnownLocation, defaultValue: .none)
     static var lastKnownLocation: CLLocationCoordinate2D?
+    
+    @SettingsStorage(key: .autoMoveCamera, defaultValue: true)
+    static var autoMoveCamera: Bool
 }
 
 enum SettingsKey: String {
     case lastKnownLocation
+    case autoMoveCamera
 }
 
 fileprivate let userDefaults: UserDefaults = {

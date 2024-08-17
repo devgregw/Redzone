@@ -12,12 +12,23 @@ struct SettingsView: View {
     @Environment(LocationService.self) private var locationService
     @Environment(Context.self) private var context
     
+    @State private var autoMoveCamera: Bool = Settings.autoMoveCamera
+    
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     OutlookTypePicker()
                     MapStylePicker()
+                }
+                
+                Section {
+                    Toggle(isOn: $autoMoveCamera) {
+                        Label("Automatically move camera", systemImage: "camera.metering.center.weighted.average")
+                    }
+                    .onChange(of: autoMoveCamera) {
+                        Settings.autoMoveCamera = autoMoveCamera
+                    }
                 }
                 
                 Section {

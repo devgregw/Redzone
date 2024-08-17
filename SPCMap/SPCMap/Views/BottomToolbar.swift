@@ -104,7 +104,9 @@ struct BottomToolbar: ToolbarContent {
             
             Button {
                 await outlookService.refresh()
-                self.context.moveCamera(centering: outlookService.state)
+                if Settings.autoMoveCamera {
+                    self.context.moveCamera(centering: outlookService.state)
+                }
             } label: {
                 Image(systemName: "arrow.clockwise")
             }
