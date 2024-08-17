@@ -9,12 +9,11 @@ import MapKit
 
 extension MKPolygon: AnyPolygon {
     func contains(point: MKMapPoint) -> Bool {
-        let polygonVerticies = points()
+        let vertices = points
         var isInsidePolygon = false
 
-        for i in 0 ..< pointCount {
-            let vertex = polygonVerticies[i]
-            let nextVertex = polygonVerticies[(i + 1) % pointCount]
+        vertices.enumerated().forEach { (idx, vertex) in
+            let nextVertex = vertices[(idx + 1) % pointCount]
 
             // The vertices of the edge we are checking.
             let xp0 = vertex.x
