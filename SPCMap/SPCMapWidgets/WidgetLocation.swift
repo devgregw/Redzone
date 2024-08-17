@@ -37,6 +37,14 @@ class WidgetLocation: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func requestOneTimeLocation() async -> CLLocation? {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.main.async {
+                self.requestOneTimeLocation(completion: continuation.resume(returning:))
+            }
+        }
+    }
+    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if !manager.isAuthorizedForWidgetUpdates || (manager.authorizationStatus != .authorizedWhenInUse && manager.authorizationStatus != .authorizedAlways) {
             completion?(nil)
