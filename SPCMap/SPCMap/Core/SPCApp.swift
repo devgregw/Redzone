@@ -36,6 +36,21 @@ struct SPCApp: App {
                     Settings.lastKnownLocation = $0.coordinate
                 }
                 .openURL(url: $bindableContext.presentedURL)
+                .onOpenURL {
+                    Logger.log(.widgets, "Handling URL: \($0.absoluteString)")
+                    guard $0.scheme == "whatley",
+                          let components = URLComponents(url: $0, resolvingAgainstBaseURL: true),
+                          components.host == "spcapp",
+                          let day = Int(components.queryItems?.first(where: { $0.name == "setOutlook" })?.value ?? ""),
+                          let outlookDay = OutlookDay(rawValue: day) else {
+                        Logger.log(.widgets, "Not sure how to handle this URL")
+                        return
+                    }
+                    switch outlookDay {
+                    case .day1: context.outlookType = .convective1(.categorical)
+                    case .day2: context.outlookType = .convective2(.categorical)
+                    }
+                }
         }
     }
 }
