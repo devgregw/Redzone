@@ -93,13 +93,13 @@
 		FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
 		FCF811312BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
 		FCF811322BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
-		FCF811352BC2E0E0005D3552 /* DayOneOutlookWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811342BC2E0E0005D3552 /* DayOneOutlookWidgetEntryView.swift */; };
-		FCF811382BC2E3AD005D3552 /* DayOneCombinedRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811372BC2E3AD005D3552 /* DayOneCombinedRiskWidget.swift */; };
-		FCF8113A2BC2E3E5005D3552 /* DayOneCombinedRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811392BC2E3E5005D3552 /* DayOneCombinedRiskWidgetEntryView.swift */; };
+		FCF811352BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811342BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift */; };
+		FCF811382BC2E3AD005D3552 /* CombinedRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811372BC2E3AD005D3552 /* CombinedRiskWidget.swift */; };
+		FCF8113A2BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811392BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift */; };
 		FCF912EE2BC0F61C005E5A44 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */; };
 		FCF912F02BC0F61C005E5A44 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
 		FCF912F32BC0F61C005E5A44 /* SPCMapWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F22BC0F61C005E5A44 /* SPCMapWidgets.swift */; };
-		FCF912F52BC0F61C005E5A44 /* DayOneOutlookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F42BC0F61C005E5A44 /* DayOneOutlookWidget.swift */; };
+		FCF912F52BC0F61C005E5A44 /* CategoricalOutlookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F42BC0F61C005E5A44 /* CategoricalOutlookWidget.swift */; };
 		FCF912F72BC0F61E005E5A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF912F62BC0F61E005E5A44 /* Assets.xcassets */; };
 		FCF912FB2BC0F61E005E5A44 /* SPCMapWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FCF912EC2BC0F61C005E5A44 /* SPCMapWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCADE42A3CEE3100944D48 /* SettingsView.swift */; };
@@ -222,14 +222,14 @@
 		FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLocation.swift; sourceTree = "<group>"; };
 		FCF8112B2BC1F40D005D3552 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FCF811302BC23593005D3552 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
-		FCF811342BC2E0E0005D3552 /* DayOneOutlookWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneOutlookWidgetEntryView.swift; sourceTree = "<group>"; };
-		FCF811372BC2E3AD005D3552 /* DayOneCombinedRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneCombinedRiskWidget.swift; sourceTree = "<group>"; };
-		FCF811392BC2E3E5005D3552 /* DayOneCombinedRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneCombinedRiskWidgetEntryView.swift; sourceTree = "<group>"; };
+		FCF811342BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidgetEntryView.swift; sourceTree = "<group>"; };
+		FCF811372BC2E3AD005D3552 /* CombinedRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidget.swift; sourceTree = "<group>"; };
+		FCF811392BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidgetEntryView.swift; sourceTree = "<group>"; };
 		FCF912EC2BC0F61C005E5A44 /* SPCMapWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SPCMapWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		FCF912F22BC0F61C005E5A44 /* SPCMapWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCMapWidgets.swift; sourceTree = "<group>"; };
-		FCF912F42BC0F61C005E5A44 /* DayOneOutlookWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneOutlookWidget.swift; sourceTree = "<group>"; };
+		FCF912F42BC0F61C005E5A44 /* CategoricalOutlookWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidget.swift; sourceTree = "<group>"; };
 		FCF912F62BC0F61E005E5A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCF912F82BC0F61E005E5A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCFCADE42A3CEE3100944D48 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -530,22 +530,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FCF811332BC2E030005D3552 /* DayOneOutlookWidget */ = {
+		FCF811332BC2E030005D3552 /* CategoricalOutlookWidget */ = {
 			isa = PBXGroup;
 			children = (
-				FCF912F42BC0F61C005E5A44 /* DayOneOutlookWidget.swift */,
-				FCF811342BC2E0E0005D3552 /* DayOneOutlookWidgetEntryView.swift */,
+				FCF912F42BC0F61C005E5A44 /* CategoricalOutlookWidget.swift */,
+				FCF811342BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift */,
 			);
-			path = DayOneOutlookWidget;
+			path = CategoricalOutlookWidget;
 			sourceTree = "<group>";
 		};
-		FCF811362BC2E392005D3552 /* DayOneCombinedRiskWidget */ = {
+		FCF811362BC2E392005D3552 /* CombinedRiskWidget */ = {
 			isa = PBXGroup;
 			children = (
-				FCF811372BC2E3AD005D3552 /* DayOneCombinedRiskWidget.swift */,
-				FCF811392BC2E3E5005D3552 /* DayOneCombinedRiskWidgetEntryView.swift */,
+				FCF811372BC2E3AD005D3552 /* CombinedRiskWidget.swift */,
+				FCF811392BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift */,
 			);
-			path = DayOneCombinedRiskWidget;
+			path = CombinedRiskWidget;
 			sourceTree = "<group>";
 		};
 		FCF912F12BC0F61C005E5A44 /* SPCMapWidgets */ = {
@@ -554,8 +554,8 @@
 				FCAB72F12BC4E7ED00E41256 /* SPCMapWidgets.entitlements */,
 				FCAB72CB2BC3718800E41256 /* Models */,
 				FCAB72C42BC3702000E41256 /* Common Views */,
-				FCF811362BC2E392005D3552 /* DayOneCombinedRiskWidget */,
-				FCF811332BC2E030005D3552 /* DayOneOutlookWidget */,
+				FCF811362BC2E392005D3552 /* CombinedRiskWidget */,
+				FCF811332BC2E030005D3552 /* CategoricalOutlookWidget */,
 				FCF912F22BC0F61C005E5A44 /* SPCMapWidgets.swift */,
 				FCF912F62BC0F61E005E5A44 /* Assets.xcassets */,
 				FCF912F82BC0F61E005E5A44 /* Info.plist */,
@@ -821,21 +821,21 @@
 				FCF811162BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */,
 				FCAB72CA2BC3714800E41256 /* WidgetErrorView.swift in Sources */,
 				FCAB72D02BC3748400E41256 /* OutlookDay.swift in Sources */,
-				FCF811382BC2E3AD005D3552 /* DayOneCombinedRiskWidget.swift in Sources */,
-				FCF8113A2BC2E3E5005D3552 /* DayOneCombinedRiskWidgetEntryView.swift in Sources */,
+				FCF811382BC2E3AD005D3552 /* CombinedRiskWidget.swift in Sources */,
+				FCF8113A2BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift in Sources */,
 				FCF811212BC1F0AD005D3552 /* Color.swift in Sources */,
 				FCF8112A2BC1F3F3005D3552 /* AnyPolygon.swift in Sources */,
 				FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */,
 				FCF811232BC1F0AD005D3552 /* MKMultiPolygon.swift in Sources */,
 				FCF811242BC1F0AD005D3552 /* Button.swift in Sources */,
 				FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */,
-				FCF811352BC2E0E0005D3552 /* DayOneOutlookWidgetEntryView.swift in Sources */,
+				FCF811352BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift in Sources */,
 				FCAB72EF2BC4D50500E41256 /* Settings.swift in Sources */,
 				FCF811262BC1F0AD005D3552 /* View.swift in Sources */,
 				FCF811272BC1F0AD005D3552 /* MKPolygon.swift in Sources */,
 				FCAB72D42BC37A7E00E41256 /* DayLabel.swift in Sources */,
 				FCF811282BC1F0AD005D3552 /* Array.swift in Sources */,
-				FCF912F52BC0F61C005E5A44 /* DayOneOutlookWidget.swift in Sources */,
+				FCF912F52BC0F61C005E5A44 /* CategoricalOutlookWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ import AppIntents
 @main
 struct SPCMapWidgets: WidgetBundle {
     var body: some Widget {
-        DayOneOutlookWidget()
-        DayOneCombinedRiskWidget()
+        CategoricalOutlookWidget()
+        CombinedRiskWidget()
     }
 }

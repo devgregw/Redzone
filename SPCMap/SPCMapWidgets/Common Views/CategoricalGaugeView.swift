@@ -40,7 +40,7 @@ struct CategoricalGaugeView: View {
 }
 
 #Preview(as: .systemSmall) {
-    DayOneOutlookWidget()
+    CategoricalOutlookWidget()
 } timeline: {
-    DayOneOutlookWidget.Provider.Entry.snapshot
+    CategoricalOutlookWidget.Provider.Entry.snapshot
 }

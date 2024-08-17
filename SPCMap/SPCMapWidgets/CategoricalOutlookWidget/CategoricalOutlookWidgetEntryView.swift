@@ -1,5 +1,5 @@
 //
-//  DayOneOutlookWidgetEntryView.swift
+//  CategoricalOutlookWidgetEntryView.swift
 //  SPCMapWidgets
 //
 //  Created by Greg Whatley on 4/7/24.
@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 import WidgetKit
 
-struct DayOneOutlookWidgetEntryView : View {
-    var entry: DayOneOutlookWidget.Provider.Entry
+struct CategoricalOutlookWidgetEntryView : View {
+    var entry: CategoricalOutlookWidget.Provider.Entry
 
     var dateString: String {
         entry.date.formatted(date: .numeric, time: .shortened)
@@ -21,7 +21,9 @@ struct DayOneOutlookWidgetEntryView : View {
             Spacer()
             VStack(spacing: 1) {
                 switch entry {
-                case .outlook(_, let feature): outlook(day: .day1, feature: feature)
+                case .outlook(let day, _, let feature):
+                    outlook(day: day, feature: feature)
+                        .widgetURL(.init(string: "whatley://spcapp?setOutlook=\(day.rawValue)"))
                 case .snapshot: CategoricalGaugeView(value: 3, title: "Enhanced Risk", day: .day1)
                 case .placeholder: placeholder
                 case .error(let type): WidgetErrorView(error: type)
@@ -33,7 +35,7 @@ struct DayOneOutlookWidgetEntryView : View {
     }
 }
 
-extension DayOneOutlookWidgetEntryView {
+extension CategoricalOutlookWidgetEntryView {
     @ViewBuilder var date: some View {
         HStack(spacing: 2) {
             if entry.showDate {
@@ -71,11 +73,11 @@ extension DayOneOutlookWidgetEntryView {
 }
 
 #Preview(as: .systemSmall) {
-    DayOneOutlookWidget()
+    CategoricalOutlookWidget()
 } timeline: {
-    DayOneOutlookWidget.Provider.Entry.snapshot
-    DayOneOutlookWidget.Provider.Entry.placeholder
-    DayOneOutlookWidget.Provider.Entry.outlook(.now, nil)
-    DayOneOutlookWidget.Provider.Entry.error(.noLocation)
-    DayOneOutlookWidget.Provider.Entry.error(.unknown)
+    CategoricalOutlookWidget.Provider.Entry.snapshot
+    CategoricalOutlookWidget.Provider.Entry.placeholder
+    CategoricalOutlookWidget.Provider.Entry.outlook(.day1, .now, nil)
+    CategoricalOutlookWidget.Provider.Entry.error(.noLocation)
+    CategoricalOutlookWidget.Provider.Entry.error(.unknown)
 }

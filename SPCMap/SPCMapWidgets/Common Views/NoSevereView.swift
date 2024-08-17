@@ -26,7 +26,7 @@ struct NoSevereView: View {
 }
 
 #Preview(as: .systemSmall) {
-    DayOneOutlookWidget()
+    CategoricalOutlookWidget()
 } timeline: {
-    DayOneOutlookWidget.Provider.Entry.outlook(.now, nil)
+    CategoricalOutlookWidget.Provider.Entry.outlook(.day1, .now, nil)
 }

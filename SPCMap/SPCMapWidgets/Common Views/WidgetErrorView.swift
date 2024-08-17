@@ -48,8 +48,8 @@ struct WidgetErrorView: View {
 }
 
 #Preview(as: .systemSmall) {
-    DayOneOutlookWidget()
+    CategoricalOutlookWidget()
 } timeline: {
-    DayOneOutlookWidget.Provider.Entry.error(.noLocation)
-    DayOneOutlookWidget.Provider.Entry.error(.unknown)
+    CategoricalOutlookWidget.Provider.Entry.error(.noLocation)
+    CategoricalOutlookWidget.Provider.Entry.error(.unknown)
 }

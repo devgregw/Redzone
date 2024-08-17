@@ -1,5 +1,5 @@
 //
-//  DayOneCombinedRiskWidgetEntryView.swift
+//  CombinedRiskWidgetEntryView.swift
 //  SPCMapWidgets
 //
 //  Created by Greg Whatley on 4/7/24.
@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 import WidgetKit
 
-struct DayOneCombinedRiskWidgetEntryView : View {
-    var entry: DayOneCombinedRiskWidget.Provider.Entry
+struct CombinedRiskWidgetEntryView : View {
+    var entry: CombinedRiskWidget.Provider.Entry
 
     var dateString: String {
         entry.date.formatted(date: .numeric, time: .shortened)
@@ -20,19 +20,22 @@ struct DayOneCombinedRiskWidgetEntryView : View {
         VStack {
             switch entry {
             case .outlook(_, let day, let categorical, let risks):
-                if let categorical {
-                    content(
-                        day: day,
-                        risk: categorical.outlookProperties.title,
-                        value: categorical.outlookProperties.severity.comparableValue,
-                        risks: risks
-                    )
-                } else {
-                    Spacer()
-                    NoSevereView(day: day)
-                    Spacer()
-                    date
+                VStack {
+                    if let categorical {
+                        content(
+                            day: day,
+                            risk: categorical.outlookProperties.title,
+                            value: categorical.outlookProperties.severity.comparableValue,
+                            risks: risks
+                        )
+                    } else {
+                        Spacer()
+                        NoSevereView(day: day)
+                        Spacer()
+                        date
+                    }
                 }
+                .widgetURL(.init(string: "whatley://spcapp?setOutlook=\(day.rawValue)"))
             case .placeholder:
                 content(day: .day1, risk: nil, value: 0, risks: nil)
             case .error(let type):
@@ -44,7 +47,7 @@ struct DayOneCombinedRiskWidgetEntryView : View {
     }
 }
 
-extension DayOneCombinedRiskWidgetEntryView {
+extension CombinedRiskWidgetEntryView {
     func content(day: OutlookDay, risk: String?, value: Double, risks: (wind: (String, Bool), hail: (String, Bool), tornado: (String, Bool))?) -> some View {
         GeometryReader { proxy in
             HStack {
@@ -133,11 +136,11 @@ extension DayOneCombinedRiskWidgetEntryView {
 }
 
 #Preview(as: .systemMedium) {
-    DayOneCombinedRiskWidget()
+    CombinedRiskWidget()
 } timeline: {
-    DayOneCombinedRiskWidget.Provider.Entry.snapshot
-    DayOneCombinedRiskWidget.Provider.Entry.placeholder
-    DayOneCombinedRiskWidget.Provider.Entry.outlook(.now, .day1, nil, nil)
-    DayOneCombinedRiskWidget.Provider.Entry.error(.noLocation)
-    DayOneCombinedRiskWidget.Provider.Entry.error(.unknown)
+    CombinedRiskWidget.Provider.Entry.snapshot
+    CombinedRiskWidget.Provider.Entry.placeholder
+    CombinedRiskWidget.Provider.Entry.outlook(.now, .day1, nil, nil)
+    CombinedRiskWidget.Provider.Entry.error(.noLocation)
+    CombinedRiskWidget.Provider.Entry.error(.unknown)
 }
