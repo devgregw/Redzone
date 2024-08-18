@@ -6,6 +6,25 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FC7A56632C7166C7002DDBEB /* Periphery */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FC7A56642C7166C7002DDBEB /* Build configuration list for PBXAggregateTarget "Periphery" */;
+			buildPhases = (
+				FC7A56732C7174DA002DDBEB /* Periphery: Build */,
+				FC7A56672C7166D0002DDBEB /* Periphery: Scan */,
+			);
+			dependencies = (
+				FC7A56692C7173A4002DDBEB /* PBXTargetDependency */,
+				FC7A566B2C7173A4002DDBEB /* PBXTargetDependency */,
+				FC7A566D2C7173A4002DDBEB /* PBXTargetDependency */,
+				FC7A566F2C7173A4002DDBEB /* PBXTargetDependency */,
+			);
+			name = Periphery;
+			productName = Periphery;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
 		FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745F2A40D8220058EBF7 /* OutlookService.swift */; };
@@ -107,6 +126,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FC7A56682C7173A4002DDBEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC70F92029C29F9B006C5DAC;
+			remoteInfo = SPCMap;
+		};
+		FC7A566A2C7173A4002DDBEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCAB72DA2BC383B500E41256;
+			remoteInfo = SPCMapIntents;
+		};
+		FC7A566C2C7173A4002DDBEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA57D3B2B9F52F5008DDCE8;
+			remoteInfo = SPCMapTests;
+		};
+		FC7A566E2C7173A4002DDBEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCF912EB2BC0F61C005E5A44;
+			remoteInfo = SPCMapWidgets;
+		};
 		FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
@@ -181,6 +228,7 @@
 		FC70F92429C29F9B006C5DAC /* SPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCApp.swift; sourceTree = "<group>"; };
 		FC70F92629C29F9B006C5DAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC70F92829C29F9D006C5DAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC7A56742C7176E5002DDBEB /* Main.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Main.xctestplan; sourceTree = "<group>"; };
 		FCA57D3C2B9F52F5008DDCE8 /* SPCMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		FCAB72C52BC3702E00E41256 /* CategoricalGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalGaugeView.swift; sourceTree = "<group>"; };
@@ -389,6 +437,7 @@
 		FC70F91829C29F9B006C5DAC = {
 			isa = PBXGroup;
 			children = (
+				FC7A56742C7176E5002DDBEB /* Main.xctestplan */,
 				FCF8110C2BC1E917005D3552 /* Shared */,
 				FC44E04D2A35713400A9925D /* SPC-Info.plist */,
 				FC70F92329C29F9B006C5DAC /* SPCMap */,
@@ -655,6 +704,9 @@
 					FC70F92029C29F9B006C5DAC = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					FC7A56632C7166C7002DDBEB = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					FCA57D3B2B9F52F5008DDCE8 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = FC70F92029C29F9B006C5DAC;
@@ -676,6 +728,9 @@
 				Base,
 			);
 			mainGroup = FC70F91829C29F9B006C5DAC;
+			packageReferences = (
+				FC7A56602C714C26002DDBEB /* XCRemoteSwiftPackageReference "periphery" */,
+			);
 			productRefGroup = FC70F92229C29F9B006C5DAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -684,6 +739,7 @@
 				FCA57D3B2B9F52F5008DDCE8 /* SPCMapTests */,
 				FCF912EB2BC0F61C005E5A44 /* SPCMapWidgets */,
 				FCAB72DA2BC383B500E41256 /* SPCMapIntents */,
+				FC7A56632C7166C7002DDBEB /* Periphery */,
 			);
 		};
 /* End PBXProject section */
@@ -723,6 +779,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FC7A56672C7166D0002DDBEB /* Periphery: Scan */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Periphery: Scan";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PERIPHERY_ROOT=$BUILD_DIR/../../SourcePackages/checkouts/periphery\n$PERIPHERY_ROOT/.build/debug/periphery scan\n";
+		};
+		FC7A56732C7174DA002DDBEB /* Periphery: Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Periphery: Build";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PERIPHERY_ROOT=$BUILD_DIR/../../SourcePackages/checkouts/periphery\n(cd $PERIPHERY_ROOT && env -i swift build)\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC70F91D29C29F9B006C5DAC /* Sources */ = {
@@ -842,6 +940,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FC7A56692C7173A4002DDBEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC70F92029C29F9B006C5DAC /* SPCMap */;
+			targetProxy = FC7A56682C7173A4002DDBEB /* PBXContainerItemProxy */;
+		};
+		FC7A566B2C7173A4002DDBEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCAB72DA2BC383B500E41256 /* SPCMapIntents */;
+			targetProxy = FC7A566A2C7173A4002DDBEB /* PBXContainerItemProxy */;
+		};
+		FC7A566D2C7173A4002DDBEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA57D3B2B9F52F5008DDCE8 /* SPCMapTests */;
+			targetProxy = FC7A566C2C7173A4002DDBEB /* PBXContainerItemProxy */;
+		};
+		FC7A566F2C7173A4002DDBEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCF912EB2BC0F61C005E5A44 /* SPCMapWidgets */;
+			targetProxy = FC7A566E2C7173A4002DDBEB /* PBXContainerItemProxy */;
+		};
 		FCA57D412B9F52F5008DDCE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FC70F92029C29F9B006C5DAC /* SPCMap */;
@@ -897,7 +1015,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -959,7 +1077,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -990,6 +1108,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = L586WSJPG7;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SPC-Info.plist";
 				INFOPLIST_KEY_NSLocationUsageDescription = "To show your location";
@@ -1025,6 +1144,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = L586WSJPG7;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SPC-Info.plist";
 				INFOPLIST_KEY_NSLocationUsageDescription = "To show your location";
@@ -1045,6 +1165,24 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC7A56652C7166C7002DDBEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FC7A56662C7166C7002DDBEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L586WSJPG7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1232,6 +1370,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		FC7A56642C7166C7002DDBEB /* Build configuration list for PBXAggregateTarget "Periphery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7A56652C7166C7002DDBEB /* Debug */,
+				FC7A56662C7166C7002DDBEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FCA57D442B9F52F5008DDCE8 /* Build configuration list for PBXNativeTarget "SPCMapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1260,6 +1407,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC7A56602C714C26002DDBEB /* XCRemoteSwiftPackageReference "periphery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/peripheryapp/periphery";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = FC70F91929C29F9B006C5DAC /* Project object */;
 }
