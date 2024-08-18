@@ -9,9 +9,6 @@ import SwiftUI
 import CoreLocationUI
 
 struct SettingsView: View {
-    @Environment(LocationService.self) private var locationService
-    @Environment(Context.self) private var context
-    
     @State private var autoMoveCamera: Bool = Settings.autoMoveCamera
     
     var body: some View {

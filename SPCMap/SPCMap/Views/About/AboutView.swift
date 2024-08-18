@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AboutView: View {
-    @Environment(\.dismiss) private var dismiss
     @Environment(Context.self) private var context
     
     var body: some View {

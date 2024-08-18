@@ -45,7 +45,7 @@ enum OutlookSeverity: Comparable, Equatable {
         }
     }
     
-    public var comparableValue: Double {
+    var comparableValue: Double {
         switch self {
         case let .percentage(value): value
         case .significant, .probabilistic, .sigprobabilistic: 10

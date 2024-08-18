@@ -38,11 +38,9 @@ struct ErrorView: View {
     }
 }
 
-struct ErrorView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack { }
-            .sheet(isPresented: .constant(true)) {
-                ErrorView(message: "Could not connect to the server.")
-            }
-    }
+#Preview {
+    VStack { }
+        .sheet(isPresented: .constant(true)) {
+            ErrorView(message: "Could not connect to the server.")
+        }
 }

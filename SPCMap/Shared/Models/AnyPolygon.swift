@@ -9,5 +9,6 @@ import Foundation
 import MapKit
 
 protocol AnyPolygon: NSObject {
+    // periphery:ignore - False positive.
     func contains(point: MKMapPoint) -> Bool
 }

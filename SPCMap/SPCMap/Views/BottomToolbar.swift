@@ -80,8 +80,6 @@ struct BottomToolbar: ToolbarContent {
     let highestRisk: OutlookFeature?
     let isSignificant: Bool
     
-    @State private var displayDetail: Bool = false
-    
     var body: some ToolbarContent {
         @Bindable var context = context
         HStack {
