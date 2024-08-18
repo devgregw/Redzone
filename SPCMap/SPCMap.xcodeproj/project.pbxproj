@@ -12,7 +12,7 @@
 			buildConfigurationList = FC7A56642C7166C7002DDBEB /* Build configuration list for PBXAggregateTarget "Periphery" */;
 			buildPhases = (
 				FC7A56732C7174DA002DDBEB /* Periphery: Build */,
-				FC7A56672C7166D0002DDBEB /* Periphery: Scan */,
+				FC7A56672C7166D0002DDBEB /* Run Periphery */,
 			);
 			dependencies = (
 				FC7A56692C7173A4002DDBEB /* PBXTargetDependency */,
@@ -781,7 +781,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FC7A56672C7166D0002DDBEB /* Periphery: Scan */ = {
+		FC7A56672C7166D0002DDBEB /* Run Periphery */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -791,14 +791,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Periphery: Scan";
+			name = "Run Periphery";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PERIPHERY_ROOT=$BUILD_DIR/../../SourcePackages/checkouts/periphery\n$PERIPHERY_ROOT/.build/debug/periphery scan\n";
+			shellScript = "case \"$BUILD_DIR\" in \n  *Previews*)\n    exit 0\n    ;;\nesac\n\nPERIPHERY_ROOT=$BUILD_DIR/../../SourcePackages/checkouts/periphery\n(cd $PERIPHERY_ROOT && env -i swift build)\n$PERIPHERY_ROOT/.build/debug/periphery scan\n";
 		};
 		FC7A56732C7174DA002DDBEB /* Periphery: Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -817,7 +817,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PERIPHERY_ROOT=$BUILD_DIR/../../SourcePackages/checkouts/periphery\n(cd $PERIPHERY_ROOT && env -i swift build)\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
