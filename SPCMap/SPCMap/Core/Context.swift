@@ -16,13 +16,16 @@ class Context {
     var mapStyle: OutlookMapView.Style = .standard
     var selectedOutlook: TappedOutlook? = nil {
         didSet {
+            Logger.log(.map, "Tapped outlook: \(selectedOutlook?.highestRisk.properties.title ?? "nil")")
             displaySettingsSheet = false
         }
     }
     var displaySettingsSheet: Bool = false
     var mapCameraPosition: MapCameraPosition = .automatic
+    var presentedURL: URL? = nil
     
     func moveCamera(to coordinate: CLLocationCoordinate2D) {
+        Logger.log(.map, "Moving camera to coordinate (lat: \(coordinate.latitude), \(coordinate.longitude))")
         withAnimation {
             mapCameraPosition = .region(.init(center: coordinate, latitudinalMeters: 80_000, longitudinalMeters: 80_000))
         }
@@ -32,6 +35,7 @@ class Context {
         guard case let .loaded(response) = state else { return }
         let mapRects = response.features.flatMap { $0.multiPolygons.map { $0.boundingMapRect } }
         guard let largestRect = mapRects.max() else { return }
+        Logger.log(.map, "Moving camera to rect (midX: \(largestRect.midX), midY: \(largestRect.midY), width: \(largestRect.width), height: \(largestRect.height))")
         withAnimation {
             mapCameraPosition = .rect(largestRect)
         }

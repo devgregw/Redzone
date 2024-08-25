@@ -1,0 +1,13 @@
+disable_update_check: true
+project: SPCMap.xcodeproj
+retain_codable_properties: true
+retain_swift_ui_previews: true
+schemes:
+  - SPCMap
+strict: true
+targets:
+  - SPCMap
+  - SPCMapWidgets
+  - SPCMapTests
+  - SPCMapIntents
+verbose: true

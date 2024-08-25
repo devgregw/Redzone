@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PercentageRiskDetailView: View {
+    @Environment(Context.self) private var context
+    
     let title: String
     let description: String
     let levels: [(Int, Color)]
@@ -49,6 +51,30 @@ struct PercentageRiskDetailView: View {
                             SigSevLegendIconView()
                         }
                         Text(sigSevereDescription)
+                    }
+                }
+            }
+            
+            Section("Safety") {
+                Button {
+                    context.presentedURL = URL(string: "https://www.weather.gov/safety/")!
+                } label: {
+                    HStack {
+                        Label("National Weather Service Safety Tips", systemImage: "staroflife")
+                        Spacer()
+                        Image(systemName: "arrow.up.forward.square")
+                    }
+                }
+                
+                if title.contains("Tornado") {
+                    Button {
+                        context.presentedURL = URL(string: "https://www.spc.noaa.gov/efscale/")!
+                    } label: {
+                        HStack {
+                            Label("About The Enhanced Fujita (EF) Scale", systemImage: "tornado")
+                            Spacer()
+                            Image(systemName: "arrow.up.forward.square")
+                        }
                     }
                 }
             }

@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct AboutView: View {
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.openURL) private var openURL
+    @Environment(Context.self) private var context
     
     var body: some View {
         List {
             Section("Data Source") {
                 Button {
-                    openURL(URL(string: "https://spc.noaa.gov")!)
+                    context.presentedURL = URL(string: "https://spc.noaa.gov")!
                 } label: {
                     HStack(alignment: .center) {
                         Image("NOAALogo")
@@ -42,6 +41,18 @@ struct AboutView: View {
             }
             
             RiskLevelLinksView()
+            
+            Section("Safety") {
+                Button {
+                    context.presentedURL = URL(string: "https://www.weather.gov/safety/")!
+                } label: {
+                    HStack {
+                        Label("National Weather Service Safety Tips", systemImage: "staroflife")
+                        Spacer()
+                        Image(systemName: "arrow.up.forward.square")
+                    }
+                }
+            }
         }
         .scrollContentBackground(.visible)
         .navigationTitle("About")

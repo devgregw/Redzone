@@ -36,6 +36,7 @@ struct OutlookMapView: View {
             .coordinateSpace(coordinateSpace)
             .onTapGesture { point in
                 if let coordinate = proxy.convert(point, from: coordinateSpace) {
+                    Logger.log(.map, "Tap gesture @ (x: \(point.x), y: \(point.y)) mapped to coordinate (lat: \(coordinate.latitude), lon: \(coordinate.longitude))")
                     context.selectedOutlook = features?.findTappedOutlook(at: coordinate)
                 }
             }

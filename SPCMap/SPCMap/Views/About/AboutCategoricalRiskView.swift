@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AboutCategoricalRiskView: View {
+    @Environment(Context.self) private var context
     struct RiskDescriptionView: View {
         let title: String
         let description: String
@@ -42,6 +43,18 @@ struct AboutCategoricalRiskView: View {
             RiskDescriptionView(title: "Moderate", description: "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense.", style: .red)
             
             RiskDescriptionView(title: "High", description: "A severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived derecho system with hurricane-force wind gusts producing widespread damage.", style: .magenta)
+            
+            Section("Safety") {
+                Button {
+                    context.presentedURL = URL(string: "https://www.weather.gov/safety/")!
+                } label: {
+                    HStack {
+                        Label("National Weather Service Safety Tips", systemImage: "staroflife")
+                        Spacer()
+                        Image(systemName: "arrow.up.forward.square")
+                    }
+                }
+            }
         }
         .scrollContentBackground(.visible)
         .navigationTitle("Categorical")

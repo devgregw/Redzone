@@ -16,13 +16,40 @@ struct SPCApp: App {
     
     var body: some Scene {
         WindowGroup {
+            @Bindable var bindableContext = context
             ContentView()
                 .environment(outlookService)
                 .environment(context)
                 .environment(locationService)
                 .onReceive(outlookService.debouncePublisher) {
-                    print("Widget: Reloading timeline due to new service state")
-                    WidgetCenter.shared.reloadTimelines(ofKind: "SPCMapWidget")
+                    Logger.log(.widgets, "Reloading all timelines")
+                    WidgetCenter.shared.getCurrentConfigurations {
+                        if case let .success(widgets) = $0 {
+                            widgets.forEach { widget in
+                                Logger.log(.widgets, "- \(widget.kind) [\(widget.family.description)]: config = \(widget.widgetConfigurationIntent(of: OutlookDayConfigurationIntent.self)?.day.rawValue ?? -1)")
+                            }
+                        }
+                    }
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
+                .onReceive(locationService.debouncePublisher) {
+                    Settings.lastKnownLocation = $0.coordinate
+                }
+                .openURL(url: $bindableContext.presentedURL)
+                .onOpenURL {
+                    Logger.log(.widgets, "Handling URL: \($0.absoluteString)")
+                    guard $0.scheme == "whatley",
+                          let components = URLComponents(url: $0, resolvingAgainstBaseURL: true),
+                          components.host == "spcapp",
+                          let day = Int(components.queryItems?.first(where: { $0.name == "setOutlook" })?.value ?? ""),
+                          let outlookDay = OutlookDay(rawValue: day) else {
+                        Logger.log(.widgets, "Not sure how to handle this URL")
+                        return
+                    }
+                    switch outlookDay {
+                    case .day1: context.outlookType = .convective1(.categorical)
+                    case .day2: context.outlookType = .convective2(.categorical)
+                    }
                 }
         }
     }

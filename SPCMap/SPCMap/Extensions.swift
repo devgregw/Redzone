@@ -25,3 +25,7 @@ extension Collection where Element == OutlookFeature {
         return .init(highestRisk: tappedPolygon, isSignificant: isSignificant)
     }
 }
+
+extension URL: Identifiable {
+    public var id: Int { hashValue }
+}

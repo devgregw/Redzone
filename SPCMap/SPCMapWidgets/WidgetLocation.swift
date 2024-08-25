@@ -24,12 +24,24 @@ class WidgetLocation: NSObject, CLLocationManagerDelegate {
     private var completion: ((CLLocation?) -> Void)?
     
     func requestOneTimeLocation(completion: @escaping (CLLocation?) -> Void) {
+        if let lastKnownLocation = Settings.lastKnownLocation {
+            completion(.init(latitude: lastKnownLocation.latitude, longitude: lastKnownLocation.longitude))
+            return
+        }
         lock.lock()
         self.completion = completion
         if !manager.isAuthorizedForWidgetUpdates || manager.authorizationStatus == .notDetermined {
             manager.requestWhenInUseAuthorization()
         } else {
             manager.requestLocation()
+        }
+    }
+    
+    func requestOneTimeLocation() async -> CLLocation? {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.main.async {
+                self.requestOneTimeLocation(completion: continuation.resume(returning:))
+            }
         }
     }
     
@@ -50,6 +62,7 @@ class WidgetLocation: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        Settings.lastKnownLocation = locations.last?.coordinate
         completion?(locations.last)
         completion = nil
         lock.unlock()

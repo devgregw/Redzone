@@ -38,7 +38,13 @@
     "About" : {
 
     },
+    "About The Enhanced Fujita (EF) Scale" : {
+
+    },
     "About This Risk" : {
+
+    },
+    "Automatically move camera" : {
 
     },
     "Categorical" : {
@@ -51,6 +57,12 @@
 
     },
     "Day %lld" : {
+
+    },
+    "Day 1 (today)" : {
+
+    },
+    "Day 2 (tomorrow)" : {
 
     },
     "Error" : {
@@ -77,6 +89,9 @@
     "National Weather Service" : {
 
     },
+    "National Weather Service Safety Tips" : {
+
+    },
     "No data available" : {
 
     },
@@ -87,6 +102,9 @@
 
     },
     "Outlook" : {
+
+    },
+    "Outlook Day" : {
 
     },
     "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense." : {
@@ -102,6 +120,15 @@
 
     },
     "Risk Levels" : {
+
+    },
+    "Safety" : {
+
+    },
+    "Select Outlook Day" : {
+
+    },
+    "Select the day to show outlooks for. Generally, day 1 corresponds to today and day 2 to tomorrow." : {
 
     },
     "Settings" : {
@@ -120,6 +147,9 @@
 
     },
     "Tapped Outlook" : {
+
+    },
+    "The Enhanced Fujita (EF) Scale" : {
 
     },
     "Tornado" : {

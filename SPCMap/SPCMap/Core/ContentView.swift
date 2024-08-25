@@ -60,10 +60,13 @@ struct ContentView: View {
                     let atCurrentLocation = currentLocationOutlook?.outlookProperties.severity == outlook.highestRisk.properties.severity
                     RiskDetailView(polygon: outlook.highestRisk, isSignificant: outlook.isSignificant, atCurrentLocation: atCurrentLocation)
                 }
+                .toolbar(.hidden, for: .navigationBar)
         }
         .onChange(of: context.outlookType, initial: true) {
             await outlookService.load(context.outlookType)
-            context.moveCamera(centering: outlookService.state)
+            if Settings.autoMoveCamera {
+                context.moveCamera(centering: outlookService.state)
+            }
         }
         .toolbar {
             BottomToolbar(highestRisk: currentLocationOutlook, isSignificant: currentLocationSignificant)
