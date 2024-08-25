@@ -1,4 +1,4 @@
-name: SPCMap - Xcode build
+name: SPCMap
 
 on:
   push:
@@ -12,21 +12,15 @@ jobs:
     defaults:
       run:
         working-directory: ./SPCMap
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Xcode build & test
     runs-on: macos-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
       - name: Build
         env:
-          scheme: ${{ 'default' }}
+          scheme: Main
           platform: ${{ 'iOS Simulator' }}
         run: |
           # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
@@ -37,7 +31,7 @@ jobs:
           xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
       - name: Test
         env:
-          scheme: ${{ 'default' }}
+          scheme: Main
           platform: ${{ 'iOS Simulator' }}
         run: |
           # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
