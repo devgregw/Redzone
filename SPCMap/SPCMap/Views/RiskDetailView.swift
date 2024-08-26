@@ -7,6 +7,7 @@
 
 import SafariServices
 import SwiftUI
+import GeoJSON
 
 struct RiskDetailView: View {
     @Environment(Context.self) private var context
@@ -21,12 +22,8 @@ struct RiskDetailView: View {
         self.atCurrentLocation = atCurrentLocation
     }
     
-    init(feature: OutlookFeature, isSignificant: Bool, atCurrentLocation: Bool) {
+    init(feature: GeoJSONFeature, isSignificant: Bool, atCurrentLocation: Bool) {
         self.init(properties: feature.outlookProperties, isSignificant: isSignificant, atCurrentLocation: atCurrentLocation)
-    }
-    
-    init(polygon: OutlookMultiPolygon, isSignificant: Bool, atCurrentLocation: Bool) {
-        self.init(properties: polygon.properties, isSignificant: isSignificant, atCurrentLocation: atCurrentLocation)
     }
         
     private var commentaryURL: URL? {

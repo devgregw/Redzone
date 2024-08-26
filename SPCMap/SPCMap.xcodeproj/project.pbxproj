@@ -28,12 +28,10 @@
 		FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
 		FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745F2A40D8220058EBF7 /* OutlookService.swift */; };
 		FC21F5F129D9C8E800046C79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F029D9C8E800046C79 /* Color.swift */; };
-		FC21F5F329D9D6FA00046C79 /* MKPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */; };
 		FC21F5F529D9F06000046C79 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F429D9F06000046C79 /* Array.swift */; };
 		FC21F5F829D9F54A00046C79 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F729D9F54A00046C79 /* AboutView.swift */; };
 		FC21F61029E10BB000046C79 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
 		FC21F61929E11CA800046C79 /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F61829E11CA800046C79 /* LoadingModifier.swift */; };
-		FC21F62129E1B16200046C79 /* MKMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */; };
 		FC21F62D29E1BA9800046C79 /* OutlookTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */; };
 		FC21F62F29E1BB6A00046C79 /* BottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */; };
 		FC21F63329E1C84C00046C79 /* RiskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63229E1C84C00046C79 /* RiskDetailView.swift */; };
@@ -42,10 +40,15 @@
 		FC26689C2A5D030A00CA34DC /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26689B2A5D030A00CA34DC /* Context.swift */; };
 		FC26689F2A5E386200CA34DC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26689E2A5E386200CA34DC /* LocationService.swift */; };
 		FC2668A12A5E5A0E00CA34DC /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
-		FC2668A32A5E5A2800CA34DC /* AnyPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */; };
+		FC2A89882C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */; };
+		FC2A89892C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */; };
+		FC2A898B2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
+		FC2A898C2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
 		FC54AFA32BDEA98500D559C0 /* OpenURLModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA22BDEA98500D559C0 /* OpenURLModifier.swift */; };
 		FC54AFA82BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
 		FC54AFA92BDEBBA100D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
+		FC6E50922C7B916A000B1626 /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FC6E50912C7B916A000B1626 /* GeoJSON */; };
+		FC6E50942C7B9178000B1626 /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FC6E50932C7B9178000B1626 /* GeoJSON */; };
 		FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92429C29F9B006C5DAC /* SPCApp.swift */; };
 		FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92629C29F9B006C5DAC /* ContentView.swift */; };
 		FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC70F92829C29F9D006C5DAC /* Assets.xcassets */; };
@@ -77,8 +80,6 @@
 		FCB386FA2A57A6C300C10FFB /* OutlookSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */; };
 		FCB386FD2A57A9B000C10FFB /* OutlookMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */; };
 		FCB4BBB92A48E12900738C3E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB4BBB82A48E12900738C3E /* MapKit.framework */; };
-		FCB4BBBE2A48E31000738C3E /* OutlookMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */; };
-		FCB4BBC02A48E34C00738C3E /* OutlookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */; };
 		FCB4BBC22A48E36100738C3E /* OutlookProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */; };
 		FCB4BBC62A48F93300738C3E /* TappedOutlook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */; };
 		FCB4BBC82A4919E600738C3E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC72A4919E600738C3E /* ErrorView.swift */; };
@@ -92,21 +93,16 @@
 		FCF811152BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */; };
 		FCF811162BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */; };
 		FCF811182BC1EC87005D3552 /* OutlookSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */; };
-		FCF811192BC1EC87005D3552 /* OutlookMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */; };
 		FCF8111A2BC1EC87005D3552 /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
 		FCF8111B2BC1EC87005D3552 /* OutlookProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */; };
 		FCF8111C2BC1EC87005D3552 /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
-		FCF8111D2BC1EC87005D3552 /* OutlookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */; };
 		FCF811202BC1ED8C005D3552 /* WidgetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */; };
 		FCF811212BC1F0AD005D3552 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F029D9C8E800046C79 /* Color.swift */; };
 		FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
-		FCF811232BC1F0AD005D3552 /* MKMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */; };
 		FCF811242BC1F0AD005D3552 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
 		FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
 		FCF811262BC1F0AD005D3552 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63D29E1DE5700046C79 /* View.swift */; };
-		FCF811272BC1F0AD005D3552 /* MKPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */; };
 		FCF811282BC1F0AD005D3552 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F429D9F06000046C79 /* Array.swift */; };
-		FCF8112A2BC1F3F3005D3552 /* AnyPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */; };
 		FCF8112C2BC1F40D005D3552 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8112B2BC1F40D005D3552 /* Extensions.swift */; };
 		FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
 		FCF811312BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
@@ -205,12 +201,10 @@
 		FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookResponse.swift; sourceTree = "<group>"; };
 		FC09745F2A40D8220058EBF7 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
 		FC21F5F029D9C8E800046C79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPolygon.swift; sourceTree = "<group>"; };
 		FC21F5F429D9F06000046C79 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FC21F5F729D9F54A00046C79 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		FC21F60F29E10BB000046C79 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		FC21F61829E11CA800046C79 /* LoadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
-		FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMultiPolygon.swift; sourceTree = "<group>"; };
 		FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookTypePicker.swift; sourceTree = "<group>"; };
 		FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbar.swift; sourceTree = "<group>"; };
 		FC21F63229E1C84C00046C79 /* RiskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskDetailView.swift; sourceTree = "<group>"; };
@@ -219,7 +213,8 @@
 		FC26689B2A5D030A00CA34DC /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		FC26689E2A5E386200CA34DC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapRect.swift; sourceTree = "<group>"; };
-		FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPolygon.swift; sourceTree = "<group>"; };
+		FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONFeature.swift; sourceTree = "<group>"; };
+		FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONPolygon.swift; sourceTree = "<group>"; };
 		FC44E04D2A35713400A9925D /* SPC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SPC-Info.plist"; sourceTree = "<group>"; };
 		FC54AFA22BDEA98500D559C0 /* OpenURLModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLModifier.swift; sourceTree = "<group>"; };
 		FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
@@ -255,8 +250,6 @@
 		FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlookSeverity.swift; sourceTree = "<group>"; };
 		FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookMapView.swift; sourceTree = "<group>"; };
 		FCB4BBB82A48E12900738C3E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookMultiPolygon.swift; sourceTree = "<group>"; };
-		FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFeature.swift; sourceTree = "<group>"; };
 		FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookProperties.swift; sourceTree = "<group>"; };
 		FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedOutlook.swift; sourceTree = "<group>"; };
 		FCB4BBC72A4919E600738C3E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -288,6 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6E50922C7B916A000B1626 /* GeoJSON in Frameworks */,
 				FCB4BBB92A48E12900738C3E /* MapKit.framework in Frameworks */,
 				FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */,
 			);
@@ -311,6 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6E50942C7B9178000B1626 /* GeoJSON in Frameworks */,
 				FCF912F02BC0F61C005E5A44 /* SwiftUI.framework in Frameworks */,
 				FCF912EE2BC0F61C005E5A44 /* WidgetKit.framework in Frameworks */,
 			);
@@ -322,6 +317,7 @@
 		FC21F5F629D9F37D00046C79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FC2A89862C7C26CB00EA0BCF /* GeoJSON */,
 				FC54AFA62BDEBB5F00D559C0 /* CoreLocation */,
 				FC21F62629E1BA0D00046C79 /* SwiftUI */,
 				FC21F62529E1B9FE00046C79 /* MapKit */,
@@ -369,8 +365,6 @@
 		FC21F62529E1B9FE00046C79 /* MapKit */ = {
 			isa = PBXGroup;
 			children = (
-				FC21F5F229D9D6FA00046C79 /* MKPolygon.swift */,
-				FC21F62029E1B16200046C79 /* MKMultiPolygon.swift */,
 				FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */,
 			);
 			path = MapKit;
@@ -412,6 +406,15 @@
 				FC26689B2A5D030A00CA34DC /* Context.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		FC2A89862C7C26CB00EA0BCF /* GeoJSON */ = {
+			isa = PBXGroup;
+			children = (
+				FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */,
+				FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */,
+			);
+			path = GeoJSON;
 			sourceTree = "<group>";
 		};
 		FC4897E329F5890C0045E761 /* Frameworks */ = {
@@ -559,11 +562,8 @@
 			isa = PBXGroup;
 			children = (
 				FCAB72CF2BC3748400E41256 /* OutlookDay.swift */,
-				FC2668A22A5E5A2800CA34DC /* AnyPolygon.swift */,
 				FCF8110D2BC1E92D005D3552 /* OutlookType.swift */,
 				FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */,
-				FCB4BBBD2A48E31000738C3E /* OutlookMultiPolygon.swift */,
-				FCB4BBBF2A48E34C00738C3E /* OutlookFeature.swift */,
 				FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */,
 				FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */,
 			);
@@ -633,6 +633,7 @@
 			);
 			name = SPCMap;
 			packageProductDependencies = (
+				FC6E50912C7B916A000B1626 /* GeoJSON */,
 			);
 			productName = SPC;
 			productReference = FC70F92129C29F9B006C5DAC /* SPCMap.app */;
@@ -686,6 +687,9 @@
 			dependencies = (
 			);
 			name = SPCMapWidgets;
+			packageProductDependencies = (
+				FC6E50932C7B9178000B1626 /* GeoJSON */,
+			);
 			productName = SPCMapWidgetExtension;
 			productReference = FCF912EC2BC0F61C005E5A44 /* SPCMapWidgets.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -729,6 +733,7 @@
 			mainGroup = FC70F91829C29F9B006C5DAC;
 			packageReferences = (
 				FC7A56602C714C26002DDBEB /* XCRemoteSwiftPackageReference "periphery" */,
+				FC6E50902C7B916A000B1626 /* XCRemoteSwiftPackageReference "swift-geojson" */,
 			);
 			productRefGroup = FC70F92229C29F9B006C5DAC /* Products */;
 			projectDirPath = "";
@@ -820,7 +825,6 @@
 				FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */,
 				FCB386FD2A57A9B000C10FFB /* OutlookMapView.swift in Sources */,
 				FC21F61029E10BB000046C79 /* Optional.swift in Sources */,
-				FCB4BBC02A48E34C00738C3E /* OutlookFeature.swift in Sources */,
 				FCAC37972B7879C300AEB3C8 /* PercentageRiskDetailView.swift in Sources */,
 				FCAB72EB2BC383E300E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
 				FC21F5F529D9F06000046C79 /* Array.swift in Sources */,
@@ -830,26 +834,24 @@
 				FCF8112C2BC1F40D005D3552 /* Extensions.swift in Sources */,
 				FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */,
 				FCAC379D2B79ABB800AEB3C8 /* OutlookLegendIconView.swift in Sources */,
+				FC2A898B2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */,
 				FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */,
 				FCAB72EE2BC4D50500E41256 /* Settings.swift in Sources */,
-				FCB4BBBE2A48E31000738C3E /* OutlookMultiPolygon.swift in Sources */,
 				FC21F62F29E1BB6A00046C79 /* BottomToolbar.swift in Sources */,
 				FC21F5F129D9C8E800046C79 /* Color.swift in Sources */,
 				FCB4BBC22A48E36100738C3E /* OutlookProperties.swift in Sources */,
-				FC21F5F329D9D6FA00046C79 /* MKPolygon.swift in Sources */,
 				FCDA91562A3E51FE003FFD84 /* SafariView.swift in Sources */,
 				FCAB72D62BC37D8500E41256 /* OutlookDay.swift in Sources */,
 				FC21F61929E11CA800046C79 /* LoadingModifier.swift in Sources */,
+				FC2A89882C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */,
 				FC26689F2A5E386200CA34DC /* LocationService.swift in Sources */,
 				FCB386FA2A57A6C300C10FFB /* OutlookSeverity.swift in Sources */,
-				FC21F62129E1B16200046C79 /* MKMultiPolygon.swift in Sources */,
 				FC54AFA82BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift in Sources */,
 				FC21F63329E1C84C00046C79 /* RiskDetailView.swift in Sources */,
 				FCAC37902B75C88300AEB3C8 /* MapStyleModifier.swift in Sources */,
 				FC54AFA32BDEA98500D559C0 /* OpenURLModifier.swift in Sources */,
 				FCAC379F2B79AC3100AEB3C8 /* SigSevLegendIconView.swift in Sources */,
 				FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */,
-				FC2668A32A5E5A2800CA34DC /* AnyPolygon.swift in Sources */,
 				FCAC37992B787A0F00AEB3C8 /* RiskLevelLinksView.swift in Sources */,
 				FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */,
 				FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */,
@@ -883,33 +885,30 @@
 				FCD037512BC4EE8F00986EC3 /* Logger.swift in Sources */,
 				FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */,
 				FCF811182BC1EC87005D3552 /* OutlookSeverity.swift in Sources */,
-				FCF811192BC1EC87005D3552 /* OutlookMultiPolygon.swift in Sources */,
 				FCF8111A2BC1EC87005D3552 /* OutlookType.swift in Sources */,
 				FCAB72C82BC370F900E41256 /* NoSevereView.swift in Sources */,
 				FCF8111B2BC1EC87005D3552 /* OutlookProperties.swift in Sources */,
 				FCAB72C62BC3702E00E41256 /* CategoricalGaugeView.swift in Sources */,
 				FCF811202BC1ED8C005D3552 /* WidgetLocation.swift in Sources */,
 				FCF8111C2BC1EC87005D3552 /* OutlookResponse.swift in Sources */,
-				FCF8111D2BC1EC87005D3552 /* OutlookFeature.swift in Sources */,
 				FCAB72EA2BC383E200E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
+				FC2A898C2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */,
 				FCAB72CD2BC3719300E41256 /* EntryError.swift in Sources */,
 				FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */,
 				FC54AFA92BDEBBA100D559C0 /* CLLocationCoordinate2D.swift in Sources */,
 				FCF811162BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */,
 				FCAB72CA2BC3714800E41256 /* WidgetErrorView.swift in Sources */,
 				FCAB72D02BC3748400E41256 /* OutlookDay.swift in Sources */,
+				FC2A89892C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */,
 				FCF811382BC2E3AD005D3552 /* CombinedRiskWidget.swift in Sources */,
 				FCF8113A2BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift in Sources */,
 				FCF811212BC1F0AD005D3552 /* Color.swift in Sources */,
-				FCF8112A2BC1F3F3005D3552 /* AnyPolygon.swift in Sources */,
 				FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */,
-				FCF811232BC1F0AD005D3552 /* MKMultiPolygon.swift in Sources */,
 				FCF811242BC1F0AD005D3552 /* Button.swift in Sources */,
 				FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */,
 				FCF811352BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift in Sources */,
 				FCAB72EF2BC4D50500E41256 /* Settings.swift in Sources */,
 				FCF811262BC1F0AD005D3552 /* View.swift in Sources */,
-				FCF811272BC1F0AD005D3552 /* MKPolygon.swift in Sources */,
 				FCAB72D42BC37A7E00E41256 /* DayLabel.swift in Sources */,
 				FCF811282BC1F0AD005D3552 /* Array.swift in Sources */,
 				FCF912F52BC0F61C005E5A44 /* CategoricalOutlookWidget.swift in Sources */,
@@ -1388,6 +1387,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FC6E50902C7B916A000B1626 /* XCRemoteSwiftPackageReference "swift-geojson" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devgregw/swift-geojson";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		FC7A56602C714C26002DDBEB /* XCRemoteSwiftPackageReference "periphery" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/peripheryapp/periphery";
@@ -1397,6 +1404,19 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC6E50912C7B916A000B1626 /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC6E50902C7B916A000B1626 /* XCRemoteSwiftPackageReference "swift-geojson" */;
+			productName = GeoJSON;
+		};
+		FC6E50932C7B9178000B1626 /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC6E50902C7B916A000B1626 /* XCRemoteSwiftPackageReference "swift-geojson" */;
+			productName = GeoJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC70F91929C29F9B006C5DAC /* Project object */;
 }

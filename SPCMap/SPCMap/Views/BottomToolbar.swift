@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import GeoJSON
 
 struct CurrentLocationButton: View {
     @Environment(OutlookService.self) private var outlookService
     @State private var displayDetail: Bool = false
     
-    let highestRisk: OutlookFeature?
+    let highestRisk: GeoJSONFeature?
     let isSignificant: Bool
     
     private var errorMessage: String? {
@@ -30,7 +31,7 @@ struct CurrentLocationButton: View {
                 if let highestRisk {
                     Image(systemName: "circle.inset.filled")
                         .symbolRenderingMode(.palette)
-                        .foregroundStyle(Color(hex: highestRisk.outlookProperties.fillColor).opacity(0.50), Color(hex: highestRisk.outlookProperties.strokeColor))
+                        .foregroundStyle(highestRisk.outlookProperties.fillColor.opacity(0.50), highestRisk.outlookProperties.strokeColor)
                 }
                 
                 if isSignificant {
@@ -77,7 +78,7 @@ struct BottomToolbar: ToolbarContent {
     @Environment(LocationService.self) private var locationService
     @Environment(Context.self) private var context
     
-    let highestRisk: OutlookFeature?
+    let highestRisk: GeoJSONFeature?
     let isSignificant: Bool
     
     var body: some ToolbarContent {

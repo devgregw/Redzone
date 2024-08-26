@@ -16,7 +16,7 @@ class Context {
     var mapStyle: OutlookMapView.Style = .standard
     var selectedOutlook: TappedOutlook? = nil {
         didSet {
-            Logger.log(.map, "Tapped outlook: \(selectedOutlook?.highestRisk.properties.title ?? "nil")")
+            Logger.log(.map, "Tapped outlook: \(selectedOutlook?.highestRisk.outlookProperties.title ?? "nil")")
             displaySettingsSheet = false
         }
     }
@@ -33,7 +33,7 @@ class Context {
     
     func moveCamera(centering state: OutlookService.State) {
         guard case let .loaded(response) = state else { return }
-        let mapRects = response.features.flatMap { $0.multiPolygons.map { $0.boundingMapRect } }
+        let mapRects = response.features.compactMap(\.multiPolygon?.boundingBox)
         guard let largestRect = mapRects.max() else { return }
         Logger.log(.map, "Moving camera to rect (midX: \(largestRect.midX), midY: \(largestRect.midY), width: \(largestRect.width), height: \(largestRect.height))")
         withAnimation {

@@ -17,13 +17,13 @@ struct OutlookLegendIconView: View {
     }
     
     init(properties: OutlookProperties) {
-        self.init(fillColor: Color(hex: properties.fillColor), strokeColor: Color(hex: properties.strokeColor))
+        self.init(fillColor: properties.fillColor.opacity(0.50), strokeColor: properties.strokeColor)
     }
     
     var body: some View {
         Image(systemName: "circle.inset.filled")
             .symbolRenderingMode(.palette)
-            .foregroundStyle(fillColor.opacity(0.50), strokeColor)
+            .foregroundStyle(fillColor, strokeColor)
     }
 }
 

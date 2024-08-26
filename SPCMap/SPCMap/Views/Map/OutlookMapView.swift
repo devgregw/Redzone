@@ -7,6 +7,7 @@
 
 import MapKit
 import SwiftUI
+import GeoJSON
 
 struct OutlookMapView: View {
     enum Style: String, CaseIterable {
@@ -17,7 +18,7 @@ struct OutlookMapView: View {
     
     @Environment(Context.self) private var context
     
-    let features: [OutlookFeature]?
+    let features: [GeoJSONFeature]?
     private let coordinateSpace: NamedCoordinateSpace = .named("Map")
     
     var body: some View {
@@ -26,8 +27,8 @@ struct OutlookMapView: View {
             Map(position: $context.mapCameraPosition) {
                 if let features {
                     ForEach(features, id: \.id) { feature in
-                        ForEach(feature.multiPolygons, id: \.hashValue) { multiPolygon in
-                            MapMultiPolygon(multiPolygon: multiPolygon)
+                        if let multiPolygon = feature.multiPolygon {
+                            MapMultiPolygon(multiPolygon: multiPolygon, properties: feature.outlookProperties)
                         }
                     }
                 }

@@ -1,5 +1,5 @@
 {
-  "originHash" : "ffa3c132ce0ef0fe3050691e65e920f493fb66080a6bb0ce567c5cf9ea8cde8c",
+  "originHash" : "493d45e0b6186aa50b97458b8463ae2a682fa6ce35caf8c465450d498cda48cb",
   "pins" : [
     {
       "identity" : "aexml",
@@ -51,8 +51,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ileitch/swift-filename-matcher",
       "state" : {
-        "revision" : "17eaeaf60f2703e3ef826de94149c88a78953fd3",
-        "version" : "0.1.1"
+        "revision" : "8cc02e902f651bb5812860011ee13707b9e037df",
+        "version" : "0.1.2"
+      }
+    },
+    {
+      "identity" : "swift-geojson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devgregw/swift-geojson",
+      "state" : {
+        "revision" : "30955daa11f8779a847f7a36d0f487ee32cfe23b",
+        "version" : "1.0.1"
       }
     },
     {
@@ -87,8 +96,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tuist/xcodeproj",
       "state" : {
-        "revision" : "2b14180320b6c709597760ffde7b4c5a4a639153",
-        "version" : "8.23.0"
+        "revision" : "a1ff175a2f3bfbec166f33b264263c55f2149720",
+        "version" : "8.23.2"
       }
     },
     {

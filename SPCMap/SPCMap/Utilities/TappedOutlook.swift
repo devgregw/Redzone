@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import GeoJSON
 
 struct TappedOutlook: Hashable, Identifiable {
-    let highestRisk: OutlookMultiPolygon
+    let highestRisk: GeoJSONFeature
     let isSignificant: Bool
     
     var id: Int {

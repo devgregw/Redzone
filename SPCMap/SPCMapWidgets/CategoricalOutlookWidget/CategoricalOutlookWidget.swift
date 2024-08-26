@@ -7,7 +7,7 @@
 
 import WidgetKit
 import SwiftUI
-import MapKit
+import GeoJSON
 
 struct CategoricalOutlookWidget: Widget {
     let kind: String = "DayOneOutlookWidget"
@@ -34,7 +34,7 @@ extension CategoricalOutlookWidget {
         typealias Intent = OutlookDayConfigurationIntent
         
         enum Entry: TimelineEntry {
-            case outlook(OutlookDay, Date, OutlookFeature?)
+            case outlook(OutlookDay, Date, GeoJSONFeature?)
             case placeholder
             case error(EntryError)
             case snapshot
@@ -77,7 +77,7 @@ extension CategoricalOutlookWidget {
                     return makeTimeline(.error(.noLocation))
                 }
                 let outlook = outlooks.first {
-                    $0.geometry.lazy.compactCast(to: MKMultiPolygon.self).contains { $0.contains(point: .init(location.coordinate)) }
+                    $0.multiPolygon?.contains(point: location.coordinate) ?? false
                 }
                 return makeTimeline(.outlook(configuration.day, .now, outlook))
             default:

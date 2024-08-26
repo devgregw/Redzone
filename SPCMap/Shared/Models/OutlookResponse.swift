@@ -5,14 +5,16 @@
 //  Created by Greg Whatley on 6/19/23.
 //
 
-import MapKit
+import Foundation
+import GeoJSON
 
 class OutlookResponse: Hashable {
-    let features: [OutlookFeature]
+    let features: [GeoJSONFeature]
     let outlookType: OutlookType
     
     init(data: Data, outlookType: OutlookType) throws {
-        features = try MKGeoJSONDecoder().decode(data).compactMap { $0 as? MKGeoJSONFeature }.map(OutlookFeature.init(from:))
+        let object = try GeoJSONDecoder().decode(data, options: .swapLatitudeLongitude)
+        self.features = object.features ?? []
         self.outlookType = outlookType
     }
     
