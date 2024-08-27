@@ -8,6 +8,7 @@
 import XCTest
 import SwiftUI
 import MapKit
+import GeoJSON
 @testable import SPCMap
 
 final class ExtensionTests: XCTestCase {
@@ -59,6 +60,18 @@ final class ExtensionTests: XCTestCase {
         let b: Int? = nil
         XCTAssertFalse(a.isNil)
         XCTAssertTrue(b.isNil)
+    }
+    
+    func testPolygonContains() {
+        let polygon = GeoJSONPolygon([
+            .init(latitude: 0.0, longitude: 0.0),
+            .init(latitude: 10.0, longitude: 0.0),
+            .init(latitude: 10.0, longitude: 10.0),
+            .init(latitude: 0.0, longitude: 10.0),
+            .init(latitude: 0.0, longitude: 0.0)
+        ])
+        XCTAssertTrue(polygon.contains(point: .init(latitude: 5, longitude: 5)))
+        XCTAssertFalse(polygon.contains(point: .init(latitude: 20.0, longitude: 20.0)))
     }
 }
 

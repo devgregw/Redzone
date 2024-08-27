@@ -11,35 +11,18 @@ import MapKit
 
 extension GeoJSONPolygon {
     func contains(point: CLLocationCoordinate2D) -> Bool {
-        let vertices = exterior
-        let count = exterior.count
-        var isInsidePolygon = false
-
-        vertices.enumerated().forEach { (idx, vertex) in
-            let nextVertex = vertices[(idx + 1) % count]
-
-            // The vertices of the edge we are checking.
-            let xp0 = vertex.latitude
-            let yp0 = vertex.longitude
-            let xp1 = nextVertex.latitude
-            let yp1 = nextVertex.longitude
-
-            if ((yp0 <= point.longitude) && (yp1 > point.longitude) || (yp1 <= point.longitude) && (yp0 > point.longitude))
-            {
-                // If so, get the point where it crosses that line. This is a simple solution
-                // to a linear equation. Note that we can't get a division by zero here -
-                // if yp1 == yp0 then the above if be false.
-                let cross = (xp1 - xp0) * (point.longitude - yp0) / (yp1 - yp0) + xp0
-
-                // Finally check if it crosses to the left of our test point. You could equally
-                // do right and it should give the same result.
-                if cross < point.longitude {
-                    isInsidePolygon.toggle()
-                }
+        exterior.dropLast().enumerated().reduce(into: false) { isInside, item in
+            let nextVertex = exterior[item.offset + 1]
+            let x1 = item.element.latitude
+            let y1 = item.element.longitude
+            let x2 = nextVertex.latitude
+            let y2 = nextVertex.longitude
+            
+            if ((y1 > point.longitude) != (y2 > point.longitude)),
+               (point.latitude < (x2 - x1) * (point.longitude - y1) / (y2 - y1) + x1) {
+                isInside.toggle()
             }
         }
-
-        return isInsidePolygon
     }
 }
 
