@@ -7,7 +7,7 @@
 
 import WidgetKit
 import SwiftUI
-import MapKit
+import GeoJSON
 
 struct CombinedRiskWidget: Widget {
     let kind: String = "CombinedRiskWidget"
@@ -34,7 +34,7 @@ extension CombinedRiskWidget {
         typealias Intent = OutlookDayConfigurationIntent
         
         enum Entry: TimelineEntry {
-            case outlook(Date, OutlookDay, OutlookFeature?, (wind: (String, Bool), hail: (String, Bool), tornado: (String, Bool))?)
+            case outlook(Date, OutlookDay, GeoJSONFeature?, (wind: (String, Bool), hail: (String, Bool), tornado: (String, Bool))?)
             case placeholder
             case error(EntryError)
             case snapshot
@@ -55,7 +55,7 @@ extension CombinedRiskWidget {
             }
         }
         
-        func getOutlook(day: OutlookDay, type: OutlookType.ConvectiveOutlookType) async -> [OutlookFeature]? {
+        func getOutlook(day: OutlookDay, type: OutlookType.ConvectiveOutlookType) async -> [GeoJSONFeature]? {
             return switch await OutlookFetcher.fetch(outlook: day == .day1 ? .convective1(type) : .convective2(type)) {
             case .success(let response): response.features.sorted().reversed()
             default: nil
@@ -89,8 +89,8 @@ extension CombinedRiskWidget {
                 guard let location = await WidgetLocation.shared.requestOneTimeLocation() else {
                     return makeTimeline(.error(.noLocation))
                 }
-                let findOutlook = { (feature: OutlookFeature) -> Bool in
-                    feature.geometry.lazy.compactCast(to: MKMultiPolygon.self).contains { $0.contains(point: .init(location.coordinate)) }
+                let findOutlook = { (feature: GeoJSONFeature) -> Bool in
+                    feature.multiPolygon?.contains(point: location.coordinate) ?? false
                 }
                 let outlook = categoricalOutlooks.first(where: findOutlook)
                 let windOutlook = windOutlooks?.first(where: findOutlook)

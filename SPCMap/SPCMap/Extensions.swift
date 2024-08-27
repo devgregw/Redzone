@@ -5,24 +5,21 @@
 //  Created by Greg Whatley on 4/6/24.
 //
 
-import Foundation
-import MapKit
+import CoreLocation
+import GeoJSON
 
-extension Collection where Element == OutlookFeature {
+extension Collection where Element == GeoJSONFeature {
     func findTappedOutlook(at coordinate: CLLocationCoordinate2D) -> TappedOutlook? {
-        let allPolygons = flatMap { $0.multiPolygons }
-        let mapPoint = MKMapPoint(coordinate)
-        
-        let (significantPolygons, otherPolgons) = allPolygons.splitFilter(by: \.dashed)
-        let tappedPolygon = otherPolgons.reversed().first { $0.contains(point: mapPoint) }
-        
-        guard let tappedPolygon else {
-            return .none
+        let (significantFeatures, otherFeatures) = splitFilter(by: \.outlookProperties.isSignificant)
+        guard let tappedFeature = otherFeatures.reversed().first(where: {
+            $0.multiPolygon?.contains(point: coordinate) ?? false
+        }) else {
+            return nil
         }
         
-        let isSignificant = significantPolygons.contains { $0.contains(point: mapPoint) }
+        let isSignificant = significantFeatures.compactMap { $0.multiPolygon }.flattened().contains(point: coordinate)
         
-        return .init(highestRisk: tappedPolygon, isSignificant: isSignificant)
+        return .init(highestRisk: tappedFeature, isSignificant: isSignificant)
     }
 }
 

@@ -5,9 +5,7 @@
 //  Created by Greg Whatley on 4/2/23.
 //
 
-import CoreLocation
 import Foundation
-import MapKit
 
 extension Array {
     @inlinable func filterNot(by keyPath: KeyPath<Element, Bool>) -> Array<Element> {
@@ -16,22 +14,6 @@ extension Array {
     
     @inlinable func first(where keyPath: KeyPath<Element, Bool>) -> Element? {
         self.first { $0[keyPath: keyPath] }
-    }
-    
-    init(unsafeMutablePointer: UnsafeMutablePointer<Element>, count: Int) {
-        var result: [Element] = []
-        var ptr = unsafeMutablePointer
-        for _ in 0 ..< count {
-            result.append(ptr.pointee)
-            ptr = ptr.successor()
-        }
-        self = result
-    }
-}
-
-extension LazySequence {
-    @inlinable func compactCast<T>(to: T.Type) -> [T] {
-        compactMap { $0 as? T }
     }
 }
 
@@ -47,5 +29,9 @@ extension Collection {
             }
         }
         return (true: `true`, false: `false`)
+    }
+    
+    func flattened<ElementOfResult>() -> [ElementOfResult] where Element == [ElementOfResult] {
+        flatMap { $0 }
     }
 }

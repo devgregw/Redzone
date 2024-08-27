@@ -21,7 +21,7 @@ class OutlookFetcher {
                     return .failure(.noData)
                 } else {
                     let response = try OutlookResponse(data: data, outlookType: outlook)
-                    if response.features.first?.geometry.isEmpty ?? true {
+                    if response.features.isEmpty {
                         return .failure(OutlookFetcherError.noData)
                     } else {
                         return .success(response)

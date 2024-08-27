@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import WidgetKit
+import GeoJSON
 
 struct CategoricalOutlookWidgetEntryView : View {
     var entry: CategoricalOutlookWidget.Provider.Entry
@@ -52,7 +53,7 @@ extension CategoricalOutlookWidgetEntryView {
         .font(.caption2)
     }
     
-    @ViewBuilder func outlook(day: OutlookDay, feature: OutlookFeature?) -> some View {
+    @ViewBuilder func outlook(day: OutlookDay, feature: GeoJSONFeature?) -> some View {
         if let feature {
             CategoricalGaugeView(value: feature.outlookProperties.severity.comparableValue, title: feature.outlookProperties.title, day: day)
         } else {
