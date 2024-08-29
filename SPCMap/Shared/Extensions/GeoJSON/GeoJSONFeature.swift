@@ -5,6 +5,7 @@
 //  Created by Greg Whatley on 8/25/24.
 //
 
+import CoreLocation
 import GeoJSON
 
 extension GeoJSONFeature: Identifiable, Comparable {
@@ -37,5 +38,13 @@ extension GeoJSONFeature: Identifiable, Comparable {
             return nil
         }
         return multiPolygon
+    }
+}
+
+extension Sequence where Element == GeoJSONFeature {
+    func first(at location: CLLocationCoordinate2D) -> GeoJSONFeature? {
+        first {
+            $0.multiPolygon?.contains(point: location) ?? false
+        }
     }
 }

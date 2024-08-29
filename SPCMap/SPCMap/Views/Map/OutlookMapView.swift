@@ -10,12 +10,6 @@ import SwiftUI
 import GeoJSON
 
 struct OutlookMapView: View {
-    enum Style: String, CaseIterable {
-        case standard
-        case hybrid
-        case satellite
-    }
-    
     @Environment(Context.self) private var context
     
     let features: [GeoJSONFeature]?

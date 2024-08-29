@@ -30,7 +30,7 @@ struct ContentView: View {
         
         return response
             .features
-            .filterNot(by: \.outlookProperties.isSignificant)
+            .filter(\.outlookProperties.isSignificant.not)
             .lazy
             .sorted()
             .reversed()

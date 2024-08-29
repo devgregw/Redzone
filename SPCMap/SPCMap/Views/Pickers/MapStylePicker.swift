@@ -13,7 +13,7 @@ struct MapStylePicker: View {
     var body: some View {
         @Bindable var context = context
         Picker(selection: $context.mapStyle) {
-            ForEach(OutlookMapView.Style.allCases, id: \.self) {
+            ForEach(MapViewStyle.allCases, id: \.self) {
                 Text($0.rawValue.capitalized)
             }
             .foregroundStyle(.secondary)

@@ -44,13 +44,13 @@ final class ExtensionTests: XCTestCase {
     
     func testArrayFilterNot() {
         let nums = [1, 2, 3, 4, 5, 6]
-        let filter = nums.filterNot(by: \.isEven)
+        let filter = nums.filter(\.isEven.not)
         XCTAssertEqual(filter, [1, 3, 5])
     }
     
     func testSplitFilter() {
         let nums = [1, 2, 3, 4, 5, 6]
-        let split = nums.splitFilter(by: \.isEven)
+        let split = nums.split(on: \.isEven)
         XCTAssertEqual(split.false, [1, 3, 5])
         XCTAssertEqual(split.true, [2, 4, 6])
     }

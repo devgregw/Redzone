@@ -10,7 +10,7 @@ import GeoJSON
 
 extension Collection where Element == GeoJSONFeature {
     func findTappedOutlook(at coordinate: CLLocationCoordinate2D) -> TappedOutlook? {
-        let (significantFeatures, otherFeatures) = splitFilter(by: \.outlookProperties.isSignificant)
+        let (significantFeatures, otherFeatures) = split(on: \.outlookProperties.isSignificant)
         guard let tappedFeature = otherFeatures.reversed().first(where: {
             $0.multiPolygon?.contains(point: coordinate) ?? false
         }) else {

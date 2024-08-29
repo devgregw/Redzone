@@ -13,7 +13,7 @@ class Context {
     static let defaultOutlookType: OutlookType = .convective1(.categorical)
     
     var outlookType: OutlookType = Context.defaultOutlookType
-    var mapStyle: OutlookMapView.Style = .standard
+    var mapStyle: MapViewStyle = .standard
     var selectedOutlook: TappedOutlook? = nil {
         didSet {
             Logger.log(.map, "Tapped outlook: \(selectedOutlook?.highestRisk.outlookProperties.title ?? "nil")")
