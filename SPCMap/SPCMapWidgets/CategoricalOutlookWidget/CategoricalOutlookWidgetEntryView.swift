@@ -10,58 +10,29 @@ import SwiftUI
 import WidgetKit
 import GeoJSON
 
-struct CategoricalOutlookWidgetEntryView : View {
-    var entry: CategoricalOutlookWidget.Provider.Entry
-
-    var dateString: String {
-        entry.date.formatted(date: .numeric, time: .shortened)
-    }
+struct CategoricalOutlookWidgetEntryView: WidgetFoundation.EntryView {
+    typealias Provider = OutlookProvider
+    typealias ErrorContent = WidgetErrorView
     
-    var body: some View {
-        VStack {
-            Spacer()
-            VStack(spacing: 1) {
-                switch entry {
-                case .outlook(let day, _, let feature):
-                    outlook(day: day, feature: feature)
-                        .widgetURL(.init(string: "whatley://spcapp?setOutlook=\(day.rawValue)"))
-                case .snapshot: CategoricalGaugeView(value: 3, title: "Enhanced Risk", day: .day1)
-                case .placeholder: placeholder
-                case .error(let type): WidgetErrorView(error: type)
+    let entry: Provider.Entry
+    
+    func mainContent(data: Provider.EntryData) -> some View {
+        VStack(spacing: 4) {
+            if let value = data.value,
+               let title = data.title {
+                CategoricalGaugeView(value: value, title: title, day: data.day)
+            } else {
+                VStack(spacing: 1) {
+                    NoSevereView()
+                    DayLabel(day: data.day)
                 }
             }
             Spacer()
-            date
-        }
-    }
-}
-
-extension CategoricalOutlookWidgetEntryView {
-    @ViewBuilder var date: some View {
-        HStack(spacing: 2) {
-            if entry.showDate {
-                Image(systemName: "clock")
-                Text(dateString)
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-            } else {
-                Text("Placeholder")
-                    .redacted(reason: .placeholder)
-            }
-        }
-        .foregroundStyle(.secondary)
-        .font(.caption2)
-    }
-    
-    @ViewBuilder func outlook(day: OutlookDay, feature: GeoJSONFeature?) -> some View {
-        if let feature {
-            CategoricalGaugeView(value: feature.outlookProperties.severity.comparableValue, title: feature.outlookProperties.title, day: day)
-        } else {
-            NoSevereView(day: day)
+            DateLabel(entry: entry)
         }
     }
     
-    @ViewBuilder var placeholder: some View {
+    @ViewBuilder var placeholderContent: some View {
         Circle()
             .fill(.secondary.quaternary)
             .frame(width: 50, height: 50)
@@ -76,9 +47,9 @@ extension CategoricalOutlookWidgetEntryView {
 #Preview(as: .systemSmall) {
     CategoricalOutlookWidget()
 } timeline: {
-    CategoricalOutlookWidget.Provider.Entry.snapshot
-    CategoricalOutlookWidget.Provider.Entry.placeholder
-    CategoricalOutlookWidget.Provider.Entry.outlook(.day1, .now, nil)
-    CategoricalOutlookWidget.Provider.Entry.error(.noLocation)
-    CategoricalOutlookWidget.Provider.Entry.error(.unknown)
+    OutlookProvider.Entry.preview
+    OutlookProvider.Entry.placeholder
+    OutlookProvider.Entry.success(.none)
+    OutlookProvider.Entry.error(.noLocation)
+    OutlookProvider.Entry.error(.unknown)
 }

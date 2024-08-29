@@ -13,15 +13,9 @@ struct CategoricalOutlookWidget: Widget {
     let kind: String = "DayOneOutlookWidget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: OutlookDayConfigurationIntent.self, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                CategoricalOutlookWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                CategoricalOutlookWidgetEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
+        AppIntentConfiguration(kind: kind, provider: OutlookProvider()) { entry in
+            CategoricalOutlookWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .supportedFamilies([.systemSmall])
         .configurationDisplayName("Categorical Outlook")
@@ -29,60 +23,52 @@ struct CategoricalOutlookWidget: Widget {
     }
 }
 
-extension CategoricalOutlookWidget {
-    struct Provider: AppIntentTimelineProvider {
-        typealias Intent = OutlookDayConfigurationIntent
-        
-        enum Entry: TimelineEntry {
-            case outlook(OutlookDay, Date, GeoJSONFeature?)
-            case placeholder
-            case error(EntryError)
-            case snapshot
-            
-            var date: Date {
-                return if case .outlook(_, let date, _) = self {
-                    date
-                } else {
-                    .init(timeIntervalSinceNow: -3600)
-                }
-            }
-            
-            var showDate: Bool {
-                return switch self {
-                case .placeholder, .error: false
-                default: true
-                }
-            }
+struct ConvectiveRiskWidget: Widget {
+    var body: some WidgetConfiguration {
+        AppIntentConfiguration(kind: "dev.gregwhatley.spcapp.ConvectiveRiskWidget", provider: OutlookProvider()) {
+            ConvectiveRiskWidgetEntryView(entry: $0)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
-        
-        func placeholder(in context: Context) -> Entry {
-            .placeholder
-        }
-        
-        func snapshot(for configuration: OutlookDayConfigurationIntent, in context: Context) async -> Entry {
-            .snapshot
-        }
+        .supportedFamilies([.accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium])
+        .configurationDisplayName("Convective Risk")
+        .description("Displays the latest day 1 or day 2 convective outlooks at your current location.")
+    }
+}
 
-        func timeline(for configuration: OutlookDayConfigurationIntent, in context: Context) async -> Timeline<Entry> {
-            let makeTimeline = { (entry: Entry) -> Timeline<Entry> in
-                Timeline(entries: [entry], policy: .after(.now.addingTimeInterval(60 * 60 * 2)))
-            }
-            switch await OutlookFetcher.fetch(outlook: .convective1(.categorical)) {
-            case .success(let response):
-                let outlooks = response.features
-                    .filterNot(by: \.outlookProperties.isSignificant)
-                    .sorted()
-                    .reversed()
-                guard let location = await WidgetLocation.shared.requestOneTimeLocation() else {
-                    return makeTimeline(.error(.noLocation))
-                }
-                let outlook = outlooks.first {
-                    $0.multiPolygon?.contains(point: location.coordinate) ?? false
-                }
-                return makeTimeline(.outlook(configuration.day, .now, outlook))
-            default:
-                return makeTimeline(.error(.unknown))
-            }
+struct ConvectiveRiskWidgetEntryView: WidgetFoundation.EntryView {
+    typealias Provider = OutlookProvider
+    typealias ErrorContent = WidgetErrorView
+    
+    @Environment(\.widgetFamily) var widgetFamily
+    let entry: Provider.Entry
+    
+    func mainContent(data: Provider.EntryData) -> some View {
+        switch widgetFamily {
+        case .accessoryRectangular, .accessoryInline:
+            RiskBreakdownWidgetEntryView(entry: entry)
+                .containerBackground(.regularMaterial, for: .widget)
+        case .systemSmall:
+            CategoricalOutlookWidgetEntryView(entry: entry)
+                .containerBackground(.background, for: .widget)
+        case .systemMedium:
+            CombinedRiskWidgetEntryView(entry: entry)
+                .containerBackground(.background, for: .widget)
+        case .accessoryCircular:
+            NoSevereView()
+        default:
+            UnsupportedWidgetFamilyView()
+                .containerBackground(.background, for: .widget)
         }
     }
 }
+
+#if DEBUG
+struct ConvectiveRiskWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        ForEach(WidgetFamily.allCases) { family in
+            ConvectiveRiskWidgetEntryView(entry: .preview)
+                .widgetPreview(as: family)
+        }
+    }
+}
+#endif

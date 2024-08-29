@@ -9,46 +9,37 @@ import Foundation
 import SwiftUI
 import WidgetKit
 
-struct CombinedRiskWidgetEntryView : View {
-    var entry: CombinedRiskWidget.Provider.Entry
-
-    var dateString: String {
-        entry.date.formatted(date: .numeric, time: .shortened)
-    }
+struct CombinedRiskWidgetEntryView: WidgetFoundation.EntryView {
+    typealias Provider = OutlookProvider
+    typealias ErrorContent = WidgetErrorView
     
-    var body: some View {
-        VStack {
-            switch entry {
-            case .outlook(_, let day, let categorical, let risks):
-                VStack {
-                    if let categorical {
-                        content(
-                            day: day,
-                            risk: categorical.outlookProperties.title,
-                            value: categorical.outlookProperties.severity.comparableValue,
-                            risks: risks
-                        )
-                    } else {
-                        Spacer()
-                        NoSevereView(day: day)
-                        Spacer()
-                        date
-                    }
+    var entry: Provider.Entry
+    
+    func mainContent(data: Provider.EntryData) -> some View {
+        VStack(spacing: 4) {
+            if let title = data.title,
+               let value = data.value {
+                content(
+                    day: data.day,
+                    risk: title,
+                    value: value,
+                    risks: data.risks
+                )
+            } else {
+                Spacer()
+                VStack(spacing: 1) {
+                    NoSevereView()
+                    DayLabel(day: data.day)
                 }
-                .widgetURL(.init(string: "whatley://spcapp?setOutlook=\(day.rawValue)"))
-            case .placeholder:
-                content(day: .day1, risk: nil, value: 0, risks: nil)
-            case .error(let type):
-                errorView(type)
-            case .snapshot:
-                content(day: .day1, risk: "Enhanced Risk", value: 3, risks: (wind: ("15% Wind Risk", false), hail: ("15% Hail Risk", false), tornado: ("30% Tornado Risk", true)))
+                Spacer()
+                DateLabel(entry: entry)
             }
         }
     }
 }
 
 extension CombinedRiskWidgetEntryView {
-    func content(day: OutlookDay, risk: String?, value: Double, risks: (wind: (String, Bool), hail: (String, Bool), tornado: (String, Bool))?) -> some View {
+    func content(day: OutlookDay, risk: String?, value: Double, risks: CombinedRisks?) -> some View {
         GeometryReader { proxy in
             HStack {
                 VStack(spacing: 1) {
@@ -66,7 +57,7 @@ extension CombinedRiskWidgetEntryView {
                             .redacted(reason: .placeholder)
                     }
                     Spacer()
-                    date
+                    DateLabel(entry: entry)
                 }
                 .frame(width: proxy.size.width / 2 - 16)
                 .padding(.leading, 4)
@@ -74,9 +65,9 @@ extension CombinedRiskWidgetEntryView {
                     .padding(.horizontal, 4)
                 VStack(alignment: .leading, spacing: 12) {
                     if let risks {
-                        riskRow(image: "wind", label: risks.wind.0, isSignificant: risks.wind.1)
-                        riskRow(image: "cloud.hail", label: risks.hail.0, isSignificant: risks.hail.1)
-                        riskRow(image: "tornado", label: risks.tornado.0, isSignificant: risks.tornado.1)
+                        riskRow(image: "wind", label: "Wind Risk", info: risks.wind)
+                        riskRow(image: "cloud.hail", label: "Hail Risk", info: risks.hail)
+                        riskRow(image: "tornado", label: "Tornado Risk", info: risks.tornado)
                     } else {
                         riskRow(placeholder: "wind")
                         riskRow(placeholder: "cloud.hail")
@@ -91,38 +82,15 @@ extension CombinedRiskWidgetEntryView {
         }
     }
     
-    @ViewBuilder var date: some View {
+    func riskRow(image: String, label: String, info: CombinedRisks.RiskInfo) -> some View {
         HStack(spacing: 2) {
-            if entry.showDate {
-                Image(systemName: "clock")
-                Text(dateString)
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-            } else {
-                Text("Placeholder")
-                    .redacted(reason: .placeholder)
-            }
-        }
-        .foregroundStyle(.secondary)
-        .font(.caption2)
-    }
-    
-    @ViewBuilder func errorView(_ type: EntryError) -> some View {
-        Spacer()
-        WidgetErrorView(error: type)
-        Spacer()
-        date
-    }
-    
-    func riskRow(image: String, label: String, isSignificant: Bool) -> some View {
-        HStack(spacing: 2) {
-            if isSignificant {
+            if info.isSignificant {
                 Image(systemName: "exclamationmark.triangle.fill")
                     .symbolRenderingMode(.multicolor)
             } else {
                 Image(systemName: image)
             }
-            Text(label)
+            Text("\(info.percentage > .zero ? info.percentage.formatted() : "No") \(label)")
         }
     }
     
@@ -138,9 +106,9 @@ extension CombinedRiskWidgetEntryView {
 #Preview(as: .systemMedium) {
     CombinedRiskWidget()
 } timeline: {
-    CombinedRiskWidget.Provider.Entry.snapshot
-    CombinedRiskWidget.Provider.Entry.placeholder
-    CombinedRiskWidget.Provider.Entry.outlook(.now, .day1, nil, nil)
-    CombinedRiskWidget.Provider.Entry.error(.noLocation)
-    CombinedRiskWidget.Provider.Entry.error(.unknown)
+    OutlookProvider.Entry.preview
+    OutlookProvider.Entry.placeholder
+    OutlookProvider.Entry.success(.none)
+    OutlookProvider.Entry.error(.noLocation)
+    OutlookProvider.Entry.error(.unknown)
 }

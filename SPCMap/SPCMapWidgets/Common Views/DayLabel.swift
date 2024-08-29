@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct DayLabel: View {
     let day: OutlookDay
@@ -15,3 +16,12 @@ struct DayLabel: View {
             .font(.footnote)
     }
 }
+
+#if DEBUG
+struct DayLabel_Previews: PreviewProvider {
+    static var previews: some View {
+        DayLabel(day: .day1)
+            .widgetPreview()
+    }
+}
+#endif

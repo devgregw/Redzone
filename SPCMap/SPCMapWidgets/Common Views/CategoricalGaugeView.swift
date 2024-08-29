@@ -39,8 +39,11 @@ struct CategoricalGaugeView: View {
     }
 }
 
-#Preview(as: .systemSmall) {
-    CategoricalOutlookWidget()
-} timeline: {
-    CategoricalOutlookWidget.Provider.Entry.snapshot
+#if DEBUG
+struct CategoricalGaugeView_Previews: PreviewProvider {
+    static var previews: some View {
+        CategoricalGaugeView(value: 3.0, title: "Enhanced Risk", day: .day1)
+            .widgetPreview()
+    }
 }
+#endif
