@@ -6,16 +6,6 @@ public func configure(_ app: Application) async throws {
     app.http.server.configuration.address = .hostname(nil, port: 8081)
     app.http.server.configuration.responseCompression = .enabled
     
-    do {
-        app.http.server.configuration.tlsConfiguration = .makeServerConfiguration(
-            certificateChain: try NIOSSLCertificate.fromPEMFile("/cert/fullchain.pem").map { .certificate($0) },
-            privateKey: .file("/cert/privkey.pem")
-        )
-        app.logger.info("SSL configuration successful")
-    } catch {
-        app.logger.error("SSL configuration failed: \(String(describing: error)), \(error.localizedDescription)")
-    }
-    
     // register routes
     try routes(app)
 }
