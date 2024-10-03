@@ -23,6 +23,10 @@ struct OpenURLModifier: ViewModifier {
     }
 }
 
+extension URL: @retroactive Identifiable {
+    public var id: String { self.absoluteString }
+}
+
 extension View {
     func openURL(url: Binding<URL?>) -> some View {
         modifier(OpenURLModifier(url: url))

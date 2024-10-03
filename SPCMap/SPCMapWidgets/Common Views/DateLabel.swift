@@ -23,7 +23,7 @@ struct DateLabel<D: WidgetFoundation.EntryData>: View {
 #if DEBUG
 struct DateLabel_Previews: PreviewProvider {
     struct PreviewData: WidgetFoundation.EntryData {
-        static var preview: Self = .init()
+        static let preview: Self = .init()
         static let none: Self = .preview
         
         let date: Date = .now

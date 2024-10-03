@@ -62,7 +62,7 @@ struct ContentView: View {
                 }
                 .toolbar(.hidden, for: .navigationBar)
         }
-        .onChange(of: context.outlookType, initial: true) {
+        .onChange(of: context.outlookType, initial: true) { @MainActor in
             await outlookService.load(context.outlookType)
             if Settings.autoMoveCamera {
                 context.moveCamera(centering: outlookService.state)

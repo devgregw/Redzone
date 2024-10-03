@@ -8,9 +8,9 @@
 import Combine
 import SwiftUI
 
-@Observable
+@MainActor @Observable
 class OutlookService {
-    enum State: Hashable {
+    enum State: Hashable, Sendable {
         case noData
         case loading
         case loaded(response: OutlookResponse)
@@ -54,9 +54,7 @@ class OutlookService {
         .eraseToAnyPublisher()
     
     init() {
-        defer {
-            Logger.log(.outlookService, "Initialized")
-        }
+        Logger.log(.locationService, "Initialized")
     }
     
     var state: State = .loading {

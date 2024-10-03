@@ -8,7 +8,7 @@
 import Foundation
 import GeoJSON
 
-class OutlookResponse: Hashable {
+final class OutlookResponse: Hashable, Sendable {
     let features: [GeoJSONFeature]
     let outlookType: OutlookType
     

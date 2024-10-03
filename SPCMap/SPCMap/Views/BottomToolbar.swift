@@ -101,7 +101,7 @@ struct BottomToolbar: ToolbarContent {
                 Image(systemName: "location\(locationService.isUpdatingLocation ? ".fill" : "")")
             }
             
-            Button {
+            Button { @MainActor in
                 await outlookService.refresh()
                 if Settings.autoMoveCamera {
                     self.context.moveCamera(centering: outlookService.state)

@@ -78,8 +78,6 @@
 		FCB2C72C2C7EE22A00F01C81 /* OutlookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C72A2C7EE22A00F01C81 /* OutlookProvider.swift */; };
 		FCB2C72D2C7EE24900F01C81 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
 		FCB2C72F2C7EE49B00F01C81 /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C72E2C7EE49B00F01C81 /* DateLabel.swift */; };
-		FCB2C7332C7EE58300F01C81 /* RiskBreakdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C7302C7EE58300F01C81 /* RiskBreakdownWidget.swift */; };
-		FCB2C7342C7EE58300F01C81 /* RiskBreakdownWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C7312C7EE58300F01C81 /* RiskBreakdownWidgetEntryView.swift */; };
 		FCB2C7362C7EE59800F01C81 /* UnsupportedWidgetFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C7352C7EE59800F01C81 /* UnsupportedWidgetFamilyView.swift */; };
 		FCB386FA2A57A6C300C10FFB /* OutlookSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */; };
 		FCB386FD2A57A9B000C10FFB /* OutlookMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */; };
@@ -104,6 +102,14 @@
 		FCD037512BC4EE8F00986EC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
 		FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDA91532A3E5123003FFD84 /* SafariServices.framework */; };
 		FCDA91562A3E51FE003FFD84 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDA91552A3E51FE003FFD84 /* SafariView.swift */; };
+		FCE29F2C2CAE3BDA00056693 /* ConvectiveRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */; };
+		FCE29F2E2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */; };
+		FCE29F3D2CAE3E7100056693 /* RiskBreakdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F382CAE3E7100056693 /* RiskBreakdownWidget.swift */; };
+		FCE29F3E2CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */; };
+		FCE29F3F2CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */; };
+		FCE29F402CAE3E7100056693 /* CategoricalOutlookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F322CAE3E7100056693 /* CategoricalOutlookWidget.swift */; };
+		FCE29F442CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */; };
+		FCE29F452CAE3EBE00056693 /* CombinedRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F412CAE3EBE00056693 /* CombinedRiskWidget.swift */; };
 		FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
 		FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
 		FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
@@ -122,13 +128,9 @@
 		FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
 		FCF811312BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
 		FCF811322BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
-		FCF811352BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811342BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift */; };
-		FCF811382BC2E3AD005D3552 /* CombinedRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811372BC2E3AD005D3552 /* CombinedRiskWidget.swift */; };
-		FCF8113A2BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811392BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift */; };
 		FCF912EE2BC0F61C005E5A44 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */; };
 		FCF912F02BC0F61C005E5A44 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
 		FCF912F32BC0F61C005E5A44 /* SPCMapWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F22BC0F61C005E5A44 /* SPCMapWidgets.swift */; };
-		FCF912F52BC0F61C005E5A44 /* CategoricalOutlookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F42BC0F61C005E5A44 /* CategoricalOutlookWidget.swift */; };
 		FCF912F72BC0F61E005E5A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF912F62BC0F61E005E5A44 /* Assets.xcassets */; };
 		FCF912FB2BC0F61E005E5A44 /* SPCMapWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FCF912EC2BC0F61C005E5A44 /* SPCMapWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCADE42A3CEE3100944D48 /* SettingsView.swift */; };
@@ -211,14 +213,14 @@
 		};
 		FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 				FCF912FB2BC0F61E005E5A44 /* SPCMapWidgets.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -274,8 +276,6 @@
 		FCAC37A02B79B4B700AEB3C8 /* MapMultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMultiPolygon.swift; sourceTree = "<group>"; };
 		FCB2C72A2C7EE22A00F01C81 /* OutlookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlookProvider.swift; sourceTree = "<group>"; };
 		FCB2C72E2C7EE49B00F01C81 /* DateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
-		FCB2C7302C7EE58300F01C81 /* RiskBreakdownWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskBreakdownWidget.swift; sourceTree = "<group>"; };
-		FCB2C7312C7EE58300F01C81 /* RiskBreakdownWidgetEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskBreakdownWidgetEntryView.swift; sourceTree = "<group>"; };
 		FCB2C7352C7EE59800F01C81 /* UnsupportedWidgetFamilyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsupportedWidgetFamilyView.swift; sourceTree = "<group>"; };
 		FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlookSeverity.swift; sourceTree = "<group>"; };
 		FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookMapView.swift; sourceTree = "<group>"; };
@@ -296,20 +296,24 @@
 		FCD0374F2BC4EE8F00986EC3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FCDA91532A3E5123003FFD84 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		FCDA91552A3E51FE003FFD84 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvectiveRiskWidget.swift; sourceTree = "<group>"; };
+		FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvectiveRiskWidgetEntryView.swift; sourceTree = "<group>"; };
+		FCE29F322CAE3E7100056693 /* CategoricalOutlookWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidget.swift; sourceTree = "<group>"; };
+		FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidgetEntryView.swift; sourceTree = "<group>"; };
+		FCE29F382CAE3E7100056693 /* RiskBreakdownWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskBreakdownWidget.swift; sourceTree = "<group>"; };
+		FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskBreakdownWidgetEntryView.swift; sourceTree = "<group>"; };
+		FCE29F412CAE3EBE00056693 /* CombinedRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidget.swift; sourceTree = "<group>"; };
+		FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidgetEntryView.swift; sourceTree = "<group>"; };
 		FCF8110D2BC1E92D005D3552 /* OutlookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookType.swift; sourceTree = "<group>"; };
 		FCF811102BC1E952005D3552 /* OutlookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcher.swift; sourceTree = "<group>"; };
 		FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcherError.swift; sourceTree = "<group>"; };
 		FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLocation.swift; sourceTree = "<group>"; };
 		FCF8112B2BC1F40D005D3552 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FCF811302BC23593005D3552 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
-		FCF811342BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidgetEntryView.swift; sourceTree = "<group>"; };
-		FCF811372BC2E3AD005D3552 /* CombinedRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidget.swift; sourceTree = "<group>"; };
-		FCF811392BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidgetEntryView.swift; sourceTree = "<group>"; };
 		FCF912EC2BC0F61C005E5A44 /* SPCMapWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SPCMapWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		FCF912F22BC0F61C005E5A44 /* SPCMapWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCMapWidgets.swift; sourceTree = "<group>"; };
-		FCF912F42BC0F61C005E5A44 /* CategoricalOutlookWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidget.swift; sourceTree = "<group>"; };
 		FCF912F62BC0F61E005E5A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCF912F82BC0F61E005E5A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCFCADE42A3CEE3100944D48 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -571,16 +575,6 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
-		FCB2C7322C7EE58300F01C81 /* RiskBreakdownWidget */ = {
-			isa = PBXGroup;
-			children = (
-				FCB2C7302C7EE58300F01C81 /* RiskBreakdownWidget.swift */,
-				FCB2C7312C7EE58300F01C81 /* RiskBreakdownWidgetEntryView.swift */,
-			);
-			name = RiskBreakdownWidget;
-			path = SPCMapWidgets/RiskBreakdownWidget;
-			sourceTree = SOURCE_ROOT;
-		};
 		FCB386FB2A57A99B00C10FFB /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +610,42 @@
 				FCC6D5BA2C7ED8A500B161D5 /* WidgetKit */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCE29F2A2CAE3BCC00056693 /* ConvectiveRiskWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */,
+				FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */,
+			);
+			path = ConvectiveRiskWidget;
+			sourceTree = "<group>";
+		};
+		FCE29F342CAE3E7100056693 /* CategoricalOutlookWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FCE29F322CAE3E7100056693 /* CategoricalOutlookWidget.swift */,
+				FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */,
+			);
+			path = CategoricalOutlookWidget;
+			sourceTree = "<group>";
+		};
+		FCE29F3A2CAE3E7100056693 /* RiskBreakdownWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FCE29F382CAE3E7100056693 /* RiskBreakdownWidget.swift */,
+				FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */,
+			);
+			path = RiskBreakdownWidget;
+			sourceTree = "<group>";
+		};
+		FCE29F432CAE3EBE00056693 /* CombinedRiskWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FCE29F412CAE3EBE00056693 /* CombinedRiskWidget.swift */,
+				FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */,
+			);
+			path = CombinedRiskWidget;
 			sourceTree = "<group>";
 		};
 		FCF8110C2BC1E917005D3552 /* Shared */ = {
@@ -656,34 +686,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FCF811332BC2E030005D3552 /* CategoricalOutlookWidget */ = {
-			isa = PBXGroup;
-			children = (
-				FCF912F42BC0F61C005E5A44 /* CategoricalOutlookWidget.swift */,
-				FCF811342BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift */,
-			);
-			path = CategoricalOutlookWidget;
-			sourceTree = "<group>";
-		};
-		FCF811362BC2E392005D3552 /* CombinedRiskWidget */ = {
-			isa = PBXGroup;
-			children = (
-				FCF811372BC2E3AD005D3552 /* CombinedRiskWidget.swift */,
-				FCF811392BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift */,
-			);
-			path = CombinedRiskWidget;
-			sourceTree = "<group>";
-		};
 		FCF912F12BC0F61C005E5A44 /* SPCMapWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				FCE29F432CAE3EBE00056693 /* CombinedRiskWidget */,
+				FCE29F342CAE3E7100056693 /* CategoricalOutlookWidget */,
+				FCE29F3A2CAE3E7100056693 /* RiskBreakdownWidget */,
+				FCE29F2A2CAE3BCC00056693 /* ConvectiveRiskWidget */,
 				FCAB72F12BC4E7ED00E41256 /* SPCMapWidgets.entitlements */,
 				FCB2C72B2C7EE22A00F01C81 /* Providers */,
 				FCC6D5BB2C7ED8A500B161D5 /* Extensions */,
 				FCAB72C42BC3702000E41256 /* Common Views */,
-				FCF811362BC2E392005D3552 /* CombinedRiskWidget */,
-				FCF811332BC2E030005D3552 /* CategoricalOutlookWidget */,
-				FCB2C7322C7EE58300F01C81 /* RiskBreakdownWidget */,
 				FCF912F22BC0F61C005E5A44 /* SPCMapWidgets.swift */,
 				FCC6D5C12C7ED8BD00B161D5 /* WidgetFoundation.swift */,
 				FCF912F62BC0F61E005E5A44 /* Assets.xcassets */,
@@ -968,15 +981,14 @@
 			files = (
 				FCB2C72F2C7EE49B00F01C81 /* DateLabel.swift in Sources */,
 				FCB2C72C2C7EE22A00F01C81 /* OutlookProvider.swift in Sources */,
-				FCB2C7342C7EE58300F01C81 /* RiskBreakdownWidgetEntryView.swift in Sources */,
 				FCF912F32BC0F61C005E5A44 /* SPCMapWidgets.swift in Sources */,
 				FCD037512BC4EE8F00986EC3 /* Logger.swift in Sources */,
 				FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */,
 				FCF811182BC1EC87005D3552 /* OutlookSeverity.swift in Sources */,
+				FCE29F2E2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift in Sources */,
 				FCC6D5C22C7ED8BD00B161D5 /* WidgetFoundation.swift in Sources */,
 				FCC6D5C52C7ED8D600B161D5 /* CommonURL.swift in Sources */,
 				FCF8111A2BC1EC87005D3552 /* OutlookType.swift in Sources */,
-				FCB2C7332C7EE58300F01C81 /* RiskBreakdownWidget.swift in Sources */,
 				FCAB72C82BC370F900E41256 /* NoSevereView.swift in Sources */,
 				FCC6D5BF2C7ED8A500B161D5 /* TimelineReloadPolicy.swift in Sources */,
 				FCF8111B2BC1EC87005D3552 /* OutlookProperties.swift in Sources */,
@@ -986,6 +998,7 @@
 				FCC6D5BD2C7ED8A500B161D5 /* AppIntentTimelineProvider.swift in Sources */,
 				FCAB72EA2BC383E200E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
 				FCC6D5BC2C7ED8A500B161D5 /* View.swift in Sources */,
+				FCE29F2C2CAE3BDA00056693 /* ConvectiveRiskWidget.swift in Sources */,
 				FC2A898C2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */,
 				FCC6D5C02C7ED8A500B161D5 /* WidgetFamily.swift in Sources */,
 				FCC6D5AF2C7ED4FA00B161D5 /* Bool.swift in Sources */,
@@ -996,18 +1009,20 @@
 				FCC6D5AD2C7ED4FA00B161D5 /* Collection.swift in Sources */,
 				FCAB72D02BC3748400E41256 /* OutlookDay.swift in Sources */,
 				FC2A89892C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */,
-				FCF811382BC2E3AD005D3552 /* CombinedRiskWidget.swift in Sources */,
-				FCF8113A2BC2E3E5005D3552 /* CombinedRiskWidgetEntryView.swift in Sources */,
 				FCF811212BC1F0AD005D3552 /* Color.swift in Sources */,
 				FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */,
 				FCF811242BC1F0AD005D3552 /* Button.swift in Sources */,
+				FCE29F3D2CAE3E7100056693 /* RiskBreakdownWidget.swift in Sources */,
+				FCE29F3E2CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift in Sources */,
+				FCE29F3F2CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift in Sources */,
+				FCE29F402CAE3E7100056693 /* CategoricalOutlookWidget.swift in Sources */,
 				FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */,
 				FCC6D5BE2C7ED8A500B161D5 /* Timeline.swift in Sources */,
-				FCF811352BC2E0E0005D3552 /* CategoricalOutlookWidgetEntryView.swift in Sources */,
 				FCAB72EF2BC4D50500E41256 /* Settings.swift in Sources */,
 				FCB2C7362C7EE59800F01C81 /* UnsupportedWidgetFamilyView.swift in Sources */,
+				FCE29F442CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift in Sources */,
+				FCE29F452CAE3EBE00056693 /* CombinedRiskWidget.swift in Sources */,
 				FCAB72D42BC37A7E00E41256 /* DayLabel.swift in Sources */,
-				FCF912F52BC0F61C005E5A44 /* CategoricalOutlookWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,8 +1202,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SPC-Info.plist";
-				INFOPLIST_KEY_NSLocationUsageDescription = "To show your location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "SPCMap pinpoints your location on the map and uses it to show outlook coverage in your area. SPCMap does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SPCMap pinpoints your location on the map and uses it to show outlook coverage in your area. SPCMap does not send your location over the internet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1223,8 +1238,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SPC-Info.plist";
-				INFOPLIST_KEY_NSLocationUsageDescription = "To show your location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "SPCMap pinpoints your location on the map and uses it to show outlook coverage in your area. SPCMap does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SPCMap pinpoints your location on the map and uses it to show outlook coverage in your area. SPCMap does not send your location over the internet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

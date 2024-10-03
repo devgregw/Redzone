@@ -31,7 +31,7 @@ struct OutlookProvider: WidgetFoundation.Provider, AppIntentTimelineProvider {
     }
     
     func timeline(for configuration: OutlookDayConfigurationIntent, in context: Context) async -> Timeline<Entry> {
-        guard let location = await WidgetLocation.shared.requestOneTimeLocation() else {
+        guard let location = await WidgetLocation.requestLocation() else {
             return .init(entry: .error(.noLocation), policy: .after(hours: 2))
         }
         

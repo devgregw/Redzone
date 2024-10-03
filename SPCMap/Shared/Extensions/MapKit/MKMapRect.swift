@@ -7,7 +7,7 @@
 
 import MapKit
 
-extension MKMapRect: Comparable {
+extension MKMapRect: @retroactive Comparable, @retroactive Equatable {
     public static func < (lhs: MKMapRect, rhs: MKMapRect) -> Bool {
         lhs.area < rhs.area
     }
@@ -15,7 +15,9 @@ extension MKMapRect: Comparable {
     public static func == (lhs: MKMapRect, rhs: MKMapRect) -> Bool {
         lhs.area == rhs.area
     }
-    
+}
+
+extension MKMapRect {
     var area: Double {
         width * height
     }

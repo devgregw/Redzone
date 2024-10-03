@@ -12,8 +12,8 @@ enum OutlookDay: Int, AppEnum {
     case day1 = 1
     case day2 = 2
     
-    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Outlook Day"
-    static var caseDisplayRepresentations: [OutlookDay : DisplayRepresentation] = [
+    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Outlook Day"
+    static let caseDisplayRepresentations: [OutlookDay : DisplayRepresentation] = [
         .day1: "Day 1 (today)",
         .day2: "Day 2 (tomorrow)"
     ]

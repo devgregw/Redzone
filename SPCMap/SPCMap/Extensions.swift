@@ -22,7 +22,3 @@ extension Collection where Element == GeoJSONFeature {
         return .init(highestRisk: tappedFeature, isSignificant: isSignificant)
     }
 }
-
-extension URL: Identifiable {
-    public var id: Int { hashValue }
-}

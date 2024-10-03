@@ -14,27 +14,11 @@ import SwiftUI
 class LocationService: NSObject, CLLocationManagerDelegate {
     private let locationManager: CLLocationManager
     
-    private(set) var lastKnownLocation: CLLocation? = nil {
-        didSet {
-            stateChangePublisher.send(lastKnownLocation)
-        }
-    }
+    private(set) var lastKnownLocation: CLLocation?
     private(set) var isUpdatingLocation: Bool = false
     
-    @ObservationIgnored private let stateChangePublisher = PassthroughSubject<CLLocation?, Never>()
-    @ObservationIgnored lazy var debouncePublisher: AnyPublisher<CLLocation, Never> = stateChangePublisher
-        .filter { $0 != nil }
-        .debounce(for: .seconds(30), scheduler: DispatchQueue.main)
-        .map {
-            Logger.log(.locationService, "Debounce")
-            return $0!
-        }
-        .eraseToAnyPublisher()
-    
-    override init() {
-        defer {
-            Logger.log(.locationService, "Initialized")
-        }
+    @MainActor override init() {
+        Logger.log(.locationService, "Initializing")
         locationManager = .init()
         super.init()
         
@@ -42,6 +26,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager.pausesLocationUpdatesAutomatically = true
         #endif
         locationManager.delegate = self
+        Logger.log(.locationService, "Initialized")
     }
     
     func requestPermission() {

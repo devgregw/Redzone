@@ -7,10 +7,20 @@
 
 import Foundation
 
+func apply<T>(_ value: T, operation: (inout T) -> Void) -> T {
+    var value = value
+    operation(&value)
+    return value
+}
+
 class OutlookFetcher {
-    private static let hostname: String = "https://ct106-spc.pve.gregwhatley.dev:8081"
+    private static let hostname: String = "https://ct106-spc.pve.gregwhatley.dev"
     
-    static let session: URLSession = .init(configuration: .ephemeral)
+    static let session: URLSession = apply(.init(configuration: .ephemeral)) {
+        $0.configuration.waitsForConnectivity = true
+        $0.configuration.timeoutIntervalForRequest = 30
+        $0.configuration.timeoutIntervalForResource = 30
+    }
     
     static func fetch(outlook: OutlookType) async -> Result<OutlookResponse, OutlookFetcherError> {
         if let url = URL(string: "\(hostname)/\(outlook.path)") {

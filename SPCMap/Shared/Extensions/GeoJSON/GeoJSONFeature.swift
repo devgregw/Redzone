@@ -8,7 +8,7 @@
 import CoreLocation
 import GeoJSON
 
-extension GeoJSONFeature: Identifiable, Comparable {
+extension GeoJSONFeature: @retroactive Identifiable, @retroactive Comparable {
     public var id: Int { hashValue }
     
     public static func < (lhs: GeoJSONFeature, rhs: GeoJSONFeature) -> Bool {

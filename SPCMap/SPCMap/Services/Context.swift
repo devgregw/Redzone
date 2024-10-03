@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-@Observable
+@MainActor @Observable
 class Context {
     static let defaultOutlookType: OutlookType = .convective1(.categorical)
     

@@ -8,7 +8,7 @@
 #if DEBUG
 import WidgetKit
 
-extension WidgetFamily: CaseIterable {
+extension WidgetFamily: @retroactive CaseIterable {
     public static let allCases: [WidgetFamily] = [
         .systemSmall,
         .systemMedium,
@@ -20,7 +20,7 @@ extension WidgetFamily: CaseIterable {
     ]
 }
 
-extension WidgetFamily: Identifiable {
+extension WidgetFamily: @retroactive Identifiable {
     public var id: Int { hashValue }
 }
 #endif
