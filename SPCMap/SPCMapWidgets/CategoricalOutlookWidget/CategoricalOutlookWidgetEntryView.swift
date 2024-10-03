@@ -41,15 +41,6 @@ struct CategoricalOutlookWidgetEntryView: WidgetFoundation.EntryView {
             .font(.callout.weight(.medium))
             .minimumScaleFactor(0.5)
             .redacted(reason: .placeholder)
+        
     }
-}
-
-#Preview(as: .systemSmall) {
-    CategoricalOutlookWidget()
-} timeline: {
-    OutlookProvider.Entry.preview
-    OutlookProvider.Entry.placeholder
-    OutlookProvider.Entry.success(.none)
-    OutlookProvider.Entry.error(.noLocation)
-    OutlookProvider.Entry.error(.unknown)
 }

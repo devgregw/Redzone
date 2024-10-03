@@ -104,12 +104,10 @@
 		FCDA91562A3E51FE003FFD84 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDA91552A3E51FE003FFD84 /* SafariView.swift */; };
 		FCE29F2C2CAE3BDA00056693 /* ConvectiveRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */; };
 		FCE29F2E2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */; };
-		FCE29F3D2CAE3E7100056693 /* RiskBreakdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F382CAE3E7100056693 /* RiskBreakdownWidget.swift */; };
 		FCE29F3E2CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */; };
 		FCE29F3F2CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */; };
-		FCE29F402CAE3E7100056693 /* CategoricalOutlookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F322CAE3E7100056693 /* CategoricalOutlookWidget.swift */; };
 		FCE29F442CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */; };
-		FCE29F452CAE3EBE00056693 /* CombinedRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F412CAE3EBE00056693 /* CombinedRiskWidget.swift */; };
+		FCE29F472CAE425C00056693 /* CombinedRisks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F462CAE425C00056693 /* CombinedRisks.swift */; };
 		FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
 		FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
 		FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
@@ -298,12 +296,10 @@
 		FCDA91552A3E51FE003FFD84 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvectiveRiskWidget.swift; sourceTree = "<group>"; };
 		FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvectiveRiskWidgetEntryView.swift; sourceTree = "<group>"; };
-		FCE29F322CAE3E7100056693 /* CategoricalOutlookWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidget.swift; sourceTree = "<group>"; };
 		FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalOutlookWidgetEntryView.swift; sourceTree = "<group>"; };
-		FCE29F382CAE3E7100056693 /* RiskBreakdownWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskBreakdownWidget.swift; sourceTree = "<group>"; };
 		FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskBreakdownWidgetEntryView.swift; sourceTree = "<group>"; };
-		FCE29F412CAE3EBE00056693 /* CombinedRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidget.swift; sourceTree = "<group>"; };
 		FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidgetEntryView.swift; sourceTree = "<group>"; };
+		FCE29F462CAE425C00056693 /* CombinedRisks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRisks.swift; sourceTree = "<group>"; };
 		FCF8110D2BC1E92D005D3552 /* OutlookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookType.swift; sourceTree = "<group>"; };
 		FCF811102BC1E952005D3552 /* OutlookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcher.swift; sourceTree = "<group>"; };
 		FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcherError.swift; sourceTree = "<group>"; };
@@ -624,7 +620,6 @@
 		FCE29F342CAE3E7100056693 /* CategoricalOutlookWidget */ = {
 			isa = PBXGroup;
 			children = (
-				FCE29F322CAE3E7100056693 /* CategoricalOutlookWidget.swift */,
 				FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */,
 			);
 			path = CategoricalOutlookWidget;
@@ -633,7 +628,6 @@
 		FCE29F3A2CAE3E7100056693 /* RiskBreakdownWidget */ = {
 			isa = PBXGroup;
 			children = (
-				FCE29F382CAE3E7100056693 /* RiskBreakdownWidget.swift */,
 				FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */,
 			);
 			path = RiskBreakdownWidget;
@@ -642,7 +636,6 @@
 		FCE29F432CAE3EBE00056693 /* CombinedRiskWidget */ = {
 			isa = PBXGroup;
 			children = (
-				FCE29F412CAE3EBE00056693 /* CombinedRiskWidget.swift */,
 				FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */,
 			);
 			path = CombinedRiskWidget;
@@ -689,6 +682,7 @@
 		FCF912F12BC0F61C005E5A44 /* SPCMapWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				FCE29F462CAE425C00056693 /* CombinedRisks.swift */,
 				FCE29F432CAE3EBE00056693 /* CombinedRiskWidget */,
 				FCE29F342CAE3E7100056693 /* CategoricalOutlookWidget */,
 				FCE29F3A2CAE3E7100056693 /* RiskBreakdownWidget */,
@@ -992,6 +986,7 @@
 				FCAB72C82BC370F900E41256 /* NoSevereView.swift in Sources */,
 				FCC6D5BF2C7ED8A500B161D5 /* TimelineReloadPolicy.swift in Sources */,
 				FCF8111B2BC1EC87005D3552 /* OutlookProperties.swift in Sources */,
+				FCE29F472CAE425C00056693 /* CombinedRisks.swift in Sources */,
 				FCAB72C62BC3702E00E41256 /* CategoricalGaugeView.swift in Sources */,
 				FCF811202BC1ED8C005D3552 /* WidgetLocation.swift in Sources */,
 				FCF8111C2BC1EC87005D3552 /* OutlookResponse.swift in Sources */,
@@ -1012,16 +1007,13 @@
 				FCF811212BC1F0AD005D3552 /* Color.swift in Sources */,
 				FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */,
 				FCF811242BC1F0AD005D3552 /* Button.swift in Sources */,
-				FCE29F3D2CAE3E7100056693 /* RiskBreakdownWidget.swift in Sources */,
 				FCE29F3E2CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift in Sources */,
 				FCE29F3F2CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift in Sources */,
-				FCE29F402CAE3E7100056693 /* CategoricalOutlookWidget.swift in Sources */,
 				FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */,
 				FCC6D5BE2C7ED8A500B161D5 /* Timeline.swift in Sources */,
 				FCAB72EF2BC4D50500E41256 /* Settings.swift in Sources */,
 				FCB2C7362C7EE59800F01C81 /* UnsupportedWidgetFamilyView.swift in Sources */,
 				FCE29F442CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift in Sources */,
-				FCE29F452CAE3EBE00056693 /* CombinedRiskWidget.swift in Sources */,
 				FCAB72D42BC37A7E00E41256 /* DayLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

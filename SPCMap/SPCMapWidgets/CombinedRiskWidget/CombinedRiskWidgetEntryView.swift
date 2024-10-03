@@ -102,13 +102,3 @@ extension CombinedRiskWidgetEntryView {
         }
     }
 }
-
-#Preview(as: .systemMedium) {
-    CombinedRiskWidget()
-} timeline: {
-    OutlookProvider.Entry.preview
-    OutlookProvider.Entry.placeholder
-    OutlookProvider.Entry.success(.none)
-    OutlookProvider.Entry.error(.noLocation)
-    OutlookProvider.Entry.error(.unknown)
-}

@@ -1,27 +1,11 @@
 //
-//  CombinedRiskWidget.swift
-//  SPCMapWidgets
+//  CombinedRisks.swift
+//  SPCMap
 //
-//  Created by Greg Whatley on 4/7/24.
+//  Created by Greg Whatley on 10/2/24.
 //
 
-import WidgetKit
-import SwiftUI
 import GeoJSON
-
-struct CombinedRiskWidget: Widget {
-    let kind: String = "CombinedRiskWidget"
-
-    var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, provider: OutlookProvider()) { entry in
-            CombinedRiskWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
-        }
-        .supportedFamilies([.systemMedium])
-        .configurationDisplayName("Combined Risks")
-        .description("Displays the latest day 1 or day 2 convective categorical, wind, hail, and tornado outlooks at your current location.")
-    }
-}
 
 struct CombinedRisks: CustomStringConvertible, Hashable {
     struct RiskInfo: CustomStringConvertible, Hashable {

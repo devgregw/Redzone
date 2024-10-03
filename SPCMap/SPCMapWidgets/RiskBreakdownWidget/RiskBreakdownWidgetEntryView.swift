@@ -83,23 +83,3 @@ extension RiskBreakdownWidgetEntryView {
         }
     }
 }
-
-#Preview(as: .accessoryInline) {
-    RiskBreakdownWidget()
-} timeline: {
-    OutlookProvider.Entry.preview
-    OutlookProvider.Entry.placeholder
-    OutlookProvider.Entry.success(.none)
-    OutlookProvider.Entry.error(.noLocation)
-    OutlookProvider.Entry.error(.unknown)
-}
-
-#Preview(as: .accessoryRectangular) {
-    RiskBreakdownWidget()
-} timeline: {
-    OutlookProvider.Entry.preview
-    OutlookProvider.Entry.placeholder
-    OutlookProvider.Entry.success(.none)
-    OutlookProvider.Entry.error(.noLocation)
-    OutlookProvider.Entry.error(.unknown)
-}

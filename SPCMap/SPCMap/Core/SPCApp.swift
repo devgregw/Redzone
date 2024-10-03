@@ -32,8 +32,8 @@ struct SPCApp: App {
                     }
                     WidgetCenter.shared.reloadAllTimelines()
                 }
-                .onReceive(locationService.debouncePublisher) {
-                    Settings.lastKnownLocation = $0.coordinate
+                .onChange(of: locationService.lastKnownLocation) {
+                    Settings.lastKnownLocation = locationService.lastKnownLocation?.coordinate
                 }
                 .openURL(url: $bindableContext.presentedURL)
                 .onOpenURL {
