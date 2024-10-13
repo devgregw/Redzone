@@ -22,9 +22,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager = .init()
         super.init()
         
-        #if !os(watchOS)
         locationManager.pausesLocationUpdatesAutomatically = true
-        #endif
         locationManager.delegate = self
         Logger.log(.locationService, "Initialized")
     }
@@ -42,7 +40,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    #if !os(watchOS)
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
         Logger.log(.locationService, "Did pause location updates")
         isUpdatingLocation = false
@@ -57,7 +54,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         Logger.log(.locationService, "Finish deferred updates with error: \(error?.localizedDescription ?? "nil") (\(String(describing: type(of: error))))")
         isUpdatingLocation = false
     }
-    #endif
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastKnownLocation = locations.last

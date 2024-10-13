@@ -9,27 +9,19 @@
 import Foundation
 
 struct WidgetLocation {
-    private final class WidgetLocationDelegate: NSObject, Sendable, CLLocationManagerDelegate {
-        let callback: @Sendable (sending CLLocation?) -> Void
-        
-        init(callback: @Sendable @escaping (CLLocation?) -> Void) {
-            self.callback = callback
-        }
-        
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            Logger.log(.locationService, "Widget location returned \(locations.count)")
-            callback(locations.last)
-        }
-    }
-    
     static func requestLocation() async -> CLLocation? {
-        await withCheckedContinuation { continuation in
-            let locationManager = CLLocationManager()
-            let delegate = WidgetLocationDelegate {
-                continuation.resume(returning: $0)
+        do {
+            for try await update in CLLocationUpdate.liveUpdates().prefix(10) {
+                if let location = update.location {
+                    Logger.log(.locationService, "Widget location: \(String(describing: update.location))")
+                    return location
+                }
             }
-            locationManager.delegate = delegate
-            locationManager.requestLocation()
+            Logger.log(.locationService, "Error: No location update received after 10 attempts.")
+            return nil
+        } catch {
+            Logger.log(.locationService, "Widget location error: \(error.localizedDescription)")
+            return nil
         }
     }
 }
