@@ -41,11 +41,6 @@ import CoreLocation
         userDefaults.setValue(data, forKey: key.rawValue)
     }
     
-    static var lastKnownLocation: CLLocationCoordinate2D? {
-        get { getSetting(key: .lastKnownLocation, defaultValue: .none) }
-        set { setSetting(key: .lastKnownLocation, newValue: newValue) }
-    }
-    
     static var autoMoveCamera: Bool {
         get { getSetting(key: .autoMoveCamera, defaultValue: true) }
         set { setSetting(key: .autoMoveCamera, newValue: newValue) }
@@ -53,6 +48,5 @@ import CoreLocation
 }
 
 enum SettingsKey: String {
-    case lastKnownLocation
     case autoMoveCamera
 }

@@ -32,9 +32,6 @@ struct SPCApp: App {
                     }
                     WidgetCenter.shared.reloadAllTimelines()
                 }
-                .onChange(of: locationService.lastKnownLocation) {
-                    Settings.lastKnownLocation = locationService.lastKnownLocation?.coordinate
-                }
                 .openURL(url: $bindableContext.presentedURL)
                 .onOpenURL {
                     Logger.log(.widgets, "Handling URL: \($0.absoluteString)")
