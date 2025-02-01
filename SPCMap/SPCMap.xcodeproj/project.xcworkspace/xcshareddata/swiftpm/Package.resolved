@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/devgregw/swift-geojson",
       "state" : {
-        "revision" : "30955daa11f8779a847f7a36d0f487ee32cfe23b",
-        "version" : "1.0.1"
+        "revision" : "2707ef9e11d4d1b4eea768602ab71c8d7e7edfcb",
+        "version" : "1.0.2"
       }
     },
     {
