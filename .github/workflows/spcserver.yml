@@ -8,11 +8,12 @@ name: SPCServer - Docker build
 on:
   push:
     branches: [ "main" ]
-    paths: [ "SPCServer/**", ".github/workflows/**" ]
+    paths: [ "SPCServer/**", ".github/workflows/spcserver.yml" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "main" ]
+    paths: [ "SPCServer/**", ".github/workflows/spcserver.yml" ]
 
 env:
   # Use docker.io for Docker Hub if empty
