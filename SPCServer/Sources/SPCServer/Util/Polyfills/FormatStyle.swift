@@ -5,9 +5,9 @@
 //  Created by Greg Whatley on 4/6/24.
 //
 
-#if os(Linux)
-
 import Foundation
+
+#if os(Linux)
 
 protocol FormatStyle : Decodable, Encodable, Hashable {
 
@@ -21,10 +21,16 @@ protocol FormatStyle : Decodable, Encodable, Hashable {
     func format(_ value: Self.FormatInput) -> Self.FormatOutput
 }
 
+typealias PolyfillFormatStyle = SPCServer.FormatStyle
+
 extension Date {
-    func formatted<F>(_ format: F) -> F.FormatOutput where F : FormatStyle, F.FormatInput == Date {
+    func formatted<F>(_ format: F) -> F.FormatOutput where F : SPCServer.FormatStyle, F.FormatInput == Date {
         format.format(self)
     }
 }
+
+#else
+
+typealias PolyfillFormatStyle = Foundation.FormatStyle
 
 #endif

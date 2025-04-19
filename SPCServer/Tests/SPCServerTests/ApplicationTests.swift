@@ -13,12 +13,12 @@ final class ApplicationTests: XCTestCase {
     var app: Application!
     
     override func setUp() async throws {
-        app = .init(.testing)
+        app = try await .make(.testing)
         try await configure(app)
     }
     
-    override func tearDown() {
-        app.shutdown()
+    override func tearDown() async throws {
+        try await app.asyncShutdown()
     }
     
     /* func testCache() async throws {

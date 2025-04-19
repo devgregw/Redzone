@@ -35,12 +35,10 @@ class OutlookDownloader {
         guard let url = URL(string: "https://www.spc.noaa.gov/products/\(outlook != .convective3(probabilistic: true) && outlook.subSection == "Probabilistic" ? "exper/day4-8" : "outlook")/archive/\(timestamp.year)/\(outlook.prefix)_\(timestamp.date)\(fingerprint ?? "").\(outlook.extension)") else {
             throw Abort(.internalServerError, reason: "Unable to parse outlook data URL.")
         }
-        if let cached = await OutlookCache.shared[outlook, fingerprint, timestamp] {
+        if let cached = await OutlookCache.shared.get(outlook, fingerprint, timestamp) {
             return cached
         } else if let data = try await getData(url: url) {
-            await MainActor.run {
-                OutlookCache.shared[outlook, fingerprint, timestamp] = data
-            }
+            await OutlookCache.shared.set(data, outlook, fingerprint, timestamp)
             return data
         } else {
             return nil

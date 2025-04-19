@@ -3,9 +3,10 @@ name: SPCMap
 on:
   push:
     branches: [ "main" ]
-    paths: [ "SPCMap/**", ".github/workflows/**" ]
+    paths: [ "SPCMap/**", ".github/workflows/spcmap.yml" ]
   pull_request:
     branches: [ "main" ]
+    paths: [ "SPCMap/**", ".github/workflows/spcmap.yml" ]
 
 jobs:
   build:

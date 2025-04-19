@@ -8,8 +8,8 @@
 import Foundation
 import Vapor
 
-class OutlookCache {
-    @MainActor static let shared: OutlookCache = OutlookCache()
+actor OutlookCache {
+    static let shared: OutlookCache = OutlookCache()
     
     private struct Key: Hashable {
         let outlook: OutlookType
@@ -27,21 +27,20 @@ class OutlookCache {
         return logger
     }()
     
-    subscript(outlook: OutlookType, fingerprint: String?, timestamp: SPCTimestamp) -> Data? {
-        get {
-            let value = cache[.init(outlook: outlook, fingerprint: fingerprint, timestamp: timestamp)]
-            if value != nil {
-                logger.debug("Cache hit for GeoJSON: \(outlook.prefix) \(outlook.suffix) \(fingerprint ?? "-") \(timestamp.date)")
-            }
-            return value
+    func get(_ outlook: OutlookType, _ fingerprint: String?, _ timestamp: SPCTimestamp) -> Data? {
+        let value = cache[.init(outlook: outlook, fingerprint: fingerprint, timestamp: timestamp)]
+        if value != nil {
+            logger.debug("Cache hit for GeoJSON: \(outlook.prefix) \(outlook.suffix) \(fingerprint ?? "-") \(timestamp.date)")
         }
-        set {
-            if let newValue {
-                cleanup()
-                logger.debug("Caching GeoJSON (\(newValue.count) bytes): \(outlook.prefix) \(outlook.suffix) \(fingerprint ?? "-") \(timestamp.date)")
-            }
-            cache[.init(outlook: outlook, fingerprint: fingerprint, timestamp: timestamp)] = newValue
+        return value
+    }
+    
+    func set(_ data: Data?, _ outlook: OutlookType, _ fingerprint: String?, _ timestamp: SPCTimestamp) {
+        if let data {
+            cleanup()
+            logger.debug("Caching GeoJSON (\(data.count) bytes): \(outlook.prefix) \(outlook.suffix) \(fingerprint ?? "-") \(timestamp.date)")
         }
+        cache[.init(outlook: outlook, fingerprint: fingerprint, timestamp: timestamp)] = data
     }
     
     private func cleanup() {
