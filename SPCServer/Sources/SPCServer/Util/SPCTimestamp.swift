@@ -21,7 +21,7 @@ struct SPCTimestamp: Hashable, Equatable {
         }
     }
 
-    private struct SPCTimeFormat: FormatStyle {
+    private struct SPCTimeFormat: PolyfillFormatStyle {
         typealias FormatInput = Date
         typealias FormatOutput = Int
         
