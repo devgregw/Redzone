@@ -118,16 +118,22 @@ extension OutlookType {
         }
     }
     
+    private func centralTimeToUTC(_ time: Int) -> Int {
+        let tz = TimeZone(identifier: "America/Chicago")!
+        return time + abs(tz.secondsFromGMT() / 36)
+    }
+    
     var issuances: [Int]? {
+        // source: https://www.spc.noaa.gov/misc/about.html#convective_outlook_issuance_times
         switch self {
         case .convective1:
             [2000, 1630, 1300, 1200, 100]
         case .convective2:
-            [1730, 600]
+            [1730, centralTimeToUTC(100)]
         case .convective3:
-            [730]
+            [1930, centralTimeToUTC(230)]
         default:
-            nil
+            [centralTimeToUTC(400)]
         }
     }
 }
