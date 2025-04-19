@@ -1,7 +1,7 @@
 import Foundation
 import Vapor
 
-fileprivate func buildRequestHandler(_ outlook: OutlookType) -> (Request) async throws -> AnyResponse {
+fileprivate func buildRequestHandler(_ outlook: OutlookType) -> @Sendable (Request) async throws -> AnyResponse {
     { req async throws in
         let data: Data = try await OutlookDownloader.fetchOutlook(outlook)
         return AnyResponse(data: data, contentType: "application/geo+json")

@@ -11,7 +11,7 @@ import FoundationNetworking
 #endif
 import Vapor
 
-class URLSessionAdapter {
+actor URLSessionAdapter {
     static let shared: URLSessionAdapter = .init()
     
     private init() {
