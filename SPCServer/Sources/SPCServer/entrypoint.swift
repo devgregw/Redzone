@@ -23,8 +23,9 @@ private extension Vapor.Application {
 @main
 enum Entrypoint {
     static func main() async throws {
-        var env = try Environment.detect()
-        try LoggingSystem.bootstrap(from: &env)
+        let env = try Environment.detect()
+        let terminal = Terminal()
+        LoggingSystem.bootstrap(console: terminal)
         
         let app = try await Application.make(env)
         

@@ -64,6 +64,10 @@ struct SPCTimestamp: Hashable, Equatable {
         referenceDate.timeIntervalSinceNow
     }
     
+    var timeIntervalSince1970: TimeInterval {
+        referenceDate.timeIntervalSince1970
+    }
+    
     static var now: SPCTimestamp {
         SPCTimestamp(referenceDate: .now)
     }

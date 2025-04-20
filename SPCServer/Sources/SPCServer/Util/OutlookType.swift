@@ -133,7 +133,7 @@ extension OutlookType {
         case .convective3:
             [1930, centralTimeToUTC(230)]
         default:
-            [centralTimeToUTC(400)]
+            nil
         }
     }
 }

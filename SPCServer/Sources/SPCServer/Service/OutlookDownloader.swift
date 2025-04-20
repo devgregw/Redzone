@@ -31,14 +31,17 @@ class OutlookDownloader {
         }
     }
     
+    private static let cache: OutlookCacheSwizzler = .init()
+    
     private static func fetchOutlook(_ outlook: OutlookType, timestamp: SPCTimestamp, fingerprint: String?) async throws -> Data? {
-        guard let url = URL(string: "https://www.spc.noaa.gov/products/\(outlook != .convective3(probabilistic: true) && outlook.subSection == "Probabilistic" ? "exper/day4-8" : "outlook")/archive/\(timestamp.year)/\(outlook.prefix)_\(timestamp.date)\(fingerprint ?? "").\(outlook.extension)") else {
+        let path = "products/\(outlook != .convective3(probabilistic: true) && outlook.subSection == "Probabilistic" ? "exper/day4-8" : "outlook")/archive/\(timestamp.year)/\(outlook.prefix)_\(timestamp.date)\(fingerprint ?? "").\(outlook.extension)"
+        guard let url = URL(string: "https://www.spc.noaa.gov/\(path)") else {
             throw Abort(.internalServerError, reason: "Unable to parse outlook data URL.")
         }
-        if let cached = await OutlookCache.shared.get(outlook, fingerprint, timestamp) {
+        if let cached = await cache.get(path: path) {
             return cached
         } else if let data = try await getData(url: url) {
-            await OutlookCache.shared.set(data, outlook, fingerprint, timestamp)
+            await cache.set(data, path: path)
             return data
         } else {
             return nil
