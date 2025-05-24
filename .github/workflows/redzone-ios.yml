@@ -13,12 +13,11 @@ on:
     paths: [ "Redzone-iOS/**", ".github/workflows/redzone-ios.yml" ]
 
 jobs:
-  build:
+  xcode:
+    runs-on: macos-latest
     defaults:
       run:
         working-directory: ./Redzone-iOS
-    name: Xcode build & test
-    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -41,8 +40,8 @@ jobs:
       - name: Resolve package dependencies
         run: xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
       - name: Compile sources
-        run: xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -clonedSourcePackagesDirPath "./.packages"
+        run: xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
       - name: Run tests
-        run: xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -clonedSourcePackagesDirPath "./.packages"
+        run: xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
       - name: Periphery scan
         run: periphery scan --skip-build --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args
