@@ -50,6 +50,8 @@
 		FC70F92529C29F9B006C5DAC /* SPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92429C29F9B006C5DAC /* SPCApp.swift */; };
 		FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92629C29F9B006C5DAC /* ContentView.swift */; };
 		FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC70F92829C29F9D006C5DAC /* Assets.xcassets */; };
+		FC82317B2DE211C000492461 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC82317A2DE211BF00492461 /* String.swift */; };
+		FC82317C2DE211C000492461 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC82317A2DE211BF00492461 /* String.swift */; };
 		FCA57D3F2B9F52F5008DDCE8 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */; };
 		FCAB72C62BC3702E00E41256 /* CategoricalGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72C52BC3702E00E41256 /* CategoricalGaugeView.swift */; };
 		FCAB72C82BC370F900E41256 /* NoSevereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72C72BC370F900E41256 /* NoSevereView.swift */; };
@@ -250,6 +252,7 @@
 		FC70F92629C29F9B006C5DAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC70F92829C29F9D006C5DAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC7A56742C7176E5002DDBEB /* Main.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Main.xctestplan; sourceTree = "<group>"; };
+		FC82317A2DE211BF00492461 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FCA57D3C2B9F52F5008DDCE8 /* SPCMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		FCAB72C52BC3702E00E41256 /* CategoricalGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalGaugeView.swift; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 		FC21F62A29E1BA6400046C79 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				FC82317A2DE211BF00492461 /* String.swift */,
 				FC21F60F29E10BB000046C79 /* Optional.swift */,
 				FCC6D5A92C7ED4FA00B161D5 /* Bool.swift */,
 				FCC6D5A82C7ED4FA00B161D5 /* Collection.swift */,
@@ -926,6 +930,7 @@
 				FCAC37972B7879C300AEB3C8 /* PercentageRiskDetailView.swift in Sources */,
 				FCAB72EB2BC383E300E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
 				FC6DD71D2DB31393002BB563 /* DisclaimerView.swift in Sources */,
+				FC82317B2DE211C000492461 /* String.swift in Sources */,
 				FCC6D5AE2C7ED4FA00B161D5 /* Bool.swift in Sources */,
 				FCAC37952B78793600AEB3C8 /* AboutCategoricalRiskView.swift in Sources */,
 				FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */,
@@ -983,6 +988,7 @@
 			files = (
 				FCB2C72F2C7EE49B00F01C81 /* DateLabel.swift in Sources */,
 				FCB2C72C2C7EE22A00F01C81 /* OutlookProvider.swift in Sources */,
+				FC82317C2DE211C000492461 /* String.swift in Sources */,
 				FCF912F32BC0F61C005E5A44 /* SPCMapWidgets.swift in Sources */,
 				FCD037512BC4EE8F00986EC3 /* Logger.swift in Sources */,
 				FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */,
