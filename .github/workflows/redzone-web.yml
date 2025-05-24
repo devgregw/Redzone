@@ -26,7 +26,7 @@ jobs:
       - name: Compile sources
         run: npm run build
         working-directory: ./redzone-web/functions
-  build:
+  nextjs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
