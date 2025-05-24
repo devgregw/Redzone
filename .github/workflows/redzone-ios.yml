@@ -31,16 +31,18 @@ jobs:
         uses: tecolicom/actions-use-homebrew-tools@v1.3
         with:
           tools: 'periphery'
+      - name: Setup SPM
+        uses: actions/cache@v3
+        with:
+          path: ./.packages
+          key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-packages-
+      - name: Resolve package dependencies
+        run: xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
       - name: Compile sources
-        run: |
-          # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild build-for-testing -scheme "Redzone" -"$filetype_parameter" "$file_to_build" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build"
+        run: xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -clonedSourcePackagesDirPath "./.packages"
       - name: Run tests
-        run: |
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild test-without-building -scheme "Redzone" -"$filetype_parameter" "$file_to_build" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build"
+        run: xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -clonedSourcePackagesDirPath "./.packages"
       - name: Periphery scan
         run: periphery scan --skip-build --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args
