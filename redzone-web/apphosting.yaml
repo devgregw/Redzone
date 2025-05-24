@@ -1,0 +1,14 @@
+# Settings for Backend (on Cloud Run).
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 0
+  # maxInstances: 100
+  # concurrency: 80
+  # cpu: 1
+  # memoryMiB: 512
+  
+env:
+  - variable: NEXT_PUBLIC_MAPKIT_TOKEN
+    secret: NEXT_PUBLIC_MAPKIT_TOKEN
+  - variable: FB_ADMIN_CONFIG_ENCODED
+    secret: FB_ADMIN_CONFIG_ENCODED
