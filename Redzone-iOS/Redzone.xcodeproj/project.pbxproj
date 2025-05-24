@@ -6,24 +6,6 @@
 	objectVersion = 56;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		FC7A56632C7166C7002DDBEB /* Periphery */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = FC7A56642C7166C7002DDBEB /* Build configuration list for PBXAggregateTarget "Periphery" */;
-			buildPhases = (
-				FC7A56672C7166D0002DDBEB /* Run Periphery */,
-			);
-			dependencies = (
-				FC7A56692C7173A4002DDBEB /* PBXTargetDependency */,
-				FC7A566B2C7173A4002DDBEB /* PBXTargetDependency */,
-				FC7A566D2C7173A4002DDBEB /* PBXTargetDependency */,
-				FC7A566F2C7173A4002DDBEB /* PBXTargetDependency */,
-			);
-			name = Periphery;
-			productName = Periphery;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
 		FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745F2A40D8220058EBF7 /* OutlookService.swift */; };
@@ -138,34 +120,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FC7A56682C7173A4002DDBEB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC70F92029C29F9B006C5DAC;
-			remoteInfo = Redzone;
-		};
-		FC7A566A2C7173A4002DDBEB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCAB72DA2BC383B500E41256;
-			remoteInfo = RedzoneIntents;
-		};
-		FC7A566C2C7173A4002DDBEB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCA57D3B2B9F52F5008DDCE8;
-			remoteInfo = RedzoneTests;
-		};
-		FC7A566E2C7173A4002DDBEB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCF912EB2BC0F61C005E5A44;
-			remoteInfo = RedzoneWidgets;
-		};
 		FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
@@ -808,9 +762,6 @@
 					FC70F92029C29F9B006C5DAC = {
 						CreatedOnToolsVersion = 14.2;
 					};
-					FC7A56632C7166C7002DDBEB = {
-						CreatedOnToolsVersion = 15.4;
-					};
 					FCA57D3B2B9F52F5008DDCE8 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = FC70F92029C29F9B006C5DAC;
@@ -833,7 +784,6 @@
 			);
 			mainGroup = FC70F91829C29F9B006C5DAC;
 			packageReferences = (
-				FC7A56602C714C26002DDBEB /* XCRemoteSwiftPackageReference "periphery" */,
 				FCB2C7252C7EE1E800F01C81 /* XCRemoteSwiftPackageReference "swift-geojson" */,
 			);
 			productRefGroup = FC70F92229C29F9B006C5DAC /* Products */;
@@ -844,7 +794,6 @@
 				FCA57D3B2B9F52F5008DDCE8 /* RedzoneTests */,
 				FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */,
 				FCAB72DA2BC383B500E41256 /* RedzoneIntents */,
-				FC7A56632C7166C7002DDBEB /* Periphery */,
 			);
 		};
 /* End PBXProject section */
@@ -884,28 +833,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FC7A56672C7166D0002DDBEB /* Run Periphery */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Periphery";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "case \"$BUILD_DIR\" in \n  *Previews*)\n    exit 0\n    ;;\nesac\n\n#PERIPHERY_ROOT=$BUILD_DIR/../../SourcePackages/checkouts/periphery\n#(cd $PERIPHERY_ROOT && env -i PATH=/usr/bin swift build --skip-update)\n\n/opt/homebrew/bin/periphery scan\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC70F91D29C29F9B006C5DAC /* Sources */ = {
@@ -1035,26 +962,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FC7A56692C7173A4002DDBEB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC70F92029C29F9B006C5DAC /* Redzone */;
-			targetProxy = FC7A56682C7173A4002DDBEB /* PBXContainerItemProxy */;
-		};
-		FC7A566B2C7173A4002DDBEB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCAB72DA2BC383B500E41256 /* RedzoneIntents */;
-			targetProxy = FC7A566A2C7173A4002DDBEB /* PBXContainerItemProxy */;
-		};
-		FC7A566D2C7173A4002DDBEB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCA57D3B2B9F52F5008DDCE8 /* RedzoneTests */;
-			targetProxy = FC7A566C2C7173A4002DDBEB /* PBXContainerItemProxy */;
-		};
-		FC7A566F2C7173A4002DDBEB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */;
-			targetProxy = FC7A566E2C7173A4002DDBEB /* PBXContainerItemProxy */;
-		};
 		FCA57D412B9F52F5008DDCE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FC70F92029C29F9B006C5DAC /* Redzone */;
@@ -1263,24 +1170,6 @@
 			};
 			name = Release;
 		};
-		FC7A56652C7166C7002DDBEB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L586WSJPG7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		FC7A56662C7166C7002DDBEB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L586WSJPG7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		FCA57D422B9F52F5008DDCE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1465,15 +1354,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC7A56642C7166C7002DDBEB /* Build configuration list for PBXAggregateTarget "Periphery" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC7A56652C7166C7002DDBEB /* Debug */,
-				FC7A56662C7166C7002DDBEB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FCA57D442B9F52F5008DDCE8 /* Build configuration list for PBXNativeTarget "RedzoneTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1504,14 +1384,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC7A56602C714C26002DDBEB /* XCRemoteSwiftPackageReference "periphery" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/peripheryapp/periphery";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.21.0;
-			};
-		};
 		FCB2C7252C7EE1E800F01C81 /* XCRemoteSwiftPackageReference "swift-geojson" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devgregw/swift-geojson";
