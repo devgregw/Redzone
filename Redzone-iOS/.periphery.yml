@@ -5,9 +5,4 @@ retain_swift_ui_previews: true
 schemes:
   - Redzone
 strict: true
-targets:
-  - Redzone
-  - RedzoneWidgets
-  - RedzoneTests
-  - RedzoneIntents
 verbose: true
