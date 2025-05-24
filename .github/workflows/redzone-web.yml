@@ -27,10 +27,14 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         run: npx firebase-tools deploy --only functions --dry-run
         working-directory: ./redzone-web/functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Firebase Deploy
         if: ${{ github.event_name == 'push' }}
         run: npx firebase-tools deploy --only functions --message ${{ toJSON(github.event.head_commit.message) }}
         working-directory: ./redzone-web/functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
   nextjs:
     runs-on: ubuntu-latest
     steps:
