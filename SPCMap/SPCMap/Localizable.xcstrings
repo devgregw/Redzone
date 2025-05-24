@@ -38,13 +38,16 @@
     "About" : {
 
     },
-    "About The Enhanced Fujita (EF) Scale" : {
-
-    },
     "About This Risk" : {
 
     },
+    "Always have a plan and be prepared to take action in the event of severe weather. Use these resources to learn more about weather safety and plan ahead." : {
+
+    },
     "Automatically move camera" : {
+
+    },
+    "By continuing to use SPCMap, you assume the entire risk associated with the use of this data." : {
 
     },
     "Categorical" : {
@@ -65,7 +68,13 @@
     "Day 2 (tomorrow)" : {
 
     },
+    "Disclaimer" : {
+
+    },
     "Error" : {
+
+    },
+    "Expired on" : {
 
     },
     "Forecasted at Your Location" : {
@@ -83,13 +92,22 @@
     "Hail" : {
 
     },
+    "I Understand" : {
+
+    },
+    "If you interact with an external link from SPCMap, the privacy policy of that website will apply." : {
+
+    },
+    "Invalid URL!" : {
+
+    },
+    "Issued on" : {
+
+    },
     "Map Style" : {
 
     },
     "National Weather Service" : {
-
-    },
-    "National Weather Service Safety Tips" : {
 
     },
     "No data available" : {
@@ -110,6 +128,9 @@
     "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense." : {
 
     },
+    "Privacy" : {
+
+    },
     "Probabilistic" : {
 
     },
@@ -123,6 +144,9 @@
 
     },
     "Safety" : {
+
+    },
+    "Safety & Disclaimers" : {
 
     },
     "Select Outlook Day" : {
@@ -140,16 +164,19 @@
     "Significant Severe" : {
 
     },
-    "SPC Forecast Discussion" : {
+    "SPCMap and all data provided herein by the NWS are provided “as-is,” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability or fitness for a particular purpose. In no event should I nor the NWS be liable to you or to any third party for any direct, indirect, incidental, consequential, special, or exemplary damages or lost profit resulting from any use or misuse of this data." : {
+
+    },
+    "SPCMap displays and represents publicly available data from the National Weather Service, primarily from its Storm Prediction Center (SPC) office. The SPCMap app and I, Gregory Whatley, are neither endorsed by nor affiliated with the National Weather Service or any other United States federal government organization." : {
+
+    },
+    "SPCMap does not collect and store any of your personal information. You may choose to share your current location with SPCMap, which it uses to show your location on the map and provide information about outlooks covering your location. This processing is done exclusively on your device. Lock Screen & Home Screen widgets require location services, but the remaining features of SPCMap will remain functional if you choose to not share your location." : {
 
     },
     "Storm Prediction Center" : {
 
     },
     "Tapped Outlook" : {
-
-    },
-    "The Enhanced Fujita (EF) Scale" : {
 
     },
     "Tornado" : {
@@ -167,6 +194,12 @@
           }
         }
       }
+    },
+    "Valid from" : {
+
+    },
+    "Valid until" : {
+
     },
     "Wind" : {
 

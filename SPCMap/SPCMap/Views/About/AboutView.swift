@@ -13,9 +13,7 @@ struct AboutView: View {
     var body: some View {
         List {
             Section("Data Source") {
-                Button {
-                    context.presentedURL = URL(string: "https://spc.noaa.gov")!
-                } label: {
+                Link(destination: URL(string: "https://spc.noaa.gov")!) {
                     HStack(alignment: .center) {
                         Image("NOAALogo")
                             .resizable()
@@ -42,16 +40,13 @@ struct AboutView: View {
             
             RiskLevelLinksView()
             
-            Section("Safety") {
-                Button {
-                    context.presentedURL = URL(string: "https://www.weather.gov/safety/")!
+            Section("Safety & Disclaimers") {
+                NavigationLink {
+                    DisclaimerView(launch: false)
                 } label: {
-                    HStack {
-                        Label("National Weather Service Safety Tips", systemImage: "staroflife")
-                        Spacer()
-                        Image(systemName: "arrow.up.forward.square")
-                    }
+                    Label("Disclaimer", systemImage: "briefcase")
                 }
+                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", systemImage: "staroflife")
             }
         }
         .scrollContentBackground(.visible)
@@ -61,7 +56,9 @@ struct AboutView: View {
 }
 
 #Preview {
+    let ctx = Context()
     NavigationStack {
         AboutView()
+            .environment(ctx)
     }
 }

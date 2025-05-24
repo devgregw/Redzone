@@ -120,39 +120,57 @@ struct RiskDetailView: View {
                             }
                         }
                         
-                        Button {
-                            context.presentedURL = URL(string: "https://www.weather.gov/safety/")!
-                        } label: {
-                            HStack {
-                                Label("National Weather Service Safety Tips", systemImage: "staroflife.circle")
-                                Spacer()
-                                Image(systemName: "arrow.up.forward.square")
-                            }
-                        }
+                        LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", systemImage: "staroflife")
                         
                         if properties.title.contains("Tornado") {
-                            Button {
-                                context.presentedURL = URL(string: "https://www.spc.noaa.gov/efscale/")!
-                            } label: {
-                                HStack {
-                                    Label("The Enhanced Fujita (EF) Scale", systemImage: "tornado.circle")
-                                    Spacer()
-                                    Image(systemName: "arrow.up.forward.square")
-                                }
-                            }
+                            LabelledLink("About The Enhanced Fujita (EF) Scale", destination: "https://www.spc.noaa.gov/efscale", systemImage: "tornado")
                         }
                         
                         if let commentaryURL {
-                            Button {
-                                context.presentedURL = commentaryURL
-                            } label: {
-                                HStack {
-                                    Label("SPC Forecast Discussion", systemImage: "exclamationmark.bubble")
+                            LabelledLink("Forecast Discussion", destination: commentaryURL, systemImage: "exclamationmark.bubble")
+                        }
+                    }
+                    
+                    if let issued = properties.issueDate,
+                       let expires = properties.expireDate,
+                       let valid = properties.validDate {
+                        Divider()
+                            .padding(.vertical)
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text("Issued on")
+                                Spacer()
+                                Text(issued, format: .dateTime.year().month().day().hour().minute().timeZone())
+                                    .monospaced()
+                            }
+                            HStack {
+                                if valid...expires ~= .now {
+                                    Text("Valid until")
                                     Spacer()
-                                    Image(systemName: "arrow.up.forward.square")
+                                    Image(systemName: "clock.badge.checkmark.fill")
+                                        .symbolRenderingMode(.multicolor)
+                                    Text(expires, format: .dateTime.year().month().day().hour().minute().timeZone())
+                                        .monospaced()
+                                } else if .now > expires {
+                                    Text("Expired on")
+                                    Spacer()
+                                    Image(systemName: "clock.badge.xmark.fill")
+                                        .symbolRenderingMode(.multicolor)
+                                    Text(expires, format: .dateTime.year().month().day().hour().minute().timeZone())
+                                        .monospaced()
+                                } else {
+                                    Text("Valid from")
+                                    Spacer()
+                                    Image(systemName: "clock.fill")
+                                        .foregroundStyle(.orange)
+                                    Text(expires, format: .dateTime.year().month().day().hour().minute().timeZone())
+                                        .monospaced()
                                 }
                             }
                         }
+                        .foregroundStyle(.foreground.secondary)
+                        .font(.footnote)
                     }
                 }
                 .padding([.horizontal, .bottom])

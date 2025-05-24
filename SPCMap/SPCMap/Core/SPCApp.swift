@@ -16,7 +16,6 @@ struct SPCApp: App {
     
     var body: some Scene {
         WindowGroup {
-            @Bindable var bindableContext = context
             ContentView()
                 .environment(outlookService)
                 .environment(context)
@@ -32,7 +31,6 @@ struct SPCApp: App {
                     }
                     WidgetCenter.shared.reloadAllTimelines()
                 }
-                .openURL(url: $bindableContext.presentedURL)
                 .onOpenURL {
                     Logger.log(.widgets, "Handling URL: \($0.absoluteString)")
                     guard $0.scheme == "whatley",

@@ -22,7 +22,6 @@ class Context {
     }
     var displaySettingsSheet: Bool = false
     var mapCameraPosition: MapCameraPosition = .automatic
-    var presentedURL: URL? = nil
     
     func moveCamera(to coordinate: CLLocationCoordinate2D) {
         Logger.log(.map, "Moving camera to coordinate (lat: \(coordinate.latitude), \(coordinate.longitude))")

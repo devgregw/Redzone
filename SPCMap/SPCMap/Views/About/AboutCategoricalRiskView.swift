@@ -45,15 +45,7 @@ struct AboutCategoricalRiskView: View {
             RiskDescriptionView(title: "High", description: "A severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived derecho system with hurricane-force wind gusts producing widespread damage.", style: .magenta)
             
             Section("Safety") {
-                Button {
-                    context.presentedURL = URL(string: "https://www.weather.gov/safety/")!
-                } label: {
-                    HStack {
-                        Label("National Weather Service Safety Tips", systemImage: "staroflife")
-                        Spacer()
-                        Image(systemName: "arrow.up.forward.square")
-                    }
-                }
+                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", systemImage: "staroflife")
             }
         }
         .scrollContentBackground(.visible)
@@ -62,7 +54,9 @@ struct AboutCategoricalRiskView: View {
 }
 
 #Preview {
+    let ctx = Context()
     NavigationStack {
         AboutCategoricalRiskView()
+            .environment(ctx)
     }
 }
