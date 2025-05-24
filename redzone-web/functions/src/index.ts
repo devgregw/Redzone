@@ -11,9 +11,9 @@ exports.cleanup = onRequest(async (_, res) => {
     logger.debug('Running database cleanup')
     const db = getDatabase()
     const manifestRef = db.ref('manifest')
-    let manifest: Record<string, number> = (await manifestRef.get()).val()
+    const manifest: Record<string, number> = (await manifestRef.get()).val()
     logger.info('Manifest', manifest)
-    let keysToDelete: string[] = []
+    const keysToDelete: string[] = []
 
     const now = Date.now()
     for (const key in manifest) {
