@@ -83,7 +83,7 @@ enum OutlookType: Hashable, Sendable {
         switch self {
         case .convective1(let type), .convective2(let type): return "convective/\(day)/\(type.rawValue)"
         case .convective3(let probabilistic): return "convective/\(day)/\(probabilistic ? "prob" : ConvectiveOutlookType.categorical.rawValue)"
-        case .convective4, .convective5, .convective6, .convective7, .convective8: return "convective/\(day)"
+        case .convective4, .convective5, .convective6, .convective7, .convective8: return "convective/\(day)/prob"
         }
     }
     

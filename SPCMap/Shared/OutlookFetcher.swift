@@ -14,7 +14,7 @@ func apply<T>(_ value: T, operation: (inout T) -> Void) -> T {
 }
 
 class OutlookFetcher {
-    private static let hostname: String = "https://spc.azure.gregwhatley.dev"
+    private static let hostname: String = "https://redzone-main--redzone-6a505.us-central1.hosted.app/api"
     
     static let session: URLSession = apply(.init(configuration: .ephemeral)) {
         $0.configuration.waitsForConnectivity = true
