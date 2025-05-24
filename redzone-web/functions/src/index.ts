@@ -7,7 +7,7 @@ import { initializeApp } from "firebase-admin/app";
 initializeApp()
 
 // exports.cleanup = onSchedule('every day 00:00', async () => {
-exports.cleanup = onRequest(async (_, res) => {
+export const cleanup = onRequest(async (_, res) => {
     logger.debug('Running database cleanup')
     const db = getDatabase()
     const manifestRef = db.ref('manifest')
