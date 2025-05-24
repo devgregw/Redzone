@@ -1,0 +1,61 @@
+name: Redzone - Web
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "redzone-web/**", ".github/workflows/redzone-web.yml" ]
+  pull_request:
+    branches: [ "main" ]
+    paths: [ "redzone-web/**", ".github/workflows/redzone-web.yml" ]
+
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: './redzone-web/functions/package-lock.json'
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./redzone-web/functions
+      - name: Compile sources
+        run: npm run build
+        working-directory: ./redzone-web/functions
+  nextjs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: './redzone-web/package-lock.json'
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./redzone-web/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('./redzone-web/**/package-lock.json', './redzone-web/**/yarn.lock') }}-${{ hashFiles('./redzone-web/**.[jt]s', './redzone-web/**.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('./redzone-web/**/package-lock.json', './redzone-web/**/yarn.lock') }}-
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./redzone-web
+      - name: Opt-out of Next.js telemetry
+        run: npx --no-install next telemetry disable
+        working-directory: ./redzone-web
+      - name: Compile sources
+        env:
+          NEXT_PUBLIC_MAPKIT_TOKEN: ${{ secrets.NEXT_PUBLIC_MAPKIT_TOKEN }}
+          FB_ADMIN_CONFIG_ENCODED: ${{ secrets.FB_ADMIN_CONFIG_ENCODED }}
+        run: npx --no-install next build
+        working-directory: ./redzone-web
