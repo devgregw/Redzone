@@ -33,7 +33,7 @@ jobs:
       - name: Setup SPM
         uses: actions/cache@v3
         with:
-          path: ./.packages
+          path: ./Redzone-iOS/.packages
           key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-packages-
