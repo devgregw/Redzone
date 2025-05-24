@@ -1,0 +1,15 @@
+{
+  "originHash" : "234d07778a9848c100d8a2663a1544900a13c6255e820cda393d29c593df048f",
+  "pins" : [
+    {
+      "identity" : "swift-geojson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devgregw/swift-geojson",
+      "state" : {
+        "revision" : "2707ef9e11d4d1b4eea768602ab71c8d7e7edfcb",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}
