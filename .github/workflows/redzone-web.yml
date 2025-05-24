@@ -9,6 +9,23 @@ on:
     paths: [ "redzone-web/**", ".github/workflows/redzone-web.yml" ]
 
 jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: './redzone-web/functions/package-lock.json'
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./redzone-web/functions
+      - name: Compile sources
+        run: npm run build
+        working-directory: ./redzone-web/functions
   build:
     runs-on: ubuntu-latest
     steps:
@@ -36,12 +53,9 @@ jobs:
       - name: Opt-out of Next.js telemetry
         run: npx --no-install next telemetry disable
         working-directory: ./redzone-web
-      - name: Build with Next.js
+      - name: Compile sources
         env:
           NEXT_PUBLIC_MAPKIT_TOKEN: ${{ secrets.NEXT_PUBLIC_MAPKIT_TOKEN }}
           FB_ADMIN_CONFIG_ENCODED: ${{ secrets.FB_ADMIN_CONFIG_ENCODED }}
         run: npx --no-install next build
         working-directory: ./redzone-web
-      - name: Firebase - Build functions
-        run: npm run build
-        working-directory: ./redzone-web/functions
