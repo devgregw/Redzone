@@ -1,43 +1,14 @@
-name: Redzone - Web
+name: NextJS
 
 on:
-  push:
-    branches: [ "main" ]
-    paths: [ "redzone-web/**", ".github/workflows/redzone-web.yml" ]
+  # Firebase App Hosting already watches pushed to main for its builds.
+  # No need to do our own main branch build & deploy.
   pull_request:
     branches: [ "main" ]
     paths: [ "redzone-web/**", ".github/workflows/redzone-web.yml" ]
 
 jobs:
-  functions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: npm
-          cache-dependency-path: './redzone-web/functions/package-lock.json'
-      - name: Install dependencies
-        run: npm ci
-        working-directory: ./redzone-web/functions
-      # Deployment dry run for PRs
-      - name: Firebase Deploy (dry run)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: npx firebase-tools deploy --only functions --dry-run
-        working-directory: ./redzone-web/functions
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      # Real deployment for main branch pushes
-      - name: Firebase Deploy
-        if: ${{ github.event_name == 'push' }}
-        run: npx firebase-tools deploy --only functions --message ${{ toJSON(github.event.head_commit.message) }}
-        working-directory: ./redzone-web/functions
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-  nextjs:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
