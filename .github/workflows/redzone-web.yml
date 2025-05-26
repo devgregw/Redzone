@@ -1,11 +1,21 @@
-name: NextJS
+name: Redzone - NextJS
 
 on:
   # Firebase App Hosting already watches pushed to main for its builds.
   # No need to do our own main branch build & deploy.
   pull_request:
     branches: [ "main" ]
-    paths: [ "redzone-web/**", ".github/workflows/redzone-web.yml" ]
+    paths: 
+      - redzone-web/src/**
+      - redzone-web/apphosting.yaml
+      - redzone-web/.firebaserc
+      - redzone-web/next.config.ts
+      - redzone-web/firebase.json
+      - redzone-web/package-lock.json
+      - redzone-web/package.json
+      - redzone-web/package.json
+      - redzone-web/tsconfig.json
+      - .github/workflows/redzone-web.yml
 
 jobs:
   build:
