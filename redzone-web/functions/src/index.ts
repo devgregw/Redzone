@@ -5,7 +5,6 @@ import { initializeApp } from "firebase-admin/app";
 
 initializeApp()
 
-// exports.cleanup = onSchedule('every day 00:00', async () => {
 export const cleanup = onSchedule('every day 00:00', async () => {
     const now = new Date()
     logger.debug(`Running database cleanup at ${now.toLocaleString()}`)
@@ -18,7 +17,7 @@ export const cleanup = onSchedule('every day 00:00', async () => {
     
     for (const key in manifest) {
         const timestamp = new Date(manifest[key]).getTime()
-        if (Math.abs(now.getTime() - timestamp) >= 86_400_000) {
+        if (Math.abs(now.getTime() - timestamp) >= 43_200_000) { // 12 hours
             delete manifest[key]
             keysToDelete.push(key.replaceAll('__', '/'))
         }
