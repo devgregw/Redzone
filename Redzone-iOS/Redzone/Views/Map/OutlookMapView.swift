@@ -10,6 +10,7 @@ import SwiftUI
 import GeoJSON
 
 struct OutlookMapView: View {
+    @AppStorage(AppStorageKeys.mapStyle) private var mapStyle: MapViewStyle = .standard
     @Environment(Context.self) private var context
     
     let features: [GeoJSONFeature]?
@@ -39,7 +40,7 @@ struct OutlookMapView: View {
                 MapScaleView()
             }
             .mapControlVisibility(.visible)
-            .mapStyle(context.mapStyle)
+            .mapStyle(mapStyle)
         }
     }
 }

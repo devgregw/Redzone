@@ -55,8 +55,7 @@ struct CurrentLocationButton: View {
                 
                 if !highestRisk.isNil || !errorMessage.isNil {
                     Image(systemName: "chevron.right")
-                        .imageScale(.small)
-                        .fontWeight(.bold)
+                        .font(.callout.bold())
                         .foregroundStyle(.secondary)
                 }
             }
@@ -70,52 +69,24 @@ struct CurrentLocationButton: View {
                 ErrorView(message: errorMessage)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .clippedBackground()
+        .padding([.horizontal, .bottom], 8)
     }
 }
 
-struct BottomToolbar: ToolbarContent {
-    @Environment(OutlookService.self) private var outlookService
-    @Environment(LocationService.self) private var locationService
+struct BottomToolbar: View {
     @Environment(Context.self) private var context
     
     let highestRisk: GeoJSONFeature?
     let isSignificant: Bool
     
-    var body: some ToolbarContent {
+    var body: some View {
         @Bindable var context = context
-        HStack {
-            CurrentLocationButton(highestRisk: highestRisk, isSignificant: isSignificant)
-                .sheet(isPresented: $context.displaySettingsSheet) {
-                    SettingsView()
-                }
-            
-            Spacer()
-            
-            Button {
-                if !locationService.isUpdatingLocation {
-                    locationService.requestPermission()
-                } else if let location = locationService.lastKnownLocation?.coordinate {
-                    context.moveCamera(to: location)
-                }
-            } label: {
-                Image(systemName: "location\(locationService.isUpdatingLocation ? ".fill" : "")")
+        CurrentLocationButton(highestRisk: highestRisk, isSignificant: isSignificant)
+            .sheet(isPresented: $context.displaySettingsSheet) {
+                SettingsView()
             }
-            
-            Button { @MainActor in
-                await outlookService.refresh()
-                if Settings.autoMoveCamera {
-                    self.context.moveCamera(centering: outlookService.state)
-                }
-            } label: {
-                Image(systemName: "arrow.clockwise")
-            }
-            
-            Button {
-                context.displaySettingsSheet.toggle()
-            } label: {
-                Image(systemName: "square.3.layers.3d")
-            }
-        }
-        .toolbarItem(.bottomBar)
     }
 }

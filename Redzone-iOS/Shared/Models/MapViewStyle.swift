@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MapViewStyle: String, CaseIterable {
+enum MapViewStyle: String, Codable, CaseIterable {
     case standard
     case hybrid
     case satellite

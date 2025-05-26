@@ -20,9 +20,8 @@ struct CategoricalGaugeView: View {
                     .font(.body.bold())
                     .multilineTextAlignment(.center)
             } currentValueLabel: {
-                Image("NOAALogo", bundle: .main)
-                    .resizable()
-                    .frame(width: 25, height: 25)
+                Text("\(Int(value))/5")
+                    .font(.footnote.bold())
             } minimumValueLabel: {
                 Text("GT")
             } maximumValueLabel: {

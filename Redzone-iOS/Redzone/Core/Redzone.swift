@@ -10,6 +10,7 @@ import WidgetKit
 
 @main
 struct Redzone: App {
+    @CodedAppStorage(AppStorageKeys.outlookType) private var outlookType: OutlookType = Context.defaultOutlookType
     @State private var outlookService = OutlookService()
     @State private var context = Context()
     @State private var locationService = LocationService()
@@ -42,8 +43,8 @@ struct Redzone: App {
                         return
                     }
                     switch outlookDay {
-                    case .day1: context.outlookType = .convective1(.categorical)
-                    case .day2: context.outlookType = .convective2(.categorical)
+                    case .day1: outlookType = .convective1(.categorical)
+                    case .day2: outlookType = .convective2(.categorical)
                     }
                 }
         }

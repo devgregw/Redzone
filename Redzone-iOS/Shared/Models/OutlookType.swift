@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum OutlookType: Hashable, Sendable {
-    enum ConvectiveOutlookType: String {
+enum OutlookType: Codable, Hashable, Sendable {
+    enum ConvectiveOutlookType: String, Codable {
         case categorical = "cat"
         case wind = "wind"
         case hail = "hail"

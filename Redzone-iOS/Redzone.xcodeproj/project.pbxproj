@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
 		FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745F2A40D8220058EBF7 /* OutlookService.swift */; };
+		FC0EA31D2DE3D90400B3B8CC /* ClippedBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA31C2DE3D90300B3B8CC /* ClippedBackgroundModifier.swift */; };
+		FC0EA31F2DE3FF8200B3B8CC /* CommonURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA31E2DE3FF8200B3B8CC /* CommonURL.swift */; };
+		FC0EA3202DE3FF8200B3B8CC /* CommonURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA31E2DE3FF8200B3B8CC /* CommonURL.swift */; };
+		FC0EA3222DE3FFA800B3B8CC /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */; };
+		FC0EA3242DE3FFB300B3B8CC /* CodedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3232DE3FFB300B3B8CC /* CodedAppStorage.swift */; };
+		FC0EA3262DE4067100B3B8CC /* SafetyLinksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3252DE4067100B3B8CC /* SafetyLinksSection.swift */; };
+		FC0EA32A2DE4B40400B3B8CC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3292DE4B40400B3B8CC /* Extensions.swift */; };
 		FC21F5F129D9C8E800046C79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F029D9C8E800046C79 /* Color.swift */; };
 		FC21F5F829D9F54A00046C79 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F729D9F54A00046C79 /* AboutView.swift */; };
 		FC21F61029E10BB000046C79 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
@@ -27,6 +34,7 @@
 		FC3172972C800474005281F6 /* MapViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3172962C800474005281F6 /* MapViewStyle.swift */; };
 		FC54AFA82BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
 		FC54AFA92BDEBBA100D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
+		FC55043C2DE51208000F3AE5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FC55043B2DE51208000F3AE5 /* PrivacyInfo.xcprivacy */; };
 		FC6DD71D2DB31393002BB563 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DD71C2DB31390002BB563 /* DisclaimerView.swift */; };
 		FC6DD7202DB34CC7002BB563 /* LabelledLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DD71F2DB34CC7002BB563 /* LabelledLink.swift */; };
 		FC70F92529C29F9B006C5DAC /* Redzone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92429C29F9B006C5DAC /* Redzone.swift */; };
@@ -41,14 +49,8 @@
 		FCAB72D02BC3748400E41256 /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
 		FCAB72D42BC37A7E00E41256 /* DayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D32BC37A7E00E41256 /* DayLabel.swift */; };
 		FCAB72D62BC37D8500E41256 /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
-		FCAB72DE2BC383B500E41256 /* RedzoneIntentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72DD2BC383B500E41256 /* RedzoneIntentsExtension.swift */; };
-		FCAB72E42BC383B500E41256 /* RedzoneIntents.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FCAB72E92BC383D400E41256 /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
 		FCAB72EA2BC383E200E41256 /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
 		FCAB72EB2BC383E300E41256 /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
-		FCAB72EC2BC3842600E41256 /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
-		FCAB72EE2BC4D50500E41256 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72ED2BC4D50500E41256 /* Settings.swift */; };
-		FCAB72EF2BC4D50500E41256 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72ED2BC4D50500E41256 /* Settings.swift */; };
 		FCAC37902B75C88300AEB3C8 /* MapStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */; };
 		FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */; };
 		FCAC37952B78793600AEB3C8 /* AboutCategoricalRiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37942B78793600AEB3C8 /* AboutCategoricalRiskView.swift */; };
@@ -81,8 +83,6 @@
 		FCC6D5BF2C7ED8A500B161D5 /* TimelineReloadPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5B82C7ED8A500B161D5 /* TimelineReloadPolicy.swift */; };
 		FCC6D5C02C7ED8A500B161D5 /* WidgetFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5B92C7ED8A500B161D5 /* WidgetFamily.swift */; };
 		FCC6D5C22C7ED8BD00B161D5 /* WidgetFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5C12C7ED8BD00B161D5 /* WidgetFoundation.swift */; };
-		FCC6D5C42C7ED8D600B161D5 /* CommonURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5C32C7ED8D600B161D5 /* CommonURL.swift */; };
-		FCC6D5C52C7ED8D600B161D5 /* CommonURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5C32C7ED8D600B161D5 /* CommonURL.swift */; };
 		FCD037502BC4EE8F00986EC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
 		FCD037512BC4EE8F00986EC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
 		FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDA91532A3E5123003FFD84 /* SafariServices.framework */; };
@@ -106,10 +106,7 @@
 		FCF811222BC1F0AD005D3552 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
 		FCF811242BC1F0AD005D3552 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
 		FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
-		FCF8112C2BC1F40D005D3552 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8112B2BC1F40D005D3552 /* Extensions.swift */; };
 		FCF8112F2BC1F4B8005D3552 /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
-		FCF811312BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
-		FCF811322BC23593005D3552 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF811302BC23593005D3552 /* SharedAssets.xcassets */; };
 		FCF912EE2BC0F61C005E5A44 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */; };
 		FCF912F02BC0F61C005E5A44 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
 		FCF912F32BC0F61C005E5A44 /* RedzoneWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F22BC0F61C005E5A44 /* RedzoneWidgets.swift */; };
@@ -127,13 +124,6 @@
 			remoteGlobalIDString = FC70F92029C29F9B006C5DAC;
 			remoteInfo = Redzone;
 		};
-		FCAB72E22BC383B500E41256 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCAB72DA2BC383B500E41256;
-			remoteInfo = RedzoneIntents;
-		};
 		FCF912F92BC0F61E005E5A44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
@@ -144,27 +134,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FCAB72E82BC383B500E41256 /* Embed ExtensionKit Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
-			dstSubfolderSpec = 16;
-			files = (
-				FCAB72E42BC383B500E41256 /* RedzoneIntents.appex in Embed ExtensionKit Extensions */,
-			);
-			name = "Embed ExtensionKit Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCB2C7482C80029700F01C81 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -181,6 +150,12 @@
 /* Begin PBXFileReference section */
 		FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookResponse.swift; sourceTree = "<group>"; };
 		FC09745F2A40D8220058EBF7 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
+		FC0EA31C2DE3D90300B3B8CC /* ClippedBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippedBackgroundModifier.swift; sourceTree = "<group>"; };
+		FC0EA31E2DE3FF8200B3B8CC /* CommonURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonURL.swift; sourceTree = "<group>"; };
+		FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
+		FC0EA3232DE3FFB300B3B8CC /* CodedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodedAppStorage.swift; sourceTree = "<group>"; };
+		FC0EA3252DE4067100B3B8CC /* SafetyLinksSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyLinksSection.swift; sourceTree = "<group>"; };
+		FC0EA3292DE4B40400B3B8CC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FC21F5F029D9C8E800046C79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FC21F5F729D9F54A00046C79 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		FC21F60F29E10BB000046C79 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
@@ -199,6 +174,10 @@
 		FC3172962C800474005281F6 /* MapViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewStyle.swift; sourceTree = "<group>"; };
 		FC44E04D2A35713400A9925D /* Redzone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Redzone-Info.plist"; sourceTree = "<group>"; };
 		FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
+		FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.debug.xcconfig; sourceTree = "<group>"; };
+		FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.base.xcconfig; sourceTree = "<group>"; };
+		FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.release.xcconfig; sourceTree = "<group>"; };
+		FC55043B2DE51208000F3AE5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		FC6DD71C2DB31390002BB563 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		FC6DD71F2DB34CC7002BB563 /* LabelledLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledLink.swift; sourceTree = "<group>"; };
 		FC70F92129C29F9B006C5DAC /* Redzone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redzone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,10 +194,6 @@
 		FCAB72CF2BC3748400E41256 /* OutlookDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookDay.swift; sourceTree = "<group>"; };
 		FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookDayConfigurationIntent.swift; sourceTree = "<group>"; };
 		FCAB72D32BC37A7E00E41256 /* DayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLabel.swift; sourceTree = "<group>"; };
-		FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = RedzoneIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCAB72DD2BC383B500E41256 /* RedzoneIntentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedzoneIntentsExtension.swift; sourceTree = "<group>"; };
-		FCAB72E12BC383B500E41256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCAB72ED2BC4D50500E41256 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FCAB72F02BC4E7CA00E41256 /* Redzone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redzone.entitlements; sourceTree = "<group>"; };
 		FCAB72F12BC4E7ED00E41256 /* RedzoneWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RedzoneWidgets.entitlements; sourceTree = "<group>"; };
 		FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleModifier.swift; sourceTree = "<group>"; };
@@ -248,7 +223,6 @@
 		FCC6D5B82C7ED8A500B161D5 /* TimelineReloadPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineReloadPolicy.swift; sourceTree = "<group>"; };
 		FCC6D5B92C7ED8A500B161D5 /* WidgetFamily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetFamily.swift; sourceTree = "<group>"; };
 		FCC6D5C12C7ED8BD00B161D5 /* WidgetFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetFoundation.swift; sourceTree = "<group>"; };
-		FCC6D5C32C7ED8D600B161D5 /* CommonURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonURL.swift; sourceTree = "<group>"; };
 		FCD0374F2BC4EE8F00986EC3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FCDA91532A3E5123003FFD84 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvectiveRiskWidget.swift; sourceTree = "<group>"; };
@@ -261,8 +235,6 @@
 		FCF811102BC1E952005D3552 /* OutlookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcher.swift; sourceTree = "<group>"; };
 		FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcherError.swift; sourceTree = "<group>"; };
 		FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLocation.swift; sourceTree = "<group>"; };
-		FCF8112B2BC1F40D005D3552 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		FCF811302BC23593005D3552 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		FCF912EC2BC0F61C005E5A44 /* RedzoneWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RedzoneWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -292,13 +264,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCAB72D82BC383B500E41256 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCF912E92BC0F61C005E5A44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +277,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC0EA32E2DE4B4F600B3B8CC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FCD0374F2BC4EE8F00986EC3 /* Logger.swift */,
+				FC0EA31E2DE3FF8200B3B8CC /* CommonURL.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FC0EA32F2DE4B50000B3B8CC /* OutlookFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				FCF811102BC1E952005D3552 /* OutlookFetcher.swift */,
+				FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */,
+			);
+			path = OutlookFetcher;
+			sourceTree = "<group>";
+		};
 		FC21F5F629D9F37D00046C79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +327,7 @@
 		FC21F61729E11C9F00046C79 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				FC0EA31C2DE3D90300B3B8CC /* ClippedBackgroundModifier.swift */,
 				FC21F61829E11CA800046C79 /* LoadingModifier.swift */,
 				FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */,
 			);
@@ -401,8 +385,11 @@
 		FC26689D2A5D032300CA34DC /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FC0EA3232DE3FFB300B3B8CC /* CodedAppStorage.swift */,
+				FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */,
 				FC70F92429C29F9B006C5DAC /* Redzone.swift */,
 				FC70F92629C29F9B006C5DAC /* ContentView.swift */,
+				FC0EA3292DE4B40400B3B8CC /* Extensions.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -437,9 +424,18 @@
 			path = CoreLocation;
 			sourceTree = "<group>";
 		};
+		FC55043A2DE50F06000F3AE5 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		FC6DD71E2DB34CC2002BB563 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FC0EA3252DE4067100B3B8CC /* SafetyLinksSection.swift */,
 				FC6DD71F2DB34CC7002BB563 /* LabelledLink.swift */,
 			);
 			path = Common;
@@ -454,9 +450,11 @@
 				FC70F92329C29F9B006C5DAC /* Redzone */,
 				FCA57D3D2B9F52F5008DDCE8 /* RedzoneTests */,
 				FCF912F12BC0F61C005E5A44 /* RedzoneWidgets */,
-				FCAB72DC2BC383B500E41256 /* RedzoneIntents */,
 				FC70F92229C29F9B006C5DAC /* Products */,
 				FC4897E329F5890C0045E761 /* Frameworks */,
+				FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */,
+				FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */,
+				FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -466,7 +464,6 @@
 				FC70F92129C29F9B006C5DAC /* Redzone.app */,
 				FCA57D3C2B9F52F5008DDCE8 /* RedzoneTests.xctest */,
 				FCF912EC2BC0F61C005E5A44 /* RedzoneWidgets.appex */,
-				FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -474,6 +471,7 @@
 		FC70F92329C29F9B006C5DAC /* Redzone */ = {
 			isa = PBXGroup;
 			children = (
+				FC55043B2DE51208000F3AE5 /* PrivacyInfo.xcprivacy */,
 				FCAB72F02BC4E7CA00E41256 /* Redzone.entitlements */,
 				FC21F61A29E11FCA00046C79 /* Services */,
 				FC21F61729E11C9F00046C79 /* Modifiers */,
@@ -481,7 +479,6 @@
 				FC26689D2A5D032300CA34DC /* Core */,
 				FC70F92829C29F9D006C5DAC /* Assets.xcassets */,
 				FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */,
-				FCF8112B2BC1F40D005D3552 /* Extensions.swift */,
 			);
 			path = Redzone;
 			sourceTree = "<group>";
@@ -505,16 +502,6 @@
 				FCAB72D32BC37A7E00E41256 /* DayLabel.swift */,
 			);
 			path = "Common Views";
-			sourceTree = "<group>";
-		};
-		FCAB72DC2BC383B500E41256 /* RedzoneIntents */ = {
-			isa = PBXGroup;
-			children = (
-				FCAB72DD2BC383B500E41256 /* RedzoneIntentsExtension.swift */,
-				FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */,
-				FCAB72E12BC383B500E41256 /* Info.plist */,
-			);
-			path = RedzoneIntents;
 			sourceTree = "<group>";
 		};
 		FCAC37932B78790E00AEB3C8 /* About */ = {
@@ -610,15 +597,12 @@
 		FCF8110C2BC1E917005D3552 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FC55043A2DE50F06000F3AE5 /* Intents */,
+				FC0EA32F2DE4B50000B3B8CC /* OutlookFetcher */,
+				FC0EA32E2DE4B4F600B3B8CC /* Core */,
 				FCF8112E2BC1F4A7005D3552 /* Views */,
 				FC21F5F629D9F37D00046C79 /* Extensions */,
 				FCF811172BC1EC77005D3552 /* Models */,
-				FCF811102BC1E952005D3552 /* OutlookFetcher.swift */,
-				FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */,
-				FCC6D5C32C7ED8D600B161D5 /* CommonURL.swift */,
-				FCF811302BC23593005D3552 /* SharedAssets.xcassets */,
-				FCAB72ED2BC4D50500E41256 /* Settings.swift */,
-				FCD0374F2BC4EE8F00986EC3 /* Logger.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -677,14 +661,11 @@
 				FC70F91E29C29F9B006C5DAC /* Frameworks */,
 				FC70F91F29C29F9B006C5DAC /* Resources */,
 				FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */,
-				FCAB72E82BC383B500E41256 /* Embed ExtensionKit Extensions */,
-				FCB2C7482C80029700F01C81 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FCF912FA2BC0F61E005E5A44 /* PBXTargetDependency */,
-				FCAB72E32BC383B500E41256 /* PBXTargetDependency */,
 			);
 			name = Redzone;
 			packageProductDependencies = (
@@ -711,23 +692,6 @@
 			productName = RedzoneTests;
 			productReference = FCA57D3C2B9F52F5008DDCE8 /* RedzoneTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FCAB72DA2BC383B500E41256 /* RedzoneIntents */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FCAB72E52BC383B500E41256 /* Build configuration list for PBXNativeTarget "RedzoneIntents" */;
-			buildPhases = (
-				FCAB72D72BC383B500E41256 /* Sources */,
-				FCAB72D82BC383B500E41256 /* Frameworks */,
-				FCAB72D92BC383B500E41256 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RedzoneIntents;
-			productName = RedzoneIntents;
-			productReference = FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */;
-			productType = "com.apple.product-type.extensionkit-extension";
 		};
 		FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */ = {
 			isa = PBXNativeTarget;
@@ -757,7 +721,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					FC70F92029C29F9B006C5DAC = {
 						CreatedOnToolsVersion = 14.2;
@@ -765,9 +729,6 @@
 					FCA57D3B2B9F52F5008DDCE8 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = FC70F92029C29F9B006C5DAC;
-					};
-					FCAB72DA2BC383B500E41256 = {
-						CreatedOnToolsVersion = 15.3;
 					};
 					FCF912EB2BC0F61C005E5A44 = {
 						CreatedOnToolsVersion = 15.3;
@@ -793,7 +754,6 @@
 				FC70F92029C29F9B006C5DAC /* Redzone */,
 				FCA57D3B2B9F52F5008DDCE8 /* RedzoneTests */,
 				FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */,
-				FCAB72DA2BC383B500E41256 /* RedzoneIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -803,7 +763,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCF811312BC23593005D3552 /* SharedAssets.xcassets in Resources */,
+				FC55043C2DE51208000F3AE5 /* PrivacyInfo.xcprivacy in Resources */,
 				FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */,
 				FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */,
 			);
@@ -816,19 +776,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCAB72D92BC383B500E41256 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCF912EA2BC0F61C005E5A44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FCF912F72BC0F61E005E5A44 /* Assets.xcassets in Resources */,
-				FCF811322BC23593005D3552 /* SharedAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,11 +796,12 @@
 				FC21F5F829D9F54A00046C79 /* AboutView.swift in Sources */,
 				FCC6D5AC2C7ED4FA00B161D5 /* Collection.swift in Sources */,
 				FCB4BBC62A48F93300738C3E /* TappedOutlook.swift in Sources */,
+				FC0EA3222DE3FFA800B3B8CC /* AppStorageKeys.swift in Sources */,
 				FCF811152BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */,
-				FCC6D5C42C7ED8D600B161D5 /* CommonURL.swift in Sources */,
 				FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */,
 				FCAC37A12B79B4B700AEB3C8 /* MapMultiPolygon.swift in Sources */,
 				FCB4BBC82A4919E600738C3E /* ErrorView.swift in Sources */,
+				FC0EA3242DE3FFB300B3B8CC /* CodedAppStorage.swift in Sources */,
 				FC2668A12A5E5A0E00CA34DC /* MKMapRect.swift in Sources */,
 				FCD037502BC4EE8F00986EC3 /* Logger.swift in Sources */,
 				FC0974602A40D8220058EBF7 /* OutlookService.swift in Sources */,
@@ -863,15 +816,15 @@
 				FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */,
 				FCC6D5A52C7ED48300B161D5 /* Context.swift in Sources */,
 				FC2668982A5CFF4D00CA34DC /* MapStylePicker.swift in Sources */,
-				FCF8112C2BC1F40D005D3552 /* Extensions.swift in Sources */,
+				FC0EA31D2DE3D90400B3B8CC /* ClippedBackgroundModifier.swift in Sources */,
 				FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */,
 				FCAC379D2B79ABB800AEB3C8 /* OutlookLegendIconView.swift in Sources */,
 				FC2A898B2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */,
 				FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */,
-				FCAB72EE2BC4D50500E41256 /* Settings.swift in Sources */,
 				FC21F62F29E1BB6A00046C79 /* BottomToolbar.swift in Sources */,
 				FC21F5F129D9C8E800046C79 /* Color.swift in Sources */,
 				FCB4BBC22A48E36100738C3E /* OutlookProperties.swift in Sources */,
+				FC0EA3202DE3FF8200B3B8CC /* CommonURL.swift in Sources */,
 				FCAB72D62BC37D8500E41256 /* OutlookDay.swift in Sources */,
 				FC21F61929E11CA800046C79 /* LoadingModifier.swift in Sources */,
 				FC2A89882C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */,
@@ -886,6 +839,8 @@
 				FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */,
 				FCAC37992B787A0F00AEB3C8 /* RiskLevelLinksView.swift in Sources */,
 				FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */,
+				FC0EA3262DE4067100B3B8CC /* SafetyLinksSection.swift in Sources */,
+				FC0EA32A2DE4B40400B3B8CC /* Extensions.swift in Sources */,
 				FC70F92529C29F9B006C5DAC /* Redzone.swift in Sources */,
 				FC21F62D29E1BA9800046C79 /* OutlookTypePicker.swift in Sources */,
 			);
@@ -896,16 +851,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA57D3F2B9F52F5008DDCE8 /* ExtensionTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCAB72D72BC383B500E41256 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FCAB72DE2BC383B500E41256 /* RedzoneIntentsExtension.swift in Sources */,
-				FCAB72EC2BC3842600E41256 /* OutlookDay.swift in Sources */,
-				FCAB72E92BC383D400E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,7 +867,6 @@
 				FCF811182BC1EC87005D3552 /* OutlookSeverity.swift in Sources */,
 				FCE29F2E2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift in Sources */,
 				FCC6D5C22C7ED8BD00B161D5 /* WidgetFoundation.swift in Sources */,
-				FCC6D5C52C7ED8D600B161D5 /* CommonURL.swift in Sources */,
 				FCF8111A2BC1EC87005D3552 /* OutlookType.swift in Sources */,
 				FCAB72C82BC370F900E41256 /* NoSevereView.swift in Sources */,
 				FCC6D5BF2C7ED8A500B161D5 /* TimelineReloadPolicy.swift in Sources */,
@@ -932,6 +876,7 @@
 				FCF811202BC1ED8C005D3552 /* WidgetLocation.swift in Sources */,
 				FCF8111C2BC1EC87005D3552 /* OutlookResponse.swift in Sources */,
 				FCC6D5BD2C7ED8A500B161D5 /* AppIntentTimelineProvider.swift in Sources */,
+				FC0EA31F2DE3FF8200B3B8CC /* CommonURL.swift in Sources */,
 				FCAB72EA2BC383E200E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
 				FCC6D5BC2C7ED8A500B161D5 /* View.swift in Sources */,
 				FCE29F2C2CAE3BDA00056693 /* ConvectiveRiskWidget.swift in Sources */,
@@ -952,7 +897,6 @@
 				FCE29F3F2CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift in Sources */,
 				FCF811252BC1F0AD005D3552 /* MKMapRect.swift in Sources */,
 				FCC6D5BE2C7ED8A500B161D5 /* Timeline.swift in Sources */,
-				FCAB72EF2BC4D50500E41256 /* Settings.swift in Sources */,
 				FCB2C7362C7EE59800F01C81 /* UnsupportedWidgetFamilyView.swift in Sources */,
 				FCE29F442CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift in Sources */,
 				FCAB72D42BC37A7E00E41256 /* DayLabel.swift in Sources */,
@@ -967,11 +911,6 @@
 			target = FC70F92029C29F9B006C5DAC /* Redzone */;
 			targetProxy = FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */;
 		};
-		FCAB72E32BC383B500E41256 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCAB72DA2BC383B500E41256 /* RedzoneIntents */;
-			targetProxy = FCAB72E22BC383B500E41256 /* PBXContainerItemProxy */;
-		};
 		FCF912FA2BC0F61E005E5A44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */;
@@ -982,6 +921,7 @@
 /* Begin XCBuildConfiguration section */
 		FC70F92D29C29F9D006C5DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1014,7 +954,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1033,6 +975,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = "$(VERSION)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1040,11 +983,13 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = "$(SWIFT)";
 			};
 			name = Debug;
 		};
 		FC70F92E29C29F9D006C5DAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1077,7 +1022,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1090,30 +1037,33 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = "$(VERSION)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = "$(SWIFT)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		FC70F93029C29F9D006C5DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Redzone-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1126,29 +1076,30 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		FC70F93129C29F9D006C5DAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Redzone-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1161,32 +1112,32 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		FCA57D422B9F52F5008DDCE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Redzone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Redzone";
 			};
@@ -1194,91 +1145,34 @@
 		};
 		FCA57D432B9F52F5008DDCE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Redzone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Redzone";
 			};
 			name = Release;
 		};
-		FCAB72E62BC383B500E41256 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RedzoneIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RedzoneIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.intents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FCAB72E72BC383B500E41256 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RedzoneIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RedzoneIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.intents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		FCF912FD2BC0F61E005E5A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
@@ -1291,26 +1185,26 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		FCF912FE2BC0F61E005E5A44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
@@ -1323,12 +1217,12 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1359,15 +1253,6 @@
 			buildConfigurations = (
 				FCA57D422B9F52F5008DDCE8 /* Debug */,
 				FCA57D432B9F52F5008DDCE8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FCAB72E52BC383B500E41256 /* Build configuration list for PBXNativeTarget "RedzoneIntents" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FCAB72E62BC383B500E41256 /* Debug */,
-				FCAB72E72BC383B500E41256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

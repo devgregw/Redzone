@@ -65,14 +65,14 @@ class OutlookService {
     }
     private var lastOutlookType: OutlookType = Context.defaultOutlookType
     
-    @MainActor func load(_ type: OutlookType) async {
+    func load(_ type: OutlookType) async {
         Logger.log(.outlookService, "Fetching outlook \(String(describing: type))")
         lastOutlookType = type
         self.state = .loading
         self.state = .init(fetcherResult: await OutlookFetcher.fetch(outlook: type))
     }
     
-    @MainActor func refresh() async {
+    func refresh() async {
         await load(lastOutlookType)
     }
 }

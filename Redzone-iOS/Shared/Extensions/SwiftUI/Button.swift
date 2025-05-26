@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Button {
-    init(action: @escaping @Sendable () async -> Void, label: () -> Label) {
+    init(action: @escaping @Sendable () async -> Void, @ViewBuilder label: () -> Label) {
         self.init(action: { Task(operation: action) }, label: label)
     }
 }
