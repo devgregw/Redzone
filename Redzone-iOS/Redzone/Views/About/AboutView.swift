@@ -67,6 +67,21 @@ struct AboutView: View {
                 }
                 LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", image: "NWSLogo")
             }
+            
+            Section {
+                HStack {
+                    Text("Version")
+                    Spacer()
+                    Text(Bundle.main.versionString)
+                        .monospaced()
+                }
+            }
+            .foregroundStyle(.primary.opacity(0.8))
+            .font(.footnote)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listRowSpacing(.zero)
+            .listRowInsets(EdgeInsets())
         }
         .scrollContentBackground(.visible)
         .navigationTitle("About")

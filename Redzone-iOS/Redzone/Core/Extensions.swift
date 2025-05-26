@@ -24,3 +24,14 @@ extension Collection where Element == GeoJSONFeature {
         return .init(highestRisk: tappedFeature, isSignificant: isSignificant)
     }
 }
+
+extension Bundle {
+    var versionString: String {
+        guard let shortVersion = infoDictionary?["CFBundleShortVersionString"] as? String,
+              let buildVersion = infoDictionary?["CFBundleVersion"] as? String else {
+            return "--"
+        }
+        
+        return "\(shortVersion) (\(buildVersion))"
+    }
+}
