@@ -90,7 +90,7 @@ extension CombinedRiskWidgetEntryView {
             } else {
                 Image(systemName: image)
             }
-            Text("\(info.percentage > .zero ? info.percentage.formatted() : "No") \(label)")
+            Text("\(info.percentage > .zero ? "\(info.percentage.formatted())%" : "No") \(label)")
         }
     }
     
