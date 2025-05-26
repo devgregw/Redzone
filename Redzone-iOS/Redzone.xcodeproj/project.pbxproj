@@ -150,20 +150,10 @@
 			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				FCAB72E42BC383B500E41256 /* RedzoneIntents.appex in Embed ExtensionKit Extensions */,
+				FC5504392DE50E70000F3AE5 /* RedzoneIntents.appex in Embed ExtensionKit Extensions */,
 			);
 			name = "Embed ExtensionKit Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCB2C7482C80029700F01C81 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 1;
 		};
 		FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -704,7 +694,6 @@
 				FC70F91F29C29F9B006C5DAC /* Resources */,
 				FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */,
 				FCAB72E82BC383B500E41256 /* Embed ExtensionKit Extensions */,
-				FCB2C7482C80029700F01C81 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
