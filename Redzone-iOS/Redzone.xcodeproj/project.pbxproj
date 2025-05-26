@@ -48,9 +48,6 @@
 		FCAB72D02BC3748400E41256 /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
 		FCAB72D42BC37A7E00E41256 /* DayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D32BC37A7E00E41256 /* DayLabel.swift */; };
 		FCAB72D62BC37D8500E41256 /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
-		FCAB72DE2BC383B500E41256 /* RedzoneIntentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72DD2BC383B500E41256 /* RedzoneIntentsExtension.swift */; };
-		FCAB72E42BC383B500E41256 /* RedzoneIntents.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FCAB72E92BC383D400E41256 /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
 		FCAB72EA2BC383E200E41256 /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
 		FCAB72EB2BC383E300E41256 /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
 		FCAB72EC2BC3842600E41256 /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
@@ -127,13 +124,6 @@
 			remoteGlobalIDString = FC70F92029C29F9B006C5DAC;
 			remoteInfo = Redzone;
 		};
-		FCAB72E22BC383B500E41256 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCAB72DA2BC383B500E41256;
-			remoteInfo = RedzoneIntents;
-		};
 		FCF912F92BC0F61E005E5A44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
@@ -144,17 +134,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FCAB72E82BC383B500E41256 /* Embed ExtensionKit Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
-			dstSubfolderSpec = 16;
-			files = (
-				FC5504392DE50E70000F3AE5 /* RedzoneIntents.appex in Embed ExtensionKit Extensions */,
-			);
-			name = "Embed ExtensionKit Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -214,9 +193,6 @@
 		FCAB72CF2BC3748400E41256 /* OutlookDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookDay.swift; sourceTree = "<group>"; };
 		FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookDayConfigurationIntent.swift; sourceTree = "<group>"; };
 		FCAB72D32BC37A7E00E41256 /* DayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLabel.swift; sourceTree = "<group>"; };
-		FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = RedzoneIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCAB72DD2BC383B500E41256 /* RedzoneIntentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedzoneIntentsExtension.swift; sourceTree = "<group>"; };
-		FCAB72E12BC383B500E41256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCAB72F02BC4E7CA00E41256 /* Redzone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redzone.entitlements; sourceTree = "<group>"; };
 		FCAB72F12BC4E7ED00E41256 /* RedzoneWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RedzoneWidgets.entitlements; sourceTree = "<group>"; };
 		FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleModifier.swift; sourceTree = "<group>"; };
@@ -281,13 +257,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FCA57D392B9F52F5008DDCE8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCAB72D82BC383B500E41256 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -454,6 +423,14 @@
 			path = CoreLocation;
 			sourceTree = "<group>";
 		};
+		FC55043A2DE50F06000F3AE5 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		FC6DD71E2DB34CC2002BB563 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,7 +449,6 @@
 				FC70F92329C29F9B006C5DAC /* Redzone */,
 				FCA57D3D2B9F52F5008DDCE8 /* RedzoneTests */,
 				FCF912F12BC0F61C005E5A44 /* RedzoneWidgets */,
-				FCAB72DC2BC383B500E41256 /* RedzoneIntents */,
 				FC70F92229C29F9B006C5DAC /* Products */,
 				FC4897E329F5890C0045E761 /* Frameworks */,
 				FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */,
@@ -487,7 +463,6 @@
 				FC70F92129C29F9B006C5DAC /* Redzone.app */,
 				FCA57D3C2B9F52F5008DDCE8 /* RedzoneTests.xctest */,
 				FCF912EC2BC0F61C005E5A44 /* RedzoneWidgets.appex */,
-				FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -525,16 +500,6 @@
 				FCAB72D32BC37A7E00E41256 /* DayLabel.swift */,
 			);
 			path = "Common Views";
-			sourceTree = "<group>";
-		};
-		FCAB72DC2BC383B500E41256 /* RedzoneIntents */ = {
-			isa = PBXGroup;
-			children = (
-				FCAB72DD2BC383B500E41256 /* RedzoneIntentsExtension.swift */,
-				FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */,
-				FCAB72E12BC383B500E41256 /* Info.plist */,
-			);
-			path = RedzoneIntents;
 			sourceTree = "<group>";
 		};
 		FCAC37932B78790E00AEB3C8 /* About */ = {
@@ -693,13 +658,11 @@
 				FC70F91E29C29F9B006C5DAC /* Frameworks */,
 				FC70F91F29C29F9B006C5DAC /* Resources */,
 				FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */,
-				FCAB72E82BC383B500E41256 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FCF912FA2BC0F61E005E5A44 /* PBXTargetDependency */,
-				FCAB72E32BC383B500E41256 /* PBXTargetDependency */,
 			);
 			name = Redzone;
 			packageProductDependencies = (
@@ -726,23 +689,6 @@
 			productName = RedzoneTests;
 			productReference = FCA57D3C2B9F52F5008DDCE8 /* RedzoneTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FCAB72DA2BC383B500E41256 /* RedzoneIntents */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FCAB72E52BC383B500E41256 /* Build configuration list for PBXNativeTarget "RedzoneIntents" */;
-			buildPhases = (
-				FCAB72D72BC383B500E41256 /* Sources */,
-				FCAB72D82BC383B500E41256 /* Frameworks */,
-				FCAB72D92BC383B500E41256 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RedzoneIntents;
-			productName = RedzoneIntents;
-			productReference = FCAB72DB2BC383B500E41256 /* RedzoneIntents.appex */;
-			productType = "com.apple.product-type.extensionkit-extension";
 		};
 		FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */ = {
 			isa = PBXNativeTarget;
@@ -781,9 +727,6 @@
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = FC70F92029C29F9B006C5DAC;
 					};
-					FCAB72DA2BC383B500E41256 = {
-						CreatedOnToolsVersion = 15.3;
-					};
 					FCF912EB2BC0F61C005E5A44 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -808,7 +751,6 @@
 				FC70F92029C29F9B006C5DAC /* Redzone */,
 				FCA57D3B2B9F52F5008DDCE8 /* RedzoneTests */,
 				FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */,
-				FCAB72DA2BC383B500E41256 /* RedzoneIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -824,13 +766,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FCA57D3A2B9F52F5008DDCE8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCAB72D92BC383B500E41256 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -915,16 +850,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCAB72D72BC383B500E41256 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FCAB72DE2BC383B500E41256 /* RedzoneIntentsExtension.swift in Sources */,
-				FCAB72EC2BC3842600E41256 /* OutlookDay.swift in Sources */,
-				FCAB72E92BC383D400E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCF912E82BC0F61C005E5A44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -981,11 +906,6 @@
 			isa = PBXTargetDependency;
 			target = FC70F92029C29F9B006C5DAC /* Redzone */;
 			targetProxy = FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */;
-		};
-		FCAB72E32BC383B500E41256 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCAB72DA2BC383B500E41256 /* RedzoneIntents */;
-			targetProxy = FCAB72E22BC383B500E41256 /* PBXContainerItemProxy */;
 		};
 		FCF912FA2BC0F61E005E5A44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1240,63 +1160,6 @@
 			};
 			name = Release;
 		};
-		FCAB72E62BC383B500E41256 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(BUILD)";
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RedzoneIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RedzoneIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = "$(VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.intents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = "$(SWIFT)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FCAB72E72BC383B500E41256 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(BUILD)";
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RedzoneIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RedzoneIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = "$(VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.intents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = "$(SWIFT)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		FCF912FD2BC0F61E005E5A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
@@ -1386,15 +1249,6 @@
 			buildConfigurations = (
 				FCA57D422B9F52F5008DDCE8 /* Debug */,
 				FCA57D432B9F52F5008DDCE8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FCAB72E52BC383B500E41256 /* Build configuration list for PBXNativeTarget "RedzoneIntents" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FCAB72E62BC383B500E41256 /* Debug */,
-				FCAB72E72BC383B500E41256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
