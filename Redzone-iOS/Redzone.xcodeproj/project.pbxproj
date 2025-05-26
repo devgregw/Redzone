@@ -205,6 +205,9 @@
 		FC3172962C800474005281F6 /* MapViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewStyle.swift; sourceTree = "<group>"; };
 		FC44E04D2A35713400A9925D /* Redzone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Redzone-Info.plist"; sourceTree = "<group>"; };
 		FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
+		FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.debug.xcconfig; sourceTree = "<group>"; };
+		FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.base.xcconfig; sourceTree = "<group>"; };
+		FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.release.xcconfig; sourceTree = "<group>"; };
 		FC6DD71C2DB31390002BB563 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		FC6DD71F2DB34CC7002BB563 /* LabelledLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledLink.swift; sourceTree = "<group>"; };
 		FC70F92129C29F9B006C5DAC /* Redzone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redzone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -482,6 +485,9 @@
 				FCAB72DC2BC383B500E41256 /* RedzoneIntents */,
 				FC70F92229C29F9B006C5DAC /* Products */,
 				FC4897E329F5890C0045E761 /* Frameworks */,
+				FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */,
+				FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */,
+				FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1002,6 +1008,7 @@
 /* Begin XCBuildConfiguration section */
 		FC70F92D29C29F9D006C5DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1034,6 +1041,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1054,6 +1062,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = "$(VERSION)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1061,12 +1070,13 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = "$(SWIFT)";
 			};
 			name = Debug;
 		};
 		FC70F92E29C29F9D006C5DAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1099,6 +1109,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1113,25 +1124,27 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = "$(VERSION)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		FC70F93029C29F9D006C5DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -1150,23 +1163,24 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		FC70F93129C29F9D006C5DAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -1185,31 +1199,32 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		FCA57D422B9F52F5008DDCE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Redzone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Redzone";
 			};
@@ -1217,19 +1232,20 @@
 		};
 		FCA57D432B9F52F5008DDCE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Redzone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Redzone";
 			};
@@ -1237,9 +1253,10 @@
 		};
 		FCAB72E62BC383B500E41256 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneIntents/Info.plist;
@@ -1252,22 +1269,23 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.intents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		FCAB72E72BC383B500E41256 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneIntents/Info.plist;
@@ -1280,24 +1298,25 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.intents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		FCF912FD2BC0F61E005E5A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
@@ -1310,25 +1329,26 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		FCF912FE2BC0F61E005E5A44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
@@ -1341,12 +1361,12 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = "$(SWIFT)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
