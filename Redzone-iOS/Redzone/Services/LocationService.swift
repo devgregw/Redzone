@@ -16,6 +16,8 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     
     private(set) var lastKnownLocation: CLLocation?
     private(set) var isUpdatingLocation: Bool = false
+    @ObservationIgnored private let locationUpdateSubject = PassthroughSubject<CLLocation?, Never>()
+    @ObservationIgnored private var cancellable: AnyCancellable?
     
     @MainActor override init() {
         Logger.log(.locationService, "Initializing")
@@ -24,6 +26,11 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         
         locationManager.pausesLocationUpdatesAutomatically = true
         locationManager.delegate = self
+        cancellable = locationUpdateSubject
+            .filter { $0 != nil }
+            .throttle(for: .seconds(30), scheduler: DispatchQueue.global(), latest: true)
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.lastKnownLocation, on: self)
         Logger.log(.locationService, "Initialized")
     }
     
@@ -56,6 +63,9 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lastKnownLocation = locations.last
+        if lastKnownLocation.isNil {
+            lastKnownLocation = locations.last
+        }
+        locationUpdateSubject.send(locations.last)
     }
 }

@@ -10,10 +10,8 @@ import MapKit
 
 @MainActor @Observable
 class Context {
-    static let defaultOutlookType: OutlookType = .convective1(.categorical)
-    
-    var outlookType: OutlookType = Context.defaultOutlookType
-    var mapStyle: MapViewStyle = .standard
+    nonisolated static let defaultOutlookType: OutlookType = .convective1(.categorical)
+
     var selectedOutlook: TappedOutlook? = nil {
         didSet {
             Logger.log(.map, "Tapped outlook: \(selectedOutlook?.highestRisk.outlookProperties.title ?? "nil")")

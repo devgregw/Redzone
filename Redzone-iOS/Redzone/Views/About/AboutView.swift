@@ -14,28 +14,47 @@ struct AboutView: View {
         List {
             Section("Data Source") {
                 Link(destination: URL(string: "https://spc.noaa.gov")!) {
-                    HStack(alignment: .center) {
-                        Image("NOAALogo")
+                    HStack {
+                        Image("NWSLogo", bundle: .main)
                             .resizable()
-                            .frame(width: 65, height: 65)
+                            .frame(width: 40, height: 40)
                             .accessibilityHidden(true)
-                        
                         VStack(alignment: .leading) {
                             Text("National Weather Service")
                                 .font(.headline)
                             Text("Storm Prediction Center")
-                                .font(.headline)
-                            Text("U.S. Department of Commerce")
-                                .font(.caption.bold().lowercaseSmallCaps())
+                                .font(.subheadline)
                         }
                         .foregroundStyle(Color(.label))
-                        .accessibilityElement(children: .combine)
-                        
                         Spacer()
-                        
                         Image(systemName: "arrow.up.forward.square")
+                            .accessibilityHidden(true)
                     }
+                    .accessibilityElement(children: .combine)
                 }
+                
+                Link(destination: URL(string: "https://noaa.gov")!) {
+                    HStack {
+                        Image("NOAALogo", bundle: .main)
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .accessibilityHidden(true)
+                        VStack(alignment: .leading) {
+                            Text("National Oceanic and Atmospheric Administration")
+                                .font(.headline)
+                        }
+                        .foregroundStyle(Color(.label))
+                        Spacer()
+                        Image(systemName: "arrow.up.forward.square")
+                            .accessibilityHidden(true)
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+            }
+            
+            Section {
+                LabelledLink("About Me", destination: "https://gregwhatley.dev", image: "Me")
+                LabelledLink("Source Code", destination: "https://github.com/devgregw/Redzone", image: "GitHubLogo")
             }
             
             RiskLevelLinksView()
@@ -46,7 +65,7 @@ struct AboutView: View {
                 } label: {
                     Label("Disclaimer", systemImage: "briefcase")
                 }
-                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", systemImage: "staroflife")
+                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", image: "NWSLogo")
             }
         }
         .scrollContentBackground(.visible)

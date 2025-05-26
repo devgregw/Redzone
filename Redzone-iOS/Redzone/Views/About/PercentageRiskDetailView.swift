@@ -55,12 +55,7 @@ struct PercentageRiskDetailView: View {
                 }
             }
             
-            Section("Safety") {
-                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", systemImage: "staroflife")
-                if title.contains("Tornado") {
-                    LabelledLink("About The Enhanced Fujita (EF) Scale", destination: "https://www.spc.noaa.gov/efscale", systemImage: "tornado")
-                }
-            }
+            SafetyLinksSection(tornado: title.contains("Tornado"))
         }
         .scrollContentBackground(.visible)
         .navigationTitle(title)

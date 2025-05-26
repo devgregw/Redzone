@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocationUI
 
 struct SettingsView: View {
-    @State private var autoMoveCamera: Bool = Settings.autoMoveCamera
+    @AppStorage(AppStorageKeys.autoMoveCamera) private var autoMoveCamera = true
     
     var body: some View {
         NavigationStack {
@@ -22,9 +22,6 @@ struct SettingsView: View {
                 Section {
                     Toggle(isOn: $autoMoveCamera) {
                         Label("Automatically move camera", systemImage: "camera.metering.center.weighted.average")
-                    }
-                    .onChange(of: autoMoveCamera) {
-                        Settings.autoMoveCamera = autoMoveCamera
                     }
                 }
                 

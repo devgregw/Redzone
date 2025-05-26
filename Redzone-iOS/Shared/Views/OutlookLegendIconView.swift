@@ -24,6 +24,7 @@ struct OutlookLegendIconView: View {
         Image(systemName: "circle.inset.filled")
             .symbolRenderingMode(.palette)
             .foregroundStyle(fillColor, strokeColor)
+            .padding(2)
     }
 }
 

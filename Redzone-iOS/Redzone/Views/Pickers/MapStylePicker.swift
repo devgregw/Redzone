@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct MapStylePicker: View {
-    @Environment(Context.self) private var context
+    @AppStorage(AppStorageKeys.mapStyle) private var mapStyle: MapViewStyle = .standard
     
     var body: some View {
-        @Bindable var context = context
-        Picker(selection: $context.mapStyle) {
+        Picker(selection: $mapStyle) {
             ForEach(MapViewStyle.allCases, id: \.self) {
                 Text($0.rawValue.capitalized)
             }
@@ -27,5 +26,4 @@ struct MapStylePicker: View {
 
 #Preview {
     MapStylePicker()
-        .environment(Context())
 }

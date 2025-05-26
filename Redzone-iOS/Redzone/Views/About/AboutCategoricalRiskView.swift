@@ -44,9 +44,7 @@ struct AboutCategoricalRiskView: View {
             
             RiskDescriptionView(title: "High", description: "A severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived derecho system with hurricane-force wind gusts producing widespread damage.", style: .magenta)
             
-            Section("Safety") {
-                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", systemImage: "staroflife")
-            }
+            SafetyLinksSection(tornado: false)
         }
         .scrollContentBackground(.visible)
         .navigationTitle("Categorical")

@@ -11,10 +11,12 @@ import SwiftUI
 import GeoJSON
 
 struct ContentView: View {
+    @CodedAppStorage(AppStorageKeys.outlookType) private var outlookType: OutlookType = Context.defaultOutlookType
+    @AppStorage(AppStorageKeys.autoMoveCamera) private var autoMoveCamera = true
     @Environment(OutlookService.self) private var outlookService
     @Environment(LocationService.self) private var locationService
     @Environment(Context.self) private var context
-    
+        
     private var isLoading: Bool {
         outlookService.state == .loading
     }
@@ -51,26 +53,58 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            @Bindable var context = context
-            OutlookMapView(features: outlookFeatures)
-                .loading(if: isLoading)
-                .animation(.easeInOut.speed(1.25), value: isLoading)
-                .sheet(item: $context.selectedOutlook) { outlook in
-                    let atCurrentLocation = currentLocationOutlook?.outlookProperties.severity == outlook.highestRisk.outlookProperties.severity
-                    RiskDetailView(feature: outlook.highestRisk, isSignificant: outlook.isSignificant, atCurrentLocation: atCurrentLocation)
-                }
-                .toolbar(.hidden, for: .navigationBar)
-        }
-        .onChange(of: context.outlookType, initial: true) { @MainActor in
-            await outlookService.load(context.outlookType)
-            if Settings.autoMoveCamera {
-                context.moveCamera(centering: outlookService.state)
+        @Bindable var context = context
+        OutlookMapView(features: outlookFeatures)
+            .safeAreaInset(edge: .bottom) {
+                CurrentLocationButton(highestRisk: currentLocationOutlook, isSignificant: currentLocationSignificant)
             }
-        }
-        .toolbar {
-            BottomToolbar(highestRisk: currentLocationOutlook, isSignificant: currentLocationSignificant)
-        }
+            .loading(if: isLoading)
+            .sheet(item: $context.selectedOutlook) { outlook in
+                let atCurrentLocation = currentLocationOutlook?.outlookProperties.severity == outlook.highestRisk.outlookProperties.severity
+                RiskDetailView(feature: outlook.highestRisk, isSignificant: outlook.isSignificant, atCurrentLocation: atCurrentLocation)
+            }
+            .toolbar(.hidden, for: .navigationBar, .bottomBar)
+            .overlay(alignment: .topTrailing) {
+                VStack(spacing: 16) {
+                    Button {
+                        if !locationService.isUpdatingLocation {
+                            locationService.requestPermission()
+                        } else if let location = locationService.lastKnownLocation?.coordinate {
+                            context.moveCamera(to: location)
+                        }
+                    } label: {
+                        Image(systemName: "location\(locationService.isUpdatingLocation ? ".fill" : "")")
+                    }
+                    
+                    Button {
+                        await outlookService.refresh()
+                        if await autoMoveCamera {
+                            await self.context.moveCamera(centering: outlookService.state)
+                        }
+                    } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                    .disabled(isLoading)
+                    
+                    Button {
+                        context.displaySettingsSheet.toggle()
+                    } label: {
+                        Image(systemName: "square.3.layers.3d")
+                    }
+                    .sheet(isPresented: $context.displaySettingsSheet) {
+                        SettingsView()
+                    }
+                }
+                .padding(12)
+                .clippedBackground()
+                .padding([.top, .trailing], 8)
+            }
+            .task(id: outlookType) {
+                await outlookService.load(outlookType)
+                if autoMoveCamera {
+                    context.moveCamera(centering: outlookService.state)
+                }
+            }
     }
 }
 

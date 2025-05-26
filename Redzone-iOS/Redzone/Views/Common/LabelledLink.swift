@@ -9,18 +9,18 @@ import SwiftUI
 
 struct LabelledLink: View {
     let title: String
-    let systemImage: String
+    let image: Image
     let destination: URL?
     
-    init(_ title: String, destination: URL?, systemImage: String) {
+    init(_ title: String, destination: String, image: String) {
         self.title = title
-        self.systemImage = systemImage
-        self.destination = destination
+        self.image = Image(image, bundle: .main).resizable()
+        self.destination = URL(string: destination)
     }
     
     init(_ title: String, destination: String, systemImage: String) {
         self.title = title
-        self.systemImage = systemImage
+        self.image = .init(systemName: systemImage)
         self.destination = URL(string: destination)
     }
     
@@ -31,16 +31,20 @@ struct LabelledLink: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(title)
+                                .foregroundStyle(Color(.label))
                             if let host = destination.host()?.trimmingPrefix("www.") {
                                 Text(host)
                                     .font(.caption)
+                                    .foregroundStyle(Color(.secondaryLabel))
                             }
                         }
                         Spacer()
                         Image(systemName: "arrow.up.forward.square")
                     }
                 } icon: {
-                    Image(systemName: systemImage)
+                    image
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 40, maxHeight: 40)
                 }
             }
         }

@@ -2,11 +2,13 @@
 //  Extensions.swift
 //  Redzone
 //
-//  Created by Greg Whatley on 4/6/24.
+//  Created by Greg Whatley on 5/26/25.
 //
+
 
 import CoreLocation
 import GeoJSON
+import SwiftUI
 
 extension Collection where Element == GeoJSONFeature {
     func findTappedOutlook(at coordinate: CLLocationCoordinate2D) -> TappedOutlook? {

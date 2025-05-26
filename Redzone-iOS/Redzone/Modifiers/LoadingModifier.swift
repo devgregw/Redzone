@@ -18,9 +18,8 @@ struct LoadingModifier: ViewModifier {
                         .progressViewStyle(.circular)
                         .scaleEffect(1.5)
                         .padding(24)
-                        .background(.ultraThinMaterial)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .transition(.asymmetric(insertion: .identity, removal: .opacity))
+                        .transition(.asymmetric(insertion: .identity, removal: .opacity).animation(.easeInOut.speed(1.25)))
+                        .clippedBackground()
                 }
             }
     }

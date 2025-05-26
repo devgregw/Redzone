@@ -17,9 +17,7 @@ class Logger {
     }
     private init() { }
     
-    static func log(_ scope: Scope, _ message: String) {
-        #if DEBUG
-        print("[Redzone] [\(scope.rawValue.capitalized)] \(message)")
-        #endif
+    @inlinable static func log(_ scope: Scope, _ message: String) {
+        print("[Redzone] [\(scope.rawValue)] \(message)")
     }
 }
