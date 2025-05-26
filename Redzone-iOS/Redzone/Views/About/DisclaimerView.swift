@@ -50,6 +50,7 @@ struct DisclaimerView: View {
                 }
             }
         }
+        .scrollContentBackground(.visible)
     }
 }
 
