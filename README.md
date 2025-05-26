@@ -1,3 +1,5 @@
+<img src="https://github.com/devgregw/Redzone/blob/main/redzone-web/src/app/logo.png?raw=true" width="75" height="75">
+
 # Redzone
 
 [![Redzone - iOS](https://github.com/devgregw/Redzone/actions/workflows/redzone-ios.yml/badge.svg)](https://github.com/devgregw/Redzone/actions/workflows/redzone-ios.yml) [![Redzone - NextJS](https://github.com/devgregw/Redzone/actions/workflows/redzone-web.yml/badge.svg)](https://github.com/devgregw/Redzone/actions/workflows/redzone-web.yml) [![Firebase Functions](https://github.com/devgregw/Redzone/actions/workflows/functions.yml/badge.svg)](https://github.com/devgregw/Redzone/actions/workflows/functions.yml)
