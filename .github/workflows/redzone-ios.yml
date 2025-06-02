@@ -29,7 +29,7 @@ jobs:
       - name: Setup Homebrew
         uses: tecolicom/actions-use-homebrew-tools@v1.3
         with:
-          tools: 'periphery'
+          tools: 'periphery xcbeautify'
       - name: Setup SPM
         uses: actions/cache@v3
         with:
@@ -38,10 +38,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
       - name: Resolve package dependencies
-        run: xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
+        run: set -o pipefail && xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
       - name: Compile sources
-        run: xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
+        run: set -o pipefail && xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
       - name: Run tests
-        run: xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
+        run: set -o pipefail && xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,id=05EEFBAF-6AFF-456E-BA92-065F6321C60D" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
       - name: Periphery scan
         run: periphery scan --skip-build --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args
