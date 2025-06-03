@@ -9,11 +9,9 @@ import SwiftUI
 
 struct OutlookTypePicker: View {
     @CodedAppStorage(AppStorageKeys.outlookType) private var outlookType: OutlookType = Context.defaultOutlookType
-    @Environment(Context.self) private var context
     
     private func button(_ outlook: OutlookType) -> some View {
-        @Bindable var context = context
-        return Button {
+        Button {
             outlookType = outlook
         } label: {
             if outlookType == outlook {

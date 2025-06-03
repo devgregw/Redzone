@@ -8,6 +8,7 @@
 
 import CoreLocation
 import GeoJSON
+import MapKit
 import SwiftUI
 
 extension Collection where Element == GeoJSONFeature {
@@ -33,5 +34,14 @@ extension Bundle {
         }
         
         return "\(shortVersion) (\(buildVersion))"
+    }
+}
+
+extension MapCameraPosition {
+    static var unitedStates: MapCameraPosition {
+        .region(.init(
+            center: .init(latitude: 37.09024, longitude: -95.712891),
+            span: .init(latitudeDelta: 60, longitudeDelta: 30)
+        ))
     }
 }

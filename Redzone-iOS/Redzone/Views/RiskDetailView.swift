@@ -11,7 +11,6 @@ import GeoJSON
 
 struct RiskDetailView: View {
     @CodedAppStorage(AppStorageKeys.outlookType) private var outlookType: OutlookType = Context.defaultOutlookType
-    @Environment(Context.self) private var context
     
     let properties: OutlookProperties
     let isSignificant: Bool

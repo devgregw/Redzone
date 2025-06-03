@@ -19,7 +19,7 @@ class Context {
         }
     }
     var displaySettingsSheet: Bool = false
-    var mapCameraPosition: MapCameraPosition = .automatic
+    var mapCameraPosition: MapCameraPosition = .unitedStates
     
     func moveCamera(to coordinate: CLLocationCoordinate2D) {
         Logger.log(.map, "Moving camera to coordinate (lat: \(coordinate.latitude), \(coordinate.longitude))")
