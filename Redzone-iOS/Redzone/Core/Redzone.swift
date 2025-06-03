@@ -11,6 +11,7 @@ import WidgetKit
 @main
 struct Redzone: App {
     @CodedAppStorage(AppStorageKeys.outlookType) private var outlookType: OutlookType = Context.defaultOutlookType
+    @AppStorage(AppStorageKeys.autoMoveCamera) private var autoMoveCamera: Bool = true
     @State private var outlookService = OutlookService()
     @State private var context = Context()
     @State private var locationService = LocationService()
@@ -42,9 +43,21 @@ struct Redzone: App {
                         Logger.log(.widgets, "Not sure how to handle this URL")
                         return
                     }
-                    switch outlookDay {
-                    case .day1: outlookType = .convective1(.categorical)
-                    case .day2: outlookType = .convective2(.categorical)
+                    let newOutlook: OutlookType = switch outlookDay {
+                    case .day1: .convective1(.categorical)
+                    case .day2: .convective2(.categorical)
+                    }
+                    outlookType = newOutlook
+                    if case let .loaded(response) = outlookService.state,
+                       response.outlookType == newOutlook {
+                        // Manually reload if the widget outlook is the same as the current outlook.
+                        // The task modifier will not be re-run because the ID didn't change.
+                        Task {
+                            await outlookService.refresh()
+                            if autoMoveCamera {
+                                context.moveCamera(centering: outlookService.state)
+                            }
+                        }
                     }
                 }
         }
