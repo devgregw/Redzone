@@ -24,7 +24,7 @@ jobs:
         include:
         - language: actions
           build-mode: none
-          directory: '.github/actions/**'
+          directory: '.github/workflows/**'
         - language: javascript-typescript
           build-mode: none
           directory: 'redzone-web/**'
