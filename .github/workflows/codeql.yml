@@ -44,6 +44,7 @@ jobs:
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Resolve package dependencies
       run: xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
+      working-directory: ./Redzone-iOS
       
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
@@ -54,7 +55,7 @@ jobs:
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Compile sources
       run: xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
-      working-directory: ./Redzone-iO
+      working-directory: ./Redzone-iOS
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
