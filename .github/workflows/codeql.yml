@@ -1,0 +1,60 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 2 * * 3'
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    permissions:
+      # required for all workflows
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - language: actions
+          build-mode: none
+        - language: javascript-typescript
+          build-mode: none
+        - language: swift
+          build-mode: manual
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - if: matrix.build-mode == 'manual' && matrix.languate == 'swift'
+      name: Setup SPM
+      uses: actions/cache@v3
+      with:
+        path: ./Redzone-iOS/.packages
+        key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-packages-
+    - if: matrix.build-mode == 'manual' && matrix.languate == 'swift'
+      name: Resolve package dependencies
+      run: xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
+      
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+        build-mode: ${{ matrix.build-mode }}
+    
+    - if: matrix.build-mode == 'manual' && matrix.languate == 'swift'
+      name: Compile sources
+      run: xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
+      working-directory: ./Redzone-iO
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:${{matrix.language}}"
