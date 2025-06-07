@@ -1,11 +1,10 @@
 name: "CodeQL"
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-    paths: [ ".github/workflows/codeql.yml" ] # Run for PRs only if the workflow is being changed.
-  schedule:
-    - cron:  '0 2 * * 3' # 2am UTC every Wednesday.
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -25,26 +24,36 @@ jobs:
         include:
         - language: actions
           build-mode: none
+          directory: '.github/actions/**'
         - language: javascript-typescript
           build-mode: none
+          directory: 'redzone-web/**'
         - language: swift
           build-mode: manual
+          directory: 'Redzone-iOS/**'
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
+    - if: github.event_name == 'pull_request'
+      name: Check changed files
+      id: changed-files
+      uses: tj-actions/changed-files@46
+      with:
+        files: ${{ matrix.directory }}
+
+    - if: (github.event_name == 'push' || steps.changed-files.outputs.any_changed == 'true') && matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1.3.0
       with:
         xcode-version: ^16
-    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
+    - if: (github.event_name == 'push' || steps.changed-files.outputs.any_changed == 'true') && matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Setup Homebrew
       uses: tecolicom/actions-use-homebrew-tools@v1.3
       with:
         tools: 'xcbeautify'
-    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
+    - if: (github.event_name == 'push' || steps.changed-files.outputs.any_changed == 'true') && matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Setup SPM
       uses: actions/cache@v3
       with:
@@ -52,23 +61,25 @@ jobs:
         key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
         restore-keys: |
           ${{ runner.os }}-packages-
-    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
+    - if: (github.event_name == 'push' || steps.changed-files.outputs.any_changed == 'true') && matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Resolve package dependencies
       run: set -o pipefail && xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
       working-directory: ./Redzone-iOS
       
-    - name: Initialize CodeQL
+    - if: github.event_name == 'push' || steps.changed-files.outputs.any_changed == 'true'
+      name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
     
-    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
+    - if: (github.event_name == 'push' || steps.changed-files.outputs.any_changed == 'true') && matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Compile sources
       run: set -o pipefail && xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
       working-directory: ./Redzone-iOS
 
-    - name: Perform CodeQL Analysis
+    - if: github.event_name == 'push' || steps.changed-files.outputs.any_changed == 'true'
+      name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
