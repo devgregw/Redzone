@@ -5,8 +5,10 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule:
-    - cron: '0 2 * * 3'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   analyze:
@@ -31,7 +33,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - if: matrix.build-mode == 'manual' && matrix.languate == 'swift'
+    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Setup SPM
       uses: actions/cache@v3
       with:
@@ -39,7 +41,7 @@ jobs:
         key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
         restore-keys: |
           ${{ runner.os }}-packages-
-    - if: matrix.build-mode == 'manual' && matrix.languate == 'swift'
+    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Resolve package dependencies
       run: xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
       
@@ -49,7 +51,7 @@ jobs:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
     
-    - if: matrix.build-mode == 'manual' && matrix.languate == 'swift'
+    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Compile sources
       run: xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages"
       working-directory: ./Redzone-iO
