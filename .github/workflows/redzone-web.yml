@@ -1,5 +1,13 @@
 name: Redzone - NextJS
 
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   # Firebase App Hosting already watches pushed to main for its builds.
   # No need to do our own main branch build & deploy.
