@@ -2,9 +2,11 @@ import centralTimeZoneOffset from "./centralTimeZoneOffset"
 
 export abstract class ConvectiveOutlook {
     protected issuances: number[]
+    protected fallback: boolean
 
-    constructor(issuances: number[]) {
+    constructor(issuances: number[], fallback: boolean) {
         this.issuances = issuances
+        this.fallback = fallback
     }
     
     abstract get path(): string
@@ -66,13 +68,13 @@ const baseURL = new URL('https://www.spc.noaa.gov')
 class Day1ConvectiveOutlook extends ConvectiveOutlook {
     subtype: ConvectiveOutlookSubtype
 
-    constructor(subtype: ConvectiveOutlookSubtype) {
-        super([2000, 1630, 1300, 1200, 100])
+    constructor(subtype: ConvectiveOutlookSubtype, fallback: boolean) {
+        super([2000, 1630, 1300, 1200, 100], fallback)
         this.subtype = subtype
     }
 
     get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances)
+        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
         return `products/outlook/archive/${timestamp.year}/day1otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
     }
 }
@@ -84,13 +86,13 @@ function centralTimeToUTC(time: number): number {
 class Day2ConvectiveOutlook extends ConvectiveOutlook {
     subtype: ConvectiveOutlookSubtype
 
-    constructor(subtype: ConvectiveOutlookSubtype) {
-        super([1730, centralTimeToUTC(100)])
+    constructor(subtype: ConvectiveOutlookSubtype, fallback: boolean) {
+        super([1730, centralTimeToUTC(100)], fallback)
         this.subtype = subtype
     }
 
     get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances)
+        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
         return `products/outlook/archive/${timestamp.year}/day2otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
     }
 }
@@ -98,13 +100,13 @@ class Day2ConvectiveOutlook extends ConvectiveOutlook {
 class Day3ConvectiveOutlook extends ConvectiveOutlook {
     subtype: ConvectiveOutlookSubtype
 
-    constructor(subtype: ConvectiveOutlookSubtype) {
-        super([1930, centralTimeToUTC(230)])
+    constructor(subtype: ConvectiveOutlookSubtype, fallback: boolean) {
+        super([1930, centralTimeToUTC(230)], fallback)
         this.subtype = subtype
     }
 
     get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances)
+        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
         return `products/outlook/archive/${timestamp.year}/day3otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
     }
 }
@@ -112,25 +114,28 @@ class Day3ConvectiveOutlook extends ConvectiveOutlook {
 class FutureProbabilisticOutlook extends ConvectiveOutlook {
     day: number
 
-    constructor(day: number) {
-        super([centralTimeToUTC(400)])
+    constructor(day: number, fallback: boolean) {
+        super([centralTimeToUTC(400)], fallback)
         this.day = day
     }
 
     get path(): string {
-        const { date, year } = findIssuance(this.issuances).timestamp
+        const { date, year } = findIssuance(this.issuances, this.fallback).timestamp
         return `products/exper/day4-8/archive/${year}/day${this.day}prob_${date}`
     }
 }
 
-function findIssuance(issuances: number[]): { timestamp: SPCDate, latestIssuance: string } {
+function findIssuance(issuances: number[], fallback: boolean): { timestamp: SPCDate, latestIssuance: string } {
     let timestamp: SPCDate
     let latestIssuance: number | undefined = issuances.find(iss => {
         const value = iss === 1200 ? 600 : iss
         return new SPCDate().time >= value
     })
     if (latestIssuance)
-        timestamp = new SPCDate()
+        if (fallback)
+            return findIssuance(issuances.filter(i => i !== latestIssuance), false)
+        else
+            timestamp = new SPCDate()
     else {
         timestamp = new SPCDate(true)
         latestIssuance = issuances[0]
@@ -139,24 +144,24 @@ function findIssuance(issuances: number[]): { timestamp: SPCDate, latestIssuance
 }
 
 export class ConvectiveOutlookFactory {
-    static createOutlook(day: number, subtype: ConvectiveOutlookSubtype): ConvectiveOutlook {
+    static createOutlook(day: number, subtype: ConvectiveOutlookSubtype, fallback: boolean): ConvectiveOutlook {
         switch (day) {
             case 1:
                 if (subtype === ConvectiveOutlookSubtype.probabilistic)
                     throw 'Invalid subtype'
-                return new Day1ConvectiveOutlook(subtype)
+                return new Day1ConvectiveOutlook(subtype, fallback)
             case 2:
                 if (subtype === ConvectiveOutlookSubtype.probabilistic)
                     throw 'Invalid subtype'
-                return new Day2ConvectiveOutlook(subtype)
+                return new Day2ConvectiveOutlook(subtype, fallback)
             case 3:
                 if (subtype !== ConvectiveOutlookSubtype.categorical && subtype !== ConvectiveOutlookSubtype.probabilistic)
                     throw 'Invalid subtype'
-                return new Day3ConvectiveOutlook(subtype)
+                return new Day3ConvectiveOutlook(subtype, fallback)
             case 4: case 5: case 6: case 7: case 8:
                 if (subtype !== ConvectiveOutlookSubtype.probabilistic)
                     throw 'Invalid subtype'
-                return new FutureProbabilisticOutlook(day)
+                return new FutureProbabilisticOutlook(day, fallback)
             default: throw 'Day must be between 1-8'
         }
     }
