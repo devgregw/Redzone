@@ -17,10 +17,6 @@ struct ContentView: View {
     @Environment(OutlookService.self) private var outlookService
     @Environment(LocationService.self) private var locationService
     @Environment(Context.self) private var context
-        
-    private var isLoading: Bool {
-        outlookService.state == .loading
-    }
     
     var outlookFeatures: [GeoJSONFeature] {
         guard case let .loaded(response) = outlookService.state else {return []}
@@ -58,58 +54,18 @@ struct ContentView: View {
         NavigationStack {
             OutlookMapView(features: outlookFeatures)
                 .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button {
-                            if !locationService.isUpdatingLocation {
-                                locationService.requestPermission()
-                            } else if let location = locationService.lastKnownLocation?.coordinate {
-                                context.moveCamera(to: location)
-                            }
-                        } label: {
-                            Image(systemName: "location\(locationService.isUpdatingLocation ? ".fill" : "")")
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            await outlookService.refresh()
-                            if await autoMoveCamera {
-                                await self.context.moveCamera(centering: outlookService.state)
-                            }
-                        } label: {
-                            Image(systemName: "arrow.clockwise")
-                        }
-                        .disabled(isLoading)
-                    }
+                    MainToolbar()
                 }
-                .navigationTitle("\(outlookType.subSection) • Day \(outlookType.day)")
+                .navigationTitle(outlookType.title)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarTitleMenu {
-                    OutlookTypePicker()
-                    Picker(selection: $mapStyle) {
-                        ForEach(MapViewStyle.allCases, id: \.self) {
-                            Text($0.rawValue.capitalized)
-                        }
-                        .foregroundStyle(.secondary)
-                    } label: {
-                        Label("Map Style", systemImage: "map")
-                    }
-                    .menuOrder(.fixed)
-                    .pickerStyle(.menu)
-                    Toggle(isOn: $autoMoveCamera) {
-                        Label("Automatically move camera", systemImage: "camera.metering.center.weighted.average")
-                    }
-                    NavigationLink {
-                        AboutView()
-                    } label: {
-                        Label("About", systemImage: "questionmark.circle")
-                    }
-                    }
+                    ToolbarMenu()
                 }
+                .navigationBarBackgroundHidden()
                 .safeAreaInset(edge: .bottom) {
                     CurrentLocationButton(highestRisk: currentLocationOutlook, isSignificant: currentLocationSignificant)
                 }
-                .loading(if: isLoading)
+                .loading(if: outlookService.state == .loading)
                 .sheet(item: $context.selectedOutlook) { outlook in
                     let atCurrentLocation = currentLocationOutlook?.outlookProperties.severity == outlook.highestRisk.outlookProperties.severity
                     RiskDetailView(feature: outlook.highestRisk, isSignificant: outlook.isSignificant, atCurrentLocation: atCurrentLocation)

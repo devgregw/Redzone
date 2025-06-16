@@ -119,10 +119,10 @@
     "Organized severe thunderstorms are expected, but usually in low coverage with varying levels of intensity." : {
 
     },
-    "Outlook" : {
+    "Outlook Day" : {
 
     },
-    "Outlook Day" : {
+    "Outlook Type" : {
 
     },
     "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense." : {
@@ -165,9 +165,6 @@
 
     },
     "Selected Outlook" : {
-
-    },
-    "Settings" : {
 
     },
     "Severe storms of either limited organization and logevety, or very low coverage and marginal intensity." : {
