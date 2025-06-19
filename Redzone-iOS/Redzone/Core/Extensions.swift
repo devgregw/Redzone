@@ -45,3 +45,9 @@ extension MapCameraPosition {
         ))
     }
 }
+
+extension OutlookType {
+    var title: LocalizedStringKey {
+        "\(subSection) • Day \(day)"
+    }
+}

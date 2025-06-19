@@ -45,41 +45,29 @@ struct OutlookTypePicker: View {
     }
     
     var body: some View {
-        HStack {
-            Label("Outlook", systemImage: "binoculars")
-            Spacer()
+        Menu {
             Menu {
+                submenu(.categorical)
+                submenu(.wind)
+                submenu(.hail)
+                submenu(.tornado)
+                
                 Menu {
-                    submenu(.categorical)
-                    submenu(.wind)
-                    submenu(.hail)
-                    submenu(.tornado)
-                    
-                    Menu {
-                        button(.convective3(probabilistic: true))
-                        button(.convective4)
-                        button(.convective5)
-                        button(.convective6)
-                        button(.convective7)
-                        button(.convective8)
-                    } label: {
-                        Label("Probabilistic", systemImage: checkmark(when: outlookType.isProbabilistic, "percent"))
-                    }
+                    button(.convective3(probabilistic: true))
+                    button(.convective4)
+                    button(.convective5)
+                    button(.convective6)
+                    button(.convective7)
+                    button(.convective8)
                 } label: {
-                    Label("Convective", systemImage: checkmark(when: outlookType.isConvective, "cloud.bolt.rain.fill"))
+                    Label("Probabilistic", systemImage: checkmark(when: outlookType.isProbabilistic, "percent"))
                 }
             } label: {
-                HStack {
-                    VStack(alignment: .trailing) {
-                        Text("\(outlookType.subSection) • Day \(outlookType.day)")
-                        Text(outlookType.category)
-                            .font(.footnote)
-                    }
-                    Image(systemName: "chevron.up.chevron.down")
-                        .imageScale(.small)
-                }
+                Label("Convective", systemImage: checkmark(when: outlookType.isConvective, "cloud.bolt.rain.fill"))
             }
-            .menuOrder(.fixed)
+        } label: {
+            Label("Outlook Type", systemImage: "binoculars")
         }
+        .menuOrder(.fixed)
     }
 }

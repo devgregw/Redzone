@@ -21,7 +21,7 @@
 		FC21F61029E10BB000046C79 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
 		FC21F61929E11CA800046C79 /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F61829E11CA800046C79 /* LoadingModifier.swift */; };
 		FC21F62D29E1BA9800046C79 /* OutlookTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */; };
-		FC21F62F29E1BB6A00046C79 /* BottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */; };
+		FC21F62F29E1BB6A00046C79 /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62E29E1BB6A00046C79 /* CurrentLocationButton.swift */; };
 		FC21F63329E1C84C00046C79 /* RiskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63229E1C84C00046C79 /* RiskDetailView.swift */; };
 		FC21F63E29E1DE5700046C79 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63D29E1DE5700046C79 /* View.swift */; };
 		FC2668982A5CFF4D00CA34DC /* MapStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668972A5CFF4D00CA34DC /* MapStylePicker.swift */; };
@@ -92,6 +92,9 @@
 		FCE29F3F2CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */; };
 		FCE29F442CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */; };
 		FCE29F472CAE425C00056693 /* CombinedRisks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F462CAE425C00056693 /* CombinedRisks.swift */; };
+		FCEA36F02DFFBD1200692CBD /* MainToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36EF2DFFBD0C00692CBD /* MainToolbar.swift */; };
+		FCEA36F22DFFBD8900692CBD /* ToolbarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F12DFFBD8500692CBD /* ToolbarMenu.swift */; };
+		FCEA36F42DFFC01400692CBD /* NavigationBarBackgroundHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F32DFFC00B00692CBD /* NavigationBarBackgroundHiddenModifier.swift */; };
 		FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
 		FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
 		FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
@@ -112,7 +115,6 @@
 		FCF912F32BC0F61C005E5A44 /* RedzoneWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F22BC0F61C005E5A44 /* RedzoneWidgets.swift */; };
 		FCF912F72BC0F61E005E5A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF912F62BC0F61E005E5A44 /* Assets.xcassets */; };
 		FCF912FB2BC0F61E005E5A44 /* RedzoneWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FCF912EC2BC0F61C005E5A44 /* RedzoneWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCADE42A3CEE3100944D48 /* SettingsView.swift */; };
 		FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -161,7 +163,7 @@
 		FC21F60F29E10BB000046C79 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		FC21F61829E11CA800046C79 /* LoadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
 		FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookTypePicker.swift; sourceTree = "<group>"; };
-		FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbar.swift; sourceTree = "<group>"; };
+		FC21F62E29E1BB6A00046C79 /* CurrentLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationButton.swift; sourceTree = "<group>"; };
 		FC21F63229E1C84C00046C79 /* RiskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskDetailView.swift; sourceTree = "<group>"; };
 		FC21F63D29E1DE5700046C79 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FC2668972A5CFF4D00CA34DC /* MapStylePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStylePicker.swift; sourceTree = "<group>"; };
@@ -231,6 +233,9 @@
 		FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskBreakdownWidgetEntryView.swift; sourceTree = "<group>"; };
 		FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRiskWidgetEntryView.swift; sourceTree = "<group>"; };
 		FCE29F462CAE425C00056693 /* CombinedRisks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedRisks.swift; sourceTree = "<group>"; };
+		FCEA36EF2DFFBD0C00692CBD /* MainToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolbar.swift; sourceTree = "<group>"; };
+		FCEA36F12DFFBD8500692CBD /* ToolbarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarMenu.swift; sourceTree = "<group>"; };
+		FCEA36F32DFFC00B00692CBD /* NavigationBarBackgroundHiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBackgroundHiddenModifier.swift; sourceTree = "<group>"; };
 		FCF8110D2BC1E92D005D3552 /* OutlookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookType.swift; sourceTree = "<group>"; };
 		FCF811102BC1E952005D3552 /* OutlookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcher.swift; sourceTree = "<group>"; };
 		FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcherError.swift; sourceTree = "<group>"; };
@@ -241,7 +246,6 @@
 		FCF912F22BC0F61C005E5A44 /* RedzoneWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedzoneWidgets.swift; sourceTree = "<group>"; };
 		FCF912F62BC0F61E005E5A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCF912F82BC0F61E005E5A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCFCADE42A3CEE3100944D48 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -310,16 +314,14 @@
 		FC21F61429E11C5600046C79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA36EE2DFFBCFD00692CBD /* Toolbar */,
 				FC6DD71E2DB34CC2002BB563 /* Common */,
 				FCAC37932B78790E00AEB3C8 /* About */,
 				FC21F63F29E1DF5000046C79 /* Pickers */,
 				FCB386FB2A57A99B00C10FFB /* Map */,
-				FC21F62E29E1BB6A00046C79 /* BottomToolbar.swift */,
+				FC21F62E29E1BB6A00046C79 /* CurrentLocationButton.swift */,
 				FC21F63229E1C84C00046C79 /* RiskDetailView.swift */,
-				FCFCADE42A3CEE3100944D48 /* SettingsView.swift */,
 				FCB4BBC72A4919E600738C3E /* ErrorView.swift */,
-				FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */,
-				FCAC379E2B79AC3100AEB3C8 /* SigSevLegendIconView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +329,7 @@
 		FC21F61729E11C9F00046C79 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA36F32DFFC00B00692CBD /* NavigationBarBackgroundHiddenModifier.swift */,
 				FC0EA31C2DE3D90300B3B8CC /* ClippedBackgroundModifier.swift */,
 				FC21F61829E11CA800046C79 /* LoadingModifier.swift */,
 				FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */,
@@ -435,6 +438,8 @@
 		FC6DD71E2DB34CC2002BB563 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FCAC379E2B79AC3100AEB3C8 /* SigSevLegendIconView.swift */,
+				FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */,
 				FC0EA3252DE4067100B3B8CC /* SafetyLinksSection.swift */,
 				FC6DD71F2DB34CC7002BB563 /* LabelledLink.swift */,
 			);
@@ -594,6 +599,15 @@
 			path = CombinedRiskWidget;
 			sourceTree = "<group>";
 		};
+		FCEA36EE2DFFBCFD00692CBD /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA36F12DFFBD8500692CBD /* ToolbarMenu.swift */,
+				FCEA36EF2DFFBD0C00692CBD /* MainToolbar.swift */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
+		};
 		FCF8110C2BC1E917005D3552 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,7 +735,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					FC70F92029C29F9B006C5DAC = {
 						CreatedOnToolsVersion = 14.2;
@@ -795,11 +809,13 @@
 				FC21F63E29E1DE5700046C79 /* View.swift in Sources */,
 				FC21F5F829D9F54A00046C79 /* AboutView.swift in Sources */,
 				FCC6D5AC2C7ED4FA00B161D5 /* Collection.swift in Sources */,
+				FCEA36F22DFFBD8900692CBD /* ToolbarMenu.swift in Sources */,
 				FCB4BBC62A48F93300738C3E /* TappedOutlook.swift in Sources */,
 				FC0EA3222DE3FFA800B3B8CC /* AppStorageKeys.swift in Sources */,
 				FCF811152BC1EA66005D3552 /* OutlookFetcherError.swift in Sources */,
 				FC09745E2A40D7A50058EBF7 /* OutlookResponse.swift in Sources */,
 				FCAC37A12B79B4B700AEB3C8 /* MapMultiPolygon.swift in Sources */,
+				FCEA36F42DFFC01400692CBD /* NavigationBarBackgroundHiddenModifier.swift in Sources */,
 				FCB4BBC82A4919E600738C3E /* ErrorView.swift in Sources */,
 				FC0EA3242DE3FFB300B3B8CC /* CodedAppStorage.swift in Sources */,
 				FC2668A12A5E5A0E00CA34DC /* MKMapRect.swift in Sources */,
@@ -820,8 +836,7 @@
 				FC70F92729C29F9B006C5DAC /* ContentView.swift in Sources */,
 				FCAC379D2B79ABB800AEB3C8 /* OutlookLegendIconView.swift in Sources */,
 				FC2A898B2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */,
-				FCFCADE52A3CEE3100944D48 /* SettingsView.swift in Sources */,
-				FC21F62F29E1BB6A00046C79 /* BottomToolbar.swift in Sources */,
+				FC21F62F29E1BB6A00046C79 /* CurrentLocationButton.swift in Sources */,
 				FC21F5F129D9C8E800046C79 /* Color.swift in Sources */,
 				FCB4BBC22A48E36100738C3E /* OutlookProperties.swift in Sources */,
 				FC0EA3202DE3FF8200B3B8CC /* CommonURL.swift in Sources */,
@@ -830,6 +845,7 @@
 				FC2A89882C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */,
 				FC26689F2A5E386200CA34DC /* LocationService.swift in Sources */,
 				FC3172972C800474005281F6 /* MapViewStyle.swift in Sources */,
+				FCEA36F02DFFBD1200692CBD /* MainToolbar.swift in Sources */,
 				FC6DD7202DB34CC7002BB563 /* LabelledLink.swift in Sources */,
 				FCB386FA2A57A6C300C10FFB /* OutlookSeverity.swift in Sources */,
 				FC54AFA82BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift in Sources */,
@@ -980,6 +996,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -1041,6 +1058,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
