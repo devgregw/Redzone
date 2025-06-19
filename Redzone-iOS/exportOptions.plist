@@ -9,12 +9,21 @@
         <key>method</key>
         <string>app-store-connect</string>
         <key>signingStyle</key>
-        <string>automatic</string>
-        <key>stripSwiftSymbols</key>
+        <string>manual</string>
+        <key>uploadSymbols</key>
         <true />
         <key>teamID</key>
         <string>D2T6N8FXD6</string>
         <key>thinning</key>
         <string>&lt;none&gt;</string>
+        <key>provisioningProfiles</key>
+        <dict>
+            <key>dev.gregwhatley.redzone</key>
+            <string>Redzone_Distribution</string>
+            <key>dev.gregwhatley.redzone.widgets</key>
+            <string>Redzone_Widgets_Distribution</string>
+        </dict>
+        <key>signingCertificate</key>
+        <string>Apple Distribution: Gregory Whatley (D2T6N8FXD6)</string>
     </dict>
 </plist>
