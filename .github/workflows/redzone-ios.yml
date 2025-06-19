@@ -42,10 +42,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
       - name: Resolve package dependencies
-        run: set -o pipefail && stdbuf -oL xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | stdbuf -oL xcbeautify --renderer github-actions
+        run: set -o pipefail && gstdbuf -oL xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | gstdbuf -oL xcbeautify --renderer github-actions
       - name: Compile sources
-        run: set -o pipefail && stdbuf -oL xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | stdbuf -oL xcbeautify --renderer github-actions
+        run: set -o pipefail && gstdbuf -oL xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | gstdbuf -oL xcbeautify --renderer github-actions
       - name: Run tests
-        run: set -o pipefail && stdbuf -oL xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | stdbuf -oL xcbeautify --renderer github-actions
+        run: set -o pipefail && gstdbuf -oL xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | gstdbuf -oL xcbeautify --renderer github-actions
       - name: Periphery scan
         run: periphery scan --skip-build --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args
