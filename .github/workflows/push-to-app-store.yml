@@ -53,10 +53,10 @@ jobs:
             security import $RUNNER_TEMP/cert.p12 -P '${{ secrets.IOS_DIST_P12_PASSWORD }}' -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
             security list-keychain -d user -s $KEYCHAIN_PATH
         - name: Setup provisioning profiles
+          shell: zsh
           run: |
             mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-            echo -n '${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}' | base64 -D -i - -o ~/Library/MobileDevice/Provisioning\ Profiles/dev.gregwhatley.redzone.mobileprovision
-            echo -n '${{ secrets.IOS_PROVISIONING_PROFILE_WIDGETS_BASE64 }}' | base64 -D -i - -o ~/Library/MobileDevice/Provisioning\ Profiles/dev.gregwhatley.redzone.widgets.mobileprovision
+            tar -xf =( echo -n '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}' | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles --verbose
         - name: Setup App Store Connect
           run: |
             mkdir -p ${{ github.workspace }}/private_keys
