@@ -70,6 +70,9 @@ struct ContentView: View {
                     let atCurrentLocation = currentLocationOutlook?.outlookProperties.severity == outlook.highestRisk.outlookProperties.severity
                     RiskDetailView(feature: outlook.highestRisk, isSignificant: outlook.isSignificant, atCurrentLocation: atCurrentLocation)
                 }
+                .sheet(isPresented: $context.displayFavoritesSheet) {
+                    FavoritesManagerView()
+                }
                 .task(id: outlookType) {
                     await outlookService.load(outlookType)
                     if autoMoveCamera {

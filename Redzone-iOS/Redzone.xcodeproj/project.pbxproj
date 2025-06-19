@@ -95,6 +95,8 @@
 		FCEA36F02DFFBD1200692CBD /* MainToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36EF2DFFBD0C00692CBD /* MainToolbar.swift */; };
 		FCEA36F22DFFBD8900692CBD /* ToolbarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F12DFFBD8500692CBD /* ToolbarMenu.swift */; };
 		FCEA36F42DFFC01400692CBD /* NavigationBarBackgroundHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F32DFFC00B00692CBD /* NavigationBarBackgroundHiddenModifier.swift */; };
+		FCEA36F72E0483F600692CBD /* FavoritesManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F62E0483F600692CBD /* FavoritesManagerView.swift */; };
+		FCEA36F92E04840A00692CBD /* FavoritesPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F82E04840A00692CBD /* FavoritesPicker.swift */; };
 		FCF8110E2BC1E92D005D3552 /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
 		FCF811112BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
 		FCF811122BC1E952005D3552 /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
@@ -236,6 +238,8 @@
 		FCEA36EF2DFFBD0C00692CBD /* MainToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolbar.swift; sourceTree = "<group>"; };
 		FCEA36F12DFFBD8500692CBD /* ToolbarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarMenu.swift; sourceTree = "<group>"; };
 		FCEA36F32DFFC00B00692CBD /* NavigationBarBackgroundHiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBackgroundHiddenModifier.swift; sourceTree = "<group>"; };
+		FCEA36F62E0483F600692CBD /* FavoritesManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerView.swift; sourceTree = "<group>"; };
+		FCEA36F82E04840A00692CBD /* FavoritesPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPicker.swift; sourceTree = "<group>"; };
 		FCF8110D2BC1E92D005D3552 /* OutlookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookType.swift; sourceTree = "<group>"; };
 		FCF811102BC1E952005D3552 /* OutlookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcher.swift; sourceTree = "<group>"; };
 		FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookFetcherError.swift; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 		FC21F61429E11C5600046C79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA36F52E0483EC00692CBD /* Favorites */,
 				FCEA36EE2DFFBCFD00692CBD /* Toolbar */,
 				FC6DD71E2DB34CC2002BB563 /* Common */,
 				FCAC37932B78790E00AEB3C8 /* About */,
@@ -379,6 +384,7 @@
 		FC21F63F29E1DF5000046C79 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA36F82E04840A00692CBD /* FavoritesPicker.swift */,
 				FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */,
 				FC2668972A5CFF4D00CA34DC /* MapStylePicker.swift */,
 			);
@@ -608,6 +614,14 @@
 			path = Toolbar;
 			sourceTree = "<group>";
 		};
+		FCEA36F52E0483EC00692CBD /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA36F62E0483F600692CBD /* FavoritesManagerView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		FCF8110C2BC1E917005D3552 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,6 +841,7 @@
 				FCAB72EB2BC383E300E41256 /* OutlookDayConfigurationIntent.swift in Sources */,
 				FC6DD71D2DB31393002BB563 /* DisclaimerView.swift in Sources */,
 				FC82317B2DE211C000492461 /* String.swift in Sources */,
+				FCEA36F72E0483F600692CBD /* FavoritesManagerView.swift in Sources */,
 				FCC6D5AE2C7ED4FA00B161D5 /* Bool.swift in Sources */,
 				FCAC37952B78793600AEB3C8 /* AboutCategoricalRiskView.swift in Sources */,
 				FCAC37922B76C2DD00AEB3C8 /* DismissButton.swift in Sources */,
@@ -837,6 +852,7 @@
 				FCAC379D2B79ABB800AEB3C8 /* OutlookLegendIconView.swift in Sources */,
 				FC2A898B2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */,
 				FC21F62F29E1BB6A00046C79 /* CurrentLocationButton.swift in Sources */,
+				FCEA36F92E04840A00692CBD /* FavoritesPicker.swift in Sources */,
 				FC21F5F129D9C8E800046C79 /* Color.swift in Sources */,
 				FCB4BBC22A48E36100738C3E /* OutlookProperties.swift in Sources */,
 				FC0EA3202DE3FF8200B3B8CC /* CommonURL.swift in Sources */,
