@@ -52,13 +52,6 @@ struct AboutView: View {
                 }
             }
             
-            Section {
-                LabelledLink("About Me", destination: "https://gregwhatley.dev", image: "Me")
-                LabelledLink("Source Code", destination: "https://github.com/devgregw/Redzone", image: "GitHubLogo")
-            }
-            
-            RiskLevelLinksView()
-            
             Section("Safety & Disclaimers") {
                 NavigationLink {
                     DisclaimerView(launch: false)
@@ -66,6 +59,13 @@ struct AboutView: View {
                     Label("Disclaimer", systemImage: "briefcase")
                 }
                 LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", image: "NWSLogo")
+            }
+            
+            RiskLevelLinksView()
+            
+            Section {
+                LabelledLink("About Me", destination: "https://gregwhatley.dev", image: "Me")
+                LabelledLink("Source Code", destination: "https://github.com/devgregw/Redzone", image: "GitHubLogo")
             }
             
             Section {

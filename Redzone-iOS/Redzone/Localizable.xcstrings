@@ -47,7 +47,7 @@
     "Always have a plan and be prepared to take action in the event of severe weather. Use these resources to learn more about weather safety and plan ahead." : {
 
     },
-    "Automatically move camera" : {
+    "Automatically Move Camera" : {
 
     },
     "By continuing to use Redzone, you assume the entire risk associated with the use of this data." : {
@@ -131,10 +131,10 @@
     "Organized severe thunderstorms are expected, but usually in low coverage with varying levels of intensity." : {
 
     },
-    "Outlook Day" : {
+    "Outlook" : {
 
     },
-    "Outlook Type" : {
+    "Outlook Day" : {
 
     },
     "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense." : {
@@ -201,6 +201,9 @@
 
     },
     "Version" : {
+
+    },
+    "Version %@" : {
 
     },
     "Wind" : {
