@@ -47,11 +47,11 @@ jobs:
             sed -i '' 's/^VERSION=.*/VERSION=${{ github.event.inputs.version }}/' Redzone.base.xcconfig
             sed -i '' 's/^BUILD=.*/BUILD=${{ github.event.inputs.build }}/' Redzone.base.xcconfig
         - name: Resolve package dependencies
-          run: set -o pipefail && unbuffer -p xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | unbuffer -p xcbeautify --renderer github-actions
+          run: set -o pipefail && xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | unbuffer -p xcbeautify --renderer github-actions
         - name: Archive
-          run: set -o pipefail && unbuffer -p xcodebuild archive -scheme "Redzone" -project "Redzone.xcodeproj" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" -configuration release -sdk iphoneos -archivePath Redzone-iOS.xcarchive | unbuffer -p xcbeautify --renderer github-actions
+          run: set -o pipefail && xcodebuild archive -scheme "Redzone" -project "Redzone.xcodeproj" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" -configuration release -sdk iphoneos -archivePath Redzone-iOS.xcarchive | unbuffer -p xcbeautify --renderer github-actions
         - name: Export IPA
-          run: set -o pipefail && unbuffer -p xcodebuild -exportArchive -archivePath Redzone-iOS.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath Redzone-iOS.ipa | unbuffer -p xcbeautify --renderer github-actions
+          run: set -o pipefail && xcodebuild -exportArchive -archivePath Redzone-iOS.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath Redzone-iOS.ipa | unbuffer -p xcbeautify --renderer github-actions
         - name: Commit updated XCConfig
           run: |
               git config user.name "github-actions[bot]"

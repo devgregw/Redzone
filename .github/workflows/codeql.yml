@@ -53,7 +53,7 @@ jobs:
           ${{ runner.os }}-packages-
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Resolve package dependencies
-      run: set -o pipefail && unbuffer -p xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | unbuffer -p xcbeautify --renderer github-actions
+      run: set -o pipefail && xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | unbuffer -p xcbeautify --renderer github-actions
       working-directory: ./Redzone-iOS
       
     - name: Initialize CodeQL
@@ -64,7 +64,7 @@ jobs:
     
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Compile sources
-      run: set -o pipefail && unbuffer -p xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | unbuffer -p xcbeautify --renderer github-actions
+      run: set -o pipefail && xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | unbuffer -p xcbeautify --renderer github-actions
       working-directory: ./Redzone-iOS
 
     - name: Perform CodeQL Analysis
