@@ -11,18 +11,26 @@ struct ToolbarMenu: View {
     @AppStorage(AppStorageKeys.autoMoveCamera) private var autoMoveCamera = true
     
     var body: some View {
-        OutlookTypePicker()
-        
-        MapStylePicker()
-        
-        Toggle(isOn: $autoMoveCamera) {
-            Label("Automatically move camera", systemImage: "camera.metering.center.weighted.average")
+        Section {
+            OutlookTypePicker()
+            FavoritesPicker()
         }
         
-        NavigationLink {
-            AboutView()
-        } label: {
-            Label("About", systemImage: "questionmark.circle")
+        Section {
+            MapStylePicker()
+            
+            Toggle(isOn: $autoMoveCamera) {
+                Label("Automatically Move Camera", systemImage: "camera.metering.center.weighted.average")
+            }
+        }
+        
+        Section {
+            NavigationLink {
+                AboutView()
+            } label: {
+                Label("About", systemImage: "questionmark.circle")
+                Text("Version \(Bundle.main.versionString)")
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ struct OutlookTypePicker: View {
                 Text("Day \(outlook.day)")
             }
         }
+        .accessibilityAddTraits(outlookType == outlook ? .isSelected : [])
     }
     
     private func checkmark(when condition: Bool, _ fallback: String) -> String {
@@ -66,7 +67,8 @@ struct OutlookTypePicker: View {
                 Label("Convective", systemImage: checkmark(when: outlookType.isConvective, "cloud.bolt.rain.fill"))
             }
         } label: {
-            Label("Outlook Type", systemImage: "binoculars")
+            Label("Outlook", systemImage: "binoculars")
+            Text(outlookType.title)
         }
         .menuOrder(.fixed)
     }

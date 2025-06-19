@@ -24,3 +24,10 @@ extension Collection {
         flatMap { $0 }
     }
 }
+
+extension Array {
+    @inlinable mutating func remove(_ element: Element) where Element: Equatable {
+        guard let idx = firstIndex(of: element) else { return }
+        self.remove(at: idx)
+    }
+}
