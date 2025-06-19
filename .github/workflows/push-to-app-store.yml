@@ -42,16 +42,59 @@ jobs:
             key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
             restore-keys: |
               ${{ runner.os }}-packages-
+        - name: Setup certificates
+          uses: apple-actions/import-codesign-certs@v5
+          id: codesign
+          with:
+            p12-file-base64: ${{ secrets.IOS_DIST_P12_BASE64 }}
+            p12-password: ${{ secrets.IOS_DIST_P12_PASSWORD }}
+            keychain: codesign
+        - name: Setup provisioning profile
+          uses: akiojin/install-provisioning-profile-github-action@v1.0
+          with:
+            base64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        - name: Setup App Store Connect
+          uses: timheuer/base64-to-file@v1
+          with:
+            fileName: AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
+            fileDir: ${{ github.workspace }}/private_keys
+            encodedString: ${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}
         - name: Update XCConfig
           run: |
             sed -i '' 's/^VERSION=.*/VERSION=${{ github.event.inputs.version }}/' Redzone.base.xcconfig
             sed -i '' 's/^BUILD=.*/BUILD=${{ github.event.inputs.build }}/' Redzone.base.xcconfig
+            cat Redzone.base.xcconfig
         - name: Resolve package dependencies
-          run: set -o pipefail && NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
+          run: |
+            set -o pipefail && \
+            NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies \
+            -disableAutomaticPackageResolution \
+            -clonedSourcePackagesDirPath "./.packages" \
+            2>&1 | xcbeautify --renderer github-actions
         - name: Archive
-          run: set -o pipefail && NSUnbufferedIO=YES xcodebuild archive -scheme "Redzone" -project "Redzone.xcodeproj" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" -configuration release -sdk iphoneos -archivePath Redzone-iOS.xcarchive 2>&1 | xcbeautify --renderer github-actions
+          run: |
+            set -o pipefail && \
+            NSUnbufferedIO=YES xcodebuild archive \
+            -scheme "Redzone" \
+            -project "Redzone.xcodeproj" \
+            -derivedDataPath "./.build" \
+            -disableAutomaticPackageResolution \
+            -clonedSourcePackagesDirPath "./.packages" \
+            -configuration release \
+            -sdk iphoneos \
+            -archivePath Redzone-iOS.xcarchive \
+            2>&1 | xcbeautify --renderer github-actions
         - name: Export IPA
-          run: set -o pipefail && NSUnbufferedIO=YES xcodebuild -exportArchive -archivePath Redzone-iOS.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath Redzone-iOS.ipa 2>&1 | xcbeautify --renderer github-actions
+          run: |
+            set -o pipefail && \
+            NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
+            -archivePath Redzone-iOS.xcarchive \
+            -exportOptionsPlist ./exportOptions.plist \
+            -exportPath Redzone-iOS.ipa \
+            -authenticationKeyIssuerID ${{ secrets.IOS_ATC_API_KEY_ISSUER_ID}} \
+            -authenticationKeyID ${{ secrets.IOS_ATC_API_KEY_ID }} \
+            -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
+            2>&1 | xcbeautify --renderer github-actions
         - name: Commit updated XCConfig
           run: |
               git config user.name "github-actions[bot]"
@@ -59,4 +102,8 @@ jobs:
               git add Redzone.base.xcconfig
               git commit -m "Bump Redzone iOS version to ${{ github.event.inputs.version }} (${{ github.event.inputs.build }}) [skip ci]" || echo "No changes to commit"
               git push origin main
+        - name: Clean up
+          run: |
+            security delete-keychain codesign.keychain
+            rm -rf ${{ github.workspace }}/private_keys || true
 
