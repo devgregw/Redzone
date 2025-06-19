@@ -33,7 +33,7 @@ jobs:
       - name: Setup Homebrew
         uses: tecolicom/actions-use-homebrew-tools@v1.3
         with:
-          tools: 'periphery xcbeautify'
+          tools: 'periphery xcbeautify coreutils'
       - name: Setup SPM
         uses: actions/cache@v3
         with:
