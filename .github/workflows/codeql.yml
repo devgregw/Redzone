@@ -42,7 +42,7 @@ jobs:
       name: Setup Homebrew
       uses: tecolicom/actions-use-homebrew-tools@v1.3
       with:
-        tools: 'xcbeautify expect'
+        tools: 'xcbeautify'
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Setup SPM
       uses: actions/cache@v3
