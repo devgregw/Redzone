@@ -43,22 +43,17 @@ jobs:
             restore-keys: |
               ${{ runner.os }}-packages-
         - name: Setup certificates
-          uses: apple-actions/import-codesign-certs@v5
-          id: codesign
+          uses: nickwph/apple-build-certificate-action@v1
           with:
-            p12-file-base64: ${{ secrets.IOS_DIST_P12_BASE64 }}
-            p12-password: ${{ secrets.IOS_DIST_P12_PASSWORD }}
-            keychain: codesign
+            certificate-base64: ${{ secrets.IOS_DIST_P12_BASE64 }}
+            certificate-password: ${{ secrets.IOS_DIST_P12_PASSWORD }}
         - name: Setup provisioning profile
-          uses: akiojin/install-provisioning-profile-github-action@v1.0
+          uses: nickwph/apple-provisioning-profile-action@v1
           with:
-            base64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+            profile-base64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
         - name: Setup App Store Connect
-          uses: timheuer/base64-to-file@v1
-          with:
-            fileName: AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
-            fileDir: ${{ github.workspace }}/private_keys
-            encodedString: ${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}
+          run: |
+            echo '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - > ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
         - name: Update XCConfig
           run: |
             sed -i '' 's/^VERSION=.*/VERSION=${{ github.event.inputs.version }}/' Redzone.base.xcconfig
@@ -104,6 +99,5 @@ jobs:
               git push origin main
         - name: Clean up
           run: |
-            security delete-keychain codesign.keychain
             rm -rf ${{ github.workspace }}/private_keys || true
 
