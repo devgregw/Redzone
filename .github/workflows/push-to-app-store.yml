@@ -50,7 +50,7 @@ jobs:
             security create-keychain -p $PASSWORD $KEYCHAIN_PATH
             security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
             security unlock-keychain -p $PASSWORD $KEYCHAIN_PATH
-            security import $RUNNER_TEMP/cert.p12 -P ${{ secrets.IOS_DIST_P12_PASSWORD }} -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+            security import $RUNNER_TEMP/cert.p12 -P '${{ secrets.IOS_DIST_P12_PASSWORD }}' -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
             security list-keychain -d user -s $KEYCHAIN_PATH
         - name: Setup provisioning profile
           run: |
