@@ -58,6 +58,7 @@ jobs:
             echo -n '${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}' | base64 -D -i - -o ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
         - name: Setup App Store Connect
           run: |
+            mkdir -p ${{ github.workspace }}/private_keys
             echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
         - name: Update XCConfig
           run: |
