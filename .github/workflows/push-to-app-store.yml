@@ -1,6 +1,9 @@
 name: "Redzone - iOS - Push to App Store"
 
 on:
+    pull_request:
+        branches: [ "main" ]
+        paths: [ "Redzone-iOS/**", ".github/workflows/push-to-app-store.yml" ]
     workflow_dispatch:
         inputs:
             version:
@@ -52,16 +55,19 @@ jobs:
             security unlock-keychain -p $PASSWORD $KEYCHAIN_PATH
             security import $RUNNER_TEMP/cert.p12 -P '${{ secrets.IOS_DIST_P12_PASSWORD }}' -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
             security list-keychain -d user -s $KEYCHAIN_PATH
+            security find-identity -v -p codesigning
         - name: Setup provisioning profiles
           shell: zsh {0}
           run: |
             mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-            tar -xf =( echo -n '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}' | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles --verbose
+            tar -xf =( echo -n '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}' | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles
+            ls -l ~/Library/MobileDevice/Provisioning\ Profiles
         - name: Setup App Store Connect
           run: |
             mkdir -p ${{ github.workspace }}/private_keys
             echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
         - name: Update XCConfig
+          if: github.event_name != 'workflow_dispatch'
           run: |
             sed -i '' 's/^VERSION=.*/VERSION=${{ github.event.inputs.version }}/' Redzone.base.xcconfig
             sed -i '' 's/^BUILD=.*/BUILD=${{ github.event.inputs.build }}/' Redzone.base.xcconfig
@@ -98,6 +104,7 @@ jobs:
             -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
             2>&1 | xcbeautify --renderer github-actions
         - name: Commit updated XCConfig
+          if: github.event_name != 'workflow_dispatch'
           run: |
               git config user.name "github-actions[bot]"
               git config user.email "github-actions[bot]@users.noreply.github.com"
