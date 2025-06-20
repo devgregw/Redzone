@@ -1,5 +1,5 @@
 //
-//  BottomToolbar.swift
+//  CurrentLocationButton.swift
 //  Redzone
 //
 //  Created by Greg Whatley on 4/8/23.
@@ -73,20 +73,5 @@ struct CurrentLocationButton: View {
         .padding(12)
         .clippedBackground()
         .padding([.horizontal, .bottom], 8)
-    }
-}
-
-struct BottomToolbar: View {
-    @Environment(Context.self) private var context
-    
-    let highestRisk: GeoJSONFeature?
-    let isSignificant: Bool
-    
-    var body: some View {
-        @Bindable var context = context
-        CurrentLocationButton(highestRisk: highestRisk, isSignificant: isSignificant)
-            .sheet(isPresented: $context.displaySettingsSheet) {
-                SettingsView()
-            }
     }
 }

@@ -25,9 +25,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Xcode
-        uses: maxim-lobanov/setup-xcode@v1.3.0
+        uses: maxim-lobanov/setup-xcode@v1.6.0
         with:
           xcode-version: ^16
       - name: Setup Homebrew
@@ -42,10 +42,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
       - name: Resolve package dependencies
-        run: set -o pipefail && xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
+        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       - name: Compile sources
-        run: set -o pipefail && xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
+        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild build-for-testing -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       - name: Run tests
-        run: set -o pipefail && xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" | xcbeautify --renderer github-actions
+        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild test-without-building -scheme "Redzone" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       - name: Periphery scan
         run: periphery scan --skip-build --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args

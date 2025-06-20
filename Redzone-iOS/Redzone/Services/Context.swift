@@ -15,10 +15,9 @@ class Context {
     var selectedOutlook: TappedOutlook? = nil {
         didSet {
             Logger.log(.map, "Tapped outlook: \(selectedOutlook?.highestRisk.outlookProperties.title ?? "nil")")
-            displaySettingsSheet = false
         }
     }
-    var displaySettingsSheet: Bool = false
+    var displayFavoritesSheet: Bool = false
     var mapCameraPosition: MapCameraPosition = .unitedStates
     
     func moveCamera(to coordinate: CLLocationCoordinate2D) {

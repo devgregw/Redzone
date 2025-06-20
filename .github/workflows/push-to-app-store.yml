@@ -1,0 +1,114 @@
+name: "Redzone - iOS - Push to App Store"
+
+on:
+    workflow_dispatch:
+        inputs:
+            version:
+                description: Version String
+                required: true
+            build:
+                description: Build Number
+                required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  appstore:
+    runs-on: 'macos-latest'
+    defaults:
+      run:
+        working-directory: ./Redzone-iOS
+    
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Xcode
+          uses: maxim-lobanov/setup-xcode@v1.6.0
+          with:
+            xcode-version: ^16
+        - name: Setup Homebrew
+          uses: tecolicom/actions-use-homebrew-tools@v1.3
+          with:
+            tools: 'xcbeautify'
+        - name: Setup SPM
+          uses: actions/cache@v3
+          with:
+            path: ./Redzone-iOS/.packages
+            key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
+            restore-keys: |
+              ${{ runner.os }}-packages-
+        - name: Setup certificates
+          run: |
+            echo -n '${{ secrets.IOS_DIST_P12_BASE64 }}' | base64 -D -i - -o $RUNNER_TEMP/cert.p12
+            PASSWORD=$(uuidgen)
+            KEYCHAIN_PATH=$RUNNER_TEMP/signing.keychain-db
+            security create-keychain -p $PASSWORD $KEYCHAIN_PATH
+            security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+            security unlock-keychain -p $PASSWORD $KEYCHAIN_PATH
+            security import $RUNNER_TEMP/cert.p12 -P '${{ secrets.IOS_DIST_P12_PASSWORD }}' -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+            security list-keychain -d user -s $KEYCHAIN_PATH
+            security find-identity -v -p codesigning
+        - name: Setup provisioning profiles
+          shell: zsh {0}
+          run: |
+            mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+            tar -xf =( echo -n '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}' | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles
+            ls -l ~/Library/MobileDevice/Provisioning\ Profiles
+        - name: Setup App Store Connect
+          run: |
+            mkdir -p ${{ github.workspace }}/private_keys
+            echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
+        - name: Update XCConfig
+          run: |
+            sed -i '' 's/^VERSION=.*/VERSION=${{ github.event.inputs.version }}/' Redzone.base.xcconfig
+            sed -i '' 's/^BUILD=.*/BUILD=${{ github.event.inputs.build }}/' Redzone.base.xcconfig
+            cat Redzone.base.xcconfig
+        - name: Resolve package dependencies
+          run: |
+            set -o pipefail && \
+            NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies \
+            -disableAutomaticPackageResolution \
+            -clonedSourcePackagesDirPath "./.packages" \
+            2>&1 | xcbeautify --renderer github-actions
+        - name: Archive
+          run: |
+            set -o pipefail && \
+            NSUnbufferedIO=YES xcodebuild archive \
+            -scheme "Redzone" \
+            -project "Redzone.xcodeproj" \
+            -derivedDataPath "./.build" \
+            -disableAutomaticPackageResolution \
+            -clonedSourcePackagesDirPath "./.packages" \
+            -configuration release \
+            -sdk iphoneos \
+            -archivePath Redzone-iOS.xcarchive \
+            2>&1 | xcbeautify --renderer github-actions
+        - name: Export IPA
+          run: |
+            set -o pipefail && \
+            NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
+            -archivePath Redzone-iOS.xcarchive \
+            -exportOptionsPlist ./exportOptions.plist \
+            -exportPath Redzone-iOS.ipa \
+            -authenticationKeyIssuerID ${{ secrets.IOS_ATC_API_KEY_ISSUER_ID}} \
+            -authenticationKeyID ${{ secrets.IOS_ATC_API_KEY_ID }} \
+            -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
+            2>&1 | xcbeautify --renderer github-actions
+        - name: Clean up
+          run: |
+            rm -rf ~/Library/MobileDevice/Provisioning\ Profiles || true
+            rm -rf ${{ github.workspace }}/private_keys || true
+            rm -f $RUNNER_TEMP/cert.p12 || true
+        - name: Commit updated XCConfig
+          run: |
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git add Redzone.base.xcconfig
+              git commit -m "Bump Redzone iOS version to ${{ github.event.inputs.version }} (${{ github.event.inputs.build }}) [skip ci]" || echo "No changes to commit"
+              git push origin main
+

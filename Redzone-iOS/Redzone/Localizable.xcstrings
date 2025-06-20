@@ -41,10 +41,13 @@
     "About This Risk" : {
 
     },
+    "Add Favorite" : {
+
+    },
     "Always have a plan and be prepared to take action in the event of severe weather. Use these resources to learn more about weather safety and plan ahead." : {
 
     },
-    "Automatically move camera" : {
+    "Automatically Move Camera" : {
 
     },
     "By continuing to use Redzone, you assume the entire risk associated with the use of this data." : {
@@ -71,10 +74,16 @@
     "Disclaimer" : {
 
     },
+    "Edit Favorites" : {
+
+    },
     "Error" : {
 
     },
     "Expired on" : {
+
+    },
+    "Favorites" : {
 
     },
     "Forecasted probability of 1-inch diameter hail or larger within 25 miles of a point." : {
@@ -113,6 +122,9 @@
     "No data available" : {
 
     },
+    "No Favorites" : {
+
+    },
     "No risk zones at your location" : {
 
     },
@@ -149,6 +161,9 @@
     "Redzone does not collect and store any of your personal information. You may choose to share your current location with Redzone, which is used to pinpoint your location on the map and provide information about outlooks at your location. This processing is done exclusively on your device. While Lock Screen & Home Screen widgets require location services, the core features of Redzone will remain functional if you choose to not share your location." : {
 
     },
+    "Remove Favorite" : {
+
+    },
     "Risk Levels" : {
 
     },
@@ -165,9 +180,6 @@
 
     },
     "Selected Outlook" : {
-
-    },
-    "Settings" : {
 
     },
     "Severe storms of either limited organization and logevety, or very low coverage and marginal intensity." : {
@@ -189,6 +201,9 @@
 
     },
     "Version" : {
+
+    },
+    "Version %@" : {
 
     },
     "Wind" : {

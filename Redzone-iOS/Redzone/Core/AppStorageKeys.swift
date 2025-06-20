@@ -9,4 +9,5 @@ enum AppStorageKeys {
     static let outlookType = "outlookType"
     static let mapStyle = "mapStyle"
     static let autoMoveCamera = "autoMoveCamera"
+    static let favoriteOutlooks = "favoriteOutlooks"
 }

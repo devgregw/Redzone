@@ -18,6 +18,7 @@ struct MapStylePicker: View {
             .foregroundStyle(.secondary)
         } label: {
             Label("Map Style", systemImage: "map")
+            Text(mapStyle.rawValue.capitalized)
         }
         .menuOrder(.fixed)
         .pickerStyle(.menu)

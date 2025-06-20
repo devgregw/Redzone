@@ -41,6 +41,15 @@ struct OutlookMapView: View {
             }
             .mapControlVisibility(.visible)
             .mapStyle(mapStyle)
+            .overlay(alignment: .top) {
+                Rectangle()
+                    .fill(Material.bar)
+                    .frame(height: 150)
+                    .mask {
+                        LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                    }
+                    .ignoresSafeArea()
+            }
         }
     }
 }
