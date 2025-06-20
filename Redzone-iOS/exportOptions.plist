@@ -10,9 +10,9 @@
         <string>app-store-connect</string>
         <key>provisioningProfiles</key>
         <dict>
-            <key>D2T6N8FXD6.dev.gregwhatley.redzone</key>
+            <key>dev.gregwhatley.redzone</key>
             <string>Redzone Distribution</string>
-            <key>D2T6N8FXD6.dev.gregwhatley.redzone.widget</key>
+            <key>dev.gregwhatley.redzone.widget</key>
             <string>Redzone Widgets Distribution</string>
         </dict>
         <key>signingStyle</key>
