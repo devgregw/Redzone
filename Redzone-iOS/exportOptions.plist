@@ -11,9 +11,9 @@
         <key>provisioningProfiles</key>
         <dict>
             <key>dev.gregwhatley.redzone</key>
-            <string>Redzone Distribution</string>
+            <string>Redzone Development</string>
             <key>dev.gregwhatley.redzone.widget</key>
-            <string>Redzone Widgets Distribution</string>
+            <string>Redzone Widgets Development</string>
         </dict>
         <key>signingStyle</key>
         <string>manual</string>
