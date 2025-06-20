@@ -8,10 +8,19 @@
         <string>upload</string>
         <key>method</key>
         <string>app-store-connect</string>
+        <key>provisioningProfiles</key>
+        <dict>
+            <key>dev.gregwhatley.redzone</key>
+            <string>Redzone Distribution</string>
+            <key>dev.gregwhatley.redzone.widget</key>
+            <string>Redzone Widgets Distribution</string>
+        </dict>
         <key>signingStyle</key>
-        <string>automatic</string>
+        <string>manual</string>
+        <key>stripSwiftSymbols</key>
+        <true />
         <key>uploadSymbols</key>
-        <true/>
+        <true />
         <key>teamID</key>
         <string>D2T6N8FXD6</string>
         <key>thinning</key>

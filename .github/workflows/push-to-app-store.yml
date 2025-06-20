@@ -85,7 +85,6 @@ jobs:
             -configuration release \
             -sdk iphoneos \
             -archivePath Redzone-iOS.xcarchive \
-            -allowProvisioningUpdates
             2>&1 | xcbeautify --renderer github-actions
         - name: Export IPA
           run: |
