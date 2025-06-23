@@ -10,4 +10,7 @@ enum AppStorageKeys {
     static let mapStyle = "mapStyle"
     static let autoMoveCamera = "autoMoveCamera"
     static let favoriteOutlooks = "favoriteOutlooks"
+#if DEBUG
+    static let useMockData = "favoriteOutlooks"
+#endif
 }
