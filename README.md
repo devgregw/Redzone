@@ -23,3 +23,49 @@ If you interact with an external link from Redzone, the privacy policy of that w
 ## Support
 
 To report a bug, file [a new issue](https://github.com/devgregw/Redzone/issues/new) if you have a GitHub account. If you do not have a GitHub account or want to submit feedback separately, feel free to [email me](mailto:redzone@gregwhatley.dev).
+
+## Screenshots
+
+### Risk Map
+
+| Categorical | Categorical (zoomed) | Details |
+| --- | --- | --- |
+| ![Categorical risk map](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_1.png?raw=true) | ![Categorical risk map (zoomed)](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_2.png?raw=true) | ![Categorical risk details](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_detail.png?raw=true) |
+
+| Wind | Details |
+| --- | --- |
+| ![Wind risk map](https://github.com/devgregw/Redzone/blob/main/screenshots/wind_1.png?raw=true) | ![Wind risk details](https://github.com/devgregw/Redzone/blob/main/screenshots/wind_detail.png?raw=true) |
+
+| Hail | Details |
+| --- | --- |
+| ![Hail risk map](https://github.com/devgregw/Redzone/blob/main/screenshots/hail_1.png?raw=true) | ![Hail risk details](https://github.com/devgregw/Redzone/blob/main/screenshots/hail_detail.png?raw=true) |
+
+| Tornado | Details |
+| --- | --- |
+| ![Tornado risk map](https://github.com/devgregw/Redzone/blob/main/screenshots/torn_1.png?raw=true) | ![Tornado risk details](https://github.com/devgregw/Redzone/blob/main/screenshots/torn_detail.png?raw=true) |
+
+| Menu | Menu (Risk) |
+| --- | --- |
+| ![Main menu](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_1.png?raw=true) | ![Main menu 2](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_2.png?raw=true) |
+
+### Widgets
+
+| Home Screen | Lock Screen |
+| --- | --- |
+| ![Home Screen widgets](https://github.com/devgregw/Redzone/blob/main/screenshots/widgets_home.png?raw=true) | ![Lock Screen widgets](https://github.com/devgregw/Redzone/blob/main/screenshots/widgets_lockscreen.png?raw=true) |
+
+### About
+
+| About | Disclaimer | Safety | Privacy |
+| --- | --- | --- | --- |
+| ![About](https://github.com/devgregw/Redzone/blob/main/screenshots/about_main.png?raw=true) | ![Disclaimer](https://github.com/devgregw/Redzone/blob/main/screenshots/about_disclaimer.png?raw=true) | ![Safety](https://github.com/devgregw/Redzone/blob/main/screenshots/about_safety.png?raw=true) | ![Privacy](https://github.com/devgregw/Redzone/blob/main/screenshots/about_privacy.png?raw=true) |
+
+#### Risks
+
+| Categorical | Wind | Hail | Tornado |
+| --- | --- | --- | --- |
+| ![Categorical](https://github.com/devgregw/Redzone/blob/main/screenshots/about_cat.png?raw=true) | ![Wind](https://github.com/devgregw/Redzone/blob/main/screenshots/about_wind.png?raw=true) | ![Hail](https://github.com/devgregw/Redzone/blob/main/screenshots/about_hail.png?raw=true) | ![Tornado](https://github.com/devgregw/Redzone/blob/main/screenshots/about_torn.png?raw=true) |
+
+| Probabilistic (Day 3) | Probabilistic (Day 4-8) |
+| --- | --- |
+| ![Day 3](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob3.png?raw=true) | ![Lock Screen widgets](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob48.png?raw=true) |
