@@ -85,7 +85,7 @@ struct AboutView: View {
         }
         .scrollContentBackground(.visible)
         .navigationTitle("About")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 

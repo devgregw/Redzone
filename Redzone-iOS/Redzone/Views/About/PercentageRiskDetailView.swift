@@ -59,6 +59,7 @@ struct PercentageRiskDetailView: View {
         }
         .scrollContentBackground(.visible)
         .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
