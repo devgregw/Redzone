@@ -3,6 +3,6 @@ project: Redzone.xcodeproj
 retain_codable_properties: true
 retain_swift_ui_previews: true
 schemes:
-  - Redzone
+  - Redzone (Debug)
 strict: true
 verbose: true
