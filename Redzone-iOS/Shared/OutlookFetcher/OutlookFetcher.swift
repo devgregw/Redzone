@@ -23,6 +23,27 @@ class OutlookFetcher {
     }
     
     static func fetch(outlook: OutlookType) async -> Result<OutlookResponse, OutlookFetcherError> {
+#if DEBUG
+        if UserDefaults.standard.bool(forKey: AppStorageKeys.useMockData) {
+            Logger.log(.outlookService, "WARNING: Using mocked data.")
+            let fileName: String
+            switch outlook {
+            case .convective1(.categorical): fileName = "day1otlk_20250608_2000_cat.lyr"
+            case .convective1(.wind): fileName = "day1otlk_20250608_2000_wind.lyr"
+            case .convective1(.hail): fileName = "day1otlk_20250608_2000_hail.lyr"
+            case .convective1(.tornado): fileName = "day1otlk_20250608_2000_torn.lyr"
+            default: return .failure(.noData)
+            }
+            guard let fileURL = Bundle.main.url(forResource: fileName, withExtension: "geojson") else {
+                return .failure(.unknown(message: "Failed to open mock data file."))
+            }
+            do {
+                return .success(try OutlookResponse(data: Data(contentsOf: fileURL), outlookType: outlook))
+            } catch {
+                return .failure(.networkError(cause: error))
+            }
+        }
+#endif
         if let url = URL(string: "\(hostname)/\(outlook.path)") {
             do {
                 let (data, urlResponse) = try await session.data(from: url)

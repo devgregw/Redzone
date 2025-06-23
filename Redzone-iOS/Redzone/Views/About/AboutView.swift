@@ -72,8 +72,13 @@ struct AboutView: View {
                 HStack {
                     Text("Version")
                     Spacer()
+#if DEBUG
+                    (Text(Bundle.main.versionString) + Text("DEBUG"))
+                        .monospaced()
+#else
                     Text(Bundle.main.versionString)
                         .monospaced()
+#endif
                 }
             }
             .foregroundStyle(.primary.opacity(0.8))

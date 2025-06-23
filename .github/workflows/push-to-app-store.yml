@@ -6,7 +6,7 @@ on:
         paths: [ "Redzone-iOS/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml" ]
     pull_request:
         branches: [ "main" ]
-        paths: [ "Redzone-iOS/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml" ]
+        paths: [ "Redzone-iOS/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml", "Redzone-iOS/**" ]
     workflow_dispatch:
         inputs:
             version:
@@ -86,7 +86,7 @@ jobs:
           run: |
             set -o pipefail && \
             NSUnbufferedIO=YES xcodebuild archive \
-            -scheme "Redzone" \
+            -scheme "Redzone (Release)" \
             -project "Redzone.xcodeproj" \
             -derivedDataPath "./.build" \
             -disableAutomaticPackageResolution \

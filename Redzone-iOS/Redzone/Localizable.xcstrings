@@ -71,6 +71,9 @@
     "Day 2 (tomorrow)" : {
 
     },
+    "DEBUG" : {
+
+    },
     "Disclaimer" : {
 
     },
@@ -194,6 +197,9 @@
     "Tornado" : {
 
     },
+    "Use mock data" : {
+
+    },
     "Valid from" : {
 
     },
@@ -204,6 +210,9 @@
 
     },
     "Version %@" : {
+
+    },
+    "Version %@ DEBUG" : {
 
     },
     "Wind" : {
