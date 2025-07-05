@@ -30,7 +30,9 @@ To report a bug, file [a new issue](https://github.com/devgregw/Redzone/issues/n
 
 ## Screenshots
 
-### Risk Map
+<details>
+
+<summary><b>Risk Map</b></summary>
 
 | Categorical | Categorical (zoomed) | Details |
 | --- | --- | --- |
@@ -51,20 +53,32 @@ To report a bug, file [a new issue](https://github.com/devgregw/Redzone/issues/n
 | Menu | Menu (Risk) |
 | --- | --- |
 | ![Main menu](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_1.png?raw=true) | ![Main menu 2](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_2.png?raw=true) |
+ 
+</details>
 
-### Widgets
+<details>
+
+<summary><b>Widgets</b></summary>
 
 | Home Screen | Lock Screen |
 | --- | --- |
 | ![Home Screen widgets](https://github.com/devgregw/Redzone/blob/main/screenshots/widgets_home.png?raw=true) | ![Lock Screen widgets](https://github.com/devgregw/Redzone/blob/main/screenshots/widgets_lockscreen.png?raw=true) |
+ 
+</details>
 
-### About
+<details>
+
+<summary><b>About</b></summary>
 
 | About | Disclaimer | Safety | Privacy |
 | --- | --- | --- | --- |
 | ![About](https://github.com/devgregw/Redzone/blob/main/screenshots/about_main.png?raw=true) | ![Disclaimer](https://github.com/devgregw/Redzone/blob/main/screenshots/about_disclaimer.png?raw=true) | ![Safety](https://github.com/devgregw/Redzone/blob/main/screenshots/about_safety.png?raw=true) | ![Privacy](https://github.com/devgregw/Redzone/blob/main/screenshots/about_privacy.png?raw=true) |
+ 
+</details>
 
-#### Risks
+<details>
+
+<summary><b>Risks</b></summary>
 
 | Categorical | Wind | Hail | Tornado |
 | --- | --- | --- | --- |
@@ -73,3 +87,5 @@ To report a bug, file [a new issue](https://github.com/devgregw/Redzone/issues/n
 | Probabilistic (Day 3) | Probabilistic (Day 4-8) |
 | --- | --- |
 | ![Day 3](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob3.png?raw=true) | ![Lock Screen widgets](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob48.png?raw=true) |
+ 
+</details>
