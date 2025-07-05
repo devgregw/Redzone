@@ -12,7 +12,11 @@ Redzone displays and represents publicly available data from the National Weathe
 
 By using Redzone, you assume the entire risk associated with the use of this data.
 
-Redzone and all data provided herein by the NWS are provided “as-is,” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability or fitness for a particular purpose. In no event should I nor the NWS be liable to you or to any third party for any direct, indirect, incidental, consequential, special, or exemplary damages or lost profit resulting from any use or misuse of this data.
+Redzone and all data provided herein by the NWS are provided “as-is,” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability or fitness for a particular purpose. In no event should I be liable to you or to any third party for any direct, indirect, incidental, consequential, special, or exemplary damages or lost profit resulting from any use or misuse of this data. For more information, please see the National Weather Service's own [disclaimer](https://www.weather.gov/disclaimer).
+
+### 17 U.S.C. § 403 Notice
+
+© 2025 Gregory Whatley. In accordance with [17 U.S.C. § 403](https://www.law.cornell.edu/uscode/text/17/403), portions of *Redzone* incoprorate works of the United States government - namely raw risk outlook data (including geograpical coordinates, colors, names, and descriptions) and agency logos used solely to identify links to their respective websites - which are not subject to copyright protection. Copyright is claimed only in the original content authored by Gregory Whatley. *Redzone* source code is licensed under the [MIT License](LICENSE).
  
 ## Privacy
 
