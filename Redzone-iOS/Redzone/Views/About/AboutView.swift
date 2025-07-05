@@ -15,7 +15,7 @@ struct AboutView: View {
             Section("Data Source") {
                 Link(destination: URL(string: "https://spc.noaa.gov")!) {
                     HStack {
-                        Image("NWSLogo", bundle: .main)
+                        Image(.nwsLogo)
                             .resizable()
                             .frame(width: 40, height: 40)
                             .accessibilityHidden(true)
@@ -35,7 +35,7 @@ struct AboutView: View {
                 
                 Link(destination: URL(string: "https://noaa.gov")!) {
                     HStack {
-                        Image("NOAALogo", bundle: .main)
+                        Image(.noaaLogo)
                             .resizable()
                             .frame(width: 40, height: 40)
                             .accessibilityHidden(true)
@@ -58,14 +58,14 @@ struct AboutView: View {
                 } label: {
                     Label("Disclaimer", systemImage: "briefcase")
                 }
-                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", image: "NWSLogo")
+                LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", image: .nwsLogo)
             }
             
             RiskLevelLinksView()
             
             Section {
-                LabelledLink("About Me", destination: "https://gregwhatley.dev", image: "Me")
-                LabelledLink("Source Code", destination: "https://github.com/devgregw/Redzone", image: "GitHubLogo")
+                LabelledLink("About Me", destination: "https://gregwhatley.dev", image: .me)
+                LabelledLink("Source Code", destination: "https://github.com/devgregw/Redzone", image: .gitHubLogo)
             }
             
             Section {
