@@ -5,7 +5,6 @@
 //  Created by Greg Whatley on 4/8/23.
 //
 
-import SafariServices
 import SwiftUI
 import GeoJSON
 

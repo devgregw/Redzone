@@ -91,7 +91,6 @@
 		FC5237832E08EEA400E8D16E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
 		FC5237842E08EEA400E8D16E /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FC5237472E08EEA400E8D16E /* GeoJSON */; };
 		FC5237852E08EEA400E8D16E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB4BBB82A48E12900738C3E /* MapKit.framework */; };
-		FC5237862E08EEA400E8D16E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDA91532A3E5123003FFD84 /* SafariServices.framework */; };
 		FC5237882E08EEA400E8D16E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FC55043B2DE51208000F3AE5 /* PrivacyInfo.xcprivacy */; };
 		FC5237892E08EEA400E8D16E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */; };
 		FC52378A2E08EEA400E8D16E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC70F92829C29F9D006C5DAC /* Assets.xcassets */; };
@@ -209,7 +208,6 @@
 		FCC6D5C22C7ED8BD00B161D5 /* WidgetFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5C12C7ED8BD00B161D5 /* WidgetFoundation.swift */; };
 		FCD037502BC4EE8F00986EC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
 		FCD037512BC4EE8F00986EC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
-		FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDA91532A3E5123003FFD84 /* SafariServices.framework */; };
 		FCE29F2C2CAE3BDA00056693 /* ConvectiveRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */; };
 		FCE29F2E2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */; };
 		FCE29F3E2CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */; };
@@ -409,7 +407,6 @@
 				FC5237832E08EEA400E8D16E /* SwiftUI.framework in Frameworks */,
 				FC5237842E08EEA400E8D16E /* GeoJSON in Frameworks */,
 				FC5237852E08EEA400E8D16E /* MapKit.framework in Frameworks */,
-				FC5237862E08EEA400E8D16E /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +427,6 @@
 				FCB2C72D2C7EE24900F01C81 /* SwiftUI.framework in Frameworks */,
 				FCB2C7272C7EE1E800F01C81 /* GeoJSON in Frameworks */,
 				FCB4BBB92A48E12900738C3E /* MapKit.framework in Frameworks */,
-				FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
