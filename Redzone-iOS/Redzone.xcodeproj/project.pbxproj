@@ -33,6 +33,7 @@
 		FC2A898C2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
 		FC2DE5572DF8A7600081DE27 /* RedzoneGlass.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC2DE5562DF8A7600081DE27 /* RedzoneGlass.icon */; };
 		FC3172972C800474005281F6 /* MapViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3172962C800474005281F6 /* MapViewStyle.swift */; };
+		FC3809762E2C10DD0055E599 /* RedzoneGlass.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC2DE5562DF8A7600081DE27 /* RedzoneGlass.icon */; };
 		FC52374A2E08EEA400E8D16E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
 		FC52374B2E08EEA400E8D16E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63D29E1DE5700046C79 /* View.swift */; };
 		FC52374C2E08EEA400E8D16E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F729D9F54A00046C79 /* AboutView.swift */; };
@@ -1018,6 +1019,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5237882E08EEA400E8D16E /* PrivacyInfo.xcprivacy in Resources */,
+				FC3809762E2C10DD0055E599 /* RedzoneGlass.icon in Resources */,
 				FC5237892E08EEA400E8D16E /* Localizable.xcstrings in Resources */,
 				FC5237922E08EF6500E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */,
 				FC5237932E08EF6500E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */,
@@ -1331,7 +1333,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = RedzoneGlass;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1369,7 +1371,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = RedzoneGlass;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
