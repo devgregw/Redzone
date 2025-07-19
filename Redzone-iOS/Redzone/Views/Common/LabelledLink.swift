@@ -12,9 +12,9 @@ struct LabelledLink: View {
     let image: Image
     let destination: URL?
     
-    init(_ title: String, destination: String, image: String) {
+    init(_ title: String, destination: String, image: ImageResource) {
         self.title = title
-        self.image = Image(image, bundle: .main).resizable()
+        self.image = Image(image).resizable()
         self.destination = URL(string: destination)
     }
     

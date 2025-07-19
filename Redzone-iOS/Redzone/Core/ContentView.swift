@@ -14,6 +14,9 @@ struct ContentView: View {
     @CodedAppStorage(AppStorageKeys.outlookType) private var outlookType: OutlookType = Context.defaultOutlookType
     @AppStorage(AppStorageKeys.mapStyle) private var mapStyle: MapViewStyle = .standard
     @AppStorage(AppStorageKeys.autoMoveCamera) private var autoMoveCamera = true
+#if DEBUG
+    @AppStorage(AppStorageKeys.useMockData) private var useMockData: Bool = false
+#endif
     @Environment(OutlookService.self) private var outlookService
     @Environment(LocationService.self) private var locationService
     @Environment(Context.self) private var context
@@ -73,12 +76,18 @@ struct ContentView: View {
                 .sheet(isPresented: $context.displayFavoritesSheet) {
                     FavoritesManagerView()
                 }
-                .task(id: outlookType) {
-                    await outlookService.load(outlookType)
-                    if autoMoveCamera {
-                        context.moveCamera(centering: outlookService.state)
-                    }
-                }
+            #if DEBUG
+                .task(id: [outlookType.hashValue, useMockData.hashValue], fetchOutlook)
+            #else
+                .task(id: outlookType, fetchOutlook)
+            #endif
+        }
+    }
+    
+    private func fetchOutlook() async {
+        await outlookService.load(outlookType)
+        if autoMoveCamera {
+            context.moveCamera(centering: outlookService.state)
         }
     }
 }

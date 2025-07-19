@@ -51,3 +51,16 @@ extension OutlookType {
         "\(subSection) • Day \(day)"
     }
 }
+
+// TODO: Remove after Xcode 26 GA
+#if compiler(<6.2)
+extension LocalizedStringResource {
+    static var disclaimerAffiliation: LocalizedStringResource { .init("disclaimerAffiliation") }
+    static var disclaimerUse: LocalizedStringResource { .init("disclaimerUse") }
+    static var disclaimerLiability: LocalizedStringResource { .init("disclaimerLiability") }
+    static var disclaimerCopyright: LocalizedStringResource { .init("disclaimerCopyright") }
+    static var disclaimerSafety: LocalizedStringResource { .init("disclaimerSafety") }
+    static var disclaimerPrivacy: LocalizedStringResource { .init("disclaimerPrivacy") }
+    static var disclaimerPrivacyExternal: LocalizedStringResource { .init("disclaimerPrivacyExternal") }
+}
+#endif

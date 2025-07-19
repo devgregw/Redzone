@@ -5,7 +5,6 @@
 //  Created by Greg Whatley on 4/8/23.
 //
 
-import SafariServices
 import SwiftUI
 import GeoJSON
 
@@ -111,7 +110,7 @@ struct RiskDetailView: View {
                         Label("About This Risk", systemImage: "questionmark.circle")
                     }
                     
-                    LabelledLink("Forecast Discussion", destination: commentaryURL, image: "NOAALogo")
+                    LabelledLink("Forecast Discussion", destination: commentaryURL, image: .noaaLogo)
                 }
                 
                 SafetyLinksSection(tornado: properties.title.contains("Tornado"))

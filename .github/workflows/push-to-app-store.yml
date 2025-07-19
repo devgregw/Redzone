@@ -1,6 +1,12 @@
 name: "Redzone - iOS - Push to App Store"
 
 on:
+    push:
+        branches: [ "main" ]
+        paths: [ "Redzone-iOS/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml" ]
+    pull_request:
+        branches: [ "main" ]
+        paths: [ "Redzone-iOS/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml", "Redzone-iOS/**" ]
     workflow_dispatch:
         inputs:
             version:
@@ -11,7 +17,7 @@ on:
                 required: true
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -63,7 +69,8 @@ jobs:
           run: |
             mkdir -p ${{ github.workspace }}/private_keys
             echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
-        - name: Update XCConfig
+        - name: Set version in XCConfig
+          if: github.event_name == 'workflow_dispatch'
           run: |
             sed -i '' 's/^VERSION=.*/VERSION=${{ github.event.inputs.version }}/' Redzone.base.xcconfig
             sed -i '' 's/^BUILD=.*/BUILD=${{ github.event.inputs.build }}/' Redzone.base.xcconfig
@@ -79,7 +86,7 @@ jobs:
           run: |
             set -o pipefail && \
             NSUnbufferedIO=YES xcodebuild archive \
-            -scheme "Redzone" \
+            -scheme "Redzone (Release)" \
             -project "Redzone.xcodeproj" \
             -derivedDataPath "./.build" \
             -disableAutomaticPackageResolution \
@@ -88,7 +95,8 @@ jobs:
             -sdk iphoneos \
             -archivePath Redzone-iOS.xcarchive \
             2>&1 | xcbeautify --renderer github-actions
-        - name: Export IPA
+        - name: Export & Upload IPA
+          if: github.event_name != 'pull_request'
           run: |
             set -o pipefail && \
             NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
@@ -99,16 +107,21 @@ jobs:
             -authenticationKeyID ${{ secrets.IOS_ATC_API_KEY_ID }} \
             -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
             2>&1 | xcbeautify --renderer github-actions
+        - name: Export & Upload IPA (dry run)
+          if: github.event_name == 'pull_request'
+          run: |
+            set -o pipefail && \
+            NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
+            -archivePath Redzone-iOS.xcarchive \
+            -exportOptionsPlist ./exportOptions-exportOnly.plist \
+            -exportPath Redzone-iOS.ipa \
+            -authenticationKeyIssuerID ${{ secrets.IOS_ATC_API_KEY_ISSUER_ID}} \
+            -authenticationKeyID ${{ secrets.IOS_ATC_API_KEY_ID }} \
+            -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
+            2>&1 | xcbeautify --renderer github-actions
         - name: Clean up
           run: |
             rm -rf ~/Library/MobileDevice/Provisioning\ Profiles || true
             rm -rf ${{ github.workspace }}/private_keys || true
             rm -f $RUNNER_TEMP/cert.p12 || true
-        - name: Commit updated XCConfig
-          run: |
-              git config user.name "github-actions[bot]"
-              git config user.email "github-actions[bot]@users.noreply.github.com"
-              git add Redzone.base.xcconfig
-              git commit -m "Bump Redzone iOS version to ${{ github.event.inputs.version }} (${{ github.event.inputs.build }}) [skip ci]" || echo "No changes to commit"
-              git push origin main
 

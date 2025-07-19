@@ -12,12 +12,12 @@ struct SafetyLinksSection: View {
     
     var body: some View {
         Section("Safety") {
-            LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", image: "NWSLogo")
+            LabelledLink("Safety for All Hazards", destination: "https://www.weather.gov/safety", image: .nwsLogo)
             if tornado {
-                LabelledLink("About The Enhanced Fujita (EF) Scale", destination: "https://www.spc.noaa.gov/efscale", image: "NOAALogo")
+                LabelledLink("About The Enhanced Fujita (EF) Scale", destination: "https://www.spc.noaa.gov/efscale", image: .noaaLogo)
             }
-            LabelledLink("Make a Plan", destination: "https://www.ready.gov/plan", image: "ReadyLogo")
-            LabelledLink("SPC Products", destination: "https://www.spc.noaa.gov/misc/about.html", image: "NOAALogo")
+            LabelledLink("Make a Plan", destination: "https://www.ready.gov/plan", image: .readyLogo)
+            LabelledLink("SPC Products", destination: "https://www.spc.noaa.gov/misc/about.html", image: .noaaLogo)
         }
     }
 }

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC70F92029C29F9B006C5DAC"
-               BuildableName = "Redzone.app"
-               BlueprintName = "Redzone"
+               BlueprintIdentifier = "FC5237442E08EEA400E8D16E"
+               BuildableName = "Redzone with Mock Data.app"
+               BlueprintName = "Redzone with Mock Data"
                ReferencedContainer = "container:Redzone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,35 +56,34 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC70F92029C29F9B006C5DAC"
-            BuildableName = "Redzone.app"
-            BlueprintName = "Redzone"
+            BlueprintIdentifier = "FC5237442E08EEA400E8D16E"
+            BuildableName = "Redzone with Mock Data.app"
+            BlueprintName = "Redzone with Mock Data"
             ReferencedContainer = "container:Redzone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC70F92029C29F9B006C5DAC"
-            BuildableName = "Redzone.app"
-            BlueprintName = "Redzone"
+            BlueprintIdentifier = "FC5237442E08EEA400E8D16E"
+            BuildableName = "Redzone with Mock Data.app"
+            BlueprintName = "Redzone with Mock Data"
             ReferencedContainer = "container:Redzone.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

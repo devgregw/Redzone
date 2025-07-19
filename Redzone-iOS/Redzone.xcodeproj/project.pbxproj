@@ -33,6 +33,129 @@
 		FC2A898C2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
 		FC2DE5572DF8A7600081DE27 /* RedzoneGlass.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC2DE5562DF8A7600081DE27 /* RedzoneGlass.icon */; };
 		FC3172972C800474005281F6 /* MapViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3172962C800474005281F6 /* MapViewStyle.swift */; };
+		FC52374A2E08EEA400E8D16E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
+		FC52374B2E08EEA400E8D16E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63D29E1DE5700046C79 /* View.swift */; };
+		FC52374C2E08EEA400E8D16E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F729D9F54A00046C79 /* AboutView.swift */; };
+		FC52374D2E08EEA400E8D16E /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5A82C7ED4FA00B161D5 /* Collection.swift */; };
+		FC52374E2E08EEA400E8D16E /* ToolbarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F12DFFBD8500692CBD /* ToolbarMenu.swift */; };
+		FC52374F2E08EEA400E8D16E /* TappedOutlook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC52A48F93300738C3E /* TappedOutlook.swift */; };
+		FC5237502E08EEA400E8D16E /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */; };
+		FC5237512E08EEA400E8D16E /* OutlookFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */; };
+		FC5237522E08EEA400E8D16E /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
+		FC5237532E08EEA400E8D16E /* MapMultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37A02B79B4B700AEB3C8 /* MapMultiPolygon.swift */; };
+		FC5237542E08EEA400E8D16E /* NavigationBarBackgroundHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F32DFFC00B00692CBD /* NavigationBarBackgroundHiddenModifier.swift */; };
+		FC5237552E08EEA400E8D16E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC72A4919E600738C3E /* ErrorView.swift */; };
+		FC5237562E08EEA400E8D16E /* CodedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3232DE3FFB300B3B8CC /* CodedAppStorage.swift */; };
+		FC5237572E08EEA400E8D16E /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
+		FC5237582E08EEA400E8D16E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
+		FC5237592E08EEA400E8D16E /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745F2A40D8220058EBF7 /* OutlookService.swift */; };
+		FC52375A2E08EEA400E8D16E /* OutlookMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386FC2A57A9B000C10FFB /* OutlookMapView.swift */; };
+		FC52375B2E08EEA400E8D16E /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
+		FC52375C2E08EEA400E8D16E /* PercentageRiskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37962B7879C300AEB3C8 /* PercentageRiskDetailView.swift */; };
+		FC52375D2E08EEA400E8D16E /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
+		FC52375E2E08EEA400E8D16E /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DD71C2DB31390002BB563 /* DisclaimerView.swift */; };
+		FC52375F2E08EEA400E8D16E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC82317A2DE211BF00492461 /* String.swift */; };
+		FC5237602E08EEA400E8D16E /* FavoritesManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F62E0483F600692CBD /* FavoritesManagerView.swift */; };
+		FC5237612E08EEA400E8D16E /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5A92C7ED4FA00B161D5 /* Bool.swift */; };
+		FC5237622E08EEA400E8D16E /* AboutCategoricalRiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37942B78793600AEB3C8 /* AboutCategoricalRiskView.swift */; };
+		FC5237632E08EEA400E8D16E /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37912B76C2DD00AEB3C8 /* DismissButton.swift */; };
+		FC5237642E08EEA400E8D16E /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5A42C7ED48300B161D5 /* Context.swift */; };
+		FC5237652E08EEA400E8D16E /* MapStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668972A5CFF4D00CA34DC /* MapStylePicker.swift */; };
+		FC5237662E08EEA400E8D16E /* ClippedBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA31C2DE3D90300B3B8CC /* ClippedBackgroundModifier.swift */; };
+		FC5237672E08EEA400E8D16E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92629C29F9B006C5DAC /* ContentView.swift */; };
+		FC5237682E08EEA400E8D16E /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
+		FC5237692E08EEA400E8D16E /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
+		FC52376A2E08EEA400E8D16E /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62E29E1BB6A00046C79 /* CurrentLocationButton.swift */; };
+		FC52376B2E08EEA400E8D16E /* FavoritesPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36F82E04840A00692CBD /* FavoritesPicker.swift */; };
+		FC52376C2E08EEA400E8D16E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F029D9C8E800046C79 /* Color.swift */; };
+		FC52376D2E08EEA400E8D16E /* OutlookProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */; };
+		FC52376E2E08EEA400E8D16E /* CommonURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA31E2DE3FF8200B3B8CC /* CommonURL.swift */; };
+		FC52376F2E08EEA400E8D16E /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
+		FC5237702E08EEA400E8D16E /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F61829E11CA800046C79 /* LoadingModifier.swift */; };
+		FC5237712E08EEA400E8D16E /* GeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */; };
+		FC5237722E08EEA400E8D16E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26689E2A5E386200CA34DC /* LocationService.swift */; };
+		FC5237732E08EEA400E8D16E /* MapViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3172962C800474005281F6 /* MapViewStyle.swift */; };
+		FC5237742E08EEA400E8D16E /* MainToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA36EF2DFFBD0C00692CBD /* MainToolbar.swift */; };
+		FC5237752E08EEA400E8D16E /* LabelledLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DD71F2DB34CC7002BB563 /* LabelledLink.swift */; };
+		FC5237762E08EEA400E8D16E /* OutlookSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */; };
+		FC5237772E08EEA400E8D16E /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
+		FC5237782E08EEA400E8D16E /* RiskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63229E1C84C00046C79 /* RiskDetailView.swift */; };
+		FC5237792E08EEA400E8D16E /* MapStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC378F2B75C88300AEB3C8 /* MapStyleModifier.swift */; };
+		FC52377A2E08EEA400E8D16E /* SigSevLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379E2B79AC3100AEB3C8 /* SigSevLegendIconView.swift */; };
+		FC52377B2E08EEA400E8D16E /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
+		FC52377C2E08EEA400E8D16E /* RiskLevelLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC37982B787A0F00AEB3C8 /* RiskLevelLinksView.swift */; };
+		FC52377D2E08EEA400E8D16E /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
+		FC52377E2E08EEA400E8D16E /* SafetyLinksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3252DE4067100B3B8CC /* SafetyLinksSection.swift */; };
+		FC52377F2E08EEA400E8D16E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3292DE4B40400B3B8CC /* Extensions.swift */; };
+		FC5237802E08EEA400E8D16E /* Redzone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70F92429C29F9B006C5DAC /* Redzone.swift */; };
+		FC5237812E08EEA400E8D16E /* OutlookTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F62C29E1BA9800046C79 /* OutlookTypePicker.swift */; };
+		FC5237832E08EEA400E8D16E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
+		FC5237842E08EEA400E8D16E /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FC5237472E08EEA400E8D16E /* GeoJSON */; };
+		FC5237852E08EEA400E8D16E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB4BBB82A48E12900738C3E /* MapKit.framework */; };
+		FC5237882E08EEA400E8D16E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FC55043B2DE51208000F3AE5 /* PrivacyInfo.xcprivacy */; };
+		FC5237892E08EEA400E8D16E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */; };
+		FC52378A2E08EEA400E8D16E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC70F92829C29F9D006C5DAC /* Assets.xcassets */; };
+		FC5237922E08EF6500E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B45A2E08E45200BEFBE7 /* day1otlk_20250608_2000_torn.lyr.geojson */; };
+		FC5237932E08EF6500E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B4582E08E45200BEFBE7 /* day1otlk_20250608_2000_cat.lyr.geojson */; };
+		FC5237942E08EF6500E8D16E /* day1otlk_20250608_2000_hail.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B4592E08E45200BEFBE7 /* day1otlk_20250608_2000_hail.lyr.geojson */; };
+		FC5237952E08EF6500E8D16E /* day1otlk_20250608_2000_wind.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B45B2E08E45200BEFBE7 /* day1otlk_20250608_2000_wind.lyr.geojson */; };
+		FC52379A2E08EF6A00E8D16E /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C72E2C7EE49B00F01C81 /* DateLabel.swift */; };
+		FC52379B2E08EF6A00E8D16E /* OutlookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C72A2C7EE22A00F01C81 /* OutlookProvider.swift */; };
+		FC52379C2E08EF6A00E8D16E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC82317A2DE211BF00492461 /* String.swift */; };
+		FC52379D2E08EF6A00E8D16E /* RedzoneWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF912F22BC0F61C005E5A44 /* RedzoneWidgets.swift */; };
+		FC52379E2E08EF6A00E8D16E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
+		FC52379F2E08EF6A00E8D16E /* OutlookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811102BC1E952005D3552 /* OutlookFetcher.swift */; };
+		FC5237A02E08EF6A00E8D16E /* OutlookSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB386F92A57A6C300C10FFB /* OutlookSeverity.swift */; };
+		FC5237A12E08EF6A00E8D16E /* ConvectiveRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */; };
+		FC5237A22E08EF6A00E8D16E /* WidgetFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5C12C7ED8BD00B161D5 /* WidgetFoundation.swift */; };
+		FC5237A32E08EF6A00E8D16E /* OutlookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8110D2BC1E92D005D3552 /* OutlookType.swift */; };
+		FC5237A42E08EF6A00E8D16E /* NoSevereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72C72BC370F900E41256 /* NoSevereView.swift */; };
+		FC5237A52E08EF6A00E8D16E /* TimelineReloadPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5B82C7ED8A500B161D5 /* TimelineReloadPolicy.swift */; };
+		FC5237A62E08EF6A00E8D16E /* OutlookProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4BBC12A48E36100738C3E /* OutlookProperties.swift */; };
+		FC5237A72E08EF6A00E8D16E /* CombinedRisks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F462CAE425C00056693 /* CombinedRisks.swift */; };
+		FC5237A82E08EF6A00E8D16E /* CategoricalGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72C52BC3702E00E41256 /* CategoricalGaugeView.swift */; };
+		FC5237A92E08EF6A00E8D16E /* WidgetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF8111E2BC1ED8C005D3552 /* WidgetLocation.swift */; };
+		FC5237AA2E08EF6A00E8D16E /* OutlookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09745D2A40D7A50058EBF7 /* OutlookResponse.swift */; };
+		FC5237AB2E08EF6A00E8D16E /* AppIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5B62C7ED8A500B161D5 /* AppIntentTimelineProvider.swift */; };
+		FC5237AC2E08EF6A00E8D16E /* CommonURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA31E2DE3FF8200B3B8CC /* CommonURL.swift */; };
+		FC5237AD2E08EF6A00E8D16E /* OutlookDayConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D12BC3752800E41256 /* OutlookDayConfigurationIntent.swift */; };
+		FC5237AE2E08EF6A00E8D16E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5B42C7ED8A500B161D5 /* View.swift */; };
+		FC5237AF2E08EF6A00E8D16E /* ConvectiveRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */; };
+		FC5237B02E08EF6A00E8D16E /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
+		FC5237B12E08EF6A00E8D16E /* WidgetFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5B92C7ED8A500B161D5 /* WidgetFamily.swift */; };
+		FC5237B22E08EF6A00E8D16E /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5A92C7ED4FA00B161D5 /* Bool.swift */; };
+		FC5237B32E08EF6A00E8D16E /* OutlookLegendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379C2B79ABB800AEB3C8 /* OutlookLegendIconView.swift */; };
+		FC5237B42E08EF6A00E8D16E /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
+		FC5237B52E08EF6A00E8D16E /* OutlookFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF811142BC1EA66005D3552 /* OutlookFetcherError.swift */; };
+		FC5237B62E08EF6A00E8D16E /* WidgetErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72C92BC3714800E41256 /* WidgetErrorView.swift */; };
+		FC5237B72E08EF6A00E8D16E /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5A82C7ED4FA00B161D5 /* Collection.swift */; };
+		FC5237B82E08EF6A00E8D16E /* OutlookDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72CF2BC3748400E41256 /* OutlookDay.swift */; };
+		FC5237B92E08EF6A00E8D16E /* GeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */; };
+		FC5237BA2E08EF6A00E8D16E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F029D9C8E800046C79 /* Color.swift */; };
+		FC5237BB2E08EF6A00E8D16E /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F60F29E10BB000046C79 /* Optional.swift */; };
+		FC5237BC2E08EF6A00E8D16E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
+		FC5237BD2E08EF6A00E8D16E /* RiskBreakdownWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */; };
+		FC5237BE2E08EF6A00E8D16E /* CategoricalOutlookWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F332CAE3E7100056693 /* CategoricalOutlookWidgetEntryView.swift */; };
+		FC5237BF2E08EF6A00E8D16E /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */; };
+		FC5237C02E08EF6A00E8D16E /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5B72C7ED8A500B161D5 /* Timeline.swift */; };
+		FC5237C12E08EF6A00E8D16E /* UnsupportedWidgetFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2C7352C7EE59800F01C81 /* UnsupportedWidgetFamilyView.swift */; };
+		FC5237C22E08EF6A00E8D16E /* CombinedRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F422CAE3EBE00056693 /* CombinedRiskWidgetEntryView.swift */; };
+		FC5237C32E08EF6A00E8D16E /* DayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB72D32BC37A7E00E41256 /* DayLabel.swift */; };
+		FC5237C52E08EF6A00E8D16E /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FC5237972E08EF6A00E8D16E /* GeoJSON */; };
+		FC5237C62E08EF6A00E8D16E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912EF2BC0F61C005E5A44 /* SwiftUI.framework */; };
+		FC5237C72E08EF6A00E8D16E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF912ED2BC0F61C005E5A44 /* WidgetKit.framework */; };
+		FC5237C92E08EF6A00E8D16E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF912F62BC0F61E005E5A44 /* Assets.xcassets */; };
+		FC5237CF2E08EFC500E8D16E /* day1otlk_20250608_2000_hail.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B4592E08E45200BEFBE7 /* day1otlk_20250608_2000_hail.lyr.geojson */; };
+		FC5237D02E08EFC500E8D16E /* day1otlk_20250608_2000_wind.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B45B2E08E45200BEFBE7 /* day1otlk_20250608_2000_wind.lyr.geojson */; };
+		FC5237D12E08EFC500E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B45A2E08E45200BEFBE7 /* day1otlk_20250608_2000_torn.lyr.geojson */; };
+		FC5237D22E08EFC500E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B4582E08E45200BEFBE7 /* day1otlk_20250608_2000_cat.lyr.geojson */; };
+		FC5237D52E08F15B00E8D16E /* day1otlk_20250608_2000_wind.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B45B2E08E45200BEFBE7 /* day1otlk_20250608_2000_wind.lyr.geojson */; };
+		FC5237D62E08F15B00E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B4582E08E45200BEFBE7 /* day1otlk_20250608_2000_cat.lyr.geojson */; };
+		FC5237D72E08F15B00E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B45A2E08E45200BEFBE7 /* day1otlk_20250608_2000_torn.lyr.geojson */; };
+		FC5237D82E08F15B00E8D16E /* day1otlk_20250608_2000_hail.lyr.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FCA8B4592E08E45200BEFBE7 /* day1otlk_20250608_2000_hail.lyr.geojson */; };
+		FC5237D92E08F52700E8D16E /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */; };
+		FC5237DA2E08F52700E8D16E /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */; };
+		FC5237DB2E08FAF500E8D16E /* RedzoneWidgets with MockData.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC5237CD2E08EF6A00E8D16E /* RedzoneWidgets with MockData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC54AFA82BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
 		FC54AFA92BDEBBA100D559C0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */; };
 		FC55043C2DE51208000F3AE5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FC55043B2DE51208000F3AE5 /* PrivacyInfo.xcprivacy */; };
@@ -86,7 +209,6 @@
 		FCC6D5C22C7ED8BD00B161D5 /* WidgetFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6D5C12C7ED8BD00B161D5 /* WidgetFoundation.swift */; };
 		FCD037502BC4EE8F00986EC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
 		FCD037512BC4EE8F00986EC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0374F2BC4EE8F00986EC3 /* Logger.swift */; };
-		FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDA91532A3E5123003FFD84 /* SafariServices.framework */; };
 		FCE29F2C2CAE3BDA00056693 /* ConvectiveRiskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2B2CAE3BDA00056693 /* ConvectiveRiskWidget.swift */; };
 		FCE29F2E2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F2D2CAE3BF800056693 /* ConvectiveRiskWidgetEntryView.swift */; };
 		FCE29F3E2CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE29F392CAE3E7100056693 /* RiskBreakdownWidgetEntryView.swift */; };
@@ -122,6 +244,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FC5237D32E08EFCF00E8D16E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC5237962E08EF6A00E8D16E;
+			remoteInfo = "RedzoneWidgets with MockData";
+		};
 		FCA57D402B9F52F5008DDCE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC70F91929C29F9B006C5DAC /* Project object */;
@@ -139,6 +268,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FC52378B2E08EEA400E8D16E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC5237DB2E08FAF500E8D16E /* RedzoneWidgets with MockData.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCF912FC2BC0F61E005E5A44 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -179,6 +319,8 @@
 		FC31727D2C8003D1005281F6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		FC3172962C800474005281F6 /* MapViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewStyle.swift; sourceTree = "<group>"; };
 		FC44E04D2A35713400A9925D /* Redzone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Redzone-Info.plist"; sourceTree = "<group>"; };
+		FC5237902E08EEA400E8D16E /* Redzone with Mock Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Redzone with Mock Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5237CD2E08EF6A00E8D16E /* RedzoneWidgets with MockData.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RedzoneWidgets with MockData.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC54AFA72BDEBB6A00D559C0 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.debug.xcconfig; sourceTree = "<group>"; };
 		FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Redzone.base.xcconfig; sourceTree = "<group>"; };
@@ -194,6 +336,10 @@
 		FC82317A2DE211BF00492461 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FCA57D3C2B9F52F5008DDCE8 /* RedzoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedzoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		FCA8B4582E08E45200BEFBE7 /* day1otlk_20250608_2000_cat.lyr.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = day1otlk_20250608_2000_cat.lyr.geojson; sourceTree = "<group>"; };
+		FCA8B4592E08E45200BEFBE7 /* day1otlk_20250608_2000_hail.lyr.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = day1otlk_20250608_2000_hail.lyr.geojson; sourceTree = "<group>"; };
+		FCA8B45A2E08E45200BEFBE7 /* day1otlk_20250608_2000_torn.lyr.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = day1otlk_20250608_2000_torn.lyr.geojson; sourceTree = "<group>"; };
+		FCA8B45B2E08E45200BEFBE7 /* day1otlk_20250608_2000_wind.lyr.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = day1otlk_20250608_2000_wind.lyr.geojson; sourceTree = "<group>"; };
 		FCAB72C52BC3702E00E41256 /* CategoricalGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalGaugeView.swift; sourceTree = "<group>"; };
 		FCAB72C72BC370F900E41256 /* NoSevereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSevereView.swift; sourceTree = "<group>"; };
 		FCAB72C92BC3714800E41256 /* WidgetErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetErrorView.swift; sourceTree = "<group>"; };
@@ -256,6 +402,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FC5237822E08EEA400E8D16E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5237832E08EEA400E8D16E /* SwiftUI.framework in Frameworks */,
+				FC5237842E08EEA400E8D16E /* GeoJSON in Frameworks */,
+				FC5237852E08EEA400E8D16E /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC5237C42E08EF6A00E8D16E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5237C52E08EF6A00E8D16E /* GeoJSON in Frameworks */,
+				FC5237C62E08EF6A00E8D16E /* SwiftUI.framework in Frameworks */,
+				FC5237C72E08EF6A00E8D16E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC70F91E29C29F9B006C5DAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,7 +429,6 @@
 				FCB2C72D2C7EE24900F01C81 /* SwiftUI.framework in Frameworks */,
 				FCB2C7272C7EE1E800F01C81 /* GeoJSON in Frameworks */,
 				FCB4BBB92A48E12900738C3E /* MapKit.framework in Frameworks */,
-				FCDA91542A3E5123003FFD84 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +457,7 @@
 			children = (
 				FCD0374F2BC4EE8F00986EC3 /* Logger.swift */,
 				FC0EA31E2DE3FF8200B3B8CC /* CommonURL.swift */,
+				FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -397,7 +563,6 @@
 			isa = PBXGroup;
 			children = (
 				FC0EA3232DE3FFB300B3B8CC /* CodedAppStorage.swift */,
-				FC0EA3212DE3FFA800B3B8CC /* AppStorageKeys.swift */,
 				FC70F92429C29F9B006C5DAC /* Redzone.swift */,
 				FC70F92629C29F9B006C5DAC /* ContentView.swift */,
 				FC0EA3292DE4B40400B3B8CC /* Extensions.swift */,
@@ -477,6 +642,8 @@
 				FC70F92129C29F9B006C5DAC /* Redzone.app */,
 				FCA57D3C2B9F52F5008DDCE8 /* RedzoneTests.xctest */,
 				FCF912EC2BC0F61C005E5A44 /* RedzoneWidgets.appex */,
+				FC5237902E08EEA400E8D16E /* Redzone with Mock Data.app */,
+				FC5237CD2E08EF6A00E8D16E /* RedzoneWidgets with MockData.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -503,6 +670,17 @@
 				FCA57D3E2B9F52F5008DDCE8 /* ExtensionTests.swift */,
 			);
 			path = RedzoneTests;
+			sourceTree = "<group>";
+		};
+		FCA8B4572E08E40700BEFBE7 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				FCA8B4582E08E45200BEFBE7 /* day1otlk_20250608_2000_cat.lyr.geojson */,
+				FCA8B4592E08E45200BEFBE7 /* day1otlk_20250608_2000_hail.lyr.geojson */,
+				FCA8B45A2E08E45200BEFBE7 /* day1otlk_20250608_2000_torn.lyr.geojson */,
+				FCA8B45B2E08E45200BEFBE7 /* day1otlk_20250608_2000_wind.lyr.geojson */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		FCAB72C42BC3702000E41256 /* Common Views */ = {
@@ -628,6 +806,7 @@
 		FCF8110C2BC1E917005D3552 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FCA8B4572E08E40700BEFBE7 /* MockData */,
 				FC55043A2DE50F06000F3AE5 /* Intents */,
 				FC0EA32F2DE4B50000B3B8CC /* OutlookFetcher */,
 				FC0EA32E2DE4B4F600B3B8CC /* Core */,
@@ -684,6 +863,48 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FC5237442E08EEA400E8D16E /* Redzone with Mock Data */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC52378D2E08EEA400E8D16E /* Build configuration list for PBXNativeTarget "Redzone with Mock Data" */;
+			buildPhases = (
+				FC5237492E08EEA400E8D16E /* Sources */,
+				FC5237822E08EEA400E8D16E /* Frameworks */,
+				FC5237872E08EEA400E8D16E /* Resources */,
+				FC52378B2E08EEA400E8D16E /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC5237D42E08EFCF00E8D16E /* PBXTargetDependency */,
+			);
+			name = "Redzone with Mock Data";
+			packageProductDependencies = (
+				FC5237472E08EEA400E8D16E /* GeoJSON */,
+			);
+			productName = SPC;
+			productReference = FC5237902E08EEA400E8D16E /* Redzone with Mock Data.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC5237962E08EF6A00E8D16E /* RedzoneWidgets with MockData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC5237CA2E08EF6A00E8D16E /* Build configuration list for PBXNativeTarget "RedzoneWidgets with MockData" */;
+			buildPhases = (
+				FC5237992E08EF6A00E8D16E /* Sources */,
+				FC5237C42E08EF6A00E8D16E /* Frameworks */,
+				FC5237C82E08EF6A00E8D16E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RedzoneWidgets with MockData";
+			packageProductDependencies = (
+				FC5237972E08EF6A00E8D16E /* GeoJSON */,
+			);
+			productName = RedzoneWidgetExtension;
+			productReference = FC5237CD2E08EF6A00E8D16E /* RedzoneWidgets with MockData.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FC70F92029C29F9B006C5DAC /* Redzone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC70F92F29C29F9D006C5DAC /* Build configuration list for PBXNativeTarget "Redzone" */;
@@ -785,11 +1006,39 @@
 				FC70F92029C29F9B006C5DAC /* Redzone */,
 				FCA57D3B2B9F52F5008DDCE8 /* RedzoneTests */,
 				FCF912EB2BC0F61C005E5A44 /* RedzoneWidgets */,
+				FC5237442E08EEA400E8D16E /* Redzone with Mock Data */,
+				FC5237962E08EF6A00E8D16E /* RedzoneWidgets with MockData */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FC5237872E08EEA400E8D16E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5237882E08EEA400E8D16E /* PrivacyInfo.xcprivacy in Resources */,
+				FC5237892E08EEA400E8D16E /* Localizable.xcstrings in Resources */,
+				FC5237922E08EF6500E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */,
+				FC5237932E08EF6500E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */,
+				FC5237942E08EF6500E8D16E /* day1otlk_20250608_2000_hail.lyr.geojson in Resources */,
+				FC5237952E08EF6500E8D16E /* day1otlk_20250608_2000_wind.lyr.geojson in Resources */,
+				FC52378A2E08EEA400E8D16E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC5237C82E08EF6A00E8D16E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5237CF2E08EFC500E8D16E /* day1otlk_20250608_2000_hail.lyr.geojson in Resources */,
+				FC5237D02E08EFC500E8D16E /* day1otlk_20250608_2000_wind.lyr.geojson in Resources */,
+				FC5237D12E08EFC500E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */,
+				FC5237D22E08EFC500E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */,
+				FC5237C92E08EF6A00E8D16E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC70F91F29C29F9B006C5DAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -805,6 +1054,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5237D52E08F15B00E8D16E /* day1otlk_20250608_2000_wind.lyr.geojson in Resources */,
+				FC5237D62E08F15B00E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */,
+				FC5237D72E08F15B00E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */,
+				FC5237D82E08F15B00E8D16E /* day1otlk_20250608_2000_hail.lyr.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +1072,119 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FC5237492E08EEA400E8D16E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC52374A2E08EEA400E8D16E /* Button.swift in Sources */,
+				FC52374B2E08EEA400E8D16E /* View.swift in Sources */,
+				FC52374C2E08EEA400E8D16E /* AboutView.swift in Sources */,
+				FC52374D2E08EEA400E8D16E /* Collection.swift in Sources */,
+				FC52374E2E08EEA400E8D16E /* ToolbarMenu.swift in Sources */,
+				FC52374F2E08EEA400E8D16E /* TappedOutlook.swift in Sources */,
+				FC5237502E08EEA400E8D16E /* AppStorageKeys.swift in Sources */,
+				FC5237512E08EEA400E8D16E /* OutlookFetcherError.swift in Sources */,
+				FC5237522E08EEA400E8D16E /* OutlookResponse.swift in Sources */,
+				FC5237532E08EEA400E8D16E /* MapMultiPolygon.swift in Sources */,
+				FC5237542E08EEA400E8D16E /* NavigationBarBackgroundHiddenModifier.swift in Sources */,
+				FC5237552E08EEA400E8D16E /* ErrorView.swift in Sources */,
+				FC5237562E08EEA400E8D16E /* CodedAppStorage.swift in Sources */,
+				FC5237572E08EEA400E8D16E /* MKMapRect.swift in Sources */,
+				FC5237582E08EEA400E8D16E /* Logger.swift in Sources */,
+				FC5237592E08EEA400E8D16E /* OutlookService.swift in Sources */,
+				FC52375A2E08EEA400E8D16E /* OutlookMapView.swift in Sources */,
+				FC52375B2E08EEA400E8D16E /* Optional.swift in Sources */,
+				FC52375C2E08EEA400E8D16E /* PercentageRiskDetailView.swift in Sources */,
+				FC52375D2E08EEA400E8D16E /* OutlookDayConfigurationIntent.swift in Sources */,
+				FC52375E2E08EEA400E8D16E /* DisclaimerView.swift in Sources */,
+				FC52375F2E08EEA400E8D16E /* String.swift in Sources */,
+				FC5237602E08EEA400E8D16E /* FavoritesManagerView.swift in Sources */,
+				FC5237612E08EEA400E8D16E /* Bool.swift in Sources */,
+				FC5237622E08EEA400E8D16E /* AboutCategoricalRiskView.swift in Sources */,
+				FC5237632E08EEA400E8D16E /* DismissButton.swift in Sources */,
+				FC5237642E08EEA400E8D16E /* Context.swift in Sources */,
+				FC5237652E08EEA400E8D16E /* MapStylePicker.swift in Sources */,
+				FC5237662E08EEA400E8D16E /* ClippedBackgroundModifier.swift in Sources */,
+				FC5237672E08EEA400E8D16E /* ContentView.swift in Sources */,
+				FC5237682E08EEA400E8D16E /* OutlookLegendIconView.swift in Sources */,
+				FC5237692E08EEA400E8D16E /* GeoJSONPolygon.swift in Sources */,
+				FC52376A2E08EEA400E8D16E /* CurrentLocationButton.swift in Sources */,
+				FC52376B2E08EEA400E8D16E /* FavoritesPicker.swift in Sources */,
+				FC52376C2E08EEA400E8D16E /* Color.swift in Sources */,
+				FC52376D2E08EEA400E8D16E /* OutlookProperties.swift in Sources */,
+				FC52376E2E08EEA400E8D16E /* CommonURL.swift in Sources */,
+				FC52376F2E08EEA400E8D16E /* OutlookDay.swift in Sources */,
+				FC5237702E08EEA400E8D16E /* LoadingModifier.swift in Sources */,
+				FC5237712E08EEA400E8D16E /* GeoJSONFeature.swift in Sources */,
+				FC5237722E08EEA400E8D16E /* LocationService.swift in Sources */,
+				FC5237732E08EEA400E8D16E /* MapViewStyle.swift in Sources */,
+				FC5237742E08EEA400E8D16E /* MainToolbar.swift in Sources */,
+				FC5237752E08EEA400E8D16E /* LabelledLink.swift in Sources */,
+				FC5237762E08EEA400E8D16E /* OutlookSeverity.swift in Sources */,
+				FC5237772E08EEA400E8D16E /* CLLocationCoordinate2D.swift in Sources */,
+				FC5237782E08EEA400E8D16E /* RiskDetailView.swift in Sources */,
+				FC5237792E08EEA400E8D16E /* MapStyleModifier.swift in Sources */,
+				FC52377A2E08EEA400E8D16E /* SigSevLegendIconView.swift in Sources */,
+				FC52377B2E08EEA400E8D16E /* OutlookType.swift in Sources */,
+				FC52377C2E08EEA400E8D16E /* RiskLevelLinksView.swift in Sources */,
+				FC52377D2E08EEA400E8D16E /* OutlookFetcher.swift in Sources */,
+				FC52377E2E08EEA400E8D16E /* SafetyLinksSection.swift in Sources */,
+				FC52377F2E08EEA400E8D16E /* Extensions.swift in Sources */,
+				FC5237802E08EEA400E8D16E /* Redzone.swift in Sources */,
+				FC5237812E08EEA400E8D16E /* OutlookTypePicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC5237992E08EF6A00E8D16E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5237DA2E08F52700E8D16E /* AppStorageKeys.swift in Sources */,
+				FC52379A2E08EF6A00E8D16E /* DateLabel.swift in Sources */,
+				FC52379B2E08EF6A00E8D16E /* OutlookProvider.swift in Sources */,
+				FC52379C2E08EF6A00E8D16E /* String.swift in Sources */,
+				FC52379D2E08EF6A00E8D16E /* RedzoneWidgets.swift in Sources */,
+				FC52379E2E08EF6A00E8D16E /* Logger.swift in Sources */,
+				FC52379F2E08EF6A00E8D16E /* OutlookFetcher.swift in Sources */,
+				FC5237A02E08EF6A00E8D16E /* OutlookSeverity.swift in Sources */,
+				FC5237A12E08EF6A00E8D16E /* ConvectiveRiskWidgetEntryView.swift in Sources */,
+				FC5237A22E08EF6A00E8D16E /* WidgetFoundation.swift in Sources */,
+				FC5237A32E08EF6A00E8D16E /* OutlookType.swift in Sources */,
+				FC5237A42E08EF6A00E8D16E /* NoSevereView.swift in Sources */,
+				FC5237A52E08EF6A00E8D16E /* TimelineReloadPolicy.swift in Sources */,
+				FC5237A62E08EF6A00E8D16E /* OutlookProperties.swift in Sources */,
+				FC5237A72E08EF6A00E8D16E /* CombinedRisks.swift in Sources */,
+				FC5237A82E08EF6A00E8D16E /* CategoricalGaugeView.swift in Sources */,
+				FC5237A92E08EF6A00E8D16E /* WidgetLocation.swift in Sources */,
+				FC5237AA2E08EF6A00E8D16E /* OutlookResponse.swift in Sources */,
+				FC5237AB2E08EF6A00E8D16E /* AppIntentTimelineProvider.swift in Sources */,
+				FC5237AC2E08EF6A00E8D16E /* CommonURL.swift in Sources */,
+				FC5237AD2E08EF6A00E8D16E /* OutlookDayConfigurationIntent.swift in Sources */,
+				FC5237AE2E08EF6A00E8D16E /* View.swift in Sources */,
+				FC5237AF2E08EF6A00E8D16E /* ConvectiveRiskWidget.swift in Sources */,
+				FC5237B02E08EF6A00E8D16E /* GeoJSONPolygon.swift in Sources */,
+				FC5237B12E08EF6A00E8D16E /* WidgetFamily.swift in Sources */,
+				FC5237B22E08EF6A00E8D16E /* Bool.swift in Sources */,
+				FC5237B32E08EF6A00E8D16E /* OutlookLegendIconView.swift in Sources */,
+				FC5237B42E08EF6A00E8D16E /* CLLocationCoordinate2D.swift in Sources */,
+				FC5237B52E08EF6A00E8D16E /* OutlookFetcherError.swift in Sources */,
+				FC5237B62E08EF6A00E8D16E /* WidgetErrorView.swift in Sources */,
+				FC5237B72E08EF6A00E8D16E /* Collection.swift in Sources */,
+				FC5237B82E08EF6A00E8D16E /* OutlookDay.swift in Sources */,
+				FC5237B92E08EF6A00E8D16E /* GeoJSONFeature.swift in Sources */,
+				FC5237BA2E08EF6A00E8D16E /* Color.swift in Sources */,
+				FC5237BB2E08EF6A00E8D16E /* Optional.swift in Sources */,
+				FC5237BC2E08EF6A00E8D16E /* Button.swift in Sources */,
+				FC5237BD2E08EF6A00E8D16E /* RiskBreakdownWidgetEntryView.swift in Sources */,
+				FC5237BE2E08EF6A00E8D16E /* CategoricalOutlookWidgetEntryView.swift in Sources */,
+				FC5237BF2E08EF6A00E8D16E /* MKMapRect.swift in Sources */,
+				FC5237C02E08EF6A00E8D16E /* Timeline.swift in Sources */,
+				FC5237C12E08EF6A00E8D16E /* UnsupportedWidgetFamilyView.swift in Sources */,
+				FC5237C22E08EF6A00E8D16E /* CombinedRiskWidgetEntryView.swift in Sources */,
+				FC5237C32E08EF6A00E8D16E /* DayLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC70F91D29C29F9B006C5DAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -894,6 +1260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5237D92E08F52700E8D16E /* AppStorageKeys.swift in Sources */,
 				FCB2C72F2C7EE49B00F01C81 /* DateLabel.swift in Sources */,
 				FCB2C72C2C7EE22A00F01C81 /* OutlookProvider.swift in Sources */,
 				FC82317C2DE211C000492461 /* String.swift in Sources */,
@@ -942,6 +1309,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FC5237D42E08EFCF00E8D16E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC5237962E08EF6A00E8D16E /* RedzoneWidgets with MockData */;
+			targetProxy = FC5237D32E08EFCF00E8D16E /* PBXContainerItemProxy */;
+		};
 		FCA57D412B9F52F5008DDCE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FC70F92029C29F9B006C5DAC /* Redzone */;
@@ -955,6 +1327,155 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FC52378E2E08EEA400E8D16E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Redzone-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = "$(VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = "$(SWIFT)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC52378F2E08EEA400E8D16E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D2T6N8FXD6;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Redzone-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = "$(VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Redzone Distribution";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = "$(SWIFT)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC5237CB2E08EF6A00E8D16E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RedzoneWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = "$(VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = "$(SWIFT)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC5237CC2E08EF6A00E8D16E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgets.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(BUILD)";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D2T6N8FXD6;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RedzoneWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = "$(VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Redzone Widgets Distribution";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = "$(SWIFT)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FC70F92D29C29F9D006C5DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504372DE50ABE000F3AE5 /* Redzone.base.xcconfig */;
@@ -1102,6 +1623,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Redzone-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
@@ -1143,6 +1665,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Redzone-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
@@ -1282,6 +1805,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FC52378D2E08EEA400E8D16E /* Build configuration list for PBXNativeTarget "Redzone with Mock Data" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC52378E2E08EEA400E8D16E /* Debug */,
+				FC52378F2E08EEA400E8D16E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC5237CA2E08EF6A00E8D16E /* Build configuration list for PBXNativeTarget "RedzoneWidgets with MockData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC5237CB2E08EF6A00E8D16E /* Debug */,
+				FC5237CC2E08EF6A00E8D16E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FC70F91C29C29F9B006C5DAC /* Build configuration list for PBXProject "Redzone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1321,7 +1862,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FCB2C7252C7EE1E800F01C81 /* XCRemoteSwiftPackageReference "swift-geojson" */ = {
+		FC5237482E08EEA400E8D16E /* XCRemoteSwiftPackageReference "swift-geojson" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devgregw/swift-geojson";
 			requirement = {
@@ -1329,9 +1870,35 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		FC5237982E08EF6A00E8D16E /* XCRemoteSwiftPackageReference "swift-geojson" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devgregw/swift-geojson";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		FCB2C7252C7EE1E800F01C81 /* XCRemoteSwiftPackageReference "swift-geojson" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devgregw/swift-geojson";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FC5237472E08EEA400E8D16E /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5237482E08EEA400E8D16E /* XCRemoteSwiftPackageReference "swift-geojson" */;
+			productName = GeoJSON;
+		};
+		FC5237972E08EF6A00E8D16E /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5237982E08EF6A00E8D16E /* XCRemoteSwiftPackageReference "swift-geojson" */;
+			productName = GeoJSON;
+		};
 		FCB2C7262C7EE1E800F01C81 /* GeoJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FCB2C7252C7EE1E800F01C81 /* XCRemoteSwiftPackageReference "swift-geojson" */;
