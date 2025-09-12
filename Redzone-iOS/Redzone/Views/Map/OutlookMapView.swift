@@ -30,12 +30,13 @@ struct OutlookMapView: View {
                 UserAnnotation(anchor: .center)
             }
             .coordinateSpace(coordinateSpace)
-            .onTapGesture { point in
+            .highPriorityGesture(SpatialTapGesture().onEnded {
+                let point = $0.location
                 if let coordinate = proxy.convert(point, from: coordinateSpace) {
                     Logger.log(.map, "Tap gesture @ (x: \(point.x), y: \(point.y)) mapped to coordinate (lat: \(coordinate.latitude), lon: \(coordinate.longitude))")
                     context.selectedOutlook = features?.findTappedOutlook(at: coordinate)
                 }
-            }
+            })
             .mapControls {
                 MapScaleView()
             }
