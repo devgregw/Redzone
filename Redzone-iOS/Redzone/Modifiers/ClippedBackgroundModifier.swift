@@ -19,14 +19,19 @@ struct ClippedBackgroundModifier<S: Shape, Background: ShapeStyle, Stroke: Shape
     }
     
     func body(content: Content) -> some View {
-        content
-            .background(background)
-            .clipShape(shape)
-            .overlay {
-                shape
-                    .stroke(stroke, lineWidth: 0.5)
-            }
-            .shadow(radius: 8)
+        if #available(iOS 26.0, *) {
+            content
+                .glassEffect(.regular.interactive())
+        } else {
+            content
+                .background(background)
+                .clipShape(shape)
+                .overlay {
+                    shape
+                        .stroke(stroke, lineWidth: 0.5)
+                }
+                .shadow(radius: 8)
+        }
     }
 }
 

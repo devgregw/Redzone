@@ -112,9 +112,11 @@ struct RiskDetailView: View {
                     
                     LabelledLink("Forecast Discussion", destination: commentaryURL, image: .noaaLogo)
                 }
-                
+                .listRowBackground(Color(uiColor: .secondarySystemFill).opacity(0.8))
+
                 SafetyLinksSection(tornado: properties.title.contains("Tornado"))
-                
+                    .listRowBackground(Color(uiColor: .secondarySystemFill).opacity(0.8))
+
                 if let issued = properties.issueDate,
                    let expires = properties.expireDate,
                    let valid = properties.validDate {
