@@ -31,9 +31,9 @@
 		FC2A89892C7C26D400EA0BCF /* GeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */; };
 		FC2A898B2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
 		FC2A898C2C7C270900EA0BCF /* GeoJSONPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */; };
-		FC2DE5572DF8A7600081DE27 /* RedzoneGlass.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC2DE5562DF8A7600081DE27 /* RedzoneGlass.icon */; };
+		FC2DE5572DF8A7600081DE27 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC2DE5562DF8A7600081DE27 /* AppIcon.icon */; };
 		FC3172972C800474005281F6 /* MapViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3172962C800474005281F6 /* MapViewStyle.swift */; };
-		FC3809762E2C10DD0055E599 /* RedzoneGlass.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC2DE5562DF8A7600081DE27 /* RedzoneGlass.icon */; };
+		FC3809762E2C10DD0055E599 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC2DE5562DF8A7600081DE27 /* AppIcon.icon */; };
 		FC52374A2E08EEA400E8D16E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC379A2B79A69200AEB3C8 /* Button.swift */; };
 		FC52374B2E08EEA400E8D16E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F63D29E1DE5700046C79 /* View.swift */; };
 		FC52374C2E08EEA400E8D16E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F5F729D9F54A00046C79 /* AboutView.swift */; };
@@ -315,7 +315,7 @@
 		FC2668A02A5E5A0E00CA34DC /* MKMapRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapRect.swift; sourceTree = "<group>"; };
 		FC2A89872C7C26D400EA0BCF /* GeoJSONFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONFeature.swift; sourceTree = "<group>"; };
 		FC2A898A2C7C270900EA0BCF /* GeoJSONPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSONPolygon.swift; sourceTree = "<group>"; };
-		FC2DE5562DF8A7600081DE27 /* RedzoneGlass.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = RedzoneGlass.icon; sourceTree = "<group>"; };
+		FC2DE5562DF8A7600081DE27 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		FC31727B2C8003CD005281F6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.5.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		FC31727D2C8003D1005281F6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		FC3172962C800474005281F6 /* MapViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewStyle.swift; sourceTree = "<group>"; };
@@ -659,7 +659,7 @@
 				FC21F61429E11C5600046C79 /* Views */,
 				FC26689D2A5D032300CA34DC /* Core */,
 				FC70F92829C29F9D006C5DAC /* Assets.xcassets */,
-				FC2DE5562DF8A7600081DE27 /* RedzoneGlass.icon */,
+				FC2DE5562DF8A7600081DE27 /* AppIcon.icon */,
 				FCFCADE62A3CFA7000944D48 /* Localizable.xcstrings */,
 			);
 			path = Redzone;
@@ -1019,7 +1019,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5237882E08EEA400E8D16E /* PrivacyInfo.xcprivacy in Resources */,
-				FC3809762E2C10DD0055E599 /* RedzoneGlass.icon in Resources */,
+				FC3809762E2C10DD0055E599 /* AppIcon.icon in Resources */,
 				FC5237892E08EEA400E8D16E /* Localizable.xcstrings in Resources */,
 				FC5237922E08EF6500E8D16E /* day1otlk_20250608_2000_torn.lyr.geojson in Resources */,
 				FC5237932E08EF6500E8D16E /* day1otlk_20250608_2000_cat.lyr.geojson in Resources */,
@@ -1046,7 +1046,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC55043C2DE51208000F3AE5 /* PrivacyInfo.xcprivacy in Resources */,
-				FC2DE5572DF8A7600081DE27 /* RedzoneGlass.icon in Resources */,
+				FC2DE5572DF8A7600081DE27 /* AppIcon.icon in Resources */,
 				FCFCADE72A3CFA7000944D48 /* Localizable.xcstrings in Resources */,
 				FC70F92929C29F9D006C5DAC /* Assets.xcassets in Resources */,
 			);
@@ -1333,7 +1333,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = RedzoneGlass;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1371,7 +1371,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = RedzoneGlass;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
@@ -1614,7 +1614,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504362DE509C6000F3AE5 /* Redzone.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = RedzoneGlass;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
@@ -1653,7 +1653,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC5504382DE50AD0000F3AE5 /* Redzone.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = RedzoneGlass;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
