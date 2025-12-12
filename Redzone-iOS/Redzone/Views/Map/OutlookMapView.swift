@@ -14,7 +14,6 @@ struct OutlookMapView: View {
     @Environment(Context.self) private var context
     
     let features: [GeoJSONFeature]?
-    private let coordinateSpace: NamedCoordinateSpace = .named("Map")
     
     var body: some View {
         MapReader { proxy in
@@ -29,10 +28,9 @@ struct OutlookMapView: View {
                 }
                 UserAnnotation(anchor: .center)
             }
-            .coordinateSpace(coordinateSpace)
-            .highPriorityGesture(SpatialTapGesture().onEnded {
+            .highPriorityGesture(SpatialTapGesture(coordinateSpace: .global).onEnded {
                 let point = $0.location
-                if let coordinate = proxy.convert(point, from: coordinateSpace) {
+                if let coordinate = proxy.convert(point, from: .global) {
                     Logger.log(.map, "Tap gesture @ (x: \(point.x), y: \(point.y)) mapped to coordinate (lat: \(coordinate.latitude), lon: \(coordinate.longitude))")
                     context.selectedOutlook = features?.findTappedOutlook(at: coordinate)
                 }
