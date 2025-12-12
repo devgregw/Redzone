@@ -61,6 +61,6 @@ jobs:
       - name: Resolve package dependencies
         run: set -o pipefail && NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       - name: Compile sources & run tests
-        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild test -scheme "Redzone (Debug)" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=26.0,name=iPhone Air" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
+        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild test -scheme "Redzone (Debug)" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=26.1,name=iPhone Air" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       - name: Periphery scan
         run: periphery scan --skip-build --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args
