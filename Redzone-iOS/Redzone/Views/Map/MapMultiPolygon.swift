@@ -15,7 +15,7 @@ struct MapMultiPolygon: MapContent {
     
     var body: some MapContent {
         ForEach(multiPolygon.reversed(), id: \.hashValue) {
-            MapPolygon(points: $0.exterior.map { .init(.init(latitude: $0.latitude, longitude: $0.longitude)) })
+            MapPolygon(points: $0.exterior.positions.map { .init(.init(latitude: $0.latitude, longitude: $0.longitude)) })
                 .foregroundStyle(properties.fillColor.opacity(0.25))
                 .stroke(properties.strokeColor, style: .init(dash: properties.isSignificant ? [5, 5] : []))
                 .mapOverlayLevel(level: .aboveRoads)
