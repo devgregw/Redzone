@@ -1,0 +1,1424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC13BF602E84E46C0013FFE6 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF5F2E84E46C0013FFE6 /* Dependencies */; };
+		FC13BF642E84E46C0013FFE6 /* DependenciesTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF632E84E46C0013FFE6 /* DependenciesTestSupport */; };
+		FC13BF662E84E4770013FFE6 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF652E84E4770013FFE6 /* Dependencies */; };
+		FC13BF6A2E84E4810013FFE6 /* DependenciesTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF692E84E4810013FFE6 /* DependenciesTestSupport */; };
+		FC2583962E80DEC90087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; };
+		FC2583972E80DEC90087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2583982E80DEC90087B661 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; };
+		FC2583992E80DEC90087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC25839E2E80DEE10087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC25839D2E80DEE10087B661 /* SwiftUI.framework */; };
+		FC2583A02E80DEFD0087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC25839F2E80DEFD0087B661 /* RedzoneMacros */; };
+		FC2583C52E80DF990087B661 /* RedzoneWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FC2583A52E80DF970087B661 /* RedzoneWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC2583D12E80DFBA0087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC2583D02E80DFBA0087B661 /* RedzoneMacros */; };
+		FC2583D42E80DFBA0087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; };
+		FC2583D52E80DFBA0087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2583D62E80DFBA0087B661 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; };
+		FC2583D72E80DFBA0087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2584222E80E3180087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584212E80E3180087B661 /* SwiftUI.framework */; };
+		FC2584242E80E31C0087B661 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584232E80E31C0087B661 /* MapKit.framework */; };
+		FC86B6132EDA863100B07540 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B6122EDA863100B07540 /* WidgetKit.framework */; };
+		FC86B6142EDA863100B07540 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584212E80E3180087B661 /* SwiftUI.framework */; };
+		FC86B6232EDA863300B07540 /* RedzoneWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC86B7042EDB687D00B07540 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7022EDB687D00B07540 /* RedzoneCore.framework */; };
+		FC86B7052EDB687D00B07540 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7022EDB687D00B07540 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC86B7062EDB687D00B07540 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7032EDB687D00B07540 /* RedzoneUI.framework */; };
+		FC86B7072EDB687D00B07540 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7032EDB687D00B07540 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC25836B2E80DE740087B661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2583552E80DE720087B661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC25835C2E80DE720087B661;
+			remoteInfo = Redzone;
+		};
+		FC2583752E80DE740087B661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2583552E80DE720087B661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC25835C2E80DE720087B661;
+			remoteInfo = Redzone;
+		};
+		FC2583B22E80DF990087B661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2583552E80DE720087B661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC2583A42E80DF970087B661;
+			remoteInfo = "RedzoneWatch Watch App";
+		};
+		FC2583BC2E80DF990087B661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2583552E80DE720087B661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC2583A42E80DF970087B661;
+			remoteInfo = "RedzoneWatch Watch App";
+		};
+		FC2583C32E80DF990087B661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2583552E80DE720087B661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC2583A42E80DF970087B661;
+			remoteInfo = "RedzoneWatch Watch App";
+		};
+		FC86B6212EDA863300B07540 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2583552E80DE720087B661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC86B6102EDA863100B07540;
+			remoteInfo = RedzoneWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC25839A2E80DEC90087B661 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC2583992E80DEC90087B661 /* RedzoneUI.framework in Embed Frameworks */,
+				FC2583972E80DEC90087B661 /* RedzoneCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583C92E80DF990087B661 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FC2583C52E80DF990087B661 /* RedzoneWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583D82E80DFBA0087B661 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC2583D72E80DFBA0087B661 /* RedzoneUI.framework in Embed Frameworks */,
+				FC2583D52E80DFBA0087B661 /* RedzoneCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86B6242EDA863300B07540 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC86B6232EDA863300B07540 /* RedzoneWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86B7082EDB687D00B07540 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC86B7072EDB687D00B07540 /* RedzoneUI.framework in Embed Frameworks */,
+				FC86B7052EDB687D00B07540 /* RedzoneCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FC25835D2E80DE720087B661 /* Redzone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redzone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC25836A2E80DE740087B661 /* RedzoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedzoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2583742E80DE740087B661 /* RedzoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedzoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2583942E80DEC90087B661 /* RedzoneCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedzoneCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2583952E80DEC90087B661 /* RedzoneUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedzoneUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC25839B2E80DED10087B661 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FC25839D2E80DEE10087B661 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FC2583A52E80DF970087B661 /* RedzoneWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedzoneWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2583B12E80DF990087B661 /* RedzoneWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedzoneWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2583BB2E80DF990087B661 /* RedzoneWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedzoneWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedzoneCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedzoneUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2584212E80E3180087B661 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS26.0.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		FC2584232E80E31C0087B661 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS26.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RedzoneWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC86B6122EDA863100B07540 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FC86B7022EDB687D00B07540 /* RedzoneCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedzoneCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC86B7032EDB687D00B07540 /* RedzoneUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedzoneUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FC2584132E80E0F60087B661 /* Exceptions for "Tests" folder in "Redzone" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RedzoneTests/RedzoneTests.swift,
+				RedzoneUITests/RedzoneUITests.swift,
+				RedzoneUITests/RedzoneUITestsLaunchTests.swift,
+				RedzoneWatchTests/RedzoneWatch_Watch_AppTests.swift,
+				RedzoneWatchUITests/RedzoneWatch_Watch_AppUITests.swift,
+				RedzoneWatchUITests/RedzoneWatch_Watch_AppUITestsLaunchTests.swift,
+			);
+			target = FC25835C2E80DE720087B661 /* Redzone */;
+		};
+		FC2584142E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RedzoneTests/RedzoneTests.swift,
+			);
+			target = FC2583692E80DE740087B661 /* RedzoneTests */;
+		};
+		FC2584152E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RedzoneUITests/RedzoneUITests.swift,
+				RedzoneUITests/RedzoneUITestsLaunchTests.swift,
+			);
+			target = FC2583732E80DE740087B661 /* RedzoneUITests */;
+		};
+		FC2584162E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneWatch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RedzoneTests/RedzoneTests.swift,
+				RedzoneUITests/RedzoneUITests.swift,
+				RedzoneUITests/RedzoneUITestsLaunchTests.swift,
+				RedzoneWatchTests/RedzoneWatch_Watch_AppTests.swift,
+				RedzoneWatchUITests/RedzoneWatch_Watch_AppUITests.swift,
+				RedzoneWatchUITests/RedzoneWatch_Watch_AppUITestsLaunchTests.swift,
+			);
+			target = FC2583A42E80DF970087B661 /* RedzoneWatch */;
+		};
+		FC2584172E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneWatchTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RedzoneWatchTests/RedzoneWatch_Watch_AppTests.swift,
+			);
+			target = FC2583B02E80DF990087B661 /* RedzoneWatchTests */;
+		};
+		FC2584182E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneWatchUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RedzoneWatchUITests/RedzoneWatch_Watch_AppUITests.swift,
+				RedzoneWatchUITests/RedzoneWatch_Watch_AppUITestsLaunchTests.swift,
+			);
+			target = FC2583BA2E80DF990087B661 /* RedzoneWatchUITests */;
+		};
+		FC2584202E80E0FF0087B661 /* Exceptions for "RedzoneWatch" folder in "Redzone" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ContentView.swift,
+				RedzoneWatchApp.swift,
+			);
+			target = FC25835C2E80DE720087B661 /* Redzone */;
+		};
+		FC86B6282EDA863300B07540 /* Exceptions for "RedzoneWidgets" folder in "RedzoneWidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FC86B6102EDA863100B07540 /* RedzoneWidgetsExtension */;
+		};
+		FCBF33752E878EB8001DCD62 /* Exceptions for "Redzone" folder in "Redzone" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FC25835C2E80DE720087B661 /* Redzone */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FC25835F2E80DE720087B661 /* Redzone */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FCBF33752E878EB8001DCD62 /* Exceptions for "Redzone" folder in "Redzone" target */,
+			);
+			path = Redzone;
+			sourceTree = "<group>";
+		};
+		FC25840A2E80E0EA0087B661 /* Tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FC2584132E80E0F60087B661 /* Exceptions for "Tests" folder in "Redzone" target */,
+				FC2584142E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneTests" target */,
+				FC2584152E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneUITests" target */,
+				FC2584162E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneWatch" target */,
+				FC2584172E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneWatchTests" target */,
+				FC2584182E80E0F60087B661 /* Exceptions for "Tests" folder in "RedzoneWatchUITests" target */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		FC25841C2E80E0FF0087B661 /* RedzoneWatch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FC2584202E80E0FF0087B661 /* Exceptions for "RedzoneWatch" folder in "Redzone" target */,
+			);
+			path = RedzoneWatch;
+			sourceTree = "<group>";
+		};
+		FC86B6152EDA863100B07540 /* RedzoneWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FC86B6282EDA863300B07540 /* Exceptions for "RedzoneWidgets" folder in "RedzoneWidgetsExtension" target */,
+			);
+			path = RedzoneWidgets;
+			sourceTree = "<group>";
+		};
+		FCBF340A2E88DA0F001DCD62 /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC25835A2E80DE720087B661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC13BF602E84E46C0013FFE6 /* Dependencies in Frameworks */,
+				FC25839E2E80DEE10087B661 /* SwiftUI.framework in Frameworks */,
+				FC2583982E80DEC90087B661 /* RedzoneUI.framework in Frameworks */,
+				FC2583A02E80DEFD0087B661 /* RedzoneMacros in Frameworks */,
+				FC2583962E80DEC90087B661 /* RedzoneCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583672E80DE740087B661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC13BF642E84E46C0013FFE6 /* DependenciesTestSupport in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583712E80DE740087B661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583A22E80DF970087B661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC2584222E80E3180087B661 /* SwiftUI.framework in Frameworks */,
+				FC2583D12E80DFBA0087B661 /* RedzoneMacros in Frameworks */,
+				FC2584242E80E31C0087B661 /* MapKit.framework in Frameworks */,
+				FC13BF662E84E4770013FFE6 /* Dependencies in Frameworks */,
+				FC2583D42E80DFBA0087B661 /* RedzoneCore.framework in Frameworks */,
+				FC2583D62E80DFBA0087B661 /* RedzoneUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583AE2E80DF990087B661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC13BF6A2E84E4810013FFE6 /* DependenciesTestSupport in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583B82E80DF990087B661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86B60E2EDA863100B07540 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC86B7062EDB687D00B07540 /* RedzoneUI.framework in Frameworks */,
+				FC86B7042EDB687D00B07540 /* RedzoneCore.framework in Frameworks */,
+				FC86B6142EDA863100B07540 /* SwiftUI.framework in Frameworks */,
+				FC86B6132EDA863100B07540 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC2583542E80DE710087B661 = {
+			isa = PBXGroup;
+			children = (
+				FCBF340A2E88DA0F001DCD62 /* Resources */,
+				FC25835F2E80DE720087B661 /* Redzone */,
+				FC25841C2E80E0FF0087B661 /* RedzoneWatch */,
+				FC86B6152EDA863100B07540 /* RedzoneWidgets */,
+				FC25840A2E80E0EA0087B661 /* Tests */,
+				FC2583932E80DEC90087B661 /* Frameworks */,
+				FC25835E2E80DE720087B661 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC25835E2E80DE720087B661 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC25835D2E80DE720087B661 /* Redzone.app */,
+				FC25836A2E80DE740087B661 /* RedzoneTests.xctest */,
+				FC2583742E80DE740087B661 /* RedzoneUITests.xctest */,
+				FC2583A52E80DF970087B661 /* RedzoneWatch.app */,
+				FC2583B12E80DF990087B661 /* RedzoneWatchTests.xctest */,
+				FC2583BB2E80DF990087B661 /* RedzoneWatchUITests.xctest */,
+				FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC2583932E80DEC90087B661 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC86B7022EDB687D00B07540 /* RedzoneCore.framework */,
+				FC86B7032EDB687D00B07540 /* RedzoneUI.framework */,
+				FC2584232E80E31C0087B661 /* MapKit.framework */,
+				FC2584212E80E3180087B661 /* SwiftUI.framework */,
+				FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */,
+				FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */,
+				FC25839D2E80DEE10087B661 /* SwiftUI.framework */,
+				FC25839B2E80DED10087B661 /* MapKit.framework */,
+				FC2583942E80DEC90087B661 /* RedzoneCore.framework */,
+				FC2583952E80DEC90087B661 /* RedzoneUI.framework */,
+				FC86B6122EDA863100B07540 /* WidgetKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC25835C2E80DE720087B661 /* Redzone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC25837E2E80DE740087B661 /* Build configuration list for PBXNativeTarget "Redzone" */;
+			buildPhases = (
+				FC2583592E80DE720087B661 /* Sources */,
+				FC25835A2E80DE720087B661 /* Frameworks */,
+				FC25835B2E80DE720087B661 /* Resources */,
+				FC25839A2E80DEC90087B661 /* Embed Frameworks */,
+				FC2583C92E80DF990087B661 /* Embed Watch Content */,
+				FC86B6242EDA863300B07540 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC2583C42E80DF990087B661 /* PBXTargetDependency */,
+				FC86B6222EDA863300B07540 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FC25835F2E80DE720087B661 /* Redzone */,
+				FC25840A2E80E0EA0087B661 /* Tests */,
+				FC25841C2E80E0FF0087B661 /* RedzoneWatch */,
+				FCBF340A2E88DA0F001DCD62 /* Resources */,
+			);
+			name = Redzone;
+			packageProductDependencies = (
+				FC25839F2E80DEFD0087B661 /* RedzoneMacros */,
+				FC13BF5F2E84E46C0013FFE6 /* Dependencies */,
+			);
+			productName = Redzone;
+			productReference = FC25835D2E80DE720087B661 /* Redzone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC2583692E80DE740087B661 /* RedzoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC2583812E80DE740087B661 /* Build configuration list for PBXNativeTarget "RedzoneTests" */;
+			buildPhases = (
+				FC2583662E80DE740087B661 /* Sources */,
+				FC2583672E80DE740087B661 /* Frameworks */,
+				FC2583682E80DE740087B661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC25836C2E80DE740087B661 /* PBXTargetDependency */,
+			);
+			name = RedzoneTests;
+			packageProductDependencies = (
+				FC13BF632E84E46C0013FFE6 /* DependenciesTestSupport */,
+			);
+			productName = RedzoneTests;
+			productReference = FC25836A2E80DE740087B661 /* RedzoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC2583732E80DE740087B661 /* RedzoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC2583842E80DE740087B661 /* Build configuration list for PBXNativeTarget "RedzoneUITests" */;
+			buildPhases = (
+				FC2583702E80DE740087B661 /* Sources */,
+				FC2583712E80DE740087B661 /* Frameworks */,
+				FC2583722E80DE740087B661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC2583762E80DE740087B661 /* PBXTargetDependency */,
+			);
+			name = RedzoneUITests;
+			packageProductDependencies = (
+			);
+			productName = RedzoneUITests;
+			productReference = FC2583742E80DE740087B661 /* RedzoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		FC2583A42E80DF970087B661 /* RedzoneWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC2583C62E80DF990087B661 /* Build configuration list for PBXNativeTarget "RedzoneWatch" */;
+			buildPhases = (
+				FC2583A12E80DF970087B661 /* Sources */,
+				FC2583A22E80DF970087B661 /* Frameworks */,
+				FC2583A32E80DF970087B661 /* Resources */,
+				FC2583D82E80DFBA0087B661 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FC25840A2E80E0EA0087B661 /* Tests */,
+				FC25841C2E80E0FF0087B661 /* RedzoneWatch */,
+				FCBF340A2E88DA0F001DCD62 /* Resources */,
+			);
+			name = RedzoneWatch;
+			packageProductDependencies = (
+				FC2583D02E80DFBA0087B661 /* RedzoneMacros */,
+				FC13BF652E84E4770013FFE6 /* Dependencies */,
+			);
+			productName = "RedzoneWatch Watch App";
+			productReference = FC2583A52E80DF970087B661 /* RedzoneWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC2583B02E80DF990087B661 /* RedzoneWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC2583CA2E80DF990087B661 /* Build configuration list for PBXNativeTarget "RedzoneWatchTests" */;
+			buildPhases = (
+				FC2583AD2E80DF990087B661 /* Sources */,
+				FC2583AE2E80DF990087B661 /* Frameworks */,
+				FC2583AF2E80DF990087B661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC2583B32E80DF990087B661 /* PBXTargetDependency */,
+			);
+			name = RedzoneWatchTests;
+			packageProductDependencies = (
+				FC13BF692E84E4810013FFE6 /* DependenciesTestSupport */,
+			);
+			productName = "RedzoneWatch Watch AppTests";
+			productReference = FC2583B12E80DF990087B661 /* RedzoneWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC2583BA2E80DF990087B661 /* RedzoneWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC2583CD2E80DF990087B661 /* Build configuration list for PBXNativeTarget "RedzoneWatchUITests" */;
+			buildPhases = (
+				FC2583B72E80DF990087B661 /* Sources */,
+				FC2583B82E80DF990087B661 /* Frameworks */,
+				FC2583B92E80DF990087B661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC2583BD2E80DF990087B661 /* PBXTargetDependency */,
+			);
+			name = RedzoneWatchUITests;
+			packageProductDependencies = (
+			);
+			productName = "RedzoneWatch Watch AppUITests";
+			productReference = FC2583BB2E80DF990087B661 /* RedzoneWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		FC86B6102EDA863100B07540 /* RedzoneWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC86B6272EDA863300B07540 /* Build configuration list for PBXNativeTarget "RedzoneWidgetsExtension" */;
+			buildPhases = (
+				FC86B60D2EDA863100B07540 /* Sources */,
+				FC86B60E2EDA863100B07540 /* Frameworks */,
+				FC86B60F2EDA863100B07540 /* Resources */,
+				FC86B7082EDB687D00B07540 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FC86B6152EDA863100B07540 /* RedzoneWidgets */,
+			);
+			name = RedzoneWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = RedzoneWidgetsExtension;
+			productReference = FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC2583552E80DE720087B661 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					FC25835C2E80DE720087B661 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					FC2583692E80DE740087B661 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = FC25835C2E80DE720087B661;
+					};
+					FC2583732E80DE740087B661 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = FC25835C2E80DE720087B661;
+					};
+					FC2583A42E80DF970087B661 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					FC2583B02E80DF990087B661 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = FC2583A42E80DF970087B661;
+					};
+					FC2583BA2E80DF990087B661 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = FC2583A42E80DF970087B661;
+					};
+					FC86B6102EDA863100B07540 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = FC2583582E80DE720087B661 /* Build configuration list for PBXProject "Redzone" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC2583542E80DE710087B661;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FC25835E2E80DE720087B661 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC25835C2E80DE720087B661 /* Redzone */,
+				FC2583692E80DE740087B661 /* RedzoneTests */,
+				FC2583732E80DE740087B661 /* RedzoneUITests */,
+				FC2583A42E80DF970087B661 /* RedzoneWatch */,
+				FC2583B02E80DF990087B661 /* RedzoneWatchTests */,
+				FC2583BA2E80DF990087B661 /* RedzoneWatchUITests */,
+				FC86B6102EDA863100B07540 /* RedzoneWidgetsExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC25835B2E80DE720087B661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583682E80DE740087B661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583722E80DE740087B661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583A32E80DF970087B661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583AF2E80DF990087B661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583B92E80DF990087B661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86B60F2EDA863100B07540 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC2583592E80DE720087B661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583662E80DE740087B661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583702E80DE740087B661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583A12E80DF970087B661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583AD2E80DF990087B661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2583B72E80DF990087B661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC86B60D2EDA863100B07540 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC25836C2E80DE740087B661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC25835C2E80DE720087B661 /* Redzone */;
+			targetProxy = FC25836B2E80DE740087B661 /* PBXContainerItemProxy */;
+		};
+		FC2583762E80DE740087B661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC25835C2E80DE720087B661 /* Redzone */;
+			targetProxy = FC2583752E80DE740087B661 /* PBXContainerItemProxy */;
+		};
+		FC2583B32E80DF990087B661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC2583A42E80DF970087B661 /* RedzoneWatch */;
+			targetProxy = FC2583B22E80DF990087B661 /* PBXContainerItemProxy */;
+		};
+		FC2583BD2E80DF990087B661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC2583A42E80DF970087B661 /* RedzoneWatch */;
+			targetProxy = FC2583BC2E80DF990087B661 /* PBXContainerItemProxy */;
+		};
+		FC2583C42E80DF990087B661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC2583A42E80DF970087B661 /* RedzoneWatch */;
+			targetProxy = FC2583C32E80DF990087B661 /* PBXContainerItemProxy */;
+		};
+		FC86B6222EDA863300B07540 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC86B6102EDA863100B07540 /* RedzoneWidgetsExtension */;
+			targetProxy = FC86B6212EDA863300B07540 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FC25837C2E80DE740087B661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		FC25837D2E80DE740087B661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC25837F2E80DE740087B661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Redzone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		FC2583802E80DE740087B661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Redzone/Redzone.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "Mocks/*";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Redzone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		FC2583822E80DE740087B661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Redzone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Redzone";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		FC2583832E80DE740087B661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Redzone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Redzone";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		FC2583852E80DE740087B661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Redzone;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		FC2583862E80DE740087B661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Redzone;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		FC2583C72E80DF990087B661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RedzoneWatch/RedzoneWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.gregwhatley.redzone;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		FC2583C82E80DF990087B661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RedzoneWatch/RedzoneWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "Mocks/*";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.gregwhatley.redzone;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		FC2583CB2E80DF990087B661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gregwhatley.redzone.RedzoneWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedzoneWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RedzoneWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		FC2583CC2E80DF990087B661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gregwhatley.redzone.RedzoneWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedzoneWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RedzoneWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		FC2583CE2E80DF990087B661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gregwhatley.redzone.RedzoneWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "RedzoneWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		FC2583CF2E80DF990087B661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gregwhatley.redzone.RedzoneWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "RedzoneWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		FC86B6252EDA863300B07540 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RedzoneWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.RedzoneWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC86B6262EDA863300B07540 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RedzoneWidgets/RedzoneWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RedzoneWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RedzoneWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.RedzoneWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC2583582E80DE720087B661 /* Build configuration list for PBXProject "Redzone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC25837C2E80DE740087B661 /* Debug */,
+				FC25837D2E80DE740087B661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC25837E2E80DE740087B661 /* Build configuration list for PBXNativeTarget "Redzone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC25837F2E80DE740087B661 /* Debug */,
+				FC2583802E80DE740087B661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC2583812E80DE740087B661 /* Build configuration list for PBXNativeTarget "RedzoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC2583822E80DE740087B661 /* Debug */,
+				FC2583832E80DE740087B661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC2583842E80DE740087B661 /* Build configuration list for PBXNativeTarget "RedzoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC2583852E80DE740087B661 /* Debug */,
+				FC2583862E80DE740087B661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC2583C62E80DF990087B661 /* Build configuration list for PBXNativeTarget "RedzoneWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC2583C72E80DF990087B661 /* Debug */,
+				FC2583C82E80DF990087B661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC2583CA2E80DF990087B661 /* Build configuration list for PBXNativeTarget "RedzoneWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC2583CB2E80DF990087B661 /* Debug */,
+				FC2583CC2E80DF990087B661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC2583CD2E80DF990087B661 /* Build configuration list for PBXNativeTarget "RedzoneWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC2583CE2E80DF990087B661 /* Debug */,
+				FC2583CF2E80DF990087B661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC86B6272EDA863300B07540 /* Build configuration list for PBXNativeTarget "RedzoneWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC86B6252EDA863300B07540 /* Debug */,
+				FC86B6262EDA863300B07540 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC13BF5F2E84E46C0013FFE6 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
+		};
+		FC13BF632E84E46C0013FFE6 /* DependenciesTestSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = DependenciesTestSupport;
+		};
+		FC13BF652E84E4770013FFE6 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
+		};
+		FC13BF692E84E4810013FFE6 /* DependenciesTestSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = DependenciesTestSupport;
+		};
+		FC25839F2E80DEFD0087B661 /* RedzoneMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RedzoneMacros;
+		};
+		FC2583D02E80DFBA0087B661 /* RedzoneMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RedzoneMacros;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FC2583552E80DE720087B661 /* Project object */;
+}

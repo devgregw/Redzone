@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:New/Redzone/Redzone.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RedzoneCore/RedzoneCore.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RedzoneUI/RedzoneUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RedzoneMacros">
+   </FileRef>
+</Workspace>

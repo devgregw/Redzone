@@ -1,0 +1,138 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "enhCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More persistent and/or widespread, a few intense"
+          }
+        }
+      }
+    },
+    "enhHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numerous severe storms possible"
+          }
+        }
+      }
+    },
+    "highCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-lived, very widespread and particularly intense"
+          }
+        }
+      }
+    },
+    "highHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widespread severe storms expected"
+          }
+        }
+      }
+    },
+    "mdtCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-lived, widespread and intense"
+          }
+        }
+      }
+    },
+    "mdtHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widespread severe storms likely"
+          }
+        }
+      }
+    },
+    "mrglCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limited in duration and/or coverage and/or intensity"
+          }
+        }
+      }
+    },
+    "mrglHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isolated severe thunderstorms possible"
+          }
+        }
+      }
+    },
+    "slgtCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Short-lived and/or not widespread, isolated intense storms possible"
+          }
+        }
+      }
+    },
+    "slgtHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scattered severe storms possible"
+          }
+        }
+      }
+    },
+    "tstmCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lightning/flooding threats exist with all thunderstorms"
+          }
+        }
+      }
+    },
+    "tstmHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No severe thunderstorms expected"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

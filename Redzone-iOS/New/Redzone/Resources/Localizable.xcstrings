@@ -1,0 +1,310 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "--" : {
+
+    },
+    "(%@ ago)" : {
+
+    },
+    "(in %@)" : {
+
+    },
+    "%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "10% or higher probability of thunderstorms is forecast." : {
+
+    },
+    "A depicted severe weather area indicates 15%, 30% or higher probability for severe thunderstorms within 25 miles of a point." : {
+
+    },
+    "A greater concentration of organized severe thunderstorms with varying levels of intensity." : {
+
+    },
+    "A severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived derecho system with hurricane-force wind gusts producing widespread damage." : {
+
+    },
+    "A significant severe region represents 10% or greater probability of 65-knot (~75 miles per hour) or greater wind gusts within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them." : {
+
+    },
+    "About" : {
+
+    },
+    "About This Risk" : {
+
+    },
+    "Before using Redzone, please read the following disclaimer." : {
+
+    },
+    "Categorical" : {
+
+    },
+    "Continue" : {
+
+    },
+    "Data Source" : {
+
+    },
+    "Day 1" : {
+
+    },
+    "Day 2" : {
+
+    },
+    "Day 3" : {
+
+    },
+    "Day 4" : {
+
+    },
+    "Day 5" : {
+
+    },
+    "Day 6" : {
+
+    },
+    "Day 7" : {
+
+    },
+    "Day 8" : {
+
+    },
+    "DEBUG" : {
+
+    },
+    "Disclaimer" : {
+
+    },
+    "Enhanced" : {
+
+    },
+    "Exp." : {
+
+    },
+    "Failed to load outlook data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to load outlook data"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+
+    },
+    "Feel free to return to this screen anytime through Redzone → About → Disclaimer." : {
+
+    },
+    "Forecasted probability of 1-inch diameter hail or larger within 25 miles of a point." : {
+
+    },
+    "Forecasted probability of a tornado within 25 miles of a point." : {
+
+    },
+    "Forecasted probability of damaging wind gusts of 50 knots (~60 miles per hour) or greater within 25 miles of a point." : {
+
+    },
+    "Forecasted probability of severe weather within 25 miles of a point." : {
+
+    },
+    "General Thunderstorms" : {
+
+    },
+    "Got it" : {
+
+    },
+    "Hail" : {
+
+    },
+    "High" : {
+
+    },
+    "I Understand" : {
+
+    },
+    "Iss." : {
+
+    },
+    "Loading..." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
+    },
+    "Location" : {
+
+    },
+    "Location disabled" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location services disabled"
+          }
+        }
+      }
+    },
+    "Make a Plan" : {
+
+    },
+    "Manage Favorites" : {
+
+    },
+    "Map" : {
+
+    },
+    "Map Style" : {
+
+    },
+    "Marginal" : {
+
+    },
+    "Moderate" : {
+
+    },
+    "National Oceanic and Atmospheric Administration" : {
+
+    },
+    "National Weather Service" : {
+
+    },
+    "No favorites yet" : {
+
+    },
+    "No risk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No risk forecast for your location"
+          }
+        }
+      }
+    },
+    "NWS Disclaimer" : {
+
+    },
+    "NWS Privacy Policy" : {
+
+    },
+    "Open Settings" : {
+
+    },
+    "Organized severe thunderstorms are expected, but usually in low coverage with varying levels of intensity." : {
+
+    },
+    "Outlook" : {
+
+    },
+    "Please open Redzone on your iPhone and acknowledge the first launch disclaimer." : {
+
+    },
+    "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense." : {
+
+    },
+    "Privacy" : {
+
+    },
+    "Probabilistic (Day 3)" : {
+
+    },
+    "Probabilistic (Day 4-8)" : {
+
+    },
+    "Protecting Your Privacy" : {
+
+    },
+    "Redzone" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redzone"
+          }
+        }
+      }
+    },
+    "Reload widgets" : {
+
+    },
+    "Reset disclaimer acknowledgement" : {
+
+    },
+    "Risk Levels" : {
+
+    },
+    "riskDetails" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Risk Details"
+          }
+        }
+      }
+    },
+    "Safety" : {
+
+    },
+    "Safety for All Hazards" : {
+
+    },
+    "Severe storms of either limited organization and longevity, or very low coverage and marginal intensity." : {
+
+    },
+    "Significant Severe" : {
+
+    },
+    "Slight" : {
+
+    },
+    "Source Code" : {
+
+    },
+    "SPC Products" : {
+
+    },
+    "Storm Prediction Center" : {
+
+    },
+    "Testing Tools" : {
+
+    },
+    "Thank You" : {
+
+    },
+    "Tornado" : {
+
+    },
+    "Version" : {
+
+    },
+    "Welcome to Redzone" : {
+
+    },
+    "Wind" : {
+
+    }
+  },
+  "version" : "1.1"
+}

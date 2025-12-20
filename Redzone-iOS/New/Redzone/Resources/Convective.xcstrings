@@ -1,0 +1,259 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "anySevereWeatherLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "severe weather"
+          }
+        }
+      }
+    },
+    "anySigSevWeatherLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "significant severe weather"
+          }
+        }
+      }
+    },
+    "Categorical" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convective"
+          }
+        }
+      }
+    },
+    "enhCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More persistent and/or widespread, a few intense"
+          }
+        }
+      }
+    },
+    "enhHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numerous severe storms possible"
+          }
+        }
+      }
+    },
+    "Hail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hail"
+          }
+        }
+      }
+    },
+    "highCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-lived, very widespread and particularly intense"
+          }
+        }
+      }
+    },
+    "highHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widespread severe storms expected"
+          }
+        }
+      }
+    },
+    "mdtCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-lived, widespread and intense"
+          }
+        }
+      }
+    },
+    "mdtHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widespread severe storms likely"
+          }
+        }
+      }
+    },
+    "mrglCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limited in duration and/or coverage and/or intensity"
+          }
+        }
+      }
+    },
+    "mrglHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isolated severe thunderstorms possible"
+          }
+        }
+      }
+    },
+    "percentageCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(percentage)lld%% chance of %2$(label)@ within 25 miles"
+          }
+        }
+      }
+    },
+    "Probabilistic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probabilistic"
+          }
+        }
+      }
+    },
+    "sigHailCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% chance of 75 mph (65 kt) wind gusts or greater within 25 miles"
+          }
+        }
+      }
+    },
+    "sigTornadoCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% chance of an EF2 tornado or stronger within 25 miles"
+          }
+        }
+      }
+    },
+    "sigWindCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% chance of two-inch diameter hail or larger within 25 miles"
+          }
+        }
+      }
+    },
+    "slgtCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Short-lived and/or not widespread, isolated intense storms possible"
+          }
+        }
+      }
+    },
+    "slgtHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scattered severe storms possible"
+          }
+        }
+      }
+    },
+    "Tornado" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tornado"
+          }
+        }
+      }
+    },
+    "tstmCaption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lightning/flooding threats exist with all thunderstorms"
+          }
+        }
+      }
+    },
+    "tstmHeadline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No severe thunderstorms expected"
+          }
+        }
+      }
+    },
+    "Wind" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wind"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}
