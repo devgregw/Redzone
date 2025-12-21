@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC2582D32E808B180087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC2582D22E808B180087B661 /* RedzoneMacros */; };
 		FC2582D52E808B180087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582D42E808B180087B661 /* RedzoneCore.framework */; };
-		FC2582D62E808B180087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582D42E808B180087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2582D62E808B180087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582D42E808B180087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC2582D92E808B260087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582D82E808B260087B661 /* SwiftUI.framework */; };
 		FC2582DB2E808B2B0087B661 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582DA2E808B2B0087B661 /* MapKit.framework */; };
 		FC35CF182E8F008B00C9245B /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = FC35CF172E8F008B00C9245B /* Dependencies */; };
@@ -350,9 +350,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -397,9 +398,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
