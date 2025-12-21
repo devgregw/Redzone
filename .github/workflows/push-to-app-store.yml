@@ -38,7 +38,7 @@ jobs:
         - name: Setup SPM
           uses: actions/cache@v3
           with:
-            path: ./Redzone-iOS/.packages
+            path: ${{ runner.temp }}/clonedSourcePackages
             key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
             restore-keys: |
               ${{ runner.os }}-packages-
@@ -56,8 +56,8 @@ jobs:
         - name: Setup App Store Connect
           shell: zsh {0}
           run: |
-            mkdir -p ${{ github.workspace }}/private_keys
-            echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
+            mkdir -p $RUNNER_TEMP/private_keys
+            echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o $RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
         - name: Resolve package dependencies
           shell: zsh {0}
           run: |
@@ -67,40 +67,40 @@ jobs:
           shell: zsh {0}
           run: |
             set -o pipefail && \
-            NSUnbufferedIO=YES xcodebuild archive \
+            xcodebuild clean archive \
             -scheme "Redzone" \
             -workspace "Redzone.xcworkspace" \
             -derivedDataPath "$RUNNER_TEMP/DerivedData" \
             -disableAutomaticPackageResolution \
             -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" \
             -configuration release \
-            -archivePath Redzone-iOS.xcarchive \
-            2>&1 | xcbeautify --renderer github-actions
+            -archivePath $RUNNER_TEMP/Redzone-iOS.xcarchive \
+            -verbose 2>&1 | xcbeautify --renderer github-actions
         - name: Export & Upload IPA
           if: github.event_name != 'pull_request'
           shell: zsh {0}
           run: |
             set -o pipefail && \
-            NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
-            -archivePath Redzone-iOS.xcarchive \
+            xcodebuild -exportArchive -verbose \
+            -archivePath $RUNNER_TEMP/Redzone-iOS.xcarchive \
             -exportOptionsPlist ./exportOptions.plist \
             -exportPath Redzone-iOS.ipa \
             -authenticationKeyIssuerID ${{ secrets.IOS_ATC_API_KEY_ISSUER_ID}} \
             -authenticationKeyID ${{ secrets.IOS_ATC_API_KEY_ID }} \
-            -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
+            -authenticationKeyPath $RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
             2>&1 | xcbeautify --renderer github-actions
         - name: Export & Upload IPA (dry run)
           if: github.event_name == 'pull_request'
           shell: zsh {0}
           run: |
             set -o pipefail && \
-            NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
-            -archivePath Redzone-iOS.xcarchive \
+            xcodebuild -exportArchive -verbose \
+            -archivePath $RUNNER_TEMP/Redzone-iOS.xcarchive \
             -exportOptionsPlist ./exportOptions-exportOnly.plist \
             -exportPath Redzone-iOS.ipa \
             -authenticationKeyIssuerID ${{ secrets.IOS_ATC_API_KEY_ISSUER_ID}} \
             -authenticationKeyID ${{ secrets.IOS_ATC_API_KEY_ID }} \
-            -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
+            -authenticationKeyPath $RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
             2>&1 | xcbeautify --renderer github-actions
         - name: Clean up
           shell: zsh {0}

@@ -39,7 +39,7 @@ jobs:
       - name: Setup SPM
         uses: actions/cache@v3
         with:
-          path: ./Redzone-iOS/.packages
+          path: ${{ runner.temp }}/clonedSourcePackages
           key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-packages-
