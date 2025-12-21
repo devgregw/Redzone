@@ -75,6 +75,7 @@ jobs:
       run: |
         chmod +x ./BuildSupport/install-profiles.sh
         ./BuildSupport/install-profiles.sh -b '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}'
+      working-directory: ./Redzone-iOS
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
