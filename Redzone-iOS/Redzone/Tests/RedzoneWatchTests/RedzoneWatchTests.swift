@@ -1,6 +1,6 @@
 //
 //  RedzoneWatchTests.swift
-//  RedzoneWatch Watch AppTests
+//  RedzoneWatchTests
 //
 //  Created by Greg Whatley on 9/21/25.
 //
@@ -9,9 +9,5 @@
 import Testing
 
 struct RedzoneWatchTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-    }
 
 }
