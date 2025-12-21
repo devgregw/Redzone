@@ -114,7 +114,7 @@
 				FC19FBBC2E7E3F1200B7B875 /* Sources */,
 				FC19FBBD2E7E3F1200B7B875 /* Frameworks */,
 				FC19FBBE2E7E3F1200B7B875 /* Resources */,
-				FC6C50D52EF78FDF0094A7AC /* ShellScript */,
+				FC6C50D52EF78FDF0094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -143,7 +143,7 @@
 				FC19FBC52E7E3F1200B7B875 /* Sources */,
 				FC19FBC62E7E3F1200B7B875 /* Frameworks */,
 				FC19FBC72E7E3F1200B7B875 /* Resources */,
-				FC6C50D72EF78FF50094A7AC /* ShellScript */,
+				FC6C50D72EF78FF50094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -221,7 +221,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FC6C50D52EF78FDF0094A7AC /* ShellScript */ = {
+		FC6C50D52EF78FDF0094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -231,6 +231,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -239,7 +240,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneCore\n";
 		};
-		FC6C50D72EF78FF50094A7AC /* ShellScript */ = {
+		FC6C50D72EF78FF50094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -249,6 +250,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (

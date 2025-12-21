@@ -12,26 +12,26 @@
 		FC13BF662E84E4770013FFE6 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF652E84E4770013FFE6 /* Dependencies */; };
 		FC13BF6A2E84E4810013FFE6 /* DependenciesTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF692E84E4810013FFE6 /* DependenciesTestSupport */; };
 		FC2583962E80DEC90087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; };
-		FC2583972E80DEC90087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2583972E80DEC90087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC2583982E80DEC90087B661 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; };
-		FC2583992E80DEC90087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2583992E80DEC90087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC25839E2E80DEE10087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC25839D2E80DEE10087B661 /* SwiftUI.framework */; };
 		FC2583A02E80DEFD0087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC25839F2E80DEFD0087B661 /* RedzoneMacros */; };
 		FC2583C52E80DF990087B661 /* RedzoneWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FC2583A52E80DF970087B661 /* RedzoneWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC2583D12E80DFBA0087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC2583D02E80DFBA0087B661 /* RedzoneMacros */; };
 		FC2583D42E80DFBA0087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; };
-		FC2583D52E80DFBA0087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2583D52E80DFBA0087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC2583D62E80DFBA0087B661 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; };
-		FC2583D72E80DFBA0087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2583D72E80DFBA0087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC2584222E80E3180087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584212E80E3180087B661 /* SwiftUI.framework */; };
 		FC2584242E80E31C0087B661 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584232E80E31C0087B661 /* MapKit.framework */; };
 		FC86B6132EDA863100B07540 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B6122EDA863100B07540 /* WidgetKit.framework */; };
 		FC86B6142EDA863100B07540 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584212E80E3180087B661 /* SwiftUI.framework */; };
 		FC86B6232EDA863300B07540 /* RedzoneWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC86B7042EDB687D00B07540 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7022EDB687D00B07540 /* RedzoneCore.framework */; };
-		FC86B7052EDB687D00B07540 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7022EDB687D00B07540 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC86B7052EDB687D00B07540 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7022EDB687D00B07540 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC86B7062EDB687D00B07540 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7032EDB687D00B07540 /* RedzoneUI.framework */; };
-		FC86B7072EDB687D00B07540 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7032EDB687D00B07540 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC86B7072EDB687D00B07540 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7032EDB687D00B07540 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,7 +426,7 @@
 				FC25839A2E80DEC90087B661 /* Embed Frameworks */,
 				FC2583C92E80DF990087B661 /* Embed Watch Content */,
 				FC86B6242EDA863300B07540 /* Embed Foundation Extensions */,
-				FC6C50CC2EF783580094A7AC /* ShellScript */,
+				FC6C50CC2EF783580094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -456,7 +456,7 @@
 				FC2583662E80DE740087B661 /* Sources */,
 				FC2583672E80DE740087B661 /* Frameworks */,
 				FC2583682E80DE740087B661 /* Resources */,
-				FC6C50D32EF78FBB0094A7AC /* ShellScript */,
+				FC6C50D32EF78FBB0094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -478,7 +478,7 @@
 				FC2583702E80DE740087B661 /* Sources */,
 				FC2583712E80DE740087B661 /* Frameworks */,
 				FC2583722E80DE740087B661 /* Resources */,
-				FC6C50D42EF78FC40094A7AC /* ShellScript */,
+				FC6C50D42EF78FC40094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -500,7 +500,7 @@
 				FC2583A22E80DF970087B661 /* Frameworks */,
 				FC2583A32E80DF970087B661 /* Resources */,
 				FC2583D82E80DFBA0087B661 /* Embed Frameworks */,
-				FC6C50CF2EF78F260094A7AC /* ShellScript */,
+				FC6C50CF2EF78F260094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -527,7 +527,7 @@
 				FC2583AD2E80DF990087B661 /* Sources */,
 				FC2583AE2E80DF990087B661 /* Frameworks */,
 				FC2583AF2E80DF990087B661 /* Resources */,
-				FC6C50D12EF78F9F0094A7AC /* ShellScript */,
+				FC6C50D12EF78F9F0094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -549,7 +549,7 @@
 				FC2583B72E80DF990087B661 /* Sources */,
 				FC2583B82E80DF990087B661 /* Frameworks */,
 				FC2583B92E80DF990087B661 /* Resources */,
-				FC6C50D22EF78FA90094A7AC /* ShellScript */,
+				FC6C50D22EF78FA90094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -571,7 +571,7 @@
 				FC86B60E2EDA863100B07540 /* Frameworks */,
 				FC86B60F2EDA863100B07540 /* Resources */,
 				FC86B7082EDB687D00B07540 /* Embed Frameworks */,
-				FC6C50D02EF78F780094A7AC /* ShellScript */,
+				FC6C50D02EF78F780094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -705,7 +705,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FC6C50CC2EF783580094A7AC /* ShellScript */ = {
+		FC6C50CC2EF783580094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -715,6 +715,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -723,7 +724,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Redzone\n";
 		};
-		FC6C50CF2EF78F260094A7AC /* ShellScript */ = {
+		FC6C50CF2EF78F260094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -733,6 +734,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -741,7 +743,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneWatch\n";
 		};
-		FC6C50D02EF78F780094A7AC /* ShellScript */ = {
+		FC6C50D02EF78F780094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -751,6 +753,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -759,7 +762,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneWidgets\n\n";
 		};
-		FC6C50D12EF78F9F0094A7AC /* ShellScript */ = {
+		FC6C50D12EF78F9F0094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -769,6 +772,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -777,7 +781,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Tests/RedzoneWatchTests\n";
 		};
-		FC6C50D22EF78FA90094A7AC /* ShellScript */ = {
+		FC6C50D22EF78FA90094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -787,6 +791,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -795,7 +800,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Tests/RedzoneWatchUITests\n";
 		};
-		FC6C50D32EF78FBB0094A7AC /* ShellScript */ = {
+		FC6C50D32EF78FBB0094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -805,6 +810,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -813,7 +819,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Tests/RedzoneTests\n";
 		};
-		FC6C50D42EF78FC40094A7AC /* ShellScript */ = {
+		FC6C50D42EF78FC40094A7AC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -823,6 +829,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
