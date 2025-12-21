@@ -22,6 +22,8 @@ jobs:
     defaults:
       run:
         working-directory: ./Redzone-iOS
+    env:
+      NSUnbufferedIO: YES
 
     steps:
       - name: Checkout
@@ -42,25 +44,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
       - name: Setup certificates
+        shell: zsh {0}
         run: |
-          echo -n '${{ secrets.IOS_DIST_P12_BASE64 }}' | base64 -D -i - -o $RUNNER_TEMP/cert.p12
-          PASSWORD=$(uuidgen)
-          KEYCHAIN_PATH=$RUNNER_TEMP/signing.keychain-db
-          security create-keychain -p $PASSWORD $KEYCHAIN_PATH
-          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p $PASSWORD $KEYCHAIN_PATH
-          security import $RUNNER_TEMP/cert.p12 -P '${{ secrets.IOS_DIST_P12_PASSWORD }}' -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-          security list-keychain -d user -s $KEYCHAIN_PATH
-          security find-identity -v -p codesigning
+          chmod +x ./BuildSupport/install-cert.sh
+          ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DIST_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DIST_CERTIFICATE_PASSWORD }}' -n distribution
+          ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DEV_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}' -n development
       - name: Setup provisioning profiles
         shell: zsh {0}
         run: |
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          tar -xf =( echo -n '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}' | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles
-          ls -l ~/Library/MobileDevice/Provisioning\ Profiles
+          chmod +x ./BuildSupport/install-profiles.sh
+          ./BuildSupport/install-profiles.sh -b '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}'
       - name: Resolve package dependencies
-        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
+        shell: zsh {0}
+        run: |
+          chmod +x ./BuildSupport/resolve-packages.sh
+          ./BuildSupport/resolve-packages.sh
       - name: Compile sources & run tests
-        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild test -scheme "Redzone" -workspace "Redzone.xcworkspace" -destination "platform=iOS Simulator,OS=26.1,name=iPhone Air" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
+        shell: zsh {0}
+        run:
+          chmod +x ./BuildSupport/xcodebuild.sh
+          ./BuildSupport/xcodebuild.sh -a test -d "platform=iOS Simulator,OS=26.1,name=iPhone Air"
       - name: Periphery scan
-        run: periphery scan --skip-build --relative-results --format github-actions --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args
+        shell: zsh {0}
+        run: |
+          chmod +x ./BuildSupport/periphery.sh
+          ./BuildSupport/periphery.sh
+      - name: Clean up
+        shell: zsh {0}
+        run: |
+          chmod +x ./BuildSupport/cleanup.sh
+          ./BuildSupport/cleanup.sh

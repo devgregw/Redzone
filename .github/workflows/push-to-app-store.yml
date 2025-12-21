@@ -3,18 +3,10 @@ name: "Redzone - iOS - Push to App Store"
 on:
     push:
         branches: [ "main" ]
-        paths: [ "Redzone-iOS/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml" ]
+        paths: [ "Redzone-iOS/Redzone/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml" ]
     pull_request:
         branches: [ "main" ]
-        paths: [ "Redzone-iOS/Redzone.base.xcconfig", "Redzone-iOS/exportOptions.plist", "Redzone-iOS/exportOptions-exportOnly.plist", ".github/workflows/push-to-app-store.yml", "Redzone-iOS/**" ]
-    workflow_dispatch:
-        inputs:
-            version:
-                description: Version String
-                required: true
-            build:
-                description: Build Number
-                required: true
+        paths: [ "Redzone-iOS/**" ]
 
 permissions:
   contents: read
@@ -29,6 +21,8 @@ jobs:
     defaults:
       run:
         working-directory: ./Redzone-iOS
+    env:
+      NSUnbufferedIO: YES
     
     steps:
         - name: Checkout
@@ -49,54 +43,43 @@ jobs:
             restore-keys: |
               ${{ runner.os }}-packages-
         - name: Setup certificates
+          shell: zsh {0}
           run: |
-            echo -n '${{ secrets.IOS_DIST_P12_BASE64 }}' | base64 -D -i - -o $RUNNER_TEMP/cert.p12
-            PASSWORD=$(uuidgen)
-            KEYCHAIN_PATH=$RUNNER_TEMP/signing.keychain-db
-            security create-keychain -p $PASSWORD $KEYCHAIN_PATH
-            security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-            security unlock-keychain -p $PASSWORD $KEYCHAIN_PATH
-            security import $RUNNER_TEMP/cert.p12 -P '${{ secrets.IOS_DIST_P12_PASSWORD }}' -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-            security list-keychain -d user -s $KEYCHAIN_PATH
-            security find-identity -v -p codesigning
+            chmod +x ./BuildSupport/install-cert.sh
+            ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DIST_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DIST_CERTIFICATE_PASSWORD }}' -n distribution
+            ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DEV_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}' -n development
         - name: Setup provisioning profiles
           shell: zsh {0}
           run: |
-            mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-            tar -xf =( echo -n '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}' | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles
-            ls -l ~/Library/MobileDevice/Provisioning\ Profiles
+            chmod +x ./BuildSupport/install-profiles.sh
+            ./BuildSupport/install-profiles.sh -b '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}'
         - name: Setup App Store Connect
+          shell: zsh {0}
           run: |
             mkdir -p ${{ github.workspace }}/private_keys
             echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
-        - name: Set version in XCConfig
-          if: github.event_name == 'workflow_dispatch'
-          run: |
-            sed -i '' 's/^VERSION=.*/VERSION=${{ github.event.inputs.version }}/' Redzone.base.xcconfig
-            sed -i '' 's/^BUILD=.*/BUILD=${{ github.event.inputs.build }}/' Redzone.base.xcconfig
-            cat Redzone.base.xcconfig
         - name: Resolve package dependencies
+          shell: zsh {0}
           run: |
-            set -o pipefail && \
-            NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies \
-            -disableAutomaticPackageResolution \
-            -clonedSourcePackagesDirPath "./.packages" \
-            2>&1 | xcbeautify --renderer github-actions
+            chmod +x ./BuildSupport/resolve-packages.sh
+            ./BuildSupport/resolve-packages.sh
         - name: Archive
+          shell: zsh {0}
           run: |
             set -o pipefail && \
             NSUnbufferedIO=YES xcodebuild archive \
             -scheme "Redzone" \
             -workspace "Redzone.xcworkspace" \
-            -derivedDataPath "./.build" \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
             -disableAutomaticPackageResolution \
-            -clonedSourcePackagesDirPath "./.packages" \
+            -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" \
             -configuration release \
             -sdk iphoneos \
             -archivePath Redzone-iOS.xcarchive \
             2>&1 | xcbeautify --renderer github-actions
         - name: Export & Upload IPA
           if: github.event_name != 'pull_request'
+          shell: zsh {0}
           run: |
             set -o pipefail && \
             NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
@@ -109,6 +92,7 @@ jobs:
             2>&1 | xcbeautify --renderer github-actions
         - name: Export & Upload IPA (dry run)
           if: github.event_name == 'pull_request'
+          shell: zsh {0}
           run: |
             set -o pipefail && \
             NSUnbufferedIO=YES xcodebuild -exportArchive -verbose \
@@ -120,8 +104,8 @@ jobs:
             -authenticationKeyPath ${{ github.workspace }}/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
             2>&1 | xcbeautify --renderer github-actions
         - name: Clean up
+          shell: zsh {0}
           run: |
-            rm -rf ~/Library/MobileDevice/Provisioning\ Profiles || true
-            rm -rf ${{ github.workspace }}/private_keys || true
-            rm -f $RUNNER_TEMP/cert.p12 || true
+            chmod +x ./BuildSupport/cleanup.sh
+            ./BuildSupport/cleanup.sh
 
