@@ -74,7 +74,6 @@ jobs:
             -disableAutomaticPackageResolution \
             -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" \
             -configuration release \
-            -sdk iphoneos \
             -archivePath Redzone-iOS.xcarchive \
             2>&1 | xcbeautify --renderer github-actions
         - name: Export & Upload IPA
@@ -108,4 +107,3 @@ jobs:
           run: |
             chmod +x ./BuildSupport/cleanup.sh
             ./BuildSupport/cleanup.sh
-
