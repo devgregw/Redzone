@@ -7,8 +7,8 @@
 
 import CoreLocation
 import Foundation
-import Testing
 @testable import RedzoneCore
+import Testing
 
 @Suite("OutlookService") struct OutlookServiceTests {
 

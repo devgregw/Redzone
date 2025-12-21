@@ -5,8 +5,8 @@
 //  Created by Greg Whatley on 12/18/25.
 //
 
-import Testing
 @testable import RedzoneCore
+import Testing
 
 @Suite("Result Extensions") struct ResultTests {
     private enum TestError: Error {
