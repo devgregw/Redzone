@@ -61,7 +61,7 @@ jobs:
           ./BuildSupport/resolve-packages.sh
       - name: Compile sources & run tests
         shell: zsh {0}
-        run:
+        run: |
           chmod +x ./BuildSupport/xcodebuild.sh
           ./BuildSupport/xcodebuild.sh -a test -d "platform=iOS Simulator,OS=26.1,name=iPhone Air"
       - name: Periphery scan
