@@ -36,8 +36,4 @@ public final actor OutlookService: NetworkingService {
         let data = try await adapter.data(for: url)
         return try OutlookResponse(data: data, outlookType: type)
     }
-
-    nonisolated private func fetchOutlook(type: OutlookType, at location: CLLocationCoordinate2D) async throws -> Outlook? {
-        (try await fetchOutlook(type: type)).findOutlook(containing: location)
-    }
 }

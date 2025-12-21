@@ -1,8 +1,9 @@
-disable_update_check: true
-project: Redzone.xcodeproj
-retain_codable_properties: true
-retain_swift_ui_previews: true
+project: Redzone.xcworkspace
+retain_public: true
 schemes:
-  - Redzone (Debug)
-strict: true
-verbose: true
+- Redzone
+- Redzone Watch App
+- Redzone Widgets Extension
+- RedzoneCore
+- RedzoneMacros
+- RedzoneUI

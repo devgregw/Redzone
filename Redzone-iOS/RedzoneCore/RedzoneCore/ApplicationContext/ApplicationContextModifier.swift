@@ -8,8 +8,14 @@
 import SwiftUI
 
 public extension View {
+    // swiftlint:disable:next orphaned_doc_comment
     /// Adds an action to perform when this view receives an update to the specified application context key.
-    func onReceiveApplicationContext<T: AtomicPropertyListValue>(key: String, as type: T.Type, perform action: @escaping @MainActor (T) -> Void) -> some View {
+    // periphery:ignore:parameters as - type argument is required for type inference
+    func onReceiveApplicationContext<T: AtomicPropertyListValue>(
+        key: String,
+        as type: T.Type,
+        perform action: @escaping @MainActor (T) -> Void
+    ) -> some View {
         self
             .onReceive(
                 ApplicationContextManager.shared.publisher(for: key, type: T.self),

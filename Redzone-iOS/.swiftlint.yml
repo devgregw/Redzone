@@ -1,0 +1,14 @@
+opt_in_rules:
+ - empty_count
+ - force_unwrapping
+ - sorted_imports
+ - trailing_closure
+
+line_length:
+  warning: 150
+  error: 150
+  ignores_comments: true
+check_for_updates: false
+trailing_whitespace:
+  ignores_empty_lines: true
+reporter: xcode

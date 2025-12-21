@@ -9,7 +9,10 @@ import MapKit
 import SwiftUI
 
 public extension View {
-    func mapStyle(_ style: MapViewStyle, pointsOfInterest: PointOfInterestCategories = .including(.airport, .hospital, .school, .stadium, .university)) -> some View {
+    func mapStyle(
+        _ style: MapViewStyle,
+        pointsOfInterest: PointOfInterestCategories = .including(.airport, .hospital, .school, .stadium, .university)
+    ) -> some View {
         mapStyle({
             switch style {
             case .standard: .standard(pointsOfInterest: pointsOfInterest)

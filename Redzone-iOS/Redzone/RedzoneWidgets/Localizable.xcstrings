@@ -1,0 +1,109 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "--" : {
+
+    },
+    "%@ • Day %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ • Day %2$lld"
+          }
+        }
+      }
+    },
+    "%lld%%" : {
+
+    },
+    "%lld%% %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld%% %2$@"
+          }
+        }
+      }
+    },
+    "99%" : {
+
+    },
+    "combinedConvectiveRiskWidgetDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Displays the convective outlook details for your location."
+          }
+        }
+      }
+    },
+    "combinedConvectiveRiskWidgetTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convective Risks"
+          }
+        }
+      }
+    },
+    "Day after tomorrow" : {
+
+    },
+    "Failed to load data" : {
+
+    },
+    "Loading..." : {
+
+    },
+    "Location services disabled" : {
+
+    },
+    "No %@" : {
+
+    },
+    "No severe forecast" : {
+
+    },
+    "No severe weather forecast" : {
+
+    },
+    "Outlook Day" : {
+
+    },
+    "outlookDayConfigurationDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the day to see corresponding outlooks. The wind/hail/tornado breakdown is only supported for today's and tomorrow's outlooks."
+          }
+        }
+      }
+    },
+    "outlookDayConfigurationTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select OutlookDay"
+          }
+        }
+      }
+    },
+    "Today" : {
+
+    },
+    "Tomorrow" : {
+
+    }
+  },
+  "version" : "1.1"
+}

@@ -5,10 +5,10 @@
 //  Created by Greg Whatley on 12/19/25.
 //
 
-import SwiftUI
-import WatchConnectivity
 import Combine
 import OSLog
+import SwiftUI
+import WatchConnectivity
 
 // MARK: - ApplicationContextManager implementation
 
@@ -37,7 +37,9 @@ import OSLog
         updateContext(plist: [key: value, "date": Date()])
     }
 
+    // swiftlint:disable:next orphaned_doc_comment
     /// A publisher that fires values that match the given type for the given application context key.
+    // periphery:ignore:parameters type - type argument is required for type inference
     func publisher<T: AtomicPropertyListValue>(for key: String, type: T.Type = T.self) -> AnyPublisher<T, Never> {
         subject.compactMap { $0[key] as? T }.eraseToAnyPublisher()
     }
@@ -114,7 +116,7 @@ nonisolated extension ApplicationContextManager: WCSessionDelegate {
         }
     }
 
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
         Self.logger.debug("didReceiveApplicationContext: \(applicationContext.debugDescription).")
         let context = applicationContext.coercedToPropertyList()
 

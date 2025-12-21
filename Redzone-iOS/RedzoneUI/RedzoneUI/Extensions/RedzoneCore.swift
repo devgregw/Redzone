@@ -17,7 +17,7 @@ extension OutlookType: @retroactive CustomStringConvertible, @retroactive Custom
     }
 }
 
-extension OutlookType.Convective: @retroactive CustomStringConvertible, @retroactive CustomLocalizedStringResourceConvertible {
+extension Convective: @retroactive CustomStringConvertible, @retroactive CustomLocalizedStringResourceConvertible {
     public var localizedStringResource: LocalizedStringResource {
         switch self {
         case let .day1(classification), let .day2(classification): .convectiveDescription(label: classification.description, day: day)
@@ -28,7 +28,7 @@ extension OutlookType.Convective: @retroactive CustomStringConvertible, @retroac
     }
 }
 
-extension OutlookType.Convective.Classification: @retroactive CustomStringConvertible, @retroactive CustomLocalizedStringResourceConvertible {
+extension Convective.Classification: @retroactive CustomStringConvertible, @retroactive CustomLocalizedStringResourceConvertible {
     public var localizedStringResource: LocalizedStringResource {
         switch self {
         case .categorical: .categorical

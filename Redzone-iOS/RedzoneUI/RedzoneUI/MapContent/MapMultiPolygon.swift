@@ -33,7 +33,7 @@ public struct MapMultiPolygon: MapContent {
                 .init(latitude: 25.83333, longitude: -106.55),
                 .init(latitude: 36.5, longitude: -106.55),
                 .init(latitude: 36.5, longitude: -93.516667),
-                .init(latitude: 25.83333, longitude: -93.516667),
+                .init(latitude: 25.83333, longitude: -93.516667)
             ], holes: [
                 // Hole covering the DFW Metroplex
                 .init([

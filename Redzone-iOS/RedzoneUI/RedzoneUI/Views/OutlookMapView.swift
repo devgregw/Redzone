@@ -6,8 +6,8 @@
 //
 
 import MapKit
-import SwiftUI
 import RedzoneCore
+import SwiftUI
 
 public struct OutlookMapView: View {
     private let response: OutlookResponse?
@@ -18,7 +18,13 @@ public struct OutlookMapView: View {
     @Binding private var selection: Outlook?
     @Binding private var tappedLocation: CLLocationCoordinate2D?
     
-    public init(response: OutlookResponse?, position: Binding<MapCameraPosition>, mapStyle: Binding<MapViewStyle>, selection: Binding<Outlook?>, tappedLocation: Binding<CLLocationCoordinate2D?>) {
+    public init(
+        response: OutlookResponse?,
+        position: Binding<MapCameraPosition>,
+        mapStyle: Binding<MapViewStyle>,
+        selection: Binding<Outlook?>,
+        tappedLocation: Binding<CLLocationCoordinate2D?>
+    ) {
         self.response = response
         self._position = position
         self._mapStyle = mapStyle

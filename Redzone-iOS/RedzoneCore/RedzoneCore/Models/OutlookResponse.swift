@@ -19,8 +19,8 @@ public struct OutlookResponse: Sendable, Hashable {
         public let properties: Outlook.Properties
 
         init?(feature: GeoJSONFeature) {
-            guard case let .multiPolygon(mp) = feature.geometry else { return nil }
-            self.multiPolygon = mp
+            guard case let .multiPolygon(multiPolygon) = feature.geometry else { return nil }
+            self.multiPolygon = multiPolygon
             self.properties = .init(from: feature)
         }
 

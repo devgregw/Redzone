@@ -12,10 +12,8 @@ import OSLog
 import RedzoneCore
 import SwiftUI
 
-fileprivate let logger: Logger = .create()
-
-struct MapTapGestureModifier<C: CoordinateSpaceProtocol>: ViewModifier {
-    let coordinateSpace: C
+struct MapTapGestureModifier: ViewModifier {
+    private static let logger: Logger = .create()
     let operation: (CLLocationCoordinate2D) -> Void
 
     func body(content: Content) -> some View {
@@ -25,7 +23,8 @@ struct MapTapGestureModifier<C: CoordinateSpaceProtocol>: ViewModifier {
                     SpatialTapGesture(coordinateSpace: .global)
                         .onEnded {
                             if let coordinate = proxy.convert($0.location, from: .global) {
-                                logger.debug("Tap @ (\($0.location.x), \($0.location.y)) mapped to coordinate (\(coordinate.latitude), \(coordinate.longitude)).")
+                                // swiftlint:disable:next line_length
+                                Self.logger.debug("Tap @ (\($0.location.x), \($0.location.y)) mapped to coordinate (\(coordinate.latitude), \(coordinate.longitude)).")
                                 operation(coordinate)
                             }
                         }
@@ -36,8 +35,8 @@ struct MapTapGestureModifier<C: CoordinateSpaceProtocol>: ViewModifier {
 }
 
 public extension View {
-    func mapTapGesture<C: CoordinateSpaceProtocol>(coordinateSpace: C = .global, perform operation: @escaping (CLLocationCoordinate2D) -> Void) -> some View {
-        modifier(MapTapGestureModifier(coordinateSpace: coordinateSpace, operation: operation))
+    func mapTapGesture(perform operation: @escaping (CLLocationCoordinate2D) -> Void) -> some View {
+        modifier(MapTapGestureModifier(operation: operation))
     }
 }
 
@@ -49,7 +48,7 @@ public extension View {
             .init(latitude: 25.83333, longitude: -106.55),
             .init(latitude: 36.5, longitude: -106.55),
             .init(latitude: 36.5, longitude: -93.516667),
-            .init(latitude: 25.83333, longitude: -93.516667),
+            .init(latitude: 25.83333, longitude: -93.516667)
         ], holes: [
             .init([
                 .init(latitude: 33.25, longitude: -97.5),

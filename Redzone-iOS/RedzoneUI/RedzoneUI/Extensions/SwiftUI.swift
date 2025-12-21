@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// swiftlint:disable identifier_name
 public extension Color {
     static let magenta = Color(.magenta)
 
@@ -84,6 +85,7 @@ public extension Color {
         }
     }
 }
+// swiftlint:enable identifier_name
 
 public struct VerticallyCenteredLabelStyle: LabelStyle {
     private let spacing: CGFloat?

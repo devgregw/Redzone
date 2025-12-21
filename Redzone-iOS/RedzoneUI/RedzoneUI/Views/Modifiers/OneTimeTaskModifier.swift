@@ -30,13 +30,21 @@ struct OneTimeTaskModifier<ID: Hashable>: ViewModifier {
     }
 }
 
-
 public extension View {
-    func task<ID: Hashable>(id: ID, priority: TaskPriority = .userInitiated, timeout: TimeInterval, operation: @MainActor @escaping () async -> Void) -> some View {
+    func task<ID: Hashable>(
+        id: ID,
+        priority: TaskPriority = .userInitiated,
+        timeout: TimeInterval,
+        operation: @MainActor @escaping () async -> Void
+    ) -> some View {
         modifier(OneTimeTaskModifier(id: id, priority: priority, timeout: timeout, operation: operation))
     }
 
-    func task(priority: TaskPriority = .userInitiated, timeout: TimeInterval, operation: @MainActor @escaping () async -> Void) -> some View {
+    func task(
+        priority: TaskPriority = .userInitiated,
+        timeout: TimeInterval,
+        operation: @MainActor @escaping () async -> Void
+    ) -> some View {
         modifier(OneTimeTaskModifier(id: 0, priority: priority, timeout: timeout, operation: operation))
     }
 }

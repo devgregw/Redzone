@@ -8,14 +8,12 @@
 import RedzoneCore
 import SwiftUI
 
-@MainActor @propertyWrapper public struct CodableAppStorage<Value: Codable & Sendable>: Sendable, DynamicProperty {
+@MainActor @propertyWrapper public struct CodableAppStorage<Value: Codable & Sendable>: DynamicProperty {
     @AppStorage private var storedData: Data?
     private let defaultValue: Value
-    private let key: String
 
     public init(wrappedValue: Value, _ key: String, store: UserDefaults? = nil) {
         self.defaultValue = wrappedValue
-        self.key = key
         self._storedData = AppStorage(key, store: store)
     }
 

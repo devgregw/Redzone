@@ -43,7 +43,7 @@ extension Array: PropertyListValue where Element == any PropertyListValue { }
 extension PropertyList: PropertyListValue { }
 
 /// Coerces an arbitrary item to a `PropertyListValue` if possible.
-fileprivate func coerceToPropertyListValue(_ item: Any) -> (any PropertyListValue)? {
+private func coerceToPropertyListValue(_ item: Any) -> (any PropertyListValue)? {
     if let dictionary = item as? [String: Any] {
         dictionary.compactMapValues(coerceToPropertyListValue(_:))
     } else if let array = item as? [Any] {

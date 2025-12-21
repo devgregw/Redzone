@@ -33,7 +33,7 @@ jobs:
       - name: Setup Homebrew
         uses: tecolicom/actions-use-homebrew-tools@v1.3
         with:
-          tools: 'periphery xcbeautify'
+          tools: 'periphery xcbeautify swiftlint'
       - name: Setup SPM
         uses: actions/cache@v3
         with:
@@ -61,6 +61,6 @@ jobs:
       - name: Resolve package dependencies
         run: set -o pipefail && NSUnbufferedIO=YES xcodebuild -resolvePackageDependencies -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       - name: Compile sources & run tests
-        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild test -scheme "Redzone (Debug)" -project "Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=26.0,name=iPhone Air" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
+        run: set -o pipefail && NSUnbufferedIO=YES xcodebuild test -scheme "Redzone" -workspace "Redzone.xcworkspace" -project "Redzone/Redzone.xcodeproj" -destination "platform=iOS Simulator,OS=26.0,name=iPhone Air" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       - name: Periphery scan
         run: periphery scan --skip-build --index-store-path "./.build" # Periphery will read the config YAML file and merge it with these CLI args

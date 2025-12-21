@@ -42,7 +42,7 @@ public struct OutlookPolygon: MapContent {
                     .init(latitude: 25.83333, longitude: -106.55),
                     .init(latitude: 36.5, longitude: -106.55),
                     .init(latitude: 36.5, longitude: -93.516667),
-                    .init(latitude: 25.83333, longitude: -93.516667),
+                    .init(latitude: 25.83333, longitude: -93.516667)
                 ], holes: [
                     .init([
                         .init(latitude: 33.25, longitude: -97.5),

@@ -86,8 +86,9 @@ jobs:
           run: |
             set -o pipefail && \
             NSUnbufferedIO=YES xcodebuild archive \
-            -scheme "Redzone (Release)" \
-            -project "Redzone.xcodeproj" \
+            -scheme "Redzone" \
+            -workspace "Redzone.xcworkspace" \
+            -project "Redzone/Redzone.xcodeproj" \
             -derivedDataPath "./.build" \
             -disableAutomaticPackageResolution \
             -clonedSourcePackagesDirPath "./.packages" \

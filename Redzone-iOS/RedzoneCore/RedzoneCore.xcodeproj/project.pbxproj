@@ -114,12 +114,14 @@
 				FC19FBBC2E7E3F1200B7B875 /* Sources */,
 				FC19FBBD2E7E3F1200B7B875 /* Frameworks */,
 				FC19FBBE2E7E3F1200B7B875 /* Resources */,
+				FC6C50D52EF78FDF0094A7AC /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FC4A55D02EF6388100E4CD0A /* PBXTargetDependency */,
-				FC4A55D22EF6388100E4CD0A /* PBXTargetDependency */,
+				FC4A58C62EF7540F00E4CD0A /* PBXTargetDependency */,
+				FC4A58C82EF7540F00E4CD0A /* PBXTargetDependency */,
+				FC4A58CA2EF7540F00E4CD0A /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FC19FBC22E7E3F1200B7B875 /* RedzoneCore */,
@@ -141,6 +143,7 @@
 				FC19FBC52E7E3F1200B7B875 /* Sources */,
 				FC19FBC62E7E3F1200B7B875 /* Frameworks */,
 				FC19FBC72E7E3F1200B7B875 /* Resources */,
+				FC6C50D72EF78FF50094A7AC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -165,7 +168,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					FC19FBBF2E7E3F1200B7B875 = {
 						CreatedOnToolsVersion = 26.0;
@@ -217,6 +220,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FC6C50D52EF78FDF0094A7AC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneCore\n";
+		};
+		FC6C50D72EF78FF50094A7AC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneCoreTests\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FC19FBBC2E7E3F1200B7B875 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -240,13 +282,17 @@
 			target = FC19FBBF2E7E3F1200B7B875 /* RedzoneCore */;
 			targetProxy = FC19FBCB2E7E3F1200B7B875 /* PBXContainerItemProxy */;
 		};
-		FC4A55D02EF6388100E4CD0A /* PBXTargetDependency */ = {
+		FC4A58C62EF7540F00E4CD0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = FC4A55CF2EF6388100E4CD0A /* RedzoneMacros */;
+			productRef = FC4A58C52EF7540F00E4CD0A /* RedzoneMacros */;
 		};
-		FC4A55D22EF6388100E4CD0A /* PBXTargetDependency */ = {
+		FC4A58C82EF7540F00E4CD0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = FC4A55D12EF6388100E4CD0A /* Algorithms */;
+			productRef = FC4A58C72EF7540F00E4CD0A /* Algorithms */;
+		};
+		FC4A58CA2EF7540F00E4CD0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC4A58C92EF7540F00E4CD0A /* GeoJSON */;
 		};
 /* End PBXTargetDependency section */
 
@@ -286,11 +332,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -309,6 +356,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -353,11 +401,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -369,6 +418,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
@@ -382,8 +432,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -429,8 +481,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -477,6 +531,7 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -504,6 +559,7 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = D2T6N8FXD6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -593,15 +649,20 @@
 			package = FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */;
 			productName = GeoJSON;
 		};
-		FC4A55CF2EF6388100E4CD0A /* RedzoneMacros */ = {
+		FC4A58C52EF7540F00E4CD0A /* RedzoneMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FC19FC582E7F690700B7B875 /* XCLocalSwiftPackageReference "../RedzoneMacros" */;
 			productName = RedzoneMacros;
 		};
-		FC4A55D12EF6388100E4CD0A /* Algorithms */ = {
+		FC4A58C72EF7540F00E4CD0A /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FCA5D8FD2E7F88480081A042 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		FC4A58C92EF7540F00E4CD0A /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */;
+			productName = GeoJSON;
 		};
 		FCA5D8FE2E7F88480081A042 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;

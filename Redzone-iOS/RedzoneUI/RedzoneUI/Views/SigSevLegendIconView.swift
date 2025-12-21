@@ -5,7 +5,6 @@
 //  Created by Greg Whatley on 9/27/25.
 //
 
-
 import SwiftUI
 
 public struct SigSevLegendIconView: View {

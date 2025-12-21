@@ -8,14 +8,14 @@
 import Foundation
 import OSLog
 
-fileprivate let logger: Logger = .create()
+private let logger: Logger = .create()
 
 public protocol RequestAdapter: Sendable {
     func data(for url: URL) async throws -> Data
 }
 
 public extension RequestAdapter {
-    func data<T>(for url: URL, decodedAs type: T.Type = T.self) async throws -> T where T: Decodable {
+    func data<T>(for url: URL) async throws -> T where T: Decodable {
         let response = try await data(for: url)
         do {
             logger.debug("Decoding response as '\(T.self)'.")

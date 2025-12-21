@@ -5,11 +5,10 @@
 //  Created by Greg Whatley on 9/19/25.
 //
 
+import Combine
 @preconcurrency import CoreLocation
 import Foundation
 import OSLog
-import Combine
-internal import RedzoneMacros
 
 @Observable @MainActor public final class LocationService: NSObject {
     private static let logger: Logger = .create()
@@ -64,6 +63,7 @@ internal import RedzoneMacros
         for await result in locationPublisher.values {
             if case let .success(location) = result,
                let location {
+                // swiftlint:disable:next line_length
                 Self.logger.debug("Received location: \(location.coordinate.latitude, privacy: .sensitive), \(location.coordinate.longitude, privacy: .sensitive)")
                 return location
             } else if case .failure = result {
