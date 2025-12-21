@@ -17,4 +17,4 @@ while getopts "a:d:" opt; do
 done
 shift $((OPTIND - 1))
 
-xcodebuild $build_action -scheme "Redzone" -workspace "Redzone.xcworkspace" -destination "$destination" -derivedDataPath "$UNNER_TEMP/DerivedData" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" 2>&1 | xcbeautify --renderer github-actions
+xcodebuild $build_action -scheme "Redzone" -workspace "Redzone.xcworkspace" -destination "$destination" -derivedDataPath "$RUNNER_TEMP/DerivedData" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" 2>&1 | xcbeautify --renderer github-actions
