@@ -88,7 +88,6 @@ jobs:
             NSUnbufferedIO=YES xcodebuild archive \
             -scheme "Redzone" \
             -workspace "Redzone.xcworkspace" \
-            -project "Redzone/Redzone.xcodeproj" \
             -derivedDataPath "./.build" \
             -disableAutomaticPackageResolution \
             -clonedSourcePackagesDirPath "./.packages" \

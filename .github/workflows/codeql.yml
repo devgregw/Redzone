@@ -84,7 +84,7 @@ jobs:
     
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       name: Compile sources
-      run: set -o pipefail && NSUnbufferedIO=YES xcodebuild build -scheme "Redzone" -workspace "Redzone.xcworkspace" -project "Redzone/Redzone.xcodeproj" -destination "generic/platform=iOS" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
+      run: set -o pipefail && NSUnbufferedIO=YES xcodebuild build -scheme "Redzone" -workspace "Redzone.xcworkspace" -destination "generic/platform=iOS" -derivedDataPath "./.build" -disableAutomaticPackageResolution -clonedSourcePackagesDirPath "./.packages" 2>&1 | xcbeautify --renderer github-actions
       working-directory: ./Redzone-iOS
 
     - name: Perform CodeQL Analysis
