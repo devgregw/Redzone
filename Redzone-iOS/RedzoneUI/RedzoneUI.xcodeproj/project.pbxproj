@@ -9,26 +9,11 @@
 /* Begin PBXBuildFile section */
 		FC2582D32E808B180087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC2582D22E808B180087B661 /* RedzoneMacros */; };
 		FC2582D52E808B180087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582D42E808B180087B661 /* RedzoneCore.framework */; };
-		FC2582D62E808B180087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582D42E808B180087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC2582D92E808B260087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582D82E808B260087B661 /* SwiftUI.framework */; };
 		FC2582DB2E808B2B0087B661 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582DA2E808B2B0087B661 /* MapKit.framework */; };
 		FC35CF182E8F008B00C9245B /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = FC35CF172E8F008B00C9245B /* Dependencies */; };
 		FC4A55D52EF639CF00E4CD0A /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC4A55D42EF639CF00E4CD0A /* RedzoneMacros */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		FC2582D72E808B180087B661 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FC2582D62E808B180087B661 /* RedzoneCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FC2582C72E808AC60087B661 /* RedzoneUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RedzoneUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,7 +95,6 @@
 				FC2582C32E808AC60087B661 /* Sources */,
 				FC2582C42E808AC60087B661 /* Frameworks */,
 				FC2582C52E808AC60087B661 /* Resources */,
-				FC2582D72E808B180087B661 /* Embed Frameworks */,
 				FC6C50D82EF790090094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
