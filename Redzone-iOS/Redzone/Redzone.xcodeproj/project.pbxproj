@@ -1045,6 +1045,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Redzone/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
@@ -1091,6 +1092,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Redzone/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
@@ -1241,6 +1243,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneWatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1285,6 +1288,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedzoneWatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Redzone;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Redzone pinpoints your location on the map and uses it to show outlook coverage in your area. Redzone does not send your location over the internet.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
