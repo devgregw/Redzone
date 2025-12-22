@@ -68,6 +68,7 @@ jobs:
         chmod +x ./BuildSupport/install-cert.sh
         ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DIST_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DIST_CERTIFICATE_PASSWORD }}' -n distribution
         ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DEV_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}' -n development
+        security find-identity -v -p codesigning
       working-directory: ./Redzone-iOS
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift' 
       name: Setup provisioning profiles
@@ -100,3 +101,4 @@ jobs:
       run: |
         chmod +x ./BuildSupport/cleanup.sh
         ./BuildSupport/cleanup.sh
+      working-directory: ./Redzone-iOS

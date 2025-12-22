@@ -48,6 +48,7 @@ jobs:
             chmod +x ./BuildSupport/install-cert.sh
             ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DIST_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DIST_CERTIFICATE_PASSWORD }}' -n distribution
             ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DEV_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}' -n development
+            security find-identity -v -p codesigning
         - name: Setup provisioning profiles
           shell: zsh {0}
           run: |
