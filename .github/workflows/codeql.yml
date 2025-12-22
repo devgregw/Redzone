@@ -87,7 +87,7 @@ jobs:
       name: Compile sources
       run: |
         chmod +x ./BuildSupport/xcodebuild.sh
-        ./BuildSupport/xcodebuild.sh -a build -d "generic/platform=iOS"
+        ./BuildSupport/xcodebuild.sh -a build -d "platform=iOS Simulator,OS=26.1,name=iPhone Air"
       working-directory: ./Redzone-iOS
 
     - name: Perform CodeQL Analysis

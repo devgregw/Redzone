@@ -22,6 +22,7 @@ jobs:
     defaults:
       run:
         working-directory: ./Redzone-iOS
+        shell: zsh {0}
     env:
       NSUnbufferedIO: YES
 
@@ -44,29 +45,24 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
       - name: Setup certificates
-        shell: zsh {0}
         run: |
           chmod +x ./BuildSupport/install-cert.sh
           ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DIST_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DIST_CERTIFICATE_PASSWORD }}' -n distribution
           ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DEV_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}' -n development
           security find-identity -v -p codesigning
       - name: Setup provisioning profiles
-        shell: zsh {0}
         run: |
           chmod +x ./BuildSupport/install-profiles.sh
           ./BuildSupport/install-profiles.sh -b '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}'
       - name: Resolve package dependencies
-        shell: zsh {0}
         run: |
           chmod +x ./BuildSupport/resolve-packages.sh
           ./BuildSupport/resolve-packages.sh
       - name: Compile sources & run tests
-        shell: zsh {0}
         run: |
           chmod +x ./BuildSupport/xcodebuild.sh
           ./BuildSupport/xcodebuild.sh -a test -d "platform=iOS Simulator,OS=26.1,name=iPhone Air"
       - name: Periphery scan
-        shell: zsh {0}
         run: |
           chmod +x ./BuildSupport/periphery.sh
           ./BuildSupport/periphery.sh
