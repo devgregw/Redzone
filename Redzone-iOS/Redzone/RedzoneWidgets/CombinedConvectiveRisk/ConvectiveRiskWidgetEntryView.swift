@@ -182,6 +182,7 @@ struct CombinedConvectiveRiskWidgetEntryView: View {
         }
         .redacted(reason: entry.result == .failure(.placeholder) ? .placeholder : [])
         .containerBackground(.background, for: .widget)
+        .widgetURL(URL(string: "redzone://map/\(entry.day.categoricalType.rawValue.joined(separator: "/"))"))
     }
 }
 

@@ -8,11 +8,14 @@
 import CoreLocation
 import Dependencies
 import MapKit
+import OSLog
 import RedzoneCore
 import RedzoneUI
 import SwiftUI
 
 struct OutlookMap: View {
+    private static let logger: Logger = .create()
+
     @CodableAppStorage("selectedOutlookType") private var selectedOutlookType = OutlookType.convective(.day1(.categorical))
     @AppStorage("mapStyle") private var mapStyle: MapViewStyle = .standard
     @Dependency(OutlookService.self) private var outlookService
@@ -141,6 +144,15 @@ struct OutlookMap: View {
                         Label("About", systemImage: "questionmark")
                     }
                 }
+            }
+            .onOpenURL {
+                guard $0.scheme == "redzone",
+                      $0.host() == "map",
+                      let outlookType = OutlookType(rawValue: $0.path().split(separator: "/").map { String($0) }) else {
+                    Self.logger.warning("Failed to parse URL: \($0.absoluteString)")
+                    return
+                }
+                selectedOutlookType = outlookType
             }
     }
 }

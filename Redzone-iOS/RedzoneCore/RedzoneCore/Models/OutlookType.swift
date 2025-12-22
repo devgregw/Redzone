@@ -9,7 +9,7 @@ import Foundation
 import OSLog
 internal import RedzoneMacros
 
-public enum OutlookType: Codable, Hashable, Sendable {
+public enum OutlookType: RawRepresentable, Codable, Hashable, Sendable {
 
     case convective(_: Convective)
 
@@ -25,9 +25,23 @@ public enum OutlookType: Codable, Hashable, Sendable {
         case let .convective(value): ["convective"] + value.pathSegments
         }
     }
+
+    public var rawValue: [String] { pathSegments }
+
+    public init?(rawValue: [String]) {
+        switch rawValue.first {
+        case "convective":
+            if let convective = Convective(rawValue: Array(rawValue.dropFirst())) {
+                self = .convective(convective)
+                return
+            }
+        default: break
+        }
+        return nil
+    }
 }
 
-public enum Convective: Codable, Hashable, Sendable {
+public enum Convective: RawRepresentable, Codable, Hashable, Sendable {
     public enum Classification: String, Codable, Hashable, Sendable {
         case categorical = "cat"
         case wind = "wind"
@@ -81,5 +95,39 @@ public enum Convective: Codable, Hashable, Sendable {
         case .day3(probabilistic: true), .day4, .day5, .day6, .day7, .day8:
             [String(day), "prob"]
         }
+    }
+
+    public var rawValue: [String] { pathSegments }
+
+    // swiftlint:disable:next cyclomatic_complexity
+    public init?(rawValue: [String]) {
+        guard let dayStr = rawValue.first,
+              let classification = rawValue.last,
+              let day = Int(dayStr) else { return nil }
+        switch day {
+        case 1:
+            if let classification = Classification(rawValue: classification) {
+                self = .day1(classification)
+                return
+            }
+        case 2:
+            if let classification = Classification(rawValue: classification) {
+                self = .day1(classification)
+                return
+            }
+        case 3 where classification == Classification.categorical.rawValue:
+            self = .day3(probabilistic: false)
+            return
+        case 3 where classification == "prob":
+            self = .day3(probabilistic: true)
+            return
+        case 4: self = .day4
+        case 5: self = .day5
+        case 6: self = .day6
+        case 7: self = .day7
+        case 8: self = .day8
+        default: break
+        }
+        return nil
     }
 }
