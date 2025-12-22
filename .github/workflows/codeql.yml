@@ -22,6 +22,9 @@ jobs:
 
     env:
       NSUnbufferedIO: YES
+    defaults:
+      run:
+        shell: ${{ (matrix.language == 'swift' && 'zsh {0}') || 'bash {0}' }}
 
     strategy:
       fail-fast: false
@@ -72,7 +75,6 @@ jobs:
       working-directory: ./Redzone-iOS
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift' 
       name: Setup provisioning profiles
-      shell: zsh {0}
       run: |
         chmod +x ./BuildSupport/install-profiles.sh
         ./BuildSupport/install-profiles.sh -b '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}'
