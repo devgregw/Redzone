@@ -31,10 +31,9 @@ if [ ! -f "$keychain_path" ]; then
     security create-keychain -p "$p12_password" "$keychain_path"
     security set-keychain-settings -lut 21600 "$keychain_path"
     security unlock-keychain -p "$p12_password" "$keychain_path"
+    security list-keychain -d user -s "$keychain_path"
 fi
 
 # Import certificate into keychain
 echo 'Importing certificate into keychain...'
 security import "$cert_path" -P "$p12_password" -A -t cert -f pkcs12 -k "$keychain_path"
-security list-keychain -d user -s "$keychain_path"
-security find-identity -v -p codesigning
