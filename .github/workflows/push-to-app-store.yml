@@ -71,8 +71,8 @@ jobs:
             -disableAutomaticPackageResolution \
             -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" \
             -configuration release \
-            -archivePath $RUNNER_TEMP/Redzone-iOS.xcarchive \
-            -verbose 2>&1 | xcbeautify --renderer github-actions
+            -archivePath $RUNNER_TEMP/Redzone.xcarchive \
+            2>&1 | xcbeautify --renderer github-actions
         - name: Export & Upload IPA
           if: github.event_name != 'pull_request'
           run: |
