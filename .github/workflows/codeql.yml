@@ -1,8 +1,11 @@
 name: "CodeQL Analysis"
 
 on:
+  push:
+    branches: [ "main" ]
+    paths: [ ".github/workflows/codeql.yml" ]
   schedule:
-    - cron: "0 0 * * 1"  # Every Monday at midnight
+   - cron: "0 0 * * 1"  # Every Monday at midnight
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
