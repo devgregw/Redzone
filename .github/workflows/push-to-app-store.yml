@@ -103,8 +103,3 @@ jobs:
             -authenticationKeyID ${{ secrets.IOS_ATC_API_KEY_ID }} \
             -authenticationKeyPath $RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8 \
             2>&1 | xcbeautify --renderer github-actions
-        - name: Clean up
-          shell: zsh {0}
-          run: |
-            chmod +x ./BuildSupport/cleanup.sh
-            ./BuildSupport/cleanup.sh

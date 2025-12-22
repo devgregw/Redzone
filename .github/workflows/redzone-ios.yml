@@ -70,8 +70,3 @@ jobs:
         run: |
           chmod +x ./BuildSupport/periphery.sh
           ./BuildSupport/periphery.sh
-      - name: Clean up
-        shell: zsh {0}
-        run: |
-          chmod +x ./BuildSupport/cleanup.sh
-          ./BuildSupport/cleanup.sh
