@@ -45,16 +45,16 @@ runs:
      run: |
       set -euo pipefail
       keychain_password=$(uuidgen)
-      security create-keychain -p "$keychain_password" "$RUNNER_TEMP/signing.keychain-db"
-      security set-keychain-settings -lut 21600 "$RUNNER_TEMP/signing.keychain-db"
-      security unlock-keychain -p "$keychain_password" "$RUNNER_TEMP/signing.keychain-db"
-      security list-keychains -d user -s "$RUNNER_TEMP/signing.keychain-db"
+      security create-keychain -p "$keychain_password" "${{ runner.temp }}/signing.keychain-db"
+      security set-keychain-settings -lut 21600 "${{ runner.temp }}/signing.keychain-db"
+      security unlock-keychain -p "$keychain_password" "${{ runner.temp }}/signing.keychain-db"
+      security list-keychains -d user -s "${{ runner.temp }}/signing.keychain-db"
 
-      echo "${{ inputs.dist-p12-base64 }}" | base64 --decode > "$RUNNER_TEMP/dist.p12"
-      security import "$RUNNER_TEMP/dist.p12" -P "${{ inputs.dist-p12-password }}" -A -t cert -f pkcs12 -k "$RUNNER_TEMP/signing.keychain-db"
+      echo "${{ inputs.dist-p12-base64 }}" | base64 --decode > "${{ runner.temp }}/dist.p12"
+      security import "${{ runner.temp }}/dist.p12" -P "${{ inputs.dist-p12-password }}" -A -t cert -f pkcs12 -k "${{ runner.temp }}/signing.keychain-db"
 
-      echo "${{ inputs.dev-p12-base64 }}" | base64 --decode > "$RUNNER_TEMP/dev.p12"
-      security import "$RUNNER_TEMP/dev.p12" -P "${{ inputs.dev-p12-password }}" -A -t cert -f pkcs12 -k "$RUNNER_TEMP/signing.keychain-db"
+      echo "${{ inputs.dev-p12-base64 }}" | base64 --decode > "${{ runner.temp }}/dev.p12"
+      security import "${{ runner.temp }}/dev.p12" -P "${{ inputs.dev-p12-password }}" -A -t cert -f pkcs12 -k "${{ runner.temp }}/signing.keychain-db"
       mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
       tar -xf =( echo -n "${{ inputs.prov-profiles-tgz-base64 }}" | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles
       
@@ -69,5 +69,5 @@ runs:
       xcodebuild \
         -resolvePackageDependencies \
         -disableAutomaticPackageResolution \
-        -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" \
+        -clonedSourcePackagesDirPath "${{ runner.temp }}/clonedSourcePackages" \
         2>&1 | xcbeautify --renderer github-actions
