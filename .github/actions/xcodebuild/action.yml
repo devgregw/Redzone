@@ -1,0 +1,40 @@
+name: "Execute xcodebuild"
+description: "Action to run xcodebuild with specified parameters"
+inputs:
+  action:
+    description: "The action to perform with xcodebuild"
+    required: true
+    default: "build"
+  workspace:
+    description: "The workspace to use"
+    required: true
+    default: "Redzone.xcworkspace"
+  scheme:
+    description: "The scheme to use"
+    required: true
+    default: "Redzone"
+  destination:
+    description: "The device destination"
+    required: true
+    default: "platform=iOS Simulator,OS=26.1,name=iPhone Air"
+  working-directory:
+    description: "The working directory"
+    required: true
+
+runs:
+  using: composite
+  steps:
+   - name: "Run xcodebuild (${{ inputs.action }})"
+     shell: zsh {0}
+     working-directory: "${{ inputs.working-directory }}"
+     run: |
+      set -euo pipefail
+      xcodebuild ${{ inputs.action }} \
+        -workspace "${{ inputs.workspace }}" \
+        -scheme "${{ inputs.scheme }}" \
+        -destination "${{ inputs.destination }}" \
+        -derivedDataPath "${{ runner.temp }}/DerivedData" \
+        -disableAutomaticPackageResolution \
+        -clonedSourcePackagesDirPath "${{ runner.temp }}/clonedSourcePackages" \
+        2>&1 | xcbeautify --renderer github-actions
+

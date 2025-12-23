@@ -1,0 +1,73 @@
+name: "iOS environment configuration"
+description: "Prepares the runner for iOS builds"
+inputs:
+  dist-p12-base64:
+    description: "The base64 encoded distribution certificate"
+    required: true
+  dist-p12-password:
+    description: "The password for the distribution certificate"
+    required: true
+  dev-p12-base64:
+    description: "The base64 encoded development certificate"
+    required: true
+  dev-p12-password:
+    description: "The password for the development certificate"
+    required: true
+  prov-profiles-tgz-base64:
+    description: "The base64-encoded .tar.gz archive of provisioning profiles"
+    required: true
+  working-directory:
+    description: "The working directory for scripts"
+    required: true
+
+runs:
+  using: composite
+  steps:
+   - name: Setup Xcode
+     uses: maxim-lobanov/setup-xcode@v1.6.0
+     with:
+       xcode-version: ^26
+   - name: Setup Homebrew
+     uses: tecolicom/actions-use-homebrew-tools@v1.3
+     with:
+       tools: 'periphery xcbeautify swiftlint'
+   - name: Setup SPM
+     uses: actions/cache@v3
+     with:
+       path: ${{ runner.temp }}/clonedSourcePackages
+       key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
+       restore-keys: |
+         ${{ runner.os }}-packages-
+
+   - name: "Import certificates and provisioning profiles"
+     shell: zsh {0}
+     working-directory: ${{ inputs.working-directory }}
+     run: |
+      set -euo pipefail
+      keychain_password=$(uuidgen)
+      security create-keychain -p "$keychain_password" "$RUNNER_TEMP/signing.keychain-db"
+      security set-keychain-settings -lut 21600 "$RUNNER_TEMP/signing.keychain-db"
+      security unlock-keychain -p "$keychain_password" "$RUNNER_TEMP/signing.keychain-db"
+      security list-keychains -d user -s "$RUNNER_TEMP/signing.keychain-db"
+
+      echo "${{ inputs.dist-p12-base64 }}" | base64 --decode > "$RUNNER_TEMP/dist.p12"
+      security import "$RUNNER_TEMP/dist.p12" -P "${{ inputs.dist-p12-password }}" -A -t cert -f pkcs12 -k "$RUNNER_TEMP/signing.keychain-db"
+
+      echo "${{ inputs.dev-p12-base64 }}" | base64 --decode > "$RUNNER_TEMP/dev.p12"
+      security import "$RUNNER_TEMP/dev.p12" -P "${{ inputs.dev-p12-password }}" -A -t cert -f pkcs12 -k "$RUNNER_TEMP/signing.keychain-db"
+      mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+      tar -xf =( echo -n "${{ inputs.prov-profiles-tgz-base64 }}" | base64 -D -i - -o - ) -C ~/Library/MobileDevice/Provisioning\ Profiles
+      
+      ls -l ~/Library/MobileDevice/Provisioning\ Profiles
+      security find-identity -v -p codesigning
+
+   - name: "Resolve packages"
+     shell: zsh {0}
+     working-directory: ${{ inputs.working-directory }}
+     run: |
+      set -euo pipefail
+      xcodebuild \
+        -resolvePackageDependencies \
+        -disableAutomaticPackageResolution \
+        -clonedSourcePackagesDirPath "$RUNNER_TEMP/clonedSourcePackages" \
+        2>&1 | xcbeautify --renderer github-actions

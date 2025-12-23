@@ -1,0 +1,39 @@
+{
+  "fill" : "automatic",
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "IMG_2242_lyr-3.png",
+          "name" : "IMG_2242_lyr-3"
+        },
+        {
+          "image-name" : "IMG_2242_lyr-2.png",
+          "name" : "IMG_2242_lyr-2"
+        },
+        {
+          "image-name" : "IMG_2242_lyr-1.png",
+          "name" : "IMG_2242_lyr-1"
+        },
+        {
+          "image-name" : "IMG_2242_bkg.png",
+          "name" : "IMG_2242_bkg"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

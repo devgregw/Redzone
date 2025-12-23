@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC19FBCA2E7E3F1200B7B875 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC19FBC02E7E3F1200B7B875 /* RedzoneCore.framework */; };
+		FC19FC5A2E7F690700B7B875 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC19FC592E7F690700B7B875 /* RedzoneMacros */; };
+		FC2582BA2E8067900087B661 /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FC2582B92E8067900087B661 /* GeoJSON */; };
+		FC2582E22E808CB50087B661 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2582E12E808CB50087B661 /* CoreLocation.framework */; };
+		FCA5D8FF2E7F88480081A042 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = FCA5D8FE2E7F88480081A042 /* Algorithms */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC19FBCB2E7E3F1200B7B875 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC19FBB72E7E3F1200B7B875 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC19FBBF2E7E3F1200B7B875;
+			remoteInfo = RedzoneCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC19FBC02E7E3F1200B7B875 /* RedzoneCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RedzoneCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC19FBC92E7E3F1200B7B875 /* RedzoneCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedzoneCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2582E12E808CB50087B661 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FC19FBC22E7E3F1200B7B875 /* RedzoneCore */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RedzoneCore;
+			sourceTree = "<group>";
+		};
+		FC19FBCD2E7E3F1200B7B875 /* RedzoneCoreTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RedzoneCoreTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC19FBBD2E7E3F1200B7B875 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC2582E22E808CB50087B661 /* CoreLocation.framework in Frameworks */,
+				FC2582BA2E8067900087B661 /* GeoJSON in Frameworks */,
+				FCA5D8FF2E7F88480081A042 /* Algorithms in Frameworks */,
+				FC19FC5A2E7F690700B7B875 /* RedzoneMacros in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC19FBC62E7E3F1200B7B875 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC19FBCA2E7E3F1200B7B875 /* RedzoneCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC19FBB62E7E3F1200B7B875 = {
+			isa = PBXGroup;
+			children = (
+				FC19FBC22E7E3F1200B7B875 /* RedzoneCore */,
+				FC19FBCD2E7E3F1200B7B875 /* RedzoneCoreTests */,
+				FC2582E02E808CB50087B661 /* Frameworks */,
+				FC19FBC12E7E3F1200B7B875 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC19FBC12E7E3F1200B7B875 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC19FBC02E7E3F1200B7B875 /* RedzoneCore.framework */,
+				FC19FBC92E7E3F1200B7B875 /* RedzoneCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC2582E02E808CB50087B661 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC2582E12E808CB50087B661 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FC19FBBB2E7E3F1200B7B875 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FC19FBBF2E7E3F1200B7B875 /* RedzoneCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC19FBD22E7E3F1200B7B875 /* Build configuration list for PBXNativeTarget "RedzoneCore" */;
+			buildPhases = (
+				FC19FBBB2E7E3F1200B7B875 /* Headers */,
+				FC19FBBC2E7E3F1200B7B875 /* Sources */,
+				FC19FBBD2E7E3F1200B7B875 /* Frameworks */,
+				FC19FBBE2E7E3F1200B7B875 /* Resources */,
+				FC6C50D52EF78FDF0094A7AC /* Run SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC4A58C62EF7540F00E4CD0A /* PBXTargetDependency */,
+				FC4A58C82EF7540F00E4CD0A /* PBXTargetDependency */,
+				FC4A58CA2EF7540F00E4CD0A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FC19FBC22E7E3F1200B7B875 /* RedzoneCore */,
+			);
+			name = RedzoneCore;
+			packageProductDependencies = (
+				FC19FC592E7F690700B7B875 /* RedzoneMacros */,
+				FCA5D8FE2E7F88480081A042 /* Algorithms */,
+				FC2582B92E8067900087B661 /* GeoJSON */,
+			);
+			productName = RedzoneCore;
+			productReference = FC19FBC02E7E3F1200B7B875 /* RedzoneCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FC19FBC82E7E3F1200B7B875 /* RedzoneCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC19FBD52E7E3F1200B7B875 /* Build configuration list for PBXNativeTarget "RedzoneCoreTests" */;
+			buildPhases = (
+				FC19FBC52E7E3F1200B7B875 /* Sources */,
+				FC19FBC62E7E3F1200B7B875 /* Frameworks */,
+				FC19FBC72E7E3F1200B7B875 /* Resources */,
+				FC6C50D72EF78FF50094A7AC /* Run SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC19FBCC2E7E3F1200B7B875 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FC19FBCD2E7E3F1200B7B875 /* RedzoneCoreTests */,
+			);
+			name = RedzoneCoreTests;
+			packageProductDependencies = (
+			);
+			productName = RedzoneCoreTests;
+			productReference = FC19FBC92E7E3F1200B7B875 /* RedzoneCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC19FBB72E7E3F1200B7B875 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					FC19FBBF2E7E3F1200B7B875 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					FC19FBC82E7E3F1200B7B875 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = FC19FBBA2E7E3F1200B7B875 /* Build configuration list for PBXProject "RedzoneCore" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC19FBB62E7E3F1200B7B875;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FC19FC582E7F690700B7B875 /* XCLocalSwiftPackageReference "../RedzoneMacros" */,
+				FCA5D8FD2E7F88480081A042 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FC19FBC12E7E3F1200B7B875 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC19FBBF2E7E3F1200B7B875 /* RedzoneCore */,
+				FC19FBC82E7E3F1200B7B875 /* RedzoneCoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC19FBBE2E7E3F1200B7B875 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC19FBC72E7E3F1200B7B875 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FC6C50D52EF78FDF0094A7AC /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneCore\n";
+		};
+		FC6C50D72EF78FF50094A7AC /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneCoreTests\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC19FBBC2E7E3F1200B7B875 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC19FBC52E7E3F1200B7B875 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC19FBCC2E7E3F1200B7B875 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC19FBBF2E7E3F1200B7B875 /* RedzoneCore */;
+			targetProxy = FC19FBCB2E7E3F1200B7B875 /* PBXContainerItemProxy */;
+		};
+		FC4A58C62EF7540F00E4CD0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC4A58C52EF7540F00E4CD0A /* RedzoneMacros */;
+		};
+		FC4A58C82EF7540F00E4CD0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC4A58C72EF7540F00E4CD0A /* Algorithms */;
+		};
+		FC4A58CA2EF7540F00E4CD0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC4A58C92EF7540F00E4CD0A /* GeoJSON */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FC19FBD02E7E3F1200B7B875 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FC19FBD12E7E3F1200B7B875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FC19FBD32E7E3F1200B7B875 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.RedzoneCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		FC19FBD42E7E3F1200B7B875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.RedzoneCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		FC19FBD62E7E3F1200B7B875 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.RedzoneCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		FC19FBD72E7E3F1200B7B875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = D2T6N8FXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gregwhatley.redzone.RedzoneCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC19FBBA2E7E3F1200B7B875 /* Build configuration list for PBXProject "RedzoneCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC19FBD02E7E3F1200B7B875 /* Debug */,
+				FC19FBD12E7E3F1200B7B875 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC19FBD22E7E3F1200B7B875 /* Build configuration list for PBXNativeTarget "RedzoneCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC19FBD32E7E3F1200B7B875 /* Debug */,
+				FC19FBD42E7E3F1200B7B875 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC19FBD52E7E3F1200B7B875 /* Build configuration list for PBXNativeTarget "RedzoneCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC19FBD62E7E3F1200B7B875 /* Debug */,
+				FC19FBD72E7E3F1200B7B875 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FC19FC582E7F690700B7B875 /* XCLocalSwiftPackageReference "../RedzoneMacros" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../RedzoneMacros;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devgregw/swift-geojson";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		FCA5D8FD2E7F88480081A042 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC19FC592E7F690700B7B875 /* RedzoneMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RedzoneMacros;
+		};
+		FC2582B92E8067900087B661 /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */;
+			productName = GeoJSON;
+		};
+		FC4A58C52EF7540F00E4CD0A /* RedzoneMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC19FC582E7F690700B7B875 /* XCLocalSwiftPackageReference "../RedzoneMacros" */;
+			productName = RedzoneMacros;
+		};
+		FC4A58C72EF7540F00E4CD0A /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCA5D8FD2E7F88480081A042 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		FC4A58C92EF7540F00E4CD0A /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */;
+			productName = GeoJSON;
+		};
+		FCA5D8FE2E7F88480081A042 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCA5D8FD2E7F88480081A042 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FC19FBB72E7E3F1200B7B875 /* Project object */;
+}

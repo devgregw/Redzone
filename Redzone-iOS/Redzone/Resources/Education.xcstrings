@@ -1,0 +1,237 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "enhancedDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A greater concentration of organized severe thunderstorms with varying levels of intensity."
+          }
+        }
+      }
+    },
+    "forecastDiscussion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forecast Discussion"
+          }
+        }
+      }
+    },
+    "highDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived derecho system with hurricane-force wind gusts producing widespread damage."
+          }
+        }
+      }
+    },
+    "marginalDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Severe storms of either limited organization and longevity, or very low coverage and marginal intensity."
+          }
+        }
+      }
+    },
+    "moderateDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense."
+          }
+        }
+      }
+    },
+    "severeTstormFootnote" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All thunderstorm categories imply lightning and the potential for flooding. Categories are also tied to the probability of a severe weather event within 25 miles of your location."
+          }
+        }
+      }
+    },
+    "severeTstormHail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One-inch diameter hail or larger"
+          }
+        }
+      }
+    },
+    "severeTstormHeader" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As defined by the NWS, a severe thunderstorm produces at least one of the following:"
+          }
+        }
+      }
+    },
+    "severeTstormLink" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is a severe thunderstorm?"
+          }
+        }
+      }
+    },
+    "severeTstormTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Severe Thunderstorms"
+          }
+        }
+      }
+    },
+    "severeTstormTornado" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A tornado"
+          }
+        }
+      }
+    },
+    "severeTstormWind" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "58 mph (50 kt) wind gusts or greater"
+          }
+        }
+      }
+    },
+    "sigHailDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A significant severe region represents 10% or greater probability of 2-inch diameter hail or larger within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
+          }
+        }
+      }
+    },
+    "sigProb3Desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A significant severe region represents 10% or greater probability of significant severe weather within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
+          }
+        }
+      }
+    },
+    "sigSevTstormHail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two-inch diameter hail or larger"
+          }
+        }
+      }
+    },
+    "sigSevTstormHeader" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The SPC futhermore classifies a severe thunderstorm as significant if it produces any of the following:"
+          }
+        }
+      }
+    },
+    "sigSevTstormTornado" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An EF2 tornado or stronger"
+          }
+        }
+      }
+    },
+    "sigSevTstormWind" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "75 mph (65 kt) wind gusts or greater"
+          }
+        }
+      }
+    },
+    "sigTornadoDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A significant severe region represents 10% or greater probability of EF2 - EF5 tornadoes within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
+          }
+        }
+      }
+    },
+    "sigWindDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A significant severe region represents 10% or greater probability of 65-knot (~75 miles per hour) or greater wind gusts within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
+          }
+        }
+      }
+    },
+    "slightDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organized severe thunderstorms are expected, but usually in low coverage with varying levels of intensity."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}
