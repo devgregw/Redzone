@@ -112,7 +112,7 @@ struct CombinedConvectiveRiskProvider: AppIntentTimelineProvider {
             day: configuration.day,
             result: await CombinedConvectiveRiskFetcher.fetchCombinedConvectiveRisk(
                 for: configuration.day,
-                includeBreakdown: context.family == .systemMedium
+                includeBreakdown: context.family == .systemMedium || context.family == .accessoryRectangular
             )
         )
     }
