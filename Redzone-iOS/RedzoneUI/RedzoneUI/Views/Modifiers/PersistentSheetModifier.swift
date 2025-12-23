@@ -111,7 +111,8 @@ struct PersistentSheetModifier<Collapsed: View, Expanded: View>: ViewModifier {
         .overlay(alignment: .top) {
             if !state.isExpanded {
                 Button {
-                    guard let detent = detents.first else { return }
+                    guard !disabled,
+                          let detent = detents.first else { return }
                     action?()
                     selectedDetent.wrappedValue = detent
                 } label: {
