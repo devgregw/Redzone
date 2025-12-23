@@ -112,7 +112,7 @@ public enum Convective: RawRepresentable, Codable, Hashable, Sendable {
             }
         case 2:
             if let classification = Classification(rawValue: classification) {
-                self = .day1(classification)
+                self = .day2(classification)
                 return
             }
         case 3 where classification == Classification.categorical.rawValue:
