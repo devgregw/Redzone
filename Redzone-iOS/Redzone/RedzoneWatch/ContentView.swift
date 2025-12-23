@@ -58,8 +58,21 @@ struct ContentView: View {
         let image: String
         let location: CLLocationCoordinate2D
 
+        var outlook: Outlook? {
+            response?.findOutlook(containing: location)
+        }
+
+        var title: String {
+            outlook?.highestRisk.properties.title ?? "No forecasted risk"
+        }
+
+        var isSignificant: Bool {
+            outlook?.isSignificantAt(location: location) == true
+        }
+
         var body: some View {
-            Label(response?.findOutlook(containing: location)?.highestRisk.properties.title ?? "No forecasted risk", systemImage: image)
+            Label(title, systemImage: isSignificant ? "exclamationmark.triangle.fill" : image)
+                .symbolRenderingMode(isSignificant ? .multicolor : .monochrome)
                 .task(id: request, timeout: 30) {
                     response = try? await outlookService.fetchOutlook(type: factory(request))
                 }
@@ -79,17 +92,35 @@ struct ContentView: View {
                                         .font(.headline)
                                     Text(selectedOutlookType.localizedStringResource)
                                         .font(.footnote)
+
+                                    Divider()
+                                        .padding(.vertical)
+
+                                    if outlook.highestRisk.properties.severity > .generalThunder {
+                                        VStack(alignment: .leading) {
+                                            PercentageRiskView(
+                                                request: .wind,
+                                                factory: { .convective(.day2($0)) },
+                                                image: "wind",
+                                                location: location
+                                            )
+                                            PercentageRiskView(
+                                                request: .hail,
+                                                factory: { .convective(.day2($0)) },
+                                                image: "cloud.hail",
+                                                location: location
+                                            )
+                                            PercentageRiskView(
+                                                request: .tornado,
+                                                factory: { .convective(.day2($0)) },
+                                                image: "tornado",
+                                                location: location
+                                            )
+                                        }
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
                                 }
                                 .frame(maxWidth: .infinity)
-
-                                Divider()
-                                    .padding(.vertical)
-
-                                if outlook.highestRisk.properties.severity > .generalThunder {
-                                    PercentageRiskView(request: .wind, factory: { .convective(.day2($0)) }, image: "wind", location: location)
-                                    PercentageRiskView(request: .hail, factory: { .convective(.day2($0)) }, image: "cloud.hail", location: location)
-                                    PercentageRiskView(request: .tornado, factory: { .convective(.day2($0)) }, image: "tornado", location: location)
-                                }
                             }
                         } else {
                             Image(systemName: "sparkles")
