@@ -44,6 +44,7 @@ jobs:
         - name: Setup App Store Connect
           run: |
             set -euo pipefail
+            mkdir -p ${{ github.workspace }}/private_keys
             echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o $RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
         - name: Archive
           run: |
