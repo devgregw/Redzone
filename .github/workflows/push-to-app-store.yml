@@ -32,38 +32,22 @@ jobs:
           uses: maxim-lobanov/setup-xcode@v1.6.0
           with:
             xcode-version: ^26
-        - name: Setup Homebrew
-          uses: tecolicom/actions-use-homebrew-tools@v1.3
+        - name: Setup environment
+          uses: ./.github/actions/ios-setup
           with:
-            tools: 'xcbeautify swiftlint'
-        - name: Setup SPM
-          uses: actions/cache@v3
-          with:
-            path: ${{ runner.temp }}/clonedSourcePackages
-            key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
-            restore-keys: |
-              ${{ runner.os }}-packages-
-        - name: Setup certificates
-          run: |
-            chmod +x ./BuildSupport/install-cert.sh
-            ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DIST_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DIST_CERTIFICATE_PASSWORD }}' -n distribution
-            ./BuildSupport/install-cert.sh -b '${{ secrets.IOS_DEV_CERTIFICATE_BASE64 }}' -p '${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}' -n development
-            security find-identity -v -p codesigning
-        - name: Setup provisioning profiles
-          run: |
-            chmod +x ./BuildSupport/install-profiles.sh
-            ./BuildSupport/install-profiles.sh -b '${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}'
+            dist-p12-base64: ${{ secrets.IOS_DIST_CERTIFICATE_BASE64 }}
+            dist-p12-password: ${{ secrets.IOS_DIST_CERTIFICATE_PASSWORD }}
+            dev-p12-base64: ${{ secrets.IOS_DEV_CERTIFICATE_BASE64 }}
+            dev-p12-password: ${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}
+            prov-profiles-tgz-base64: ${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}
+            working-directory: ./Redzone-iOS
         - name: Setup App Store Connect
           run: |
-            mkdir -p $RUNNER_TEMP/private_keys
+            set -euo pipefail
             echo -n '${{ secrets.IOS_ATC_API_KEY_P8_BASE64 }}' | base64 -D -i - -o $RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8
-        - name: Resolve package dependencies
-          run: |
-            chmod +x ./BuildSupport/resolve-packages.sh
-            ./BuildSupport/resolve-packages.sh
         - name: Archive
           run: |
-            set -euo pipefail && \
+            set -euo pipefail
             xcodebuild clean archive \
             -scheme "Redzone" \
             -workspace "Redzone.xcworkspace" \
@@ -76,10 +60,26 @@ jobs:
         - name: Export & Upload IPA
           if: github.event_name != 'pull_request'
           run: |
-            chmod +x ./BuildSupport/export-archive.sh
-            ./BuildSupport/export-archive.sh -e ./exportOptions.plist -i "${{ secrets.IOS_ATC_API_KEY_ISSUER_ID }}" -k "${{ secrets.IOS_ATC_API_KEY_ID }}"
+            set -euo pipefail
+            xcodebuild \
+              -exportArchive \
+              -archivePath "$RUNNER_TEMP/Redzone.xcarchive" \
+              -exportOptionsPlist "./exportOptions.plist" \
+              -exportPath "$RUNNER_TEMP/Redzone.ipa" \
+              -authenticationKeyIssuerID "${{ secrets.IOS_ATC_API_KEY_ISSUER_ID }}" \
+              -authenticationKeyID "${{ secrets.IOS_ATC_API_KEY_ID }}" \
+              -authenticationKeyPath "$RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8" \
+              2>&1 | xcbeautify --renderer github-actions
         - name: Export & Upload IPA (dry run)
           if: github.event_name == 'pull_request'
           run: |
-            chmod +x ./BuildSupport/export-archive.sh
-            ./BuildSupport/export-archive.sh -e ./exportOptions-exportOnly.plist -i "${{ secrets.IOS_ATC_API_KEY_ISSUER_ID }}" -k "${{ secrets.IOS_ATC_API_KEY_ID }}"
+            set -euo pipefail
+            xcodebuild \
+              -exportArchive \
+              -archivePath "$RUNNER_TEMP/Redzone.xcarchive" \
+              -exportOptionsPlist "./exportOptions-exportOnly.plist" \
+              -exportPath "$RUNNER_TEMP/Redzone.ipa" \
+              -authenticationKeyIssuerID "${{ secrets.IOS_ATC_API_KEY_ISSUER_ID }}" \
+              -authenticationKeyID "${{ secrets.IOS_ATC_API_KEY_ID }}" \
+              -authenticationKeyPath "$RUNNER_TEMP/private_keys/AuthKey_${{ secrets.IOS_ATC_API_KEY_ID }}.p8" \
+              2>&1 | xcbeautify --renderer github-actions
