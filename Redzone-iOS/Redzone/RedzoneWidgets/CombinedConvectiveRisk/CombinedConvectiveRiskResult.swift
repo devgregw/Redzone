@@ -46,7 +46,7 @@ struct DiscreteRisks: Equatable {
 
     private static func makeRisk(from outlook: Outlook?, at location: CLLocationCoordinate2D) -> RiskValue? {
         guard let outlook else { return nil }
-        return (value: Int(outlook.highestRisk.properties.severity.comparableValue) * 100, sig: outlook.isSignificantAt(location: location))
+        return (value: Int(outlook.highestRisk.properties.severity.comparableValue * 100), sig: outlook.isSignificantAt(location: location))
     }
 
     init(wind: Outlook?, hail: Outlook?, tornado: Outlook?, at location: CLLocationCoordinate2D) {
