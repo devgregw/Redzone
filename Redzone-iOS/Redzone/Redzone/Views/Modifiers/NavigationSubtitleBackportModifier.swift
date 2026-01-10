@@ -8,11 +8,13 @@
 import SwiftUI
 
 private struct NavigationTitleSubtitleBackportModifier: ViewModifier {
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     let title: LocalizedStringResource
     let subtitle: LocalizedStringResource
 
     func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
+        if #available(iOS 26.0, *),
+           horizontalSizeClass == .compact {
             content
                 .navigationTitle(title)
                 .navigationSubtitle(subtitle)
