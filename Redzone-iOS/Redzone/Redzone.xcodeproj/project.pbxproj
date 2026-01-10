@@ -12,9 +12,9 @@
 		FC13BF662E84E4770013FFE6 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF652E84E4770013FFE6 /* Dependencies */; };
 		FC13BF6A2E84E4810013FFE6 /* DependenciesTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FC13BF692E84E4810013FFE6 /* DependenciesTestSupport */; };
 		FC2583962E80DEC90087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; };
-		FC2583972E80DEC90087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC2583972E80DEC90087B661 /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583942E80DEC90087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC2583982E80DEC90087B661 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; };
-		FC2583992E80DEC90087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC2583992E80DEC90087B661 /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583952E80DEC90087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC25839E2E80DEE10087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC25839D2E80DEE10087B661 /* SwiftUI.framework */; };
 		FC2583A02E80DEFD0087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC25839F2E80DEFD0087B661 /* RedzoneMacros */; };
 		FC2583C52E80DF990087B661 /* RedzoneWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FC2583A52E80DF970087B661 /* RedzoneWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
