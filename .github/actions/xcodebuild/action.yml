@@ -34,6 +34,8 @@ runs:
         -scheme "${{ inputs.scheme }}" \
         -destination "${{ inputs.destination }}" \
         -derivedDataPath "${{ runner.temp }}/DerivedData" \
+        -skipPackagePluginValidation \
+        -skipMacroValidation \
         -disableAutomaticPackageResolution \
         -clonedSourcePackagesDirPath "${{ runner.temp }}/clonedSourcePackages" \
         2>&1 | xcbeautify --renderer github-actions

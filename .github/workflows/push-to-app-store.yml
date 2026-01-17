@@ -53,6 +53,8 @@ jobs:
             -scheme "Redzone" \
             -workspace "Redzone.xcworkspace" \
             -derivedDataPath "${{ runner.temp }}/DerivedData" \
+            -skipPackagePluginValidation \
+            -skipMacroValidation \
             -disableAutomaticPackageResolution \
             -clonedSourcePackagesDirPath "${{ runner.temp }}/clonedSourcePackages" \
             -configuration release \
