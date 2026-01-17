@@ -12,6 +12,7 @@ import OSLog
 import RedzoneCore
 import RedzoneUI
 import SwiftUI
+import WidgetKit
 
 struct OutlookMap: View {
     private static let logger: Logger = .create()
@@ -77,10 +78,15 @@ struct OutlookMap: View {
     }
 
     @MainActor private func fetchOutlook() async {
+        let isFirstTimeFetch = response == nil
         do {
             response = nil
             let newResponse = try await outlookService.fetchOutlook(type: selectedOutlookType)
             response = .success(newResponse)
+            if isFirstTimeFetch {
+                Self.logger.debug("Reloading widgets")
+                WidgetCenter.shared.reloadAllTimelines()
+            }
         } catch {
             response = .failure(error)
             selectedOutlook = nil
