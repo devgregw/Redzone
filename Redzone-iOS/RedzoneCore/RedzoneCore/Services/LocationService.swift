@@ -5,6 +5,7 @@
 //  Created by Greg Whatley on 9/19/25.
 //
 
+internal import Algorithms
 import Combine
 @preconcurrency import CoreLocation
 import Foundation
@@ -19,7 +20,7 @@ import OSLog
             logger.debug("Failed to unarchive stored location")
             return nil
         }
-        logger.debug("Retrieved stored location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
+        logger.debug("Retrieved stored location: \(location.debugDescription, privacy: .sensitive)")
         return location
     }
 
@@ -36,7 +37,14 @@ import OSLog
     @ObservationIgnored private let authorizationPublisher: CurrentValueSubject<CLAuthorizationStatus, Never>
     @ObservationIgnored private let persistLastKnownLocation: Bool
     public var authorizationStatus: CLAuthorizationStatus
-    public var lastKnownLocation: CLLocation?
+    public var lastKnownLocation: CLLocation? {
+        didSet {
+            if persistLastKnownLocation,
+               let lastKnownLocation {
+                Self.setStoredLocation(lastKnownLocation)
+            }
+        }
+    }
 
     public override convenience init() {
         self.init(persistLastKnownLocation: false)
@@ -49,7 +57,7 @@ import OSLog
         self.locationPublisher = .init(.success(manager.location))
         self.authorizationPublisher = .init(manager.authorizationStatus)
         if persistLastKnownLocation {
-            self.lastKnownLocation = manager.location ?? Self.retrieveStoredLocation()
+            self.lastKnownLocation = [manager.location, Self.retrieveStoredLocation()].compacted().max { $0.timestamp < $1.timestamp }
         } else {
             self.lastKnownLocation = manager.location
         }
@@ -87,15 +95,16 @@ import OSLog
     public func requestLocation() async -> CLLocation? {
         guard await requestAuthorization() else { return nil }
         Self.logger.debug("Requesting location update...")
+        if let lastKnownLocation,
+           abs(lastKnownLocation.timestamp.timeIntervalSince(.now)) < 30 {
+            Self.logger.debug("Recent location already available: \(lastKnownLocation.debugDescription, privacy: .sensitive)")
+            return lastKnownLocation
+        }
         manager.requestLocation()
         for await result in locationPublisher.values {
             if case let .success(location) = result,
                let location {
-                // swiftlint:disable:next line_length
-                Self.logger.debug("Received location: \(location.coordinate.latitude, privacy: .sensitive), \(location.coordinate.longitude, privacy: .sensitive)")
-                if persistLastKnownLocation {
-                    Self.setStoredLocation(location)
-                }
+                Self.logger.debug("Received location: \(location.debugDescription, privacy: .sensitive)")
                 return location
             } else if case .failure = result {
                 Self.logger.warning("Location request failed.")
