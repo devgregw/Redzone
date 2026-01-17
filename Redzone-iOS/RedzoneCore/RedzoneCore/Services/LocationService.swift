@@ -13,18 +13,46 @@ import OSLog
 @Observable @MainActor public final class LocationService: NSObject {
     private static let logger: Logger = .create()
 
+    private static func retrieveStoredLocation() -> CLLocation? {
+        guard let data = UserDefaults.standard.data(forKey: "lastKnownLocation") else { return nil }
+        guard let location = try? NSKeyedUnarchiver.unarchivedObject(ofClass: CLLocation.self, from: data) else {
+            logger.debug("Failed to unarchive stored location")
+            return nil
+        }
+        logger.debug("Retrieved stored location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
+        return location
+    }
+
+    private static func setStoredLocation(_ location: CLLocation) {
+        guard let data = try? NSKeyedArchiver.archivedData(withRootObject: location, requiringSecureCoding: true) else {
+            logger.debug("Failed to archive new location")
+            return
+        }
+        UserDefaults.standard.set(data, forKey: "lastKnownLocation")
+    }
+
     @ObservationIgnored private let manager: CLLocationManager
     @ObservationIgnored private let locationPublisher: CurrentValueSubject<Result<CLLocation?, any Error>, Never>
     @ObservationIgnored private let authorizationPublisher: CurrentValueSubject<CLAuthorizationStatus, Never>
+    @ObservationIgnored private let persistLastKnownLocation: Bool
     public var authorizationStatus: CLAuthorizationStatus
     public var lastKnownLocation: CLLocation?
 
-    public override init() {
-        manager = CLLocationManager()
-        authorizationStatus = manager.authorizationStatus
-        lastKnownLocation = manager.location
-        locationPublisher = .init(.success(manager.location))
-        authorizationPublisher = .init(manager.authorizationStatus)
+    public override convenience init() {
+        self.init(persistLastKnownLocation: false)
+    }
+
+    public init(persistLastKnownLocation: Bool) {
+        self.persistLastKnownLocation = persistLastKnownLocation
+        self.manager = CLLocationManager()
+        self.authorizationStatus = manager.authorizationStatus
+        self.locationPublisher = .init(.success(manager.location))
+        self.authorizationPublisher = .init(manager.authorizationStatus)
+        if persistLastKnownLocation {
+            self.lastKnownLocation = manager.location ?? Self.retrieveStoredLocation()
+        } else {
+            self.lastKnownLocation = manager.location
+        }
         super.init()
         manager.delegate = self
         Self.logger.debug("Location service initialized.")
@@ -65,14 +93,17 @@ import OSLog
                let location {
                 // swiftlint:disable:next line_length
                 Self.logger.debug("Received location: \(location.coordinate.latitude, privacy: .sensitive), \(location.coordinate.longitude, privacy: .sensitive)")
+                if persistLastKnownLocation {
+                    Self.setStoredLocation(location)
+                }
                 return location
             } else if case .failure = result {
                 Self.logger.warning("Location request failed.")
-                return nil
+                return lastKnownLocation
             }
         }
         Self.logger.error("Location request did not yield any values before terminating.")
-        return nil
+        return lastKnownLocation
     }
 }
 

@@ -16,7 +16,7 @@ struct CombinedConvectiveRiskFetcher {
         for day: CombinedConvectiveRiskProvider.Day,
         includeBreakdown: Bool
     ) async -> Result<CombinedConvectiveRiskResult, WidgetError> {
-        let locationService = await LocationService()
+        let locationService = await LocationService(persistLastKnownLocation: true)
         guard let location = await locationService.requestLocation()?.coordinate else {
             logger.debug("Location services disabled.")
             return .failure(.locationDisabled)
