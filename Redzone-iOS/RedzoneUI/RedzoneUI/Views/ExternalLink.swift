@@ -10,15 +10,15 @@ import SwiftUI
 public struct ExternalLink<Content: View>: View {
     private let url: URL
     private let label: () -> Content
-    private let icon: Image?
+    private let icon: () -> Image?
 
-    public init(_ url: URL, label: LocalizedStringResource, icon: Image? = nil) where Content == Text {
+    public init(_ url: URL, label: LocalizedStringResource, icon: @autoclosure @escaping () -> Image? = nil) where Content == Text {
         self.url = url
         self.label = { Text(label) }
         self.icon = icon
     }
 
-    public init(_ url: URL, icon: Image? = nil, @ViewBuilder label: @escaping () -> Content) {
+    public init(_ url: URL, icon: @autoclosure @escaping () -> Image? = nil, @ViewBuilder label: @escaping () -> Content) {
         self.url = url
         self.icon = icon
         self.label = label
@@ -28,30 +28,33 @@ public struct ExternalLink<Content: View>: View {
         HStack {
             VStack(alignment: .leading) {
                 label()
-    #if os(watchOS)
+#if os(watchOS)
                     .foregroundStyle(.foreground)
-    #else
+#else
                     .foregroundStyle(Color(uiColor: .label))
-    #endif
+#endif
                 if let host = url.host() {
                     Text(host.trimmingPrefix("www."))
                         .font(.caption)
-    #if os(watchOS)
+#if os(watchOS)
                         .foregroundStyle(.secondary)
-    #else
+#else
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
-    #endif
+#endif
                 }
             }
             Spacer()
+            #if EXTERNALLINK_LOGOS
             Image(systemName: "arrow.up.forward.square")
                 .accessibilityHidden(true)
+            #endif
         }
     }
 
     public var body: some View {
         Link(destination: url) {
-            if let icon {
+#if EXTERNALLINK_LOGOS
+            if let icon: Image = icon() {
                 Label {
                     labelView
                 } icon: {
@@ -64,6 +67,21 @@ public struct ExternalLink<Content: View>: View {
             } else {
                 labelView
             }
+#else
+            Label {
+                labelView
+            } icon: {
+                Image(systemName: "arrow.up.forward.square")
+                    .accessibilityHidden(true)
+            }
+#endif
         }
+    }
+}
+
+#Preview {
+    // swiftlint:disable:next force_unwrapping
+    ExternalLink(URL(string: "https://example.com")!, icon: .init(systemName: "xmark")) {
+        Text("Example")
     }
 }
