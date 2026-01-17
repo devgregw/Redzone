@@ -30,6 +30,7 @@ runs:
      run: |
       set -euo pipefail
       xcodebuild ${{ inputs.action }} \
+        -verbose \
         -workspace "${{ inputs.workspace }}" \
         -scheme "${{ inputs.scheme }}" \
         -destination "${{ inputs.destination }}" \

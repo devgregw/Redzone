@@ -50,6 +50,7 @@ jobs:
           run: |
             set -euo pipefail
             xcodebuild clean archive \
+            -verbose \
             -scheme "Redzone" \
             -workspace "Redzone.xcworkspace" \
             -derivedDataPath "${{ runner.temp }}/DerivedData" \
