@@ -28,7 +28,7 @@ public struct URLMacro: ExpressionMacro {
             throw MacroError.inputNotAStringLiteral
         }
 
-        guard let _ = URL(string: segments.description) else {
+        guard URL(string: segments.description) != nil else {
             throw MacroError.malformedURL
         }
 

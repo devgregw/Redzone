@@ -398,11 +398,11 @@
 				FC25839A2E80DEC90087B661 /* Embed Frameworks */,
 				FC2583C92E80DF990087B661 /* Embed Watch Content */,
 				FC86B6242EDA863300B07540 /* Embed Foundation Extensions */,
-				FC6C50CC2EF783580094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A67042F1C54DF00650BED /* PBXTargetDependency */,
 				FC2583C42E80DF990087B661 /* PBXTargetDependency */,
 				FC86B6222EDA863300B07540 /* PBXTargetDependency */,
 			);
@@ -428,11 +428,11 @@
 				FC2583662E80DE740087B661 /* Sources */,
 				FC2583672E80DE740087B661 /* Frameworks */,
 				FC2583682E80DE740087B661 /* Resources */,
-				FC6C50D32EF78FBB0094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A67062F1C54ED00650BED /* PBXTargetDependency */,
 				FC25836C2E80DE740087B661 /* PBXTargetDependency */,
 			);
 			name = RedzoneTests;
@@ -450,11 +450,11 @@
 				FC2583702E80DE740087B661 /* Sources */,
 				FC2583712E80DE740087B661 /* Frameworks */,
 				FC2583722E80DE740087B661 /* Resources */,
-				FC6C50D42EF78FC40094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A67082F1C54F100650BED /* PBXTargetDependency */,
 				FC2583762E80DE740087B661 /* PBXTargetDependency */,
 			);
 			name = RedzoneUITests;
@@ -471,11 +471,11 @@
 				FC2583A12E80DF970087B661 /* Sources */,
 				FC2583A22E80DF970087B661 /* Frameworks */,
 				FC2583A32E80DF970087B661 /* Resources */,
-				FC6C50CF2EF78F260094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A670A2F1C54F800650BED /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FC25840A2E80E0EA0087B661 /* Tests */,
@@ -498,11 +498,11 @@
 				FC2583AD2E80DF990087B661 /* Sources */,
 				FC2583AE2E80DF990087B661 /* Frameworks */,
 				FC2583AF2E80DF990087B661 /* Resources */,
-				FC6C50D12EF78F9F0094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A670C2F1C54FE00650BED /* PBXTargetDependency */,
 				FC2583B32E80DF990087B661 /* PBXTargetDependency */,
 			);
 			name = RedzoneWatchTests;
@@ -520,11 +520,11 @@
 				FC2583B72E80DF990087B661 /* Sources */,
 				FC2583B82E80DF990087B661 /* Frameworks */,
 				FC2583B92E80DF990087B661 /* Resources */,
-				FC6C50D22EF78FA90094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A670E2F1C550300650BED /* PBXTargetDependency */,
 				FC2583BD2E80DF990087B661 /* PBXTargetDependency */,
 			);
 			name = RedzoneWatchUITests;
@@ -541,11 +541,11 @@
 				FC86B60D2EDA863100B07540 /* Sources */,
 				FC86B60E2EDA863100B07540 /* Frameworks */,
 				FC86B60F2EDA863100B07540 /* Resources */,
-				FC6C50D02EF78F780094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A67102F1C550900650BED /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FC86B6152EDA863100B07540 /* RedzoneWidgets */,
@@ -605,6 +605,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
+				FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC25835E2E80DE720087B661 /* Products */;
@@ -673,142 +674,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FC6C50CC2EF783580094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Redzone\n";
-		};
-		FC6C50CF2EF78F260094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneWatch\n";
-		};
-		FC6C50D02EF78F780094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneWidgets\n\n";
-		};
-		FC6C50D12EF78F9F0094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Tests/RedzoneWatchTests\n";
-		};
-		FC6C50D22EF78FA90094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Tests/RedzoneWatchUITests\n";
-		};
-		FC6C50D32EF78FBB0094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Tests/RedzoneTests\n";
-		};
-		FC6C50D42EF78FC40094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" Tests/RedzoneUITests\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC2583592E80DE720087B661 /* Sources */ = {
@@ -892,6 +757,34 @@
 			isa = PBXTargetDependency;
 			target = FC86B6102EDA863100B07540 /* RedzoneWidgetsExtension */;
 			targetProxy = FC86B6212EDA863300B07540 /* PBXContainerItemProxy */;
+		};
+		FC8A67042F1C54DF00650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A67032F1C54DF00650BED /* SwiftLintBuildToolPlugin */;
+		};
+		FC8A67062F1C54ED00650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A67052F1C54ED00650BED /* SwiftLintBuildToolPlugin */;
+		};
+		FC8A67082F1C54F100650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A67072F1C54F100650BED /* SwiftLintBuildToolPlugin */;
+		};
+		FC8A670A2F1C54F800650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A67092F1C54F800650BED /* SwiftLintBuildToolPlugin */;
+		};
+		FC8A670C2F1C54FE00650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A670B2F1C54FE00650BED /* SwiftLintBuildToolPlugin */;
+		};
+		FC8A670E2F1C550300650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A670D2F1C550300650BED /* SwiftLintBuildToolPlugin */;
+		};
+		FC8A67102F1C550900650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A670F2F1C550900650BED /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1585,6 +1478,14 @@
 				minimumVersion = 1.10.0;
 			};
 		};
+		FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.63.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1615,6 +1516,41 @@
 		FC2583D02E80DFBA0087B661 /* RedzoneMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RedzoneMacros;
+		};
+		FC8A67032F1C54DF00650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		FC8A67052F1C54ED00650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		FC8A67072F1C54F100650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		FC8A67092F1C54F800650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		FC8A670B2F1C54FE00650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		FC8A670D2F1C550300650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		FC8A670F2F1C550900650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

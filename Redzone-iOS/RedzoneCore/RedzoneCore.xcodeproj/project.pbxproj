@@ -114,11 +114,11 @@
 				FC19FBBC2E7E3F1200B7B875 /* Sources */,
 				FC19FBBD2E7E3F1200B7B875 /* Frameworks */,
 				FC19FBBE2E7E3F1200B7B875 /* Resources */,
-				FC6C50D52EF78FDF0094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A67132F1C551F00650BED /* PBXTargetDependency */,
 				FC4A58C62EF7540F00E4CD0A /* PBXTargetDependency */,
 				FC4A58C82EF7540F00E4CD0A /* PBXTargetDependency */,
 				FC4A58CA2EF7540F00E4CD0A /* PBXTargetDependency */,
@@ -143,11 +143,11 @@
 				FC19FBC52E7E3F1200B7B875 /* Sources */,
 				FC19FBC62E7E3F1200B7B875 /* Frameworks */,
 				FC19FBC72E7E3F1200B7B875 /* Resources */,
-				FC6C50D72EF78FF50094A7AC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8A67152F1C552600650BED /* PBXTargetDependency */,
 				FC19FBCC2E7E3F1200B7B875 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -191,6 +191,7 @@
 				FC19FC582E7F690700B7B875 /* XCLocalSwiftPackageReference "../RedzoneMacros" */,
 				FCA5D8FD2E7F88480081A042 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */,
+				FC8A67112F1C551900650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC19FBC12E7E3F1200B7B875 /* Products */;
@@ -219,47 +220,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FC6C50D52EF78FDF0094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneCore\n";
-		};
-		FC6C50D72EF78FF50094A7AC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/swiftlint lint --strict --config \"$(/usr/bin/git rev-parse --show-toplevel)/Redzone-iOS/.swiftlint.yml\" RedzoneCoreTests\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC19FBBC2E7E3F1200B7B875 /* Sources */ = {
@@ -295,6 +255,14 @@
 		FC4A58CA2EF7540F00E4CD0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = FC4A58C92EF7540F00E4CD0A /* GeoJSON */;
+		};
+		FC8A67132F1C551F00650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A67122F1C551F00650BED /* SwiftLintBuildToolPlugin */;
+		};
+		FC8A67152F1C552600650BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FC8A67142F1C552600650BED /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -633,6 +601,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		FC8A67112F1C551900650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.63.1;
+			};
+		};
 		FCA5D8FD2E7F88480081A042 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
@@ -667,6 +643,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC2582B82E8067900087B661 /* XCRemoteSwiftPackageReference "swift-geojson" */;
 			productName = GeoJSON;
+		};
+		FC8A67122F1C551F00650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67112F1C551900650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		FC8A67142F1C552600650BED /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8A67112F1C551900650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 		FCA5D8FE2E7F88480081A042 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
