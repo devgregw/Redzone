@@ -1,0 +1,46 @@
+{
+  "configurations" : [
+    {
+      "id" : "57EB04B0-D748-4A89-9EE5-2CC3145F542F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Redzone.xcodeproj",
+      "identifier" : "FC25835C2E80DE720087B661",
+      "name" : "Redzone"
+    }
+  },
+  "testTargets" : [
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Redzone.xcodeproj",
+        "identifier" : "FC2583732E80DE740087B661",
+        "name" : "RedzoneUITests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Redzone.xcodeproj",
+        "identifier" : "FC2583692E80DE740087B661",
+        "name" : "RedzoneTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/RedzoneCore\/RedzoneCore.xcodeproj",
+        "identifier" : "FC19FBC82E7E3F1200B7B875",
+        "name" : "RedzoneCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}
