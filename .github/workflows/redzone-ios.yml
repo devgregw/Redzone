@@ -49,6 +49,7 @@ jobs:
           action: test
           scheme: Redzone Watch App
           working-directory: ./Redzone-iOS
+          platform: watchOS
       - name: Periphery scan
         run: |
           set -euo pipefail

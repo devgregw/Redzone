@@ -16,7 +16,11 @@ inputs:
   destination:
     description: "The device destination"
     required: true
-    default: "platform=iOS Simulator,OS=26.1,name=iPhone Air"
+    default: auto
+  platform:
+    description: "The platform of the destination - only necessary if destination is auto"
+    required: false
+    default: "iOS"
   working-directory:
     description: "The working directory"
     required: true
@@ -24,6 +28,23 @@ inputs:
 runs:
   using: composite
   steps:
+   - name: "Set build destination"
+     id: dest
+     shell: zsh {0}
+     working-directory: "${{ inputs.working-directory }}"
+     run: |
+      set -euo pipefail
+      if [[ "${{ inputs.destination }}" = "auto" ]]; then
+        DEVICES=$(xcodebuild -workspace "${{ inputs.workspace }}" -scheme "${{ inputs.scheme }}" -showdestinations | grep "${{ inputs.platform }} Simulator, arch:arm64")
+        echo Available device specifiers:
+        echo $DEVICES
+        DEVICE=$(echo $DEVICES | head -n 1)
+        [[ $DEVICE =~ .*id:([0-9A-Z\-]*).* ]]
+        echo "destination=id=${match[1]}" >> $GITHUB_OUTPUT
+        echo Selected device ID: ${match[1]}
+      else
+        echo "destination=${{ inputs.destination }}" >> $GITHUB_OUTPUT
+      fi
    - name: "Run xcodebuild (${{ inputs.action }})"
      shell: zsh {0}
      working-directory: "${{ inputs.working-directory }}"
@@ -32,7 +53,8 @@ runs:
       xcodebuild ${{ inputs.action }} \
         -workspace "${{ inputs.workspace }}" \
         -scheme "${{ inputs.scheme }}" \
-        -destination "${{ inputs.destination }}" \
+        -destination "${{ steps.dest.outputs.destination }}" \
+        -destination-timeout 5 \
         -derivedDataPath "${{ runner.temp }}/DerivedData" \
         -skipPackagePluginValidation \
         -skipMacroValidation \
