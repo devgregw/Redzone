@@ -38,10 +38,16 @@ jobs:
           dev-p12-password: ${{ secrets.IOS_DEV_CERTIFICATE_PASSWORD }}
           prov-profiles-tgz-base64: ${{ secrets.IOS_MOBILEPROVISION_TGZ_BASE64 }}
           working-directory: ./Redzone-iOS
-      - name: Compile sources & run tests
+      - name: iOS - Compile sources & run tests
         uses: ./.github/actions/xcodebuild
         with:
           action: test
+          working-directory: ./Redzone-iOS
+      - name: watchOS - Compile sources & run tests
+        uses: ./.github/actions/xcodebuild
+        with:
+          action: test
+          scheme: Redzone Watch App
           working-directory: ./Redzone-iOS
       - name: Periphery scan
         run: |
