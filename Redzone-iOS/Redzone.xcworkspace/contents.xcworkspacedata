@@ -13,4 +13,10 @@
    <FileRef
       location = "group:RedzoneMacros">
    </FileRef>
+   <FileRef
+      location = "group:Redzone/Redzone/Redzone App.xctestplan">
+   </FileRef>
+   <FileRef
+      location = "group:Redzone/RedzoneWatch/Redzone Watch App.xctestplan">
+   </FileRef>
 </Workspace>
