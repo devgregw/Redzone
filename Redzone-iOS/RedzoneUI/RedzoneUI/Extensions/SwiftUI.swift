@@ -109,3 +109,15 @@ public extension LabelStyle where Self == VerticallyCenteredLabelStyle {
         VerticallyCenteredLabelStyle(spacing: spacing)
     }
 }
+
+public extension Binding where Value: Hashable & Sendable {
+    func mapEquals(_ value: Value) -> Binding<Bool> {
+        .init {
+            self.wrappedValue == value
+        } set: {
+            if $0 {
+                self.wrappedValue = value
+            }
+        }
+    }
+}
