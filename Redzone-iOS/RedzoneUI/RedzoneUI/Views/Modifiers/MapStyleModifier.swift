@@ -17,7 +17,6 @@ public extension View {
             switch style {
             case .standard: .standard(pointsOfInterest: pointsOfInterest)
             case .hybrid: .hybrid(pointsOfInterest: pointsOfInterest)
-            case .satellite: .imagery
             }
         }())
     }
