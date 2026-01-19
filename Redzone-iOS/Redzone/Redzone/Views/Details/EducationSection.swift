@@ -33,7 +33,12 @@ struct EducationSection: View {
                 @unknown default: EmptyView()
                 }
             } label: {
-                Label("About This Risk", systemImage: "questionmark.circle")
+                if case .convective = selectedOutlookType,
+                   let classification = String(localized: selectedOutlookType.localizedStringResource).split(separator: " ").first {
+                    Label("\(classification) Risk Levels", systemImage: "questionmark.circle")
+                } else {
+                    Label("About This Risk", systemImage: "questionmark.circle")
+                }
             }
 
             ExternalLink(selectedOutlookType.commentaryURL, label: .Education.forecastDiscussion, icon: .init("NOAALogo"))

@@ -12,14 +12,10 @@ struct MapStylePicker: View {
     @Binding var mapStyle: MapViewStyle
 
     var body: some View {
-        Picker(selection: $mapStyle) {
+        ControlGroupPicker(.mapStyle, selection: $mapStyle) {
             ForEach(MapViewStyle.allCases, id: \.self) {
-                Text($0.localizedStringResource)
+                Label($0.localizedStringResource, systemImage: $0.systemImage)
             }
-        } label: {
-            Label("Map Style", systemImage: "map")
-            Text(mapStyle.localizedStringResource)
         }
-        .pickerStyle(.menu)
     }
 }

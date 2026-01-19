@@ -20,6 +20,9 @@
         }
       }
     },
+    "%@ Risk Levels" : {
+
+    },
     "10% or higher probability of thunderstorms is forecast." : {
 
     },
@@ -72,6 +75,9 @@
 
     },
     "Disclaimer" : {
+
+    },
+    "Discrete" : {
 
     },
     "Enhanced" : {
@@ -161,8 +167,16 @@
     "Map" : {
 
     },
-    "Map Style" : {
-
+    "mapStyle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map Style"
+          }
+        }
+      }
     },
     "Marginal" : {
 
