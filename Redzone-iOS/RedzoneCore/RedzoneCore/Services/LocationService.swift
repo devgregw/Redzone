@@ -85,7 +85,7 @@ import OSLog
             for await status in authorizationPublisher.values where status != .notDetermined {
                 return status == .authorizedWhenInUse
             }
-            Self.logger.error("Authorization request did not yield any values before terminating.")
+            Self.logger.fault("Authorization request did not yield any values before terminating.")
         } else {
             Self.logger.debug("Skipping authorization request - already known: \(self.authorizationStatus.description)")
         }
@@ -106,12 +106,12 @@ import OSLog
                let location {
                 Self.logger.debug("Received location: \(location.debugDescription, privacy: .sensitive)")
                 return location
-            } else if case .failure = result {
-                Self.logger.warning("Location request failed.")
+            } else if case let .failure(error) = result {
+                Self.logger.error("Location request failed: \(error.localizedDescription)")
                 return lastKnownLocation
             }
         }
-        Self.logger.error("Location request did not yield any values before terminating.")
+        Self.logger.fault("Location request did not yield any values before terminating.")
         return lastKnownLocation
     }
 }
