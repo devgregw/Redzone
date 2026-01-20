@@ -12,7 +12,7 @@ import SwiftUI
 struct AboutDiscreteRiskView: View {
     enum Risk: String {
         private static let standardLevels: [(Double, Color)] = [
-            (0.5, .brown),
+            (0.05, .brown),
             (0.15, .yellow),
             (0.30, .red),
             (0.45, .magenta),
@@ -49,8 +49,8 @@ struct AboutDiscreteRiskView: View {
             switch self {
             case .wind, .hail, .prob3: Self.standardLevels
             case .tornado: [
-                (0.2, .green),
-                (0.5, .brown),
+                (0.02, .green),
+                (0.05, .brown),
                 (0.10, .yellow),
                 (0.15, .red),
                 (0.30, .magenta),
