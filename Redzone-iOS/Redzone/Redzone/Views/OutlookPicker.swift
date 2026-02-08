@@ -29,53 +29,68 @@ struct OutlookPicker: View {
 
     var body: some View {
         Menu {
-            ControlGroupPicker(.Convective.categorical, selection: $selection) {
-                Label("Day 1", systemImage: "square.3.layers.3d.top.filled")
-                    .tag(OutlookType.convective(.day1(.categorical)))
-                Label("Day 2", systemImage: "square.3.layers.3d.middle.filled")
-                    .tag(OutlookType.convective(.day2(.categorical)))
-                Label("Day 3", systemImage: "square.3.layers.3d.bottom.filled")
-                    .tag(OutlookType.convective(.day3(probabilistic: false)))
+            Submenu(
+                title: "Convective",
+                systemImage: "bolt.trianglebadge.exclamationmark",
+                isSelected: selection.pathSegments.first == "convective"
+            ) {
+                ControlGroupPicker(.Convective.categorical, selection: $selection) {
+                    Label("Day 1", systemImage: "1.calendar")
+                        .tag(OutlookType.convective(.day1(.categorical)))
+                    Label("Day 2", systemImage: "2.calendar")
+                        .tag(OutlookType.convective(.day2(.categorical)))
+                    Label("Day 3", systemImage: "3.calendar")
+                        .tag(OutlookType.convective(.day3(probabilistic: false)))
+                }
+
+                Section("Discrete") {
+                    Submenu(
+                        title: .Convective.wind,
+                        systemImage: "wind",
+                        isSelected: selection.description.contains("Wind")
+                    ) {
+                        SelectionButton(selection: $selection, value: .convective(.day1(.wind)), label: "Day 1")
+                        SelectionButton(selection: $selection, value: .convective(.day2(.wind)), label: "Day 2")
+                    }
+                    Submenu(
+                        title: .Convective.hail,
+                        systemImage: "cloud.hail",
+                        isSelected: selection.description.contains("Hail")
+                    ) {
+                        SelectionButton(selection: $selection, value: .convective(.day1(.hail)), label: "Day 1")
+                        SelectionButton(selection: $selection, value: .convective(.day2(.hail)), label: "Day 2")
+                    }
+                    Submenu(
+                        title: .Convective.tornado,
+                        systemImage: "tornado",
+                        isSelected: selection.description.contains("Tornado")
+                    ) {
+                        SelectionButton(selection: $selection, value: .convective(.day1(.tornado)), label: "Day 1")
+                        SelectionButton(selection: $selection, value: .convective(.day2(.tornado)), label: "Day 2")
+                    }
+                }
+                Section {
+                    Submenu(
+                        title: .Convective.probabilistic,
+                        systemImage: "percent",
+                        isSelected: selection.description.contains("Probabilistic")
+                    ) {
+                        SelectionButton(selection: $selection, value: .convective(.day3(probabilistic: true)), label: "Day 3")
+                        SelectionButton(selection: $selection, value: .convective(.day4), label: "Day 4")
+                        SelectionButton(selection: $selection, value: .convective(.day5), label: "Day 5")
+                        SelectionButton(selection: $selection, value: .convective(.day6), label: "Day 6")
+                        SelectionButton(selection: $selection, value: .convective(.day7), label: "Day 7")
+                        SelectionButton(selection: $selection, value: .convective(.day8), label: "Day 8")
+                    }
+                }
             }
 
-            Section("Discrete") {
-                Submenu(
-                    title: .Convective.wind,
-                    systemImage: "wind",
-                    isSelected: selection.description.contains("Wind")
-                ) {
-                    SelectionButton(selection: $selection, value: .convective(.day1(.wind)), label: "Day 1")
-                    SelectionButton(selection: $selection, value: .convective(.day2(.wind)), label: "Day 2")
-                }
-                Submenu(
-                    title: .Convective.hail,
-                    systemImage: "cloud.hail",
-                    isSelected: selection.description.contains("Hail")
-                ) {
-                    SelectionButton(selection: $selection, value: .convective(.day1(.hail)), label: "Day 1")
-                    SelectionButton(selection: $selection, value: .convective(.day2(.hail)), label: "Day 2")
-                }
-                Submenu(
-                    title: .Convective.tornado,
-                    systemImage: "tornado",
-                    isSelected: selection.description.contains("Tornado")
-                ) {
-                    SelectionButton(selection: $selection, value: .convective(.day1(.tornado)), label: "Day 1")
-                    SelectionButton(selection: $selection, value: .convective(.day2(.tornado)), label: "Day 2")
-                }
-            }
-            Section {
-                Submenu(
-                    title: .Convective.probabilistic,
-                    systemImage: "percent",
-                    isSelected: selection.description.contains("Probabilistic")
-                ) {
-                    SelectionButton(selection: $selection, value: .convective(.day3(probabilistic: true)), label: "Day 3")
-                    SelectionButton(selection: $selection, value: .convective(.day4), label: "Day 4")
-                    SelectionButton(selection: $selection, value: .convective(.day5), label: "Day 5")
-                    SelectionButton(selection: $selection, value: .convective(.day6), label: "Day 6")
-                    SelectionButton(selection: $selection, value: .convective(.day7), label: "Day 7")
-                    SelectionButton(selection: $selection, value: .convective(.day8), label: "Day 8")
+            Submenu(title: "Fire", systemImage: "flame", isSelected: selection.pathSegments.first == "fire") {
+                ControlGroupPicker("Wind & Relative Humidity", selection: $selection) {
+                    Label("Day 1", systemImage: "1.calendar")
+                        .tag(OutlookType.fire(.day1))
+                    Label("Day 2", systemImage: "2.calendar")
+                        .tag(OutlookType.fire(.day2))
                 }
             }
         } label: {

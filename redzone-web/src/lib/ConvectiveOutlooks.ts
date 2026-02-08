@@ -1,4 +1,5 @@
-import centralTimeZoneOffset from "./centralTimeZoneOffset"
+import centralTimeToUTC from "./centralTimeToUTC"
+import { findIssuance } from "./Issuance"
 
 export abstract class ConvectiveOutlook {
     protected issuances: number[]
@@ -35,34 +36,6 @@ export function subtypeFromString(str: string): ConvectiveOutlookSubtype {
     else throw 'Invalid sub type ' + str
 }
 
-function padZeroes(input: { toString(): string }, maxLength: number): string {
-    return input.toString().padStart(maxLength, "0")
-}
-
-class SPCDate {
-    private referenceDate: Date
-
-    get date(): string {
-        return `${padZeroes(this.referenceDate.getUTCFullYear(), 4)}${padZeroes(this.referenceDate.getUTCMonth() + 1, 2)}${padZeroes(this.referenceDate.getUTCDate(), 2)}`
-    }
-
-    get time(): number {
-        return parseInt(`${this.referenceDate.getUTCHours()}${padZeroes(this.referenceDate.getUTCMinutes(), 2)}`)
-    }
-
-    get year(): number {
-        return this.referenceDate.getUTCFullYear()
-    }
-
-
-    constructor(yesterday?: boolean) {
-        this.referenceDate = new Date()
-        if (yesterday) {
-            this.referenceDate.setUTCDate(this.referenceDate.getUTCDate() - 1)
-        }
-    }
-}
-
 const baseURL = new URL('https://www.spc.noaa.gov')
 
 class Day1ConvectiveOutlook extends ConvectiveOutlook {
@@ -77,10 +50,6 @@ class Day1ConvectiveOutlook extends ConvectiveOutlook {
         const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
         return `products/outlook/archive/${timestamp.year}/day1otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
     }
-}
-
-function centralTimeToUTC(time: number): number {
-    return time - (centralTimeZoneOffset() / 36)
 }
 
 class Day2ConvectiveOutlook extends ConvectiveOutlook {
@@ -123,24 +92,6 @@ class FutureProbabilisticOutlook extends ConvectiveOutlook {
         const { date, year } = findIssuance(this.issuances, this.fallback).timestamp
         return `products/exper/day4-8/archive/${year}/day${this.day}prob_${date}`
     }
-}
-
-function findIssuance(issuances: number[], fallback: boolean): { timestamp: SPCDate, latestIssuance: string } {
-    let timestamp: SPCDate
-    let latestIssuance: number | undefined = issuances.find(iss => {
-        const value = iss === 1200 ? 600 : iss
-        return new SPCDate().time >= value
-    })
-    if (latestIssuance)
-        if (fallback)
-            return findIssuance(issuances.filter(i => i !== latestIssuance), false)
-        else
-            timestamp = new SPCDate()
-    else {
-        timestamp = new SPCDate(true)
-        latestIssuance = issuances[0]
-    }
-    return { timestamp, latestIssuance: padZeroes(latestIssuance, 4) }
 }
 
 export class ConvectiveOutlookFactory {

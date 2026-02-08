@@ -15,7 +15,11 @@ extension OutlookService: @retroactive DependencyKey {
     public static let liveValue: OutlookService = .init(adapter: .urlSession)
 #if DEBUG
     public static let previewValue: OutlookService = .init(adapter: .custom {
-        Data(contentsOf: Mocks[dynamicMember: $0.lastPathComponent].geojson)
+        if $0.relativePath.contains("fire") {
+            Data(contentsOf: Mocks.fire.geojson)
+        } else {
+            Data(contentsOf: Mocks[dynamicMember: $0.lastPathComponent].geojson)
+        }
     })
     public static var testValue: OutlookService { previewValue }
 #endif

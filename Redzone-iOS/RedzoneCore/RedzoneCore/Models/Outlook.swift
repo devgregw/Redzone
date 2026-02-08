@@ -23,7 +23,10 @@ public struct Outlook: Sendable, Hashable, Identifiable {
             "MDT": .moderate,
             "HIGH": .high,
             "SIGN": .significant,
-            "SIGPROB": .sigprobabilistic
+            "SIGPROB": .sigprobabilistic,
+            "ELEV": .fireElevated,
+            "CRIT": .fireCritical,
+            "EXTM": .fireExtreme
         ]
 
         case generalThunder
@@ -34,6 +37,9 @@ public struct Outlook: Sendable, Hashable, Identifiable {
         case high
         case significant
         case sigprobabilistic
+        case fireElevated
+        case fireCritical
+        case fireExtreme
         case percentage(Double)
         case unknown
 
@@ -52,11 +58,11 @@ public struct Outlook: Sendable, Hashable, Identifiable {
             case let .percentage(value): value
             case .significant, .sigprobabilistic: 10
             case .generalThunder: 0
-            case .marginal: 1
+            case .marginal, .fireElevated: 1
             case .slight: 2
-            case .enhanced: 3
+            case .enhanced, .fireCritical: 3
             case .moderate: 4
-            case .high: 5
+            case .high, .fireExtreme: 5
             case .unknown: -1
             }
         }

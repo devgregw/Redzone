@@ -12,17 +12,21 @@ internal import RedzoneMacros
 public enum OutlookType: RawRepresentable, Codable, Hashable, Sendable {
 
     case convective(_: Convective)
+    case fire(_: Fire)
 
     public var commentaryURL: URL {
         switch self {
         case let .convective(convective):
             #URL("day\(convective.day)otlk.html", relativeTo: #URL("https://www.spc.noaa.gov/products/outlook/"))
+        case let .fire(fire):
+            #URL("fwdy\(fire.day).html", relativeTo: #URL("https://www.spc.noaa.gov/products/fire_wx/"))
         }
     }
 
     public var pathSegments: [String] {
         switch self {
         case let .convective(value): ["convective"] + value.pathSegments
+        case let .fire(fire): ["fire"] + fire.pathSegments
         }
     }
 
@@ -35,9 +39,40 @@ public enum OutlookType: RawRepresentable, Codable, Hashable, Sendable {
                 self = .convective(convective)
                 return
             }
+        case "fire":
+            if let fire = Fire(rawValue: Array(rawValue.dropFirst())) {
+                self = .fire(fire)
+                return
+            }
         default: break
         }
         return nil
+    }
+}
+
+public enum Fire: RawRepresentable, Codable, Hashable, Sendable {
+    case day1
+    case day2
+
+    public var day: Int {
+        switch self {
+        case .day1: 1
+        case .day2: 2
+        }
+    }
+
+    public var pathSegments: [String] { [String(day)] }
+
+    public var rawValue: [String] { pathSegments }
+
+    public init?(rawValue: [String]) {
+        guard let dayStr = rawValue.first,
+              let day = Int(dayStr) else { return nil }
+        switch day {
+        case 1: self = .day1
+        case 2: self = .day2
+        default: return nil
+        }
     }
 }
 
