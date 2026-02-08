@@ -13,7 +13,7 @@ struct AboutFireRiskView: View {
         List {
             RiskView(
                 title: "Elevated",
-                description: "Fire potential is great enough to pose a limited threat, but not enough to warrent a critical area.",
+                description: "Fire potential is great enough to pose a limited threat, but not enough to warrant a critical area.",
                 color: .orange
             )
             RiskView(
