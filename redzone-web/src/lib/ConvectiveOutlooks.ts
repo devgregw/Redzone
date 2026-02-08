@@ -1,4 +1,4 @@
-import centralTimeZoneOffset from "./centralTimeZoneOffset"
+import centralTimeToUTC from "./centralTimeToUTC"
 import { findIssuance } from "./Issuance"
 
 export abstract class ConvectiveOutlook {
@@ -50,10 +50,6 @@ class Day1ConvectiveOutlook extends ConvectiveOutlook {
         const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
         return `products/outlook/archive/${timestamp.year}/day1otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
     }
-}
-
-function centralTimeToUTC(time: number): number {
-    return time - (centralTimeZoneOffset() / 36)
 }
 
 class Day2ConvectiveOutlook extends ConvectiveOutlook {
