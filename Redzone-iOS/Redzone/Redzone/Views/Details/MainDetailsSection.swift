@@ -44,6 +44,15 @@ struct MainDetailsSection: View {
                     Text(.Convective.highHeadline)
                         .fontWeight(.medium)
                     Text(.Convective.highCaption)
+                case .fireElevated:
+                    Text("Elevated risk from wind and relative humidity")
+                        .fontWeight(.medium)
+                case .fireCritical:
+                    Text("Critical risk from wind and relative humidity")
+                        .fontWeight(.medium)
+                case .fireExtreme:
+                    Text("Extremely critical risk from wind and relative humidity")
+                        .fontWeight(.medium)
                 case let .percentage(pct):
                     let label: LocalizedStringResource = {
                         switch outlook.outlookType {

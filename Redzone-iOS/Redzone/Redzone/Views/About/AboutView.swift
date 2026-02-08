@@ -47,7 +47,7 @@ struct AboutView: View {
                     ExternalLink(#URL("https://www.spc.noaa.gov/misc/about.html"), label: "SPC Products", icon: Image(.noaaLogo))
                 }
 
-                Section("Risk Levels") {
+                Section {
                     NavigationLink {
                         AboutRiskLevelsView()
                     } label: {
@@ -89,6 +89,18 @@ struct AboutView: View {
                     } label: {
                         Label(.Education.severeTstormLink, systemImage: "questionmark.circle")
                     }
+                } header: {
+                    Label("Convective Risks", systemImage: "bolt.trianglebadge.exclamationmark")
+                }
+
+                Section {
+                    NavigationLink {
+                        AboutFireRiskView()
+                    } label: {
+                        Label("Wind & Relative Humidity", systemImage: "humidity")
+                    }
+                } header: {
+                    Label("Fire Risks", systemImage: "flame")
                 }
 
                 Section {

@@ -30,6 +30,8 @@ struct EducationSection: View {
                         AboutDiscreteRiskView(risk: .prob)
                     @unknown default: EmptyView()
                     }
+                case .fire:
+                    AboutFireRiskView()
                 @unknown default: EmptyView()
                 }
             } label: {
