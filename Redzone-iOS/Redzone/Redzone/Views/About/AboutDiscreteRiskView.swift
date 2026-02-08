@@ -86,7 +86,7 @@ struct AboutDiscreteRiskView: View {
                         Text(level.0, format: .percent.precision(.fractionLength(0)))
                             .font(.headline)
                     } icon: {
-                        OutlookLegendIconView(fillColor: level.1, strokeColor: level.1)
+                        OutlookLegendIconView(fillColor: level.1.opacity(0.5), strokeColor: level.1)
                             .shadow(color: level.1.opacity(0.5), radius: 10)
                     }
                 }
