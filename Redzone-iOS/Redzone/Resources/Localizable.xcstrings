@@ -44,6 +44,18 @@
     "Continue" : {
 
     },
+    "Convective" : {
+
+    },
+    "Convective Risks" : {
+
+    },
+    "Critical" : {
+
+    },
+    "Critical risk from wind and relative humidity" : {
+
+    },
     "Data Source" : {
 
     },
@@ -80,10 +92,22 @@
     "Discrete" : {
 
     },
+    "Elevated" : {
+
+    },
+    "Elevated risk from wind and relative humidity" : {
+
+    },
     "Enhanced" : {
 
     },
     "Exp." : {
+
+    },
+    "Extremely Critical" : {
+
+    },
+    "Extremely critical risk from wind and relative humidity" : {
 
     },
     "Failed to load outlook data" : {
@@ -101,6 +125,15 @@
 
     },
     "Feel free to return to this screen anytime through Redzone → About → Disclaimer." : {
+
+    },
+    "Fire" : {
+
+    },
+    "Fire potential is great enough to pose a limited threat, but not enough to warrant a critical area." : {
+
+    },
+    "Fire Risks" : {
 
     },
     "Forecasted probability of 1-inch diameter hail or larger within 25 miles of a point." : {
@@ -248,9 +281,6 @@
     "Reset disclaimer acknowledgement" : {
 
     },
-    "Risk Levels" : {
-
-    },
     "riskDetails" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -283,6 +313,9 @@
     "Storm Prediction Center" : {
 
     },
+    "Strong winds and low relative humidity are expected to occur where dried fuels exist." : {
+
+    },
     "Testing Tools" : {
 
     },
@@ -295,10 +328,16 @@
     "Version" : {
 
     },
+    "Very strong winds and very low relative humidity are expected to occur with very dry fuels." : {
+
+    },
     "Welcome to Redzone" : {
 
     },
     "Wind" : {
+
+    },
+    "Wind & Relative Humidity" : {
 
     }
   },
