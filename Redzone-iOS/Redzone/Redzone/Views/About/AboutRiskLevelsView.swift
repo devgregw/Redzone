@@ -11,9 +11,16 @@ import SwiftUI
 struct AboutRiskLevelsView: View {
     var body: some View {
         List {
-            ForEach(Self.risks, id: \.self) {
-                $0
-            }
+            RiskView(
+                title: "General Thunderstorms",
+                description: "10% or higher probability of thunderstorms is forecast.",
+                color: .green.opacity(0.5)
+            )
+            RiskView(title: "Marginal", description: .Education.marginalDesc, color: .green)
+            RiskView(title: "Slight", description: .Education.slightDesc, color: .yellow)
+            RiskView(title: "Enhanced", description: .Education.enhancedDesc, color: .orange)
+            RiskView(title: "Moderate", description: .Education.moderateDesc, color: .red)
+            RiskView(title: "High", description: .Education.highDesc, color: .magenta)
         }
         .navigationTitle("Categorical")
         .navigationBarTitleDisplayMode(.inline)
