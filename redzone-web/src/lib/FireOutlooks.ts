@@ -18,7 +18,7 @@ export abstract class FireOutlook {
 
 class Day1FireOutlook extends FireOutlook {
     constructor(fallback: boolean) {
-        super([1700, centralTimeToUTC(200)], fallback)
+        super([1700, 1200], fallback)
     }
 
     get path(): string {
@@ -29,7 +29,7 @@ class Day1FireOutlook extends FireOutlook {
 
 class Day2FireOutlook extends FireOutlook {
     constructor(fallback: boolean) {
-        super([2000, centralTimeToUTC(200)], fallback)
+        super([2000, 1200], fallback)
     }
 
     get path(): string {
