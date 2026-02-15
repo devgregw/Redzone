@@ -30,7 +30,7 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
     else {
         const response = await fetch(outlook.url)
         if (!response.ok) {
-            console.error(await response.text(), outlook.url.toString(), fallback)
+            console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
             if (fallback)
                 return NextResponse.json({ error: 'Failed to fetch the outlook from the NWS after a second attempt.', url: outlook.url.toString() })
             else
