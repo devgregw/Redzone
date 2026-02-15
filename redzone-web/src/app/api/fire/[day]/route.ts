@@ -26,6 +26,8 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
             cached: true,
             fallback,
             ...(snap.val())
+        }, {
+            headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
     else {
         const response = await fetch(outlook.url)
@@ -39,7 +41,10 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
         const data = await response.json()
         await ref.set(data)
         await updateManifest(path)
-        return NextResponse.json({ ...data, fallback })
+        return NextResponse.json(
+            { ...data, fallback },
+            { headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' } }
+        )
     }
 }
 
