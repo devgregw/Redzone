@@ -26,11 +26,13 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
             cached: true,
             fallback,
             ...(snap.val())
+        }, {
+            headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
     else {
         const response = await fetch(outlook.url)
         if (!response.ok) {
-            console.error(await response.text(), outlook.url.toString(), fallback)
+            console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
             if (fallback)
                 return NextResponse.json({ error: 'Failed to fetch the outlook from the NWS after a second attempt.', url: outlook.url.toString() })
             else
@@ -39,7 +41,10 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
         const data = await response.json()
         await ref.set(data)
         await updateManifest(path)
-        return NextResponse.json({ ...data, fallback })
+        return NextResponse.json(
+            { ...data, fallback },
+            { headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' } }
+        )
     }
 }
 
