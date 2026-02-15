@@ -39,5 +39,6 @@ export function findIssuance(issuances: number[], fallback: boolean): { timestam
         timestamp = new SPCDate(true)
         latestIssuance = issuances[0]
     }
+    console.log(`Next issuance in ${issuances.join(',')} (fallback: ${fallback}): ${latestIssuance} (${timestamp.date} ${timestamp.time})`)
     return { timestamp, latestIssuance: padZeroes(latestIssuance, 4) }
 }
