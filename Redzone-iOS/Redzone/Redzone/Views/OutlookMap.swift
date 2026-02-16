@@ -83,6 +83,13 @@ struct OutlookMap: View {
             response = nil
             let newResponse = try await outlookService.fetchOutlook(type: selectedOutlookType)
             response = .success(newResponse)
+            if let tappedLocation,
+               let newSelection = newResponse.findOutlook(containing: tappedLocation) {
+                selectedOutlook = newSelection
+            } else {
+                tappedLocation = nil
+                selectedOutlook = nil
+            }
             if isFirstTimeFetch {
                 Self.logger.debug("Reloading widgets")
                 WidgetCenter.shared.reloadAllTimelines()
