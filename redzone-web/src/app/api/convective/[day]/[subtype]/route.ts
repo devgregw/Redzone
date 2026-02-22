@@ -1,15 +1,9 @@
+import { verifyAppCheck } from "@/lib/AppCheck";
 import { ConvectiveOutlookSubtype, subtypeFromString, ConvectiveOutlook, ConvectiveOutlookFactory } from "@/lib/ConvectiveOutlooks";
-import { getApps, cert, initializeApp } from "firebase-admin/app";
 import { getDatabase } from "firebase-admin/database";
 import { NextRequest, NextResponse } from "next/server";
 
 async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fallback: boolean): Promise<NextResponse> {
-    if (getApps().length === 0)
-        initializeApp({
-            credential: cert(JSON.parse(atob(process.env.FB_ADMIN_CONFIG_ENCODED!))),
-            databaseURL: 'https://redzone-6a505-default-rtdb.firebaseio.com'
-        })
-
     let outlook: ConvectiveOutlook
     try {
         outlook = ConvectiveOutlookFactory.createOutlook(day, subtype, fallback)
@@ -49,6 +43,8 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{day: string, subtype: string}> }) {
+    if (!(await verifyAppCheck(req)))
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     const { day, subtype } = await params
     let parsedSubtype: ConvectiveOutlookSubtype
     try {
