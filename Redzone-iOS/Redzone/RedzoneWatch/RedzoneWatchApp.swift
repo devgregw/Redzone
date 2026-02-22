@@ -7,11 +7,21 @@
 
 import Combine
 import Dependencies
+import FirebaseAppCheck
+import FirebaseCore
 import RedzoneCore
 import SwiftUI
 
 extension OutlookService: @retroactive DependencyKey {
-    public static let liveValue: OutlookService = .init(adapter: .urlSession)
+    public static let liveValue: OutlookService = .init(adapter: .urlSession {
+        if FirebaseApp.app() == nil {
+#if targetEnvironment(simulator)
+        AppCheck.setAppCheckProviderFactory(AppCheckDebugProviderFactory())
+#endif
+        FirebaseApp.configure()
+    }
+        return try await AppCheck.appCheck().token(forcingRefresh: false).token
+    })
 #if DEBUG
     public static let previewValue: OutlookService = .init(adapter: .custom {
         Data(contentsOf: Mocks[dynamicMember: $0.lastPathComponent].geojson)

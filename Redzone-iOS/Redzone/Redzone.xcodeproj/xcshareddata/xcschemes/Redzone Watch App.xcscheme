@@ -82,7 +82,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      notificationPayloadFile = "Example/watchOSSample/SampleWatchAppWatchKitExtension/PushNotificationPayload.apns">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -93,6 +94,12 @@
             ReferencedContainer = "container:Redzone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-FIRDebugEnabled"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
