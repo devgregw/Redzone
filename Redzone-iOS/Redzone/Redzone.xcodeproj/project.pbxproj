@@ -28,6 +28,12 @@
 		FC86B6232EDA863300B07540 /* RedzoneWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC86B7042EDB687D00B07540 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7022EDB687D00B07540 /* RedzoneCore.framework */; };
 		FC86B7062EDB687D00B07540 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B7032EDB687D00B07540 /* RedzoneUI.framework */; };
+		FC8963682F4B79D1005C8C66 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = FC8963672F4B79D1005C8C66 /* FirebaseAppCheck */; };
+		FC89636A2F4B79DF005C8C66 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = FC8963692F4B79DF005C8C66 /* FirebaseAppCheck */; };
+		FC89636C2F4B79F2005C8C66 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = FC89636B2F4B79F2005C8C66 /* FirebaseAppCheck */; };
+		FC8963742F4B7D5F005C8C66 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FC8963732F4B7D5F005C8C66 /* FirebaseCore */; };
+		FC8963762F4B7D6B005C8C66 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FC8963752F4B7D6B005C8C66 /* FirebaseCore */; };
+		FC8963782F4B7D72005C8C66 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FC8963772F4B7D72005C8C66 /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +197,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				ContentView.swift,
+				"GoogleService-Info.plist",
 				Info.plist,
 				RedzoneWatchApp.swift,
 			);
@@ -274,6 +281,8 @@
 				FC25839E2E80DEE10087B661 /* SwiftUI.framework in Frameworks */,
 				FC2583982E80DEC90087B661 /* RedzoneUI.framework in Frameworks */,
 				FC2583A02E80DEFD0087B661 /* RedzoneMacros in Frameworks */,
+				FC8963742F4B7D5F005C8C66 /* FirebaseCore in Frameworks */,
+				FC8963682F4B79D1005C8C66 /* FirebaseAppCheck in Frameworks */,
 				FC2583962E80DEC90087B661 /* RedzoneCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +310,9 @@
 				FC2583D12E80DFBA0087B661 /* RedzoneMacros in Frameworks */,
 				FC2584242E80E31C0087B661 /* MapKit.framework in Frameworks */,
 				FC13BF662E84E4770013FFE6 /* Dependencies in Frameworks */,
+				FC89636A2F4B79DF005C8C66 /* FirebaseAppCheck in Frameworks */,
 				FC2583D42E80DFBA0087B661 /* RedzoneCore.framework in Frameworks */,
+				FC8963762F4B7D6B005C8C66 /* FirebaseCore in Frameworks */,
 				FC2583D62E80DFBA0087B661 /* RedzoneUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +339,8 @@
 				FC86B7062EDB687D00B07540 /* RedzoneUI.framework in Frameworks */,
 				FC86B7042EDB687D00B07540 /* RedzoneCore.framework in Frameworks */,
 				FC86B6142EDA863100B07540 /* SwiftUI.framework in Frameworks */,
+				FC89636C2F4B79F2005C8C66 /* FirebaseAppCheck in Frameworks */,
+				FC8963782F4B7D72005C8C66 /* FirebaseCore in Frameworks */,
 				FC86B6132EDA863100B07540 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +429,8 @@
 			packageProductDependencies = (
 				FC25839F2E80DEFD0087B661 /* RedzoneMacros */,
 				FC13BF5F2E84E46C0013FFE6 /* Dependencies */,
+				FC8963672F4B79D1005C8C66 /* FirebaseAppCheck */,
+				FC8963732F4B7D5F005C8C66 /* FirebaseCore */,
 			);
 			productName = Redzone;
 			productReference = FC25835D2E80DE720087B661 /* Redzone.app */;
@@ -486,6 +501,8 @@
 			packageProductDependencies = (
 				FC2583D02E80DFBA0087B661 /* RedzoneMacros */,
 				FC13BF652E84E4770013FFE6 /* Dependencies */,
+				FC8963692F4B79DF005C8C66 /* FirebaseAppCheck */,
+				FC8963752F4B7D6B005C8C66 /* FirebaseCore */,
 			);
 			productName = "RedzoneWatch Watch App";
 			productReference = FC2583A52E80DF970087B661 /* RedzoneWatch.app */;
@@ -552,6 +569,8 @@
 			);
 			name = RedzoneWidgetsExtension;
 			packageProductDependencies = (
+				FC89636B2F4B79F2005C8C66 /* FirebaseAppCheck */,
+				FC8963772F4B7D72005C8C66 /* FirebaseCore */,
 			);
 			productName = RedzoneWidgetsExtension;
 			productReference = FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */;
@@ -606,6 +625,7 @@
 			packageReferences = (
 				FC13BF5E2E84E46C0013FFE6 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
 				FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC25835E2E80DE720087B661 /* Products */;
@@ -1478,6 +1498,14 @@
 				minimumVersion = 1.10.0;
 			};
 		};
+		FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.9.0;
+			};
+		};
 		FC8A67022F1C54D200650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
@@ -1516,6 +1544,36 @@
 		FC2583D02E80DFBA0087B661 /* RedzoneMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RedzoneMacros;
+		};
+		FC8963672F4B79D1005C8C66 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		FC8963692F4B79DF005C8C66 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		FC89636B2F4B79F2005C8C66 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		FC8963732F4B7D5F005C8C66 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		FC8963752F4B7D6B005C8C66 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		FC8963772F4B7D72005C8C66 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC8963662F4B79D1005C8C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
 		};
 		FC8A67032F1C54DF00650BED /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;

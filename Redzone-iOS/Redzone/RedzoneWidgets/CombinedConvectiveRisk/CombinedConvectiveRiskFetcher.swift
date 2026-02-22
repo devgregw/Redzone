@@ -6,6 +6,8 @@
 //
 
 import CoreLocation
+import FirebaseAppCheck
+import FirebaseCore
 import OSLog
 import RedzoneCore
 
@@ -22,7 +24,15 @@ struct CombinedConvectiveRiskFetcher {
             return .failure(.locationDisabled)
         }
 
-        let outlookService = OutlookService(adapter: .urlSession)
+        let outlookService = OutlookService(adapter: .urlSession {
+            if FirebaseApp.app() == nil {
+#if targetEnvironment(simulator)
+                AppCheck.setAppCheckProviderFactory(AppCheckDebugProviderFactory())
+#endif
+                FirebaseApp.configure()
+            }
+            return try await AppCheck.appCheck().token(forcingRefresh: false).token
+        })
         let categoricalRisk: OutlookResponse
         do {
             categoricalRisk = try await outlookService.fetchOutlook(type: day.categoricalType)
