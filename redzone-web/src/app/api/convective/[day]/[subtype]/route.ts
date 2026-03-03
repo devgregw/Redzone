@@ -24,6 +24,7 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
             headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
     else {
+        console.log(`Fetch: ${outlook.url} for convective/${day}/${subtype}`)
         const response = await fetch(outlook.url)
         if (!response.ok) {
             console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
