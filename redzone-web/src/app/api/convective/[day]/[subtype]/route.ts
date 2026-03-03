@@ -58,16 +58,16 @@ function processResponse(data: any, subtype: ConvectiveOutlookSubtype): any {
     if (subtype == ConvectiveOutlookSubtype.categorical || subtype == ConvectiveOutlookSubtype.probabilistic)
         return { convectivePrimary: data }
     else {
-        let featureCollection = data as { type: 'FeatureCollection', features: { type: 'Feature', geometry: any, properties: Record<string, any> }[] }
-        let [cigs, probs] = chunkArray(featureCollection.features, f => (f.properties.LABEL as string)?.indexOf('CIG') === 0)
-        featureCollection.features = probs
-        let cigCollection = {
+        let convectivePrimary = data as { type: 'FeatureCollection', features: { type: 'Feature', geometry: any, properties: Record<string, any> }[] }
+        let [cigs, probs] = chunkArray(convectivePrimary.features, f => (f.properties.LABEL as string)?.indexOf('CIG') === 0)
+        convectivePrimary.features = probs
+        let convectiveCIG = {
             type: 'FeatureCollection',
             features: cigs
         }
         return {
-            convectivePrimary: featureCollection,
-            convectiveCIG: cigCollection
+            convectivePrimary: convectivePrimary.features.length === 0 ? null : convectivePrimary,
+            convectiveCIG: convectiveCIG.features.length === 0 ? null : convectiveCIG
         }
     }
 }
