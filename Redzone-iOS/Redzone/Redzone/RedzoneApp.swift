@@ -22,7 +22,7 @@ extension OutlookService: @retroactive DependencyKey {
         if $0.relativePath.contains("fire") {
             Data(contentsOf: Mocks.fire.geojson)
         } else {
-            Data(contentsOf: Mocks[dynamicMember: $0.lastPathComponent].geojson)
+            Data(contentsOf: Mocks[dynamicMember: $0.lastPathComponent].json)
         }
     })
     public static var testValue: OutlookService { previewValue }
