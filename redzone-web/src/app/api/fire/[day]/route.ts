@@ -1,15 +1,9 @@
+import { verifyAppCheck } from "@/lib/AppCheck";
 import { FireOutlook, FireOutlookFactory } from "@/lib/FireOutlooks";
-import { getApps, cert, initializeApp } from "firebase-admin/app";
 import { getDatabase } from "firebase-admin/database";
 import { NextRequest, NextResponse } from "next/server";
 
 async function fetchOutlook(day: number, fallback: boolean): Promise<NextResponse> {
-    if (getApps().length === 0)
-        initializeApp({
-            credential: cert(JSON.parse(atob(process.env.FB_ADMIN_CONFIG_ENCODED!))),
-            databaseURL: 'https://redzone-6a505-default-rtdb.firebaseio.com'
-        })
-
     let outlook: FireOutlook
     try {
         outlook = FireOutlookFactory.createOutlook(day, fallback)
@@ -49,6 +43,8 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{day: string}> }) {
+    if (!(await verifyAppCheck(req)))
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     const { day } = await params
     return await fetchOutlook(parseInt(day), false)
 }
