@@ -6,6 +6,7 @@
 //
 
 import RedzoneCore
+import RedzoneMacros
 import RedzoneUI
 import SwiftUI
 
@@ -47,7 +48,16 @@ struct AboutDiscreteRiskView: View {
 
         var levels: [(Double, Color)] {
             switch self {
-            case .wind, .hail, .prob3: Self.standardLevels
+            case .hail, .prob3: Self.standardLevels
+            case .wind: [
+                (0.05, .brown),
+                (0.15, .yellow),
+                (0.30, .red),
+                (0.45, .magenta),
+                (0.60, .purple),
+                (0.75, .blue),
+                (0.90, .cyan)
+            ]
             case .tornado: [
                 (0.02, .green),
                 (0.05, .brown),
@@ -92,7 +102,38 @@ struct AboutDiscreteRiskView: View {
                 }
             }
 
-            if let sigDesc = risk.sigDescription {
+            if risk == .wind || risk == .hail || risk == .tornado {
+                Section {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(.cigTitle)
+                            .font(.headline)
+                        Text(.cigExplanation)
+                    }
+
+                    Group {
+                        switch risk {
+                        case .wind:
+                            Label(.windCig0, systemImage: "slash.circle", foregroundStyle: .secondary)
+                            Label(.windCig1, systemImage: "exclamationmark", foregroundStyle: .red)
+                            Label(.windCig2, systemImage: "exclamationmark.2", foregroundStyle: .red)
+                            Label(.windCig3, systemImage: "exclamationmark.3", foregroundStyle: .red)
+                        case .hail:
+                            Label(.hailCig0, systemImage: "slash.circle", foregroundStyle: .secondary)
+                            Label(.hailCig1, systemImage: "exclamationmark", foregroundStyle: .red)
+                            Label(.hailCig2, systemImage: "exclamationmark.2", foregroundStyle: .red)
+                        case .tornado:
+                            Label(.tornadoCig0, systemImage: "slash.circle", foregroundStyle: .secondary)
+                            Label(.tornadoCig1, systemImage: "exclamationmark", foregroundStyle: .red)
+                            Label(.tornadoCig2, systemImage: "exclamationmark.2", foregroundStyle: .red)
+                            Label(.tornadoCig3, systemImage: "exclamationmark.3", foregroundStyle: .red)
+                        default: EmptyView()
+                        }
+                    }
+                    .symbolRenderingMode(.hierarchical)
+
+                    ExternalLink(#URL("https://www.spc.noaa.gov/exper/conditional-intensity-information/"), label: "Learn more")
+                }
+            } else if let sigDesc = risk.sigDescription {
                 Section {
                     VStack(alignment: .leading, spacing: 8) {
                         Label {

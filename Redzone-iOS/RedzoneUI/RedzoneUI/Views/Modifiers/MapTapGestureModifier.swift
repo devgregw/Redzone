@@ -62,7 +62,7 @@ public extension View {
     Map(initialPosition: .unitedStates) {
         OutlookPolygon(
             multiPolygon,
-            properties: Outlook.Properties(id: "", title: "", fillColor: "#0000FF", strokeColor: "#FF0000", expire: "", valid: "", issue: "")
+            properties: OutlookProperties(id: "", title: "", fillColor: "#0000FF", strokeColor: "#FF0000", expire: "", valid: "", issue: "")
         )
     }
     .mapTapGesture {

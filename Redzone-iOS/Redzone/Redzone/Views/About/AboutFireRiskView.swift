@@ -13,17 +13,17 @@ struct AboutFireRiskView: View {
         List {
             RiskView(
                 title: "Elevated",
-                description: "Fire potential is great enough to pose a limited threat, but not enough to warrant a critical area.",
+                description: LocalizedStringResource.fireElevatedDesc,
                 color: .orange
             )
             RiskView(
                 title: "Critical",
-                description: "Strong winds and low relative humidity are expected to occur where dried fuels exist.",
+                description: LocalizedStringResource.fireCriticalDesc,
                 color: .red
             )
             RiskView(
                 title: "Extremely Critical",
-                description: "Very strong winds and very low relative humidity are expected to occur with very dry fuels.",
+                description: LocalizedStringResource.fireExtmCriticalDesc,
                 color: .magenta
             )
         }

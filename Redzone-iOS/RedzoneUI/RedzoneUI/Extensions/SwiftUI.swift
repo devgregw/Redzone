@@ -121,3 +121,34 @@ public extension Binding where Value: Hashable & Sendable {
         }
     }
 }
+
+public struct InternalForegroundStyleView<Base: View, S: ShapeStyle>: View {
+    let baseView: Base
+    let style: S
+
+    init(style: S, baseView: () -> Base) {
+        self.baseView = baseView()
+        self.style = style
+    }
+
+    public var body: some View {
+        baseView
+            .foregroundStyle(style)
+    }
+}
+
+public extension Label {
+    @MainActor init<S: ShapeStyle>(
+        _ label: LocalizedStringResource,
+        systemImage: String,
+        foregroundStyle: S
+    ) where Title == Text, Icon == InternalForegroundStyleView<Image, S> {
+        self.init {
+            Text(label)
+        } icon: {
+            InternalForegroundStyleView(style: foregroundStyle) {
+                Image(systemName: systemImage)
+            }
+        }
+    }
+}
