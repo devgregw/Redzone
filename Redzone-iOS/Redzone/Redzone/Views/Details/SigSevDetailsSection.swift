@@ -13,7 +13,7 @@ import SwiftUI
 struct SigSevDetailsSection: View {
     @Environment(LocationService.self) private var locationService
     
-    let feature: OutlookResponse.Feature
+    let feature: OutlookFeature
     let outlookType: OutlookType
 
     var body: some View {

@@ -19,9 +19,9 @@ struct ConvectiveRisk: Equatable {
     let value: String
     let title: String
 
-    init(from outlook: Outlook) {
-        self.value = outlook.highestRisk.properties.id
-        self.title = outlook.highestRisk.properties.title
+    init(from feature: OutlookFeature) {
+        self.value = feature.properties.id
+        self.title = feature.properties.title
     }
 
     private init(value: String, title: String) {
@@ -44,12 +44,13 @@ struct DiscreteRisks: Equatable {
         lhs.tornado?.value == rhs.tornado?.value && lhs.tornado?.sig == rhs.tornado?.sig
     }
 
-    private static func makeRisk(from outlook: Outlook?, at location: CLLocationCoordinate2D) -> RiskValue? {
-        guard let outlook else { return nil }
-        return (value: Int(outlook.highestRisk.properties.severity.comparableValue * 100), sig: outlook.isSignificantAt(location: location))
+    private static func makeRisk(from outlook: ResolvedOutlook?, at location: CLLocationCoordinate2D) -> RiskValue? {
+        guard let feature = outlook?[.convectivePrimary] else { return nil }
+        let containsCIG = outlook?[.convectiveCIG] != nil
+        return (value: Int(feature.properties.severity.comparableValue * 100), sig: containsCIG)
     }
 
-    init(wind: Outlook?, hail: Outlook?, tornado: Outlook?, at location: CLLocationCoordinate2D) {
+    init(wind: ResolvedOutlook?, hail: ResolvedOutlook?, tornado: ResolvedOutlook?, at location: CLLocationCoordinate2D) {
         self.wind = Self.makeRisk(from: wind, at: location)
         self.hail = Self.makeRisk(from: hail, at: location)
         self.tornado = Self.makeRisk(from: tornado, at: location)

@@ -20,3 +20,10 @@ public extension GeoJSONPosition {
 }
 
 public typealias GeoJSONMultiPolygon = [GeoJSONPolygon]
+
+public extension GeoJSONFeature.PropertyValue {
+    var stringValue: String? {
+        guard case .string(let value) = self else { return nil }
+        return value
+    }
+}

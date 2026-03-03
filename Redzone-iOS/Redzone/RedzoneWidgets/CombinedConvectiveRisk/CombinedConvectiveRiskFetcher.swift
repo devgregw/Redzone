@@ -33,38 +33,39 @@ struct CombinedConvectiveRiskFetcher {
             }
             return try await AppCheck.appCheck().token(forcingRefresh: false).token
         })
-        let categoricalRisk: OutlookResponse
+        let categoricalRisk: OutlookCollection
         do {
             categoricalRisk = try await outlookService.fetchOutlook(type: day.categoricalType)
         } catch {
             logger.debug("Failed to fetch categorical outlook.")
             return .failure(.fetchError)
         }
-        guard let outlook = categoricalRisk.findOutlook(containing: location) else {
+        guard let outlook = categoricalRisk.findRisks(at: location),
+              let primary = outlook[.convectivePrimary] else {
             logger.debug("No risk found.")
             return .failure(.noRisk)
         }
 
         if day.supportsOutlookBreakdown && includeBreakdown {
-            guard outlook.highestRisk.properties.severity > .generalThunder,
+            guard primary.properties.severity > .generalThunder,
                   let windType = day.windType,
                   let hailType = day.hailType,
                   let tornadoType = day.tornadoType else {
                 logger.debug("Risk too low for breakdown or breakdown types not defined.")
                 return .success(.init(
-                    convective: .init(from: outlook),
+                    convective: .init(from: primary),
                     discreteRisks: .init(wind: nil, hail: nil, tornado: nil, at: location)
                 ))
             }
 
-            async let wind = (try await outlookService.fetchOutlook(type: windType)).findOutlook(containing: location)
-            async let hail = (try await outlookService.fetchOutlook(type: hailType)).findOutlook(containing: location)
-            async let tornado = (try await outlookService.fetchOutlook(type: tornadoType)).findOutlook(containing: location)
+            async let wind = (try await outlookService.fetchOutlook(type: windType)).findRisks(at: location)
+            async let hail = (try await outlookService.fetchOutlook(type: hailType)).findRisks(at: location)
+            async let tornado = (try await outlookService.fetchOutlook(type: tornadoType)).findRisks(at: location)
 
             do {
                 logger.debug("Building discrete risk breakdown...")
                 return .success(.init(
-                    convective: .init(from: outlook),
+                    convective: .init(from: primary),
                     discreteRisks: .init(
                         wind: try await wind,
                         hail: try await hail,
@@ -78,7 +79,7 @@ struct CombinedConvectiveRiskFetcher {
             }
         } else {
             logger.debug("Outlook breakdown not requested or not supported.")
-            return .success(.init(convective: .init(from: outlook), discreteRisks: nil))
+            return .success(.init(convective: .init(from: primary), discreteRisks: nil))
         }
     }
 }

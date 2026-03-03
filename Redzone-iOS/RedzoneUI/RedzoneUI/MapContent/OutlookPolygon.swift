@@ -12,14 +12,14 @@ import SwiftUI
 
 public struct OutlookPolygon: MapContent {
     let multiPolygon: GeoJSONMultiPolygon
-    let properties: Outlook.Properties
+    let properties: OutlookProperties
 
-    public init(_ multiPolygon: GeoJSONMultiPolygon, properties: Outlook.Properties) {
+    public init(_ multiPolygon: GeoJSONMultiPolygon, properties: OutlookProperties) {
         self.multiPolygon = multiPolygon
         self.properties = properties
     }
 
-    public init(feature: OutlookResponse.Feature) {
+    public init(feature: OutlookFeature) {
         self.multiPolygon = feature.multiPolygon
         self.properties = feature.properties
     }
@@ -53,7 +53,7 @@ public struct OutlookPolygon: MapContent {
                     ])
                 ])
             ],
-            properties: Outlook.Properties(id: "", title: "", fillColor: "#0000FF", strokeColor: "#FF0000", expire: "", valid: "", issue: "")
+            properties: OutlookProperties(id: "", title: "", fillColor: "#0000FF", strokeColor: "#FF0000", expire: "", valid: "", issue: "")
         )
     }
 }

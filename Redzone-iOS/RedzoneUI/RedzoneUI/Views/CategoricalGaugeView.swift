@@ -14,10 +14,10 @@ public struct CategoricalGaugeView: View {
         case numeric
     }
 
-    private let properties: Outlook.Properties
+    private let properties: OutlookProperties
     private let mode: Mode
 
-    public init(properties: Outlook.Properties, mode: Mode = .numeric) {
+    public init(properties: OutlookProperties, mode: Mode = .numeric) {
         self.properties = properties
         self.mode = mode
     }

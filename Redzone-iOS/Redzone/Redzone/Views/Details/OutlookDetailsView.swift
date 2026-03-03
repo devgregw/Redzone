@@ -11,14 +11,19 @@ import RedzoneUI
 import SwiftUI
 
 struct OutlookDetailsView: View {
-    let response: Result<OutlookResponse, any Error>?
-    let selectedOutlook: Outlook?
+    let response: Result<OutlookCollection, any Error>?
+    let outlookType: OutlookType
+    let selectedOutlook: ResolvedOutlook?
     let isFromSheet: Bool
 
-    @ViewBuilder private func details(for outlook: Outlook, response: OutlookResponse) -> some View {
-        MainDetailsSection(outlook: outlook, response: response)
-        if let sigSev = outlook.significantFeature {
-            SigSevDetailsSection(feature: sigSev, outlookType: outlook.outlookType)
+    @ViewBuilder private func details(for outlook: ResolvedOutlook, outlookType: OutlookType, response: OutlookCollection) -> some View {
+        if let convectivePrimary = outlook[.convectivePrimary] {
+            OutlookFeatureDetailSection(convectivePrimary, in: response, outlookType: outlookType)
+            if let convectiveCIG = outlook[.convectiveCIG] {
+                OutlookFeatureDetailSection(convectiveCIG, in: response, outlookType: outlookType)
+            }
+        } else if let fireWindRH = outlook[.fireWindRH] {
+            OutlookFeatureDetailSection(fireWindRH, in: response, outlookType: outlookType)
         }
     }
 
@@ -26,7 +31,7 @@ struct OutlookDetailsView: View {
         List {
             if case let .success(response) = response,
                let selectedOutlook {
-                details(for: selectedOutlook, response: response)
+                details(for: selectedOutlook, outlookType: outlookType, response: response)
             } else {
                 StatusSection(response: response)
             }
@@ -34,8 +39,8 @@ struct OutlookDetailsView: View {
             EducationSection()
 
             if let selectedOutlook,
-               let issue = selectedOutlook.highestRisk.properties.issue,
-               let expire = selectedOutlook.highestRisk.properties.expire {
+               let issue = selectedOutlook.first?.value.properties.issue,
+               let expire = selectedOutlook.first?.value.properties.expire {
                 OutlookTimestampSection(issue: issue, expire: expire)
             }
         }

@@ -10,16 +10,23 @@ import RedzoneCore
 import RedzoneUI
 import SwiftUI
 
-struct MainDetailsSection: View {
+struct OutlookFeatureDetailSection: View {
     @Environment(LocationService.self) private var locationService
-    
-    let outlook: Outlook
-    let response: OutlookResponse
+
+    let collection: OutlookCollection
+    let feature: OutlookFeature
+    let outlookType: OutlookType
+
+    init(_ feature: OutlookFeature, in collection: OutlookCollection, outlookType: OutlookType) {
+        self.collection = collection
+        self.feature = feature
+        self.outlookType = outlookType
+    }
 
     var body: some View {
         Section {
             VStack(alignment: .leading, spacing: 8) {
-                switch outlook.highestRisk.properties.severity {
+                switch feature.properties.severity {
                 case .generalThunder:
                     Text(.Convective.tstmHeadline)
                         .fontWeight(.medium)
@@ -68,7 +75,7 @@ struct MainDetailsSection: View {
                 }
             }
             .geometryGroup()
-            OutlookLocationStatusLabel(feature: outlook.highestRisk, location: locationService.lastKnownLocation?.coordinate, response: response)
+            OutlookLocationStatusLabel(feature: feature, location: locationService.lastKnownLocation?.coordinate, response: collection)
         } header: {
             Label {
                 Text(outlook.highestRisk.properties.title)

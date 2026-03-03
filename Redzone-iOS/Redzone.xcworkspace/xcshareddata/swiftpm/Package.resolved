@@ -1,5 +1,5 @@
 {
-  "originHash" : "12c932f8aab82d4438c4a37e0ff0a96d7129e2790fc8ca5c4e17a2c6406a4e10",
+  "originHash" : "baa6d804070982860bf062c1106f0925ba081c0280323ba002ffdd68174bb582",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -168,8 +168,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/devgregw/swift-geojson",
       "state" : {
-        "revision" : "e7b108d9e5e893cd832e734917fde10b30e3ff73",
-        "version" : "3.0.2"
+        "revision" : "e3a2555850e2fb70becce46c0eb06c384123c916",
+        "version" : "4.0.0"
       }
     },
     {
