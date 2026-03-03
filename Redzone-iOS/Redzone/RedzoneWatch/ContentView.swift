@@ -96,7 +96,8 @@ struct ContentView: View {
                                     Divider()
                                         .padding(.vertical)
 
-                                    if feature.properties.severity > .generalThunder {
+                                    if feature.properties.severity > .generalThunder,
+                                       selectedOutlookType != .convective(.day3(probabilistic: false)) {
                                         VStack(alignment: .leading) {
                                             PercentageRiskView(
                                                 request: .wind,
