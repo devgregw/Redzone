@@ -17,7 +17,7 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
         console.error(error)
         return NextResponse.json({ error: 'Invalid convective outlook' }, { status: 400 })
     }
-    const path = outlook.path
+    const path = 'v2/' + outlook.path
     const db = getDatabase()
     const ref = db.ref(path)
     const snap = await ref.get()
@@ -38,13 +38,42 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
             else
                 return await fetchOutlook(day, subtype, true)
         }
-        const data = await response.json()
+        const json = await response.json()
+        const data = { groups: processResponse(json, subtype)  }
         await ref.set(data)
         await updateManifest(path)
         return NextResponse.json(
             { ...data, fallback },
             { headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' } }
         )
+    }
+}
+
+function chunkArray<T>(array: T[], predicate: (element: T) => boolean): [T[], T[]] {
+    let trueElements: T[] = []
+    let falseElements: T[] = []
+
+    for (let element of array)
+        (predicate(element) ? trueElements : falseElements).push(element)
+
+    return [trueElements, falseElements]
+}
+
+function processResponse(data: any, subtype: ConvectiveOutlookSubtype): any {
+    if (subtype == ConvectiveOutlookSubtype.categorical || subtype == ConvectiveOutlookSubtype.probabilistic)
+        return { convectivePrimary: data }
+    else {
+        let featureCollection = data as { type: 'FeatureCollection', features: { type: 'Feature', geometry: any, properties: Record<string, any> }[] }
+        let [cigs, probs] = chunkArray(featureCollection.features, f => (f.properties.LABEL as string)?.indexOf('CIG') === 0)
+        featureCollection.features = probs
+        let cigCollection = {
+            type: 'FeatureCollection',
+            features: cigs
+        }
+        return {
+            convectivePrimary: featureCollection,
+            convectiveCIG: cigCollection
+        }
     }
 }
 
