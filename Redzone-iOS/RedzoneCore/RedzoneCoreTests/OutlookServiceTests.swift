@@ -19,12 +19,9 @@ import Testing
 
     @Test("Fetch outlook and find by location") func testFetch() async throws {
         let response = try await service.fetchOutlook(type: .convective(.day1(.categorical)))
-        #expect(response.outlookType == .convective(.day1(.categorical)))
-
         let coordinate = CLLocationCoordinate2D(latitude: 33.216389, longitude: -97.129167)
-        let locationOutlook = try #require(response.findOutlook(containing: coordinate))
-        #expect(locationOutlook.highestRisk.id == "MDT")
-        #expect(locationOutlook.highestRisk.properties.severity == .moderate)
-        #expect(locationOutlook.significantFeature == nil)
+        let locationOutlook = try #require(response.findRisks(at: coordinate)?[.convectivePrimary])
+        #expect(locationOutlook.id == "MDT")
+        #expect(locationOutlook.properties.severity == .moderate)
     }
 }
