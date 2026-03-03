@@ -17,7 +17,6 @@ export async function verifyAppCheck(req: NextRequest): Promise<boolean> {
 
     try {
         const claims = await getAppCheck().verifyToken(token)
-        console.log(claims.appId, claims.token)
         return true
     } catch (err) {
         console.warn('App Check verification failed: verification failed')
