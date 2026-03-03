@@ -12,13 +12,13 @@ import RedzoneUI
 import SwiftUI
 
 struct MapView: View {
-    let outlookResponse: OutlookResponse?
+    let outlookCollection: OutlookCollection?
     @State private var position: MapCameraPosition = .unitedStates
 
     var body: some View {
-        OutlookMapView(response: outlookResponse, position: $position, mapStyle: .constant(.standard))
+        OutlookMapView(response: outlookCollection, position: $position, mapStyle: .constant(.standard))
             .overlay {
-                if outlookResponse == nil {
+                if outlookCollection == nil {
                     ProgressView()
                         .progressViewStyle(.circular)
                         .frame(width: 48, height: 48)
@@ -48,26 +48,26 @@ struct ContentView: View {
     @CodableAppStorage("selectedOutlookType") private var selectedOutlookType = OutlookType.convective(.day1(.categorical))
     @Dependency(OutlookService.self) private var outlookService
     @Environment(LocationService.self) private var locationService
-    @State private var outlookResponse: OutlookResponse?
+    @State private var outlookCollection: OutlookCollection?
 
     struct PercentageRiskView: View {
         @Dependency(OutlookService.self) private var outlookService
-        @State private var response: OutlookResponse?
+        @State private var response: OutlookCollection?
         let request: Convective.Classification
         let factory: (Convective.Classification) -> OutlookType
         let image: String
         let location: CLLocationCoordinate2D
 
-        var outlook: Outlook? {
-            response?.findOutlook(containing: location)
+        var outlook: ResolvedOutlook? {
+            response?.findRisks(at: location)
         }
 
         var title: String {
-            outlook?.highestRisk.properties.title ?? "No forecasted risk"
+            outlook?[.convectivePrimary]?.properties.title ?? "No forecasted risk"
         }
 
         var isSignificant: Bool {
-            outlook?.isSignificantAt(location: location) == true
+            outlook?[.convectiveCIG] != nil
         }
 
         var body: some View {
@@ -82,13 +82,13 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if let outlookResponse {
+                if let outlookCollection {
                     if let location = locationService.lastKnownLocation?.coordinate {
-                        if let outlook = outlookResponse.findOutlook(containing: location) {
+                        if let feature = outlookCollection.findRisks(at: location)?[.convectivePrimary] {
                             ScrollView {
                                 VStack {
-                                    CategoricalGaugeView(properties: outlook.highestRisk.properties)
-                                    Text(outlook.highestRisk.properties.title)
+                                    CategoricalGaugeView(properties: feature.properties)
+                                    Text(feature.properties.title)
                                         .font(.headline)
                                     Text(selectedOutlookType.localizedStringResource)
                                         .font(.footnote)
@@ -96,7 +96,8 @@ struct ContentView: View {
                                     Divider()
                                         .padding(.vertical)
 
-                                    if outlook.highestRisk.properties.severity > .generalThunder {
+                                    if feature.properties.severity > .generalThunder,
+                                       selectedOutlookType != .convective(.day3(probabilistic: false)) {
                                         VStack(alignment: .leading) {
                                             PercentageRiskView(
                                                 request: .wind,
@@ -162,14 +163,14 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .bottomBar) {
                     NavigationLink {
-                        MapView(outlookResponse: outlookResponse)
+                        MapView(outlookCollection: outlookCollection)
                     } label: {
                         Label("Map", systemImage: "map")
                     }
                 }
             }
             .task(id: selectedOutlookType, timeout: 30) {
-                outlookResponse = try? await outlookService.fetchOutlook(type: selectedOutlookType)
+                outlookCollection = try? await outlookService.fetchOutlook(type: selectedOutlookType)
             }
         }
     }

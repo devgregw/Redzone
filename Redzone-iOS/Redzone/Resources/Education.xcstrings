@@ -128,7 +128,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "58 mph (50 kt) wind gusts or greater"
+            "value" : "50-knot (~50 miles per hour) wind gusts or greater"
           }
         }
       }
@@ -194,7 +194,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "75 mph (65 kt) wind gusts or greater"
+            "value" : "65-knot (~75 miles per hour) wind gusts or greater"
           }
         }
       }

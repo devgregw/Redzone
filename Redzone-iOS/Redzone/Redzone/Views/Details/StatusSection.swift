@@ -12,7 +12,7 @@ import SwiftUI
 struct StatusSection: View {
     @Environment(LocationService.self) private var locationService
 
-    let response: Result<OutlookResponse, any Error>?
+    let response: Result<OutlookCollection, any Error>?
 
     var body: some View {
         Section {

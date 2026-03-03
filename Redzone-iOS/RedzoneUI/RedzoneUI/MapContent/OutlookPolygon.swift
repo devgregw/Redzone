@@ -12,23 +12,49 @@ import SwiftUI
 
 public struct OutlookPolygon: MapContent {
     let multiPolygon: GeoJSONMultiPolygon
-    let properties: Outlook.Properties
+    let properties: OutlookProperties
 
-    public init(_ multiPolygon: GeoJSONMultiPolygon, properties: Outlook.Properties) {
+    public init(_ multiPolygon: GeoJSONMultiPolygon, properties: OutlookProperties) {
         self.multiPolygon = multiPolygon
         self.properties = properties
     }
 
-    public init(feature: OutlookResponse.Feature) {
+    public init(feature: OutlookFeature) {
         self.multiPolygon = feature.multiPolygon
         self.properties = feature.properties
     }
 
     public var body: some MapContent {
         MapMultiPolygon(multiPolygon)
-            .foregroundStyle(Color(hex: properties.fillColor).opacity(0.25))
-            .stroke(Color(hex: properties.strokeColor), style: .init(dash: properties.severity == .significant ? [5, 5] : []))
+            .outlookStyle(from: properties)
             .mapOverlayLevel(level: .aboveRoads)
+    }
+}
+
+private extension MapContent {
+    func outlookStyle(from properties: OutlookProperties) -> some MapContent {
+        switch properties.severity {
+        case .significant, .sigprobabilistic:
+            self
+                .foregroundStyle(Color(hex: properties.fillColor).opacity(0.25))
+                .stroke(Color(hex: properties.strokeColor), style: .init(dash: [5, 5]))
+        case .cig1:
+            self
+                .foregroundStyle(.clear)
+                .stroke(Color(hex: properties.strokeColor), style: .init(dash: [2, 2]))
+        case .cig2:
+            self
+                .foregroundStyle(.clear)
+                .stroke(Color(hex: properties.strokeColor), style: .init(dash: [4, 2]))
+        case .cig3:
+            self
+                .foregroundStyle(.clear)
+                .stroke(Color(hex: properties.strokeColor), style: .init(dash: [6, 2]))
+        default:
+            self
+                .foregroundStyle(Color(hex: properties.fillColor).opacity(0.25))
+                .stroke(Color(hex: properties.strokeColor), style: .init())
+        }
     }
 }
 
@@ -53,7 +79,7 @@ public struct OutlookPolygon: MapContent {
                     ])
                 ])
             ],
-            properties: Outlook.Properties(id: "", title: "", fillColor: "#0000FF", strokeColor: "#FF0000", expire: "", valid: "", issue: "")
+            properties: OutlookProperties(id: "", title: "", fillColor: "#0000FF", strokeColor: "#FF0000", expire: "", valid: "", issue: "")
         )
     }
 }

@@ -30,6 +30,14 @@ public enum OutlookType: RawRepresentable, Codable, Hashable, Sendable {
         }
     }
 
+    public var convectiveClassification: Convective.Classification? {
+        guard case let .convective(convective) = self else { return nil }
+        switch convective {
+        case let .day1(classification), let .day2(classification): return classification
+        default: return nil
+        }
+    }
+
     public var rawValue: [String] { pathSegments }
 
     public init?(rawValue: [String]) {

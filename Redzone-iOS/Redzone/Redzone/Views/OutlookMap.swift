@@ -22,20 +22,25 @@ struct OutlookMap: View {
     @Dependency(OutlookService.self) private var outlookService
     @Environment(LocationService.self) private var locationService
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @State private var response: Result<OutlookResponse, any Error>?
+    @State private var response: Result<OutlookCollection, any Error>?
     @State private var mapPosition: MapCameraPosition = .unitedStates
-    @State private var selectedOutlook: Outlook?
+    @State private var selectedOutlook: ResolvedOutlook?
     @State private var sheetState: PersistentSheetState = .collapsed
     @State private var collapsedSheetHeight: CGFloat = .zero
     @State private var tappedLocation: CLLocationCoordinate2D? = .none
 
-    private var currentLocationOutlook: Outlook? {
+    private var currentLocationOutlook: ResolvedOutlook? {
         guard let location = locationService.lastKnownLocation?.coordinate else { return nil }
-        return response?.value?.findOutlook(containing: location)
+        return response?.value?.findRisks(at: location)
     }
 
     private func detailsView(sheet: Bool) -> some View {
-        OutlookDetailsView(response: response, selectedOutlook: selectedOutlook ?? currentLocationOutlook, isFromSheet: sheet)
+        OutlookDetailsView(
+            response: response,
+            outlookType: selectedOutlookType,
+            selectedOutlook: selectedOutlook ?? currentLocationOutlook,
+            isFromSheet: sheet
+        )
     }
 
     private var map: some View {
@@ -56,7 +61,7 @@ struct OutlookMap: View {
                     collapsedHeight: collapsedSheetHeight,
                     disabled: response == nil || response?.error != nil
                 ) {
-                    CurrentLocationCollapsedView(response: response, currentLocationOutlook: currentLocationOutlook)
+                    CurrentLocationCollapsedView(response: response, outlookType: selectedOutlookType, currentLocationOutlook: currentLocationOutlook)
                         .onGeometryChange(for: CGFloat.self, of: \.size.height) {
                             collapsedSheetHeight = $0
                         }
@@ -84,7 +89,7 @@ struct OutlookMap: View {
             let newResponse = try await outlookService.fetchOutlook(type: selectedOutlookType)
             response = .success(newResponse)
             if let tappedLocation,
-               let newSelection = newResponse.findOutlook(containing: tappedLocation) {
+               let newSelection = newResponse.findRisks(at: tappedLocation) {
                 selectedOutlook = newSelection
             } else {
                 tappedLocation = nil

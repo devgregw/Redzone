@@ -41,6 +41,28 @@
     "Categorical" : {
 
     },
+    "cigExplanation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conditional Intensity Groups (CIG) represent intensity distributions utilized to communicate increasing intensity of significant severe hazards. These replace the previous Significant Severe (SIGN) label which only communicated a minimum threshold. The absence of a designated CIG region on the map implies group 0."
+          }
+        }
+      }
+    },
+    "cigTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conditional Intensity Groups"
+          }
+        }
+      }
+    },
     "Continue" : {
 
     },
@@ -51,9 +73,6 @@
 
     },
     "Critical" : {
-
-    },
-    "Critical risk from wind and relative humidity" : {
 
     },
     "Data Source" : {
@@ -95,9 +114,6 @@
     "Elevated" : {
 
     },
-    "Elevated risk from wind and relative humidity" : {
-
-    },
     "Enhanced" : {
 
     },
@@ -105,9 +121,6 @@
 
     },
     "Extremely Critical" : {
-
-    },
-    "Extremely critical risk from wind and relative humidity" : {
 
     },
     "Failed to load outlook data" : {
@@ -130,11 +143,41 @@
     "Fire" : {
 
     },
-    "Fire potential is great enough to pose a limited threat, but not enough to warrant a critical area." : {
-
-    },
     "Fire Risks" : {
 
+    },
+    "fireCriticalDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strong winds and low relative humidity are expected to occur where dried fuels exist."
+          }
+        }
+      }
+    },
+    "fireElevatedDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fire potential is great enough to pose a limited threat, but not enough to warrant a critical area."
+          }
+        }
+      }
+    },
+    "fireExtmCriticalDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Very strong winds and very low relative humidity are expected to occur with very dry fuels."
+          }
+        }
+      }
     },
     "Forecasted probability of 1-inch diameter hail or larger within 25 miles of a point." : {
 
@@ -157,6 +200,39 @@
     "Hail" : {
 
     },
+    "hailCig0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostly less than 2-inch diameter (lime or golf ball) hail"
+          }
+        }
+      }
+    },
+    "hailCig1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2-inch diameter (billiard ball) hail or larger (mostly supercells)"
+          }
+        }
+      }
+    },
+    "hailCig2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3½-inch diameter (softball) hail or larger (long-tracked, discrete supercells)"
+          }
+        }
+      }
+    },
     "High" : {
 
     },
@@ -164,6 +240,9 @@
 
     },
     "Iss." : {
+
+    },
+    "Learn more" : {
 
     },
     "Loading..." : {
@@ -313,9 +392,6 @@
     "Storm Prediction Center" : {
 
     },
-    "Strong winds and low relative humidity are expected to occur where dried fuels exist." : {
-
-    },
     "Testing Tools" : {
 
     },
@@ -325,10 +401,51 @@
     "Tornado" : {
 
     },
-    "Version" : {
-
+    "tornadoCig0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostly weak (EF0-EF1)"
+          }
+        }
+      }
     },
-    "Very strong winds and very low relative humidity are expected to occur with very dry fuels." : {
+    "tornadoCig1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reasonable maximum intensity of EF2"
+          }
+        }
+      }
+    },
+    "tornadoCig2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reasonable maximum intensity of EF3"
+          }
+        }
+      }
+    },
+    "tornadoCig3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reasonable maximum intensity of EF4+ (high-end outbreak)"
+          }
+        }
+      }
+    },
+    "Version" : {
 
     },
     "Welcome to Redzone" : {
@@ -339,6 +456,50 @@
     },
     "Wind & Relative Humidity" : {
 
+    },
+    "windCig0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostly less than 64-knot (~73 miles per hour) wind gusts"
+          }
+        }
+      }
+    },
+    "windCig1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "65-knot (~75 miles per hour) wind gusts or greater"
+          }
+        }
+      }
+    },
+    "windCig2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "73-knot (~84 miles per hour) wind gusts or greater (bow echoes or derechos possible)"
+          }
+        }
+      }
+    },
+    "windCig3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "82-knot (~94 miles per hour) wind gusts or greater (high-end derecho, usually ongoing)"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"

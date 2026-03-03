@@ -17,7 +17,7 @@ public struct OutlookLegendIconView: View {
         self.strokeColor = strokeColor
     }
     
-    public init(properties: Outlook.Properties) {
+    public init(properties: OutlookProperties) {
         self.init(fillColor: Color(hex: properties.fillColor).opacity(0.50), strokeColor: Color(hex: properties.strokeColor))
     }
     

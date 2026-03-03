@@ -598,7 +598,7 @@
 			repositoryURL = "https://github.com/devgregw/swift-geojson";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 		FC8A67112F1C551900650BED /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {

@@ -10,11 +10,11 @@ import RedzoneCore
 import SwiftUI
 
 public struct OutlookLocationStatusLabel: View {
-    private let feature: OutlookResponse.Feature
+    private let feature: OutlookFeature
     private let location: CLLocationCoordinate2D?
-    private let response: OutlookResponse?
+    private let response: OutlookCollection?
 
-    public init(feature: OutlookResponse.Feature, location: CLLocationCoordinate2D?, response: OutlookResponse? = nil) {
+    public init(feature: OutlookFeature, location: CLLocationCoordinate2D?, response: OutlookCollection? = nil) {
         self.feature = feature
         self.location = location
         self.response = response
@@ -23,7 +23,7 @@ public struct OutlookLocationStatusLabel: View {
     private func isAtCurrentLocation(_ location: CLLocationCoordinate2D) -> Bool {
         guard feature.contains(location) else { return false }
         guard let response else { return true }
-        return response.findOutlook(containing: location)?.highestRisk == feature
+        return response.findRisks(at: location)?.values.contains(feature) ?? false
     }
 
     public var body: some View {
