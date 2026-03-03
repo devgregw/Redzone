@@ -75,9 +75,6 @@
     "Critical" : {
 
     },
-    "Critical risk from wind and relative humidity" : {
-
-    },
     "Data Source" : {
 
     },
@@ -117,9 +114,6 @@
     "Elevated" : {
 
     },
-    "Elevated risk from wind and relative humidity" : {
-
-    },
     "Enhanced" : {
 
     },
@@ -127,9 +121,6 @@
 
     },
     "Extremely Critical" : {
-
-    },
-    "Extremely critical risk from wind and relative humidity" : {
 
     },
     "Failed to load outlook data" : {
