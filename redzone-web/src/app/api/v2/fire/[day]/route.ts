@@ -11,7 +11,7 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
         console.error(error)
         return NextResponse.json({ error: 'Invalid fire outlook' }, { status: 400 })
     }
-    const path = outlook.path
+    const path = 'v2/' + outlook.path
     const db = getDatabase()
     const ref = db.ref(path)
     const snap = await ref.get()
@@ -24,6 +24,7 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
             headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
     else {
+        console.log(`Fetch: ${outlook.url} for fire/${day}`)
         const response = await fetch(outlook.url)
         if (!response.ok) {
             console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
@@ -32,7 +33,11 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
             else
                 return await fetchOutlook(day, true)
         }
-        const data = await response.json()
+        const data = {
+            groups: {
+                fireWindRH: await response.json()
+            }
+        }
         await ref.set(data)
         await updateManifest(path)
         return NextResponse.json(

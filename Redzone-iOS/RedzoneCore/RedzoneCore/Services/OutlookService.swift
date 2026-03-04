@@ -25,7 +25,7 @@ public final actor OutlookService: NetworkingService {
         case noRiskForecast
     }
 
-    private let hostname = #URL("https://redzone.gregwhatley.dev/api/")
+    private let hostname = #URL("https://redzone.gregwhatley.dev/api/v2/")
     public let adapter: any RequestAdapter
 
     public init(adapter: any RequestAdapter) {

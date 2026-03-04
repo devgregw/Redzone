@@ -11,7 +11,7 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
         console.error(error)
         return NextResponse.json({ error: 'Invalid convective outlook' }, { status: 400 })
     }
-    const path = outlook.path
+    const path = 'v2/' + outlook.path
     const db = getDatabase()
     const ref = db.ref(path)
     const snap = await ref.get()
@@ -24,6 +24,7 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
             headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
     else {
+        console.log(`Fetch: ${outlook.url} for convective/${day}/${subtype}`)
         const response = await fetch(outlook.url)
         if (!response.ok) {
             console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
@@ -32,13 +33,44 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
             else
                 return await fetchOutlook(day, subtype, true)
         }
-        const data = await response.json()
+        const json = await response.json()
+        const data = { groups: processResponse(json, subtype)  }
         await ref.set(data)
         await updateManifest(path)
         return NextResponse.json(
             { ...data, fallback },
             { headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' } }
         )
+    }
+}
+
+function chunkArray<T>(array: T[], predicate: (element: T) => boolean): [T[], T[]] {
+    let trueElements: T[] = []
+    let falseElements: T[] = []
+
+    for (let element of array)
+        (predicate(element) ? trueElements : falseElements).push(element)
+
+    return [trueElements, falseElements]
+}
+
+function processResponse(data: any, subtype: ConvectiveOutlookSubtype): any {
+    if (subtype == ConvectiveOutlookSubtype.categorical || subtype == ConvectiveOutlookSubtype.probabilistic)
+        return { convectivePrimary: data }
+    else {
+        let convectivePrimary = data as { type: 'FeatureCollection', features: { type: 'Feature', geometry: any, properties: Record<string, any> }[] }
+        let [cigs, probs] = chunkArray(convectivePrimary.features, f => (f.properties.LABEL as string)?.indexOf('CIG') === 0)
+        convectivePrimary.features = probs
+        let convectiveCIG = {
+            type: 'FeatureCollection',
+            features: cigs
+        }
+        let response: any = { }
+        if (convectivePrimary.features.length > 0)
+            response.convectivePrimary = convectivePrimary
+        if (convectiveCIG.features.length > 0)
+            response.convectiveCIG = convectiveCIG
+        return response
     }
 }
 
