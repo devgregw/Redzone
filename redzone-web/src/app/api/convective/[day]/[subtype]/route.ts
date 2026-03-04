@@ -65,10 +65,12 @@ function processResponse(data: any, subtype: ConvectiveOutlookSubtype): any {
             type: 'FeatureCollection',
             features: cigs
         }
-        return {
-            convectivePrimary: convectivePrimary.features.length === 0 ? null : convectivePrimary,
-            convectiveCIG: convectiveCIG.features.length === 0 ? null : convectiveCIG
-        }
+        let response: any = { }
+        if (convectivePrimary.features.length > 0)
+            response.convectivePrimary = convectivePrimary
+        if (convectiveCIG.features.length > 0)
+            response.convectiveCIG = convectiveCIG
+        return response
     }
 }
 
