@@ -34,6 +34,12 @@ function issProp(iss: Issuance, value: 'iss' | 'comparison'): number {
         return iss[value]
 }
 
+function dayBeforeMidnight(referenceDate: Date): Date {
+    let dayBefore = new Date(referenceDate.getTime() - 24 * 60 * 60 * 1000)
+    dayBefore.setUTCHours(23, 59, 0, 0)
+    return dayBefore
+}
+
 export function findIssuance(issuances: Issuance[], fallback: boolean, referenceDate: Date = new Date()): ResolvedIssuance {
     const sortedIssuances = issuances.toSorted((a, b) => {
         return issProp(b, 'comparison') - issProp(a, 'comparison')
@@ -51,7 +57,10 @@ export function findIssuance(issuances: Issuance[], fallback: boolean, reference
     if (latest) {
         if (fallback) {
             let filteredIssuances = sortedIssuances.filter(iss => issProp(iss, 'comparison') < issProp(latest, 'comparison'))
-            return findIssuance(filteredIssuances, false, referenceDate)
+            if (filteredIssuances.length === 0)
+                return findIssuance(issuances, false, dayBeforeMidnight(referenceDate))
+            else
+                return findIssuance(filteredIssuances, false, referenceDate)
         } else {
             return {
                 year,
@@ -60,9 +69,8 @@ export function findIssuance(issuances: Issuance[], fallback: boolean, reference
             }
         }
     } else {
-        let dayBefore = new Date(referenceDate.getTime() - 24 * 60 * 60 * 1000)
-        dayBefore.setUTCHours(23, 59, 0, 0)
-        return findIssuance(issuances, fallback, new Date(dayBefore))
+        
+        return findIssuance(issuances, fallback, dayBeforeMidnight(referenceDate))
     }
 }
 
