@@ -36,13 +36,13 @@ function issProp(iss: Issuance, value: 'iss' | 'comparison'): number {
 
 export function findIssuance(issuances: Issuance[], fallback: boolean, referenceDate: Date = new Date()): ResolvedIssuance {
     const sortedIssuances = issuances.toSorted((a, b) => {
-        return issProp(a, 'comparison') - issProp(b, 'comparison')
+        return issProp(b, 'comparison') - issProp(a, 'comparison')
     })
     const year = referenceDate.getUTCFullYear()
     const month = referenceDate.getUTCMonth()
     const day = referenceDate.getUTCDate()
     
-    const latest = sortedIssuances.toReversed().find(iss => {
+    const latest = sortedIssuances.find(iss => {
         const hhmm = issProp(iss, 'comparison')
         const date = Date.UTC(year, month, day, Math.floor(hhmm / 100), hhmm % 100)
         return date <= referenceDate.getTime()
