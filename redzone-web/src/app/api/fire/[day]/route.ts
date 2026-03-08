@@ -11,7 +11,7 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
         console.error(error)
         return NextResponse.json({ error: 'Invalid fire outlook' }, { status: 400 })
     }
-    const path = outlook.path
+    const path = outlook.paths[0]
     const db = getDatabase()
     const ref = db.ref(path)
     const snap = await ref.get()
@@ -24,11 +24,11 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
             headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
     else {
-        const response = await fetch(outlook.url)
+        const response = await fetch(outlook.urls[0])
         if (!response.ok) {
-            console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
+            console.error(`${outlook.urls[0].toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
             if (fallback)
-                return NextResponse.json({ error: 'Failed to fetch the outlook from the NWS after a second attempt.', url: outlook.url.toString() })
+                return NextResponse.json({ error: 'Failed to fetch the outlook from the NWS after a second attempt.', url: outlook.urls[0].toString() })
             else
                 return await fetchOutlook(day, true)
         }

@@ -11,9 +11,9 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
         console.error(error)
         return NextResponse.json({ error: 'Invalid fire outlook' }, { status: 400 })
     }
-    const path = 'v2/' + outlook.path
+    const cachePath = 'v2/' + outlook.cachePath
     const db = getDatabase()
-    const ref = db.ref(path)
+    const ref = db.ref(cachePath)
     const snap = await ref.get()
     if (snap.exists())
         return NextResponse.json({
@@ -24,22 +24,35 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
             headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
     else {
-        console.log(`Fetch: ${outlook.url} for fire/${day}`)
-        const response = await fetch(outlook.url)
-        if (!response.ok) {
-            console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
+
+        const [responseWindRH, responseDryT] = await Promise.all(outlook.urls.map(url => {
+            console.log(`Fetch: ${url} for fire/${day}`)
+            return fetch(url)
+        }))
+
+        if (!responseWindRH.ok) {
+            console.error(`${outlook.urls[0].toString()}: ${responseWindRH.status} ${responseWindRH.statusText} (fallback: ${fallback})`)
             if (fallback)
-                return NextResponse.json({ error: 'Failed to fetch the outlook from the NWS after a second attempt.', url: outlook.url.toString() })
+                return NextResponse.json({ error: 'Failed to fetch the windrh outlook from the NWS after a second attempt.', url: outlook.urls[0].toString() })
+            else
+                return await fetchOutlook(day, true)
+        } else if (!responseDryT.ok) {
+            console.error(`${outlook.urls[0].toString()}: ${responseDryT.status} ${responseDryT.statusText} (fallback: ${fallback})`)
+            if (fallback)
+                return NextResponse.json({ error: 'Failed to fetch the dryt outlook from the NWS after a second attempt.', url: outlook.urls[1].toString() })
             else
                 return await fetchOutlook(day, true)
         }
-        const data = {
-            groups: {
-                fireWindRH: await response.json()
-            }
-        }
+
+        const [windRH, dryT] = await Promise.all([responseWindRH, responseDryT].map(r => r.json()))
+        
+        let data: any = { groups: { } }
+        if (windRH.features.length > 0)
+            data.groups.fireWindRH = windRH
+        if (dryT.features.length > 0)
+            data.groups.fireDryTs = dryT
         await ref.set(data)
-        await updateManifest(path)
+        await updateManifest(cachePath)
         return NextResponse.json(
             { ...data, fallback },
             { headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' } }
