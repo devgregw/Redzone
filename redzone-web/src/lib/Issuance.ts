@@ -73,22 +73,3 @@ export function findIssuance(issuances: Issuance[], fallback: boolean, reference
         return findIssuance(issuances, fallback, dayBeforeMidnight(referenceDate))
     }
 }
-
-// export function findIssuance(issuances: number[], fallback: boolean): { timestamp: SPCDate, latestIssuance: string } {
-//     let timestamp: SPCDate
-//     let latestIssuance: number | undefined = issuances.find(iss => {
-//         const value = iss === 1200 ? 600 : iss
-//         return new SPCDate().time >= value
-//     })
-//     if (latestIssuance)
-//         if (fallback)
-//             return findIssuance(issuances.filter(i => i !== latestIssuance), false)
-//         else
-//             timestamp = new SPCDate()
-//     else {
-//         timestamp = new SPCDate(true)
-//         latestIssuance = issuances[0]
-//     }
-//     console.log(`Next issuance in ${issuances.join(',')} (fallback: ${fallback}): ${latestIssuance} (${timestamp.date} ${timestamp.time})`)
-//     return { timestamp, latestIssuance: padZeroes(latestIssuance, 4) }
-// }
