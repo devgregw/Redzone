@@ -61,11 +61,8 @@ jobs:
         run: npx --no-install next build
         working-directory: ./redzone-web
       - name: Run tests
-        uses: willcaul/jest-github-action@v4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_MAPKIT_TOKEN: ${{ secrets.NEXT_PUBLIC_MAPKIT_TOKEN }}
           FB_ADMIN_CONFIG_ENCODED: ${{ secrets.FB_ADMIN_CONFIG_ENCODED }}
-        with:
-          coverage-comment: false
-          working-directory: ./redzone-web
+        run: npm test -- --ci
+        working-directory: ./redzone-web
