@@ -28,10 +28,24 @@ describe('Issuance', () => {
     })
 
     it('finds the latest issuance yesterday', () => {
-        // Reference date: 2024-06-01T18:00:00Z
+        // Reference date: 2024-06-01T00:00:00Z
         const referenceDate = new Date(Date.UTC(2024, 5, 1, 0, 0))
         const issuances: Issuance[] = [800, 1200, 1600, 2000]
         const result = findIssuance(issuances, false, referenceDate)
+        // If no issuance has occurred today, it should return the latest
+        // issuance from yesterday.
+        expect(result).toStrictEqual({
+            year: 2024,
+            date: '20240531',
+            issuance: 2000
+        })
+    })
+
+    it('finds the latest issuance yesterday (fallback)', () => {
+        // Reference date: 2024-06-01T08:00:00Z
+        const referenceDate = new Date(Date.UTC(2024, 5, 1, 8, 0))
+        const issuances: Issuance[] = [800, 1200, 1600, 2000]
+        const result = findIssuance(issuances, true, referenceDate)
         // If no issuance has occurred today, it should return the latest
         // issuance from yesterday.
         expect(result).toStrictEqual({
