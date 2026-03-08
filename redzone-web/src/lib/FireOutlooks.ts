@@ -1,18 +1,23 @@
 import centralTimeToUTC from "./centralTimeToUTC"
-import { findIssuance } from "./Issuance"
+import { findIssuance, Issuance } from "./Issuance"
 
 export abstract class FireOutlook {
-    protected issuances: number[]
+    protected issuances: Issuance[]
     protected fallback: boolean
 
-    constructor(issuances: number[], fallback: boolean) {
+    constructor(issuances: Issuance[], fallback: boolean) {
         this.issuances = issuances
         this.fallback = fallback
     }
     
-    abstract get path(): string
-    get url(): URL {
-        return new URL(`/${this.path}.lyr.geojson`, baseURL)
+    abstract get paths(): [string, string]
+    get urls(): [URL, URL] {
+        return this.paths.map(p => new URL(`/${p}.lyr.geojson`, baseURL)) as [URL, URL]
+    }
+
+    get cachePath(): string {
+        const { year, date, issuance } = findIssuance(this.issuances, this.fallback)
+        return `products/fire_wx/${year}/day1fw_${date}_${issuance}`
     }
 }
 
@@ -21,9 +26,12 @@ class Day1FireOutlook extends FireOutlook {
         super([1700, 1200], fallback)
     }
 
-    get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
-        return `products/fire_wx/${timestamp.year}/day1fw_${timestamp.date}_${latestIssuance}_windrh`
+    get paths(): [string, string] {
+        const { year, date, issuance } = findIssuance(this.issuances, this.fallback)
+        return [
+            `products/fire_wx/${year}/day1fw_${date}_${issuance}_windrh`,
+            `products/fire_wx/${year}/day1fw_${date}_${issuance}_dryt`
+        ]
     }
 }
 
@@ -32,9 +40,12 @@ class Day2FireOutlook extends FireOutlook {
         super([2000, 1200], fallback)
     }
 
-    get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
-        return `products/fire_wx/${timestamp.year}/day2fw_${timestamp.date}_${latestIssuance}_windrh`
+    get paths(): [string, string] {
+        const { year, date, issuance } = findIssuance(this.issuances, this.fallback)
+        return [
+            `products/fire_wx/${year}/day2fw_${date}_${issuance}_windrh`,
+            `products/fire_wx/${year}/day2fw_${date}_${issuance}_dryt`
+        ]
     }
 }
 

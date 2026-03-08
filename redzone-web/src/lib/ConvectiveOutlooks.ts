@@ -1,11 +1,11 @@
 import centralTimeToUTC from "./centralTimeToUTC"
-import { findIssuance } from "./Issuance"
+import { findIssuance, Issuance } from "./Issuance"
 
 export abstract class ConvectiveOutlook {
-    protected issuances: number[]
+    protected issuances: Issuance[]
     protected fallback: boolean
 
-    constructor(issuances: number[], fallback: boolean) {
+    constructor(issuances: Issuance[], fallback: boolean) {
         this.issuances = issuances
         this.fallback = fallback
     }
@@ -42,13 +42,13 @@ class Day1ConvectiveOutlook extends ConvectiveOutlook {
     subtype: ConvectiveOutlookSubtype
 
     constructor(subtype: ConvectiveOutlookSubtype, fallback: boolean) {
-        super([2000, 1630, 1300, 1200, 100], fallback)
+        super([2000, 1630, 1300, {iss: 1200, comparison: 600}, 100], fallback)
         this.subtype = subtype
     }
 
     get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
-        return `products/outlook/archive/${timestamp.year}/day1otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
+        const { year, date, issuance } = findIssuance(this.issuances, this.fallback)
+        return `products/outlook/archive/${year}/day1otlk_${date}_${issuance}_${this.subtype}`
     }
 }
 
@@ -61,8 +61,8 @@ class Day2ConvectiveOutlook extends ConvectiveOutlook {
     }
 
     get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
-        return `products/outlook/archive/${timestamp.year}/day2otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
+        const { year, date, issuance } = findIssuance(this.issuances, this.fallback)
+        return `products/outlook/archive/${year}/day2otlk_${date}_${issuance}_${this.subtype}`
     }
 }
 
@@ -75,8 +75,8 @@ class Day3ConvectiveOutlook extends ConvectiveOutlook {
     }
 
     get path(): string {
-        const { timestamp, latestIssuance } = findIssuance(this.issuances, this.fallback)
-        return `products/outlook/archive/${timestamp.year}/day3otlk_${timestamp.date}_${latestIssuance}_${this.subtype}`
+        const { year, date, issuance } = findIssuance(this.issuances, this.fallback)
+        return `products/outlook/archive/${year}/day3otlk_${date}_${issuance}_${this.subtype}`
     }
 }
 
@@ -89,7 +89,7 @@ class FutureProbabilisticOutlook extends ConvectiveOutlook {
     }
 
     get path(): string {
-        const { date, year } = findIssuance(this.issuances, this.fallback).timestamp
+        const { year, date } = findIssuance(this.issuances, this.fallback)
         return `products/exper/day4-8/archive/${year}/day${this.day}prob_${date}`
     }
 }
