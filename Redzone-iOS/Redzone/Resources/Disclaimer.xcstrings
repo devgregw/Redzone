@@ -7,7 +7,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Redzone displays and represents publicly available data from the National Weather Service, primarily from its Storm Prediction Center (SPC) office. The Redzone app and I, Gregory Whatley, are neither endorsed by nor affiliated with the National Weather Service or any other United States federal government organization."
+            "value" : "Redzone displays and represents publicly available data from the National Weather Service, primarily from its Storm Prediction Center (SPC) office. The Redzone app and I, Gregory Whatley, are neither endorsed by nor affiliated with the National Weather Service or any other United States federal government organization. Redzone is a hobbyist project and makes no guarantees regarding future support and service uptime & reliability."
           }
         }
       }
