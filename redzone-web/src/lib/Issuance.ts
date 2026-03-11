@@ -25,7 +25,7 @@ export class SPCDate {
 }
 
 export type Issuance = number | { iss: number, comparison: number }
-export type ResolvedIssuance = { year: number, date: string, issuance: number }
+export type ResolvedIssuance = { year: number, date: string, issuance: string }
 
 function issProp(iss: Issuance, value: 'iss' | 'comparison'): number {
     if (typeof iss === 'number')
@@ -65,7 +65,7 @@ export function findIssuance(issuances: Issuance[], fallback: boolean, reference
             return {
                 year,
                 date: `${padZeroes(year, 4)}${padZeroes(month + 1, 2)}${padZeroes(day, 2)}`,
-                issuance: typeof latest === 'number' ? latest : latest.iss
+                issuance: padZeroes(issProp(latest, 'iss'), 4)
             }
         }
     } else {
