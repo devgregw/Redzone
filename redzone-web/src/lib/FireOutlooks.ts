@@ -23,7 +23,7 @@ export abstract class FireOutlook {
 
 class Day1FireOutlook extends FireOutlook {
     constructor(fallback: boolean) {
-        super([1700, 1200], fallback)
+        super([1700, { iss: 1200, comparison: 630 }], fallback)
     }
 
     get paths(): [string, string] {
@@ -37,7 +37,7 @@ class Day1FireOutlook extends FireOutlook {
 
 class Day2FireOutlook extends FireOutlook {
     constructor(fallback: boolean) {
-        super([2000, 1200], fallback)
+        super([2000, { iss: 1200, comparison: 630 }], fallback)
     }
 
     get paths(): [string, string] {
