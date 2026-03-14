@@ -1,5 +1,5 @@
-export default function centralTimeZoneOffset(): number {
-    const str = new Date().toLocaleString('en', { timeZone: 'America/Chicago', timeZoneName: 'longOffset' })
+export default function centralTimeZoneOffset(tz?: string): number {
+    const str = new Date().toLocaleString('en', { timeZone: tz ?? 'America/Chicago', timeZoneName: 'longOffset' })
     const match = str.match(/([+-]\d+):(\d+)$/)
 
     if (match) {
