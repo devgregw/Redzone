@@ -51,14 +51,20 @@ struct OutlookFeatureDetailSection: View {
                     Text(.Convective.highHeadline)
                         .fontWeight(.medium)
                     Text(.Convective.highCaption)
-                case .fireElevated:
+                case .fireWindRHElevated:
                     Text(.fireElevatedDesc)
                         .fontWeight(.medium)
-                case .fireCritical:
+                case .fireWindRHCritical:
                     Text(.fireCriticalDesc)
                         .fontWeight(.medium)
-                case .fireExtreme:
+                case .fireWindRHExtreme:
                     Text(.fireExtmCriticalDesc)
+                        .fontWeight(.medium)
+                case .fireIsolatedDryT:
+                    Text(.fireIsoDryTDesc)
+                        .fontWeight(.medium)
+                case .fireScatteredDryT:
+                    Text(.fireSctDryTDesc)
                         .fontWeight(.medium)
                 case .cig1 where outlookType.convectiveClassification == .tornado:
                     Text(.tornadoCig1)

@@ -26,9 +26,11 @@ public enum OutlookSeverity: Sendable, Hashable, Comparable {
         "CIG3": .cig3,
         "SIGN": .significant,
         "SIGPROB": .sigprobabilistic,
-        "ELEV": .fireElevated,
-        "CRIT": .fireCritical,
-        "EXTM": .fireExtreme
+        "ELEV": .fireWindRHElevated,
+        "CRIT": .fireWindRHCritical,
+        "EXTM": .fireWindRHExtreme,
+        "IDRT": .fireIsolatedDryT,
+        "SDRT": .fireScatteredDryT
     ]
 
     case generalThunder
@@ -42,9 +44,11 @@ public enum OutlookSeverity: Sendable, Hashable, Comparable {
     case cig1
     case cig2
     case cig3
-    case fireElevated
-    case fireCritical
-    case fireExtreme
+    case fireWindRHElevated
+    case fireWindRHCritical
+    case fireWindRHExtreme
+    case fireIsolatedDryT
+    case fireScatteredDryT
     case percentage(Double)
     case unknown
 
@@ -69,11 +73,11 @@ public enum OutlookSeverity: Sendable, Hashable, Comparable {
         case .cig2: 11
         case .significant, .sigprobabilistic, .cig1: 10
         case .generalThunder: 0
-        case .marginal, .fireElevated: 1
-        case .slight: 2
-        case .enhanced, .fireCritical: 3
-        case .moderate: 4
-        case .high, .fireExtreme: 5
+        case .marginal, .fireWindRHElevated: 1
+        case .slight, .fireWindRHCritical: 2
+        case .enhanced, .fireWindRHExtreme: 3
+        case .moderate, .fireIsolatedDryT: 4
+        case .high, .fireScatteredDryT: 5
         case .unknown: -1
         }
     }
