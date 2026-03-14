@@ -48,7 +48,7 @@ struct CombinedConvectiveRiskWidgetEntryView: View {
                             .font(.title)
                     case .noRisk:
                         AccessoryWidgetBackground()
-                        Image(systemName: "sparkles")
+                        Image(systemName: "cloud.sun.fill")
                             .symbolRenderingMode(.multicolor)
                             .font(.title)
                     case .placeholder:
@@ -139,7 +139,7 @@ struct CombinedConvectiveRiskWidgetEntryView: View {
                         }
                     case .noRisk:
                         VStack {
-                            Image(systemName: "sparkles")
+                            Image(systemName: "cloud.sun.fill")
                                 .symbolRenderingMode(.multicolor)
                             Text("No severe forecast")
                                 .multilineTextAlignment(.center)
@@ -247,7 +247,7 @@ extension CombinedConvectiveRiskWidgetEntryView {
                         .multilineTextAlignment(.center)
                         .font(.subheadline.weight(.medium))
                 case .noRisk:
-                    Image(systemName: "sparkles")
+                    Image(systemName: "cloud.sun.fill")
                         .symbolRenderingMode(.multicolor)
                         .font(.title)
                     Text("No severe weather forecast")

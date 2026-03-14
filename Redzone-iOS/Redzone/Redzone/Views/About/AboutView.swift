@@ -83,12 +83,6 @@ struct AboutView: View {
                     } label: {
                         Label("Probabilistic (Day 4-8)", systemImage: "umbrella.percent")
                     }
-
-                    NavigationLink {
-                        AboutSevTStormView()
-                    } label: {
-                        Label(.Education.severeTstormLink, systemImage: "questionmark.circle")
-                    }
                 } header: {
                     Label("Convective Risks", systemImage: "bolt.trianglebadge.exclamationmark")
                 }
@@ -97,7 +91,7 @@ struct AboutView: View {
                     NavigationLink {
                         AboutFireRiskView()
                     } label: {
-                        Label("Wind & Relative Humidity", systemImage: "humidity")
+                        Label("Categorical", systemImage: "square.3.layers.3d.down.right")
                     }
                 } header: {
                     Label("Fire Risks", systemImage: "flame")

@@ -51,12 +51,26 @@ struct CurrentLocationCollapsedView: View {
                 }
             }
         case .fire:
-            if let windRh = outlook[.fireWindRH] {
+            let windRh = outlook[.fireWindRH]
+            let dryT = outlook[.fireDryTs]
+            if let windRh {
                 Label {
                     Text(windRh.properties.title)
                         .fontWeight(.medium)
                 } icon: {
-                    OutlookLegendIconView(properties: windRh.properties)
+                    HStack(spacing: 4) {
+                        OutlookLegendIconView(properties: windRh.properties)
+                        if let dryT {
+                            OutlookLegendIconView(properties: dryT.properties)
+                        }
+                    }
+                }
+            } else if let dryT {
+                Label {
+                    Text(dryT.properties.title)
+                        .fontWeight(.medium)
+                } icon: {
+                    OutlookLegendIconView(properties: dryT.properties)
                 }
             }
         @unknown default:

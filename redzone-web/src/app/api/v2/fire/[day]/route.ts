@@ -44,8 +44,18 @@ async function fetchOutlook(day: number, fallback: boolean): Promise<NextRespons
                 return await fetchOutlook(day, true)
         }
 
-        const [windRH, dryT] = await Promise.all([responseWindRH, responseDryT].map(r => r.json()))
-        
+        let [windRH, dryT] = await Promise.all([responseWindRH, responseDryT].map(r => r.json()))
+        dryT.features = dryT.features.map((feature: any) => {
+            if (feature.properties.LABEL === 'IDRT') {
+                feature.properties.stroke = '#824A19'
+                feature.properties.fill = '#BFA495'
+            } else if (feature.properties.LABEL === 'SDRT') {
+                feature.properties.stroke = '#44087D'
+                feature.properties.fill = '#C78FF8'
+            }
+            return feature
+        })
+
         let data: any = { groups: { } }
         if (windRH.features.length > 0)
             data.groups.fireWindRH = windRH

@@ -22,8 +22,12 @@ struct OutlookDetailsView: View {
             if let convectiveCIG = outlook[.convectiveCIG] {
                 OutlookFeatureDetailSection(convectiveCIG, in: response, outlookType: outlookType)
             }
-        } else if let fireWindRH = outlook[.fireWindRH] {
+        }
+        if let fireWindRH = outlook[.fireWindRH] {
             OutlookFeatureDetailSection(fireWindRH, in: response, outlookType: outlookType)
+        }
+        if let fireDryTs = outlook[.fireDryTs] {
+            OutlookFeatureDetailSection(fireDryTs, in: response, outlookType: outlookType)
         }
     }
 

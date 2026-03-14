@@ -86,7 +86,7 @@ struct OutlookPicker: View {
             }
 
             Submenu(title: "Fire", systemImage: "flame", isSelected: selection.pathSegments.first == "fire") {
-                ControlGroupPicker("Wind & Relative Humidity", selection: $selection) {
+                ControlGroupPicker("Categorical", selection: $selection) {
                     Label("Day 1", systemImage: "1.calendar")
                         .tag(OutlookType.fire(.day1))
                     Label("Day 2", systemImage: "2.calendar")
