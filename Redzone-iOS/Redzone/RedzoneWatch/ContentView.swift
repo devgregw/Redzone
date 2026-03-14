@@ -124,7 +124,7 @@ struct ContentView: View {
                                 .frame(maxWidth: .infinity)
                             }
                         } else {
-                            Image(systemName: "sparkles")
+                            Image(systemName: "cloud.sun.fill")
                                 .symbolRenderingMode(.multicolor)
                                 .font(.title)
                             Text(.noRisk)

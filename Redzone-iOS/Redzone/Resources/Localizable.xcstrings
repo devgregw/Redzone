@@ -111,6 +111,9 @@
     "Discrete" : {
 
     },
+    "Dry Thunderstorms" : {
+
+    },
     "Elevated" : {
 
     },
@@ -179,6 +182,28 @@
         }
       }
     },
+    "fireIsoDryTDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elevated risk of isolated thunderstorms (<40% coverage) producing rainfall of little accumulation to provide sufficient ground wetting are expected to occur where dried fuels exist."
+          }
+        }
+      }
+    },
+    "fireSctDryTDesc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Critical risk of widespread or numerous thunderstorms (>40% coverage) producing rainfall of little accumulation to provide sufficient ground wetting are expected to occur where dried fuels exist."
+          }
+        }
+      }
+    },
     "Forecasted probability of 1-inch diameter hail or larger within 25 miles of a point." : {
 
     },
@@ -237,6 +262,9 @@
 
     },
     "I Understand" : {
+
+    },
+    "Isolated" : {
 
     },
     "Iss." : {
@@ -375,6 +403,9 @@
 
     },
     "Safety for All Hazards" : {
+
+    },
+    "Scattered" : {
 
     },
     "Significant Severe" : {

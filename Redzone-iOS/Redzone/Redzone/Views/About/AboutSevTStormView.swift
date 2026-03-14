@@ -26,7 +26,6 @@ struct AboutSevTStormView: View {
             } footer: {
                 Text(.Education.severeTstormFootnote)
             }
-            .listRowBackground(Color(uiColor: .secondarySystemFill).opacity(0.8))
         }
         .navigationTitle(.Education.severeTstormTitle)
         .navigationBarTitleDisplayMode(.inline)

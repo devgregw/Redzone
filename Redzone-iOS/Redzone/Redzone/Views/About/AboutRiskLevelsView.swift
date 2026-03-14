@@ -11,16 +11,26 @@ import SwiftUI
 struct AboutRiskLevelsView: View {
     var body: some View {
         List {
-            RiskView(
-                title: "General Thunderstorms",
-                description: "10% or higher probability of thunderstorms is forecast.",
-                color: .green.opacity(0.5)
-            )
-            RiskView(title: "Marginal", description: .Education.marginalDesc, color: .green)
-            RiskView(title: "Slight", description: .Education.slightDesc, color: .yellow)
-            RiskView(title: "Enhanced", description: .Education.enhancedDesc, color: .orange)
-            RiskView(title: "Moderate", description: .Education.moderateDesc, color: .red)
-            RiskView(title: "High", description: .Education.highDesc, color: .magenta)
+            Section {
+                RiskView(
+                    title: "General Thunderstorms",
+                    description: "10% or higher probability of thunderstorms is forecast.",
+                    color: .green.opacity(0.5)
+                )
+                RiskView(title: "Marginal", description: .Education.marginalDesc, color: .green)
+                RiskView(title: "Slight", description: .Education.slightDesc, color: .yellow)
+                RiskView(title: "Enhanced", description: .Education.enhancedDesc, color: .orange)
+                RiskView(title: "Moderate", description: .Education.moderateDesc, color: .red)
+                RiskView(title: "High", description: .Education.highDesc, color: .magenta)
+            }
+
+            Section {
+                NavigationLink {
+                    AboutSevTStormView()
+                } label: {
+                    Label(.Education.severeTstormLink, systemImage: "questionmark.circle")
+                }
+            }
         }
         .navigationTitle("Categorical")
         .navigationBarTitleDisplayMode(.inline)
