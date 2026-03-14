@@ -10,7 +10,7 @@ describe('Issuance', () => {
         expect(result).toStrictEqual({
             year: 2024,
             date: '20240601',
-            issuance: 1600
+            issuance: "1600"
         })
     })
 
@@ -23,7 +23,7 @@ describe('Issuance', () => {
         expect(result).toStrictEqual({
             year: 2024,
             date: '20240601',
-            issuance: 1200
+            issuance: "1200"
         })
     })
 
@@ -37,7 +37,7 @@ describe('Issuance', () => {
         expect(result).toStrictEqual({
             year: 2024,
             date: '20240531',
-            issuance: 2000
+            issuance: "2000"
         })
     })
 
@@ -51,7 +51,7 @@ describe('Issuance', () => {
         expect(result).toStrictEqual({
             year: 2024,
             date: '20240531',
-            issuance: 2000
+            issuance: "2000"
         })
     })
 })
