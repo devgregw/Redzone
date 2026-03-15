@@ -17,7 +17,11 @@ public enum OutlookType: RawRepresentable, Codable, Hashable, Sendable {
     public var commentaryURL: URL {
         switch self {
         case let .convective(convective):
-            #URL("day\(convective.day)otlk.html", relativeTo: #URL("https://www.spc.noaa.gov/products/outlook/"))
+            if convective.day <= 3 {
+                #URL("day\(convective.day)otlk.html", relativeTo: #URL("https://www.spc.noaa.gov/products/outlook/"))
+            } else {
+                #URL("https://www.spc.noaa.gov/products/exper/day4-8/")
+            }
         case let .fire(fire):
             #URL("fwdy\(fire.day).html", relativeTo: #URL("https://www.spc.noaa.gov/products/fire_wx/"))
         }
