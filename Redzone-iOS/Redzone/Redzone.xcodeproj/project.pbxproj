@@ -19,10 +19,12 @@
 		FC2583A02E80DEFD0087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC25839F2E80DEFD0087B661 /* RedzoneMacros */; };
 		FC2583C52E80DF990087B661 /* RedzoneWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FC2583A52E80DF970087B661 /* RedzoneWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC2583D12E80DFBA0087B661 /* RedzoneMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FC2583D02E80DFBA0087B661 /* RedzoneMacros */; };
-		FC2583D42E80DFBA0087B661 /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; };
-		FC2583D62E80DFBA0087B661 /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; };
 		FC2584222E80E3180087B661 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584212E80E3180087B661 /* SwiftUI.framework */; };
 		FC2584242E80E31C0087B661 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584232E80E31C0087B661 /* MapKit.framework */; };
+		FC2BF04B2F67801D00C0A40E /* RedzoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; };
+		FC2BF04C2F67801D00C0A40E /* RedzoneCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D22E80DFBA0087B661 /* RedzoneCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC2BF04E2F67802000C0A40E /* RedzoneUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; };
+		FC2BF04F2F67802000C0A40E /* RedzoneUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC2583D32E80DFBA0087B661 /* RedzoneUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC86B6132EDA863100B07540 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC86B6122EDA863100B07540 /* WidgetKit.framework */; };
 		FC86B6142EDA863100B07540 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2584212E80E3180087B661 /* SwiftUI.framework */; };
 		FC86B6232EDA863300B07540 /* RedzoneWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC86B6112EDA863100B07540 /* RedzoneWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -103,6 +105,18 @@
 				FC2583C52E80DF990087B661 /* RedzoneWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2BF04D2F67801D00C0A40E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC2BF04F2F67802000C0A40E /* RedzoneUI.framework in Embed Frameworks */,
+				FC2BF04C2F67801D00C0A40E /* RedzoneCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FC86B6242EDA863300B07540 /* Embed Foundation Extensions */ = {
@@ -307,13 +321,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2584222E80E3180087B661 /* SwiftUI.framework in Frameworks */,
+				FC2BF04B2F67801D00C0A40E /* RedzoneCore.framework in Frameworks */,
 				FC2583D12E80DFBA0087B661 /* RedzoneMacros in Frameworks */,
 				FC2584242E80E31C0087B661 /* MapKit.framework in Frameworks */,
+				FC2BF04E2F67802000C0A40E /* RedzoneUI.framework in Frameworks */,
 				FC13BF662E84E4770013FFE6 /* Dependencies in Frameworks */,
 				FC89636A2F4B79DF005C8C66 /* FirebaseAppCheck in Frameworks */,
-				FC2583D42E80DFBA0087B661 /* RedzoneCore.framework in Frameworks */,
 				FC8963762F4B7D6B005C8C66 /* FirebaseCore in Frameworks */,
-				FC2583D62E80DFBA0087B661 /* RedzoneUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +500,7 @@
 				FC2583A12E80DF970087B661 /* Sources */,
 				FC2583A22E80DF970087B661 /* Frameworks */,
 				FC2583A32E80DF970087B661 /* Resources */,
+				FC2BF04D2F67801D00C0A40E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
