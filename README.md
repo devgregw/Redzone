@@ -34,9 +34,9 @@ To report a bug, file [a new issue](https://github.com/devgregw/Redzone/issues/n
 
 <summary><b>Risk Map</b></summary>
 
-| Categorical | Categorical (zoomed) | Details |
-| --- | --- | --- |
-| ![Categorical risk map](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_1.png?raw=true) | ![Categorical risk map (zoomed)](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_2.png?raw=true) | ![Categorical risk details](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_detail.png?raw=true) |
+| Categorical | Details |
+| --- | --- |
+| ![Categorical risk map](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_1.png?raw=true) | ![Categorical risk details](https://github.com/devgregw/Redzone/blob/main/screenshots/cat_detail.png?raw=true) |
 
 | Wind | Details |
 | --- | --- |
@@ -50,9 +50,9 @@ To report a bug, file [a new issue](https://github.com/devgregw/Redzone/issues/n
 | --- | --- |
 | ![Tornado risk map](https://github.com/devgregw/Redzone/blob/main/screenshots/torn_1.png?raw=true) | ![Tornado risk details](https://github.com/devgregw/Redzone/blob/main/screenshots/torn_detail.png?raw=true) |
 
-| Menu | Menu (Risk) |
-| --- | --- |
-| ![Main menu](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_1.png?raw=true) | ![Main menu 2](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_2.png?raw=true) |
+| Menu | Menu (Risk) | Menu (Favorites) |
+| --- | --- | --- |
+| ![Main menu](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_1.png?raw=true) | ![Main menu 2](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_2.png?raw=true) | ![Main menu 3](https://github.com/devgregw/Redzone/blob/main/screenshots/menu_3.png?raw=true) |
  
 </details>
 
@@ -84,8 +84,8 @@ To report a bug, file [a new issue](https://github.com/devgregw/Redzone/issues/n
 | --- | --- | --- | --- |
 | ![Categorical](https://github.com/devgregw/Redzone/blob/main/screenshots/about_cat.png?raw=true) | ![Wind](https://github.com/devgregw/Redzone/blob/main/screenshots/about_wind.png?raw=true) | ![Hail](https://github.com/devgregw/Redzone/blob/main/screenshots/about_hail.png?raw=true) | ![Tornado](https://github.com/devgregw/Redzone/blob/main/screenshots/about_torn.png?raw=true) |
 
-| Probabilistic (Day 3) | Probabilistic (Day 4-8) |
-| --- | --- |
-| ![Day 3](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob3.png?raw=true) | ![Lock Screen widgets](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob48.png?raw=true) |
+| Probabilistic (Day 3) | Probabilistic (Day 4-8) | Fire |
+| --- | --- | --- |
+| ![Day 3](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob3.png?raw=true) | ![Days 4-8](https://github.com/devgregw/Redzone/blob/main/screenshots/about_prob48.png?raw=true) |  ![Fire](https://github.com/devgregw/Redzone/blob/main/screenshots/about_fire.png?raw=true) |
  
 </details>
