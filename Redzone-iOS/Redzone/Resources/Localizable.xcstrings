@@ -38,6 +38,17 @@
     "Before using Redzone, please read the following disclaimer." : {
 
     },
+    "cat3Cig0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conditional intensity group 0 for any severe risk (wind, hail, and/or tornado)"
+          }
+        }
+      }
+    },
     "cat3Cig1" : {
       "extractionState" : "manual",
       "localizations" : {

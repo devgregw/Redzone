@@ -133,28 +133,6 @@
         }
       }
     },
-    "sigHailDesc" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A significant severe region represents 10% or greater probability of 2-inch diameter hail or larger within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
-          }
-        }
-      }
-    },
-    "sigProb3Desc" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A significant severe region represents 10% or greater probability of significant severe weather within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
-          }
-        }
-      }
-    },
     "sigSevTstormHail" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -195,28 +173,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "65-knot (~75 miles per hour) wind gusts or greater"
-          }
-        }
-      }
-    },
-    "sigTornadoDesc" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A significant severe region represents 10% or greater probability of EF2 - EF5 tornadoes within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
-          }
-        }
-      }
-    },
-    "sigWindDesc" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A significant severe region represents 10% or greater probability of 65-knot (~75 miles per hour) or greater wind gusts within 25 miles of a point. This region is represented separately from the percentage regions and may overlap with them."
           }
         }
       }
