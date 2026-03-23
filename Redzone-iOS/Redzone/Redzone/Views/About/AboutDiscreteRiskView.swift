@@ -131,7 +131,7 @@ struct AboutDiscreteRiskView: View {
                     }
                     .symbolRenderingMode(.hierarchical)
 
-                    ExternalLink(#URL("https://www.spc.noaa.gov/exper/conditional-intensity-information/"), label: "Learn more")
+                    ExternalLink(#URL("https://www.spc.noaa.gov/about/outlooks/SPC_Conditional_Intensity_Reference.pdf"), label: "Learn more")
                 }
             } else if let sigDesc = risk.sigDescription {
                 Section {
