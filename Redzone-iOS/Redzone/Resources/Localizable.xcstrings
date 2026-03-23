@@ -242,7 +242,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "2-inch diameter (billiard ball) hail or larger (mostly supercells)"
+            "value" : "Largest hail at least 2-inch diameter (billiard ball)"
           }
         }
       }
@@ -253,7 +253,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "3½-inch diameter (softball) hail or larger (long-tracked, discrete supercells)"
+            "value" : "Largest hail at least 3½-inch diameter (softball)"
           }
         }
       }
