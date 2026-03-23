@@ -21,7 +21,8 @@ export enum ConvectiveOutlookSubtype {
     wind = "wind",
     hail = "hail",
     tornado = "torn",
-    probabilistic = "prob"
+    probabilistic = "prob",
+    cigProbabilistic = "cigprob"
 }
 
 export function subtypeFromString(str: string): ConvectiveOutlookSubtype {
@@ -106,7 +107,7 @@ export class ConvectiveOutlookFactory {
                     throw 'Invalid subtype'
                 return new Day2ConvectiveOutlook(subtype, fallback)
             case 3:
-                if (subtype !== ConvectiveOutlookSubtype.categorical && subtype !== ConvectiveOutlookSubtype.probabilistic)
+                if (![ConvectiveOutlookSubtype.categorical, ConvectiveOutlookSubtype.probabilistic, ConvectiveOutlookSubtype.cigProbabilistic].includes(subtype))
                     throw 'Invalid subtype'
                 return new Day3ConvectiveOutlook(subtype, fallback)
             case 4: case 5: case 6: case 7: case 8:
