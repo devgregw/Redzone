@@ -73,16 +73,6 @@ struct AboutDiscreteRiskView: View {
             ]
             }
         }
-
-        var sigDescription: LocalizedStringResource? {
-            switch self {
-            case .wind: .Education.sigWindDesc
-            case .hail: .Education.sigHailDesc
-            case .tornado: .Education.sigTornadoDesc
-            case .prob3: .Education.sigProb3Desc
-            case .prob: nil
-            }
-        }
     }
 
     let risk: AboutDiscreteRiskView.Risk
@@ -102,7 +92,7 @@ struct AboutDiscreteRiskView: View {
                 }
             }
 
-            if risk == .wind || risk == .hail || risk == .tornado {
+            if risk == .wind || risk == .hail || risk == .tornado || risk == .prob3 {
                 Section {
                     VStack(alignment: .leading, spacing: 8) {
                         Text(.cigTitle)
@@ -126,28 +116,16 @@ struct AboutDiscreteRiskView: View {
                             Label(.tornadoCig1, systemImage: "exclamationmark", foregroundStyle: .red)
                             Label(.tornadoCig2, systemImage: "exclamationmark.2", foregroundStyle: .red)
                             Label(.tornadoCig3, systemImage: "exclamationmark.3", foregroundStyle: .red)
+                        case .prob3:
+                            Label(.cat3Cig0, systemImage: "slash.circle", foregroundStyle: .secondary)
+                            Label(.cat3Cig1, systemImage: "exclamationmark", foregroundStyle: .red)
+                            Label(.cat3Cig2, systemImage: "exclamationmark.2", foregroundStyle: .red)
                         default: EmptyView()
                         }
                     }
                     .symbolRenderingMode(.hierarchical)
 
                     ExternalLink(#URL("https://www.spc.noaa.gov/about/outlooks/SPC_Conditional_Intensity_Reference.pdf"), label: "Learn more")
-                }
-            } else if let sigDesc = risk.sigDescription {
-                Section {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Label {
-                            HStack(spacing: 4) {
-                                Image(systemName: "exclamationmark.triangle.fill")
-                                    .symbolRenderingMode(.multicolor)
-                                Text("Significant Severe")
-                                    .font(.headline)
-                            }
-                        } icon: {
-                            SigSevLegendIconView()
-                        }
-                        Text(sigDesc)
-                    }
                 }
             }
         }

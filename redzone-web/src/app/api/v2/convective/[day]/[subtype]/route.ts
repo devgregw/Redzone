@@ -3,6 +3,21 @@ import { ConvectiveOutlookSubtype, subtypeFromString, ConvectiveOutlook, Convect
 import { getDatabase } from "firebase-admin/database";
 import { NextRequest, NextResponse } from "next/server";
 
+async function fetchDay3CigProb(fallback: boolean): Promise<any | null> {
+    try {
+        let outlook = ConvectiveOutlookFactory.createOutlook(3, ConvectiveOutlookSubtype.cigProbabilistic, fallback)
+        console.log(`Fetch: ${outlook.url} for convective/3/cigprob`)
+        const response = await fetch(outlook.url)
+        if (!response.ok) {
+            console.error(`${outlook.url.toString()}: ${response.status} ${response.statusText} (fallback: ${fallback})`)
+            return null
+        }
+        return await response.json()
+    } catch {
+        return null
+    }
+}
+
 async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fallback: boolean): Promise<NextResponse> {
     let outlook: ConvectiveOutlook
     try {
@@ -33,8 +48,13 @@ async function fetchOutlook(day: number, subtype: ConvectiveOutlookSubtype, fall
             else
                 return await fetchOutlook(day, subtype, true)
         }
+        let cigData: any | null
+        if (day === 3 && subtype === ConvectiveOutlookSubtype.probabilistic)
+            cigData = await fetchDay3CigProb(fallback)
+        else
+            cigData = null
         const json = await response.json()
-        const data = { groups: processResponse(json, subtype)  }
+        const data = { groups: processResponse(json, cigData, day, subtype)  }
         await ref.set(data)
         await updateManifest(path)
         return NextResponse.json(
@@ -54,11 +74,20 @@ function chunkArray<T>(array: T[], predicate: (element: T) => boolean): [T[], T[
     return [trueElements, falseElements]
 }
 
-function processResponse(data: any, subtype: ConvectiveOutlookSubtype): any {
-    if (subtype == ConvectiveOutlookSubtype.categorical || subtype == ConvectiveOutlookSubtype.probabilistic)
+type FeatureCollection = { type: 'FeatureCollection', features: { type: 'Feature', geometry: any, properties: Record<string, any> }[] }
+
+function processResponse(data: any, cigData: any | null, day: number, subtype: ConvectiveOutlookSubtype): any {
+    if ((day <= 2 && subtype == ConvectiveOutlookSubtype.categorical) || day >= 4)
         return { convectivePrimary: data }
-    else {
-        let convectivePrimary = data as { type: 'FeatureCollection', features: { type: 'Feature', geometry: any, properties: Record<string, any> }[] }
+    else if (cigData) {
+        let response: any = { }
+        if ((data as FeatureCollection).features.length > 0)
+            response.convectivePrimary = data
+        if ((cigData as FeatureCollection).features.length > 0)
+            response.convectiveCIG = cigData
+        return response
+    } else {
+        let convectivePrimary = data as FeatureCollection
         let [cigs, probs] = chunkArray(convectivePrimary.features, f => (f.properties.LABEL as string)?.indexOf('CIG') === 0)
         convectivePrimary.features = probs
         let convectiveCIG = {

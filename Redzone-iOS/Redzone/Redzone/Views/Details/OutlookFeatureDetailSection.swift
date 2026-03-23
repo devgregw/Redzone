@@ -82,6 +82,10 @@ struct OutlookFeatureDetailSection: View {
                     Text(.hailCig1)
                 case .cig2 where outlookType.convectiveClassification == .hail:
                     Text(.hailCig2)
+                case .cig1 where outlookType == .convective(.day3(probabilistic: true)):
+                    Text(.cat3Cig1)
+                case .cig2 where outlookType == .convective(.day3(probabilistic: true)):
+                    Text(.cat3Cig2)
                 case let .percentage(pct):
                     let label: LocalizedStringResource = {
                         switch outlookType {
