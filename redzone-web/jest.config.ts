@@ -3,14 +3,14 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from 'jest';
+import { Config } from '@jest/types'
 import nextJest from 'next/jest.js';
 
 const createJestConfig = nextJest({
   dir: './',
 });
 
-const config: Config = {
+const config: Config.InitialProjectOptions = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -38,7 +38,7 @@ const config: Config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  // coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
