@@ -18,7 +18,7 @@ on:
 
 jobs:
   iOS:
-    runs-on: macos-26
+    runs-on: xcode-27
     defaults:
       run:
         working-directory: ./Redzone-iOS
@@ -54,7 +54,7 @@ jobs:
             --index-store-path "${{ runner.temp }}/DerivedData"
             
   watchOS:
-    runs-on: macos-26
+    runs-on: xcode-27
     defaults:
       run:
         working-directory: ./Redzone-iOS
