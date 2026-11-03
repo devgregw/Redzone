@@ -52,7 +52,7 @@ public struct ExternalLink<Content: View>: View {
     }
 
     public var body: some View {
-        Link(destination: url) {
+        Link(destination: url.absoluteURL) {
 #if EXTERNALLINK_LOGOS
             if let icon: Image = icon() {
                 Label {
