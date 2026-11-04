@@ -172,5 +172,6 @@ struct OutlookMap: View {
                 }
                 selectedOutlookType = outlookType
             }
+            .neverMinimizeNavigationBar()
     }
 }

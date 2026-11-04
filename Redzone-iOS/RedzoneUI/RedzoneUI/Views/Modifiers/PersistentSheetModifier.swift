@@ -105,6 +105,7 @@ struct PersistentSheetModifier<Collapsed: View, Expanded: View>: ViewModifier {
                     .scrollContentBackground(.hidden)
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarTitleHidden(!state.isExpanded)
+                    .neverMinimizeNavigationBar()
             }
         }
         .id(navigationStackID)
